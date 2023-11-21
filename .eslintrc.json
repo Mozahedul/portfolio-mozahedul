@@ -49,16 +49,17 @@
     "node/prefer-promises/dns": "off",
     "node/prefer-promises/fs": "off",
     "no-path-concat": "off",
-    "react/jsx-fragments": ["warn", "element"],
     "react/jsx-pascal-case": ["warn", { "allowNamespace": true }],
     "import/extensions": "off",
     "react/jsx-filename-extension": "off",
     "react/react-in-jsx-scope": "off",
+    "jsx-a11y/label-has-associated-control": "off",
     "react/prop-types": "off",
     "react/jsx-props-no-spreading": "off",
     "react-hooks/rules-of-hooks": "warn",
     "react/jsx-equals-spacing": "off",
     "import/no-unresolved": "off",
+    "react/jsx-fragments": "off",
     "react-hooks/exhaustive-deps": [
       "warn",
       {
