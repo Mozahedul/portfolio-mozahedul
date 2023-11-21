@@ -27,6 +27,17 @@ const ProjectSchema = new mongoose.Schema(
         message: "Invalid URL format",
       },
     },
+    github: {
+      type: String,
+      required: true,
+      validate: {
+        validator(value) {
+          const regex = /^(ftp|http|https):\/\/[^ "]+$/;
+          return regex.test(value);
+        },
+        message: "Invalid URL format",
+      },
+    },
     language: {
       type: Array,
       required: true,

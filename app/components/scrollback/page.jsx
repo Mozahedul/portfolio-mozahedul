@@ -18,7 +18,7 @@ const Scroll = () => {
       ) {
         scrollRef.current.style.display = "block";
       } else {
-        scrollRef.current.style.display = "none";
+        scrollRef.current && (scrollRef.current.style.display = "none");
       }
     };
   }, []);

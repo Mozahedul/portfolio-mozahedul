@@ -110,6 +110,7 @@ function ViewProjects() {
               <th className="px-3 py-2 text-left text-gray-200">SL No</th>
               <th className="px-3 py-2 text-left text-gray-200">Title</th>
               <th className="px-3 py-2 text-left text-gray-200">Anchor</th>
+              <th className="px-3 py-2 text-left text-gray-200">GitHub</th>
               <th className="px-3 py-2 text-left text-gray-200">Languages</th>
               <th className="px-3 py-2 text-left text-gray-200">Description</th>
               <th className="px-3 py-2 text-left text-gray-200">Action</th>
@@ -127,6 +128,9 @@ function ViewProjects() {
                 </td>
                 <td className="border-b-2 border-slate-800 p-3">
                   {`${project.anchor.substring(0, 15)}...`}
+                </td>
+                <td className="border-b-2 border-slate-800 p-3">
+                  {`${project.github.substring(0, 15)}...`}
                 </td>
                 <td className="flex flex-wrap border-b-2 border-slate-800 p-3">
                   {project?.language?.map(lang => (

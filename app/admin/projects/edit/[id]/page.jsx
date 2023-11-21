@@ -193,7 +193,6 @@ const UserRegister = () => {
               name="anchor"
               id="anchor"
               defaultValue={projectForm.anchor}
-              placeholder="https://anchorlink.com"
               className="w-full rounded-md bg-slate-500 p-2 text-sm text-gray-300"
             />
             {projectForm?.anchor !== "" && (
@@ -201,6 +200,34 @@ const UserRegister = () => {
                 {projectForm?.anchor?.length < 6
                   ? "Enter at least 6 characters"
                   : projectForm?.anchor?.length > 150
+                    ? "Do not exceed 150 characters"
+                    : ""}
+              </span>
+            )}
+          </div>
+
+          {/* GitHub link */}
+          <div className="mt-3">
+            <label
+              htmlFor="github"
+              className="mb-1 block text-sm font-semibold text-gray-300"
+            >
+              GitHub Link<span className="text-red-400">*</span>
+            </label>
+            <input
+              onChange={handleField}
+              onBlur={handleInputFocus}
+              type="text"
+              name="github"
+              id="github"
+              defaultValue={projectForm.github}
+              className="w-full rounded-md bg-slate-500 p-2 text-sm text-gray-300"
+            />
+            {projectForm?.github !== "" && (
+              <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
+                {projectForm?.github?.length < 6
+                  ? "Enter at least 6 characters"
+                  : projectForm?.github?.length > 150
                     ? "Do not exceed 150 characters"
                     : ""}
               </span>

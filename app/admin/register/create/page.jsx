@@ -105,13 +105,13 @@ const UserRegister = () => {
       const isPasswordMatched = pwd.match(regex);
       return isPasswordMatched;
     }
-    return true;
+    return false;
   };
 
   // Check any of the input field of a from is empty or not
   useEffect(() => {
     const projectArr = Object.values(userForm);
-    const itemExist = projectArr.some(item => item.length < 2);
+    const itemExist = projectArr.some(item => item.length < 6);
 
     setIsEmpty(itemExist);
   }, [userForm]);
@@ -247,7 +247,12 @@ const UserRegister = () => {
                 Password Matched
               </span>
             ) : (
-              ""
+              userForm.password.length > 5 &&
+              userForm.confirmPassword.length > 5 && (
+                <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
+                  Passwords do not match
+                </span>
+              )
             )}
             <button
               type="button"

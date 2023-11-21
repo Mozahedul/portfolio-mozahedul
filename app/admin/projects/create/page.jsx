@@ -50,6 +50,8 @@ const UserRegister = () => {
     const entries = Array.from(formData.entries());
     const projectsFormData = Object.fromEntries(entries);
 
+    console.log(projectsFormData);
+
     projectsFormData.language = languages;
 
     setIsLoading(true);
@@ -61,7 +63,7 @@ const UserRegister = () => {
       },
     });
 
-    const data = response.ok === "OK" && (await response.json());
+    const data = response.ok && (await response.json());
 
     // if user created, then show success message
     if (data.success) {
@@ -150,9 +152,9 @@ const UserRegister = () => {
               placeholder="Full Title"
               className="w-full rounded-md bg-slate-500 p-2 text-sm text-gray-300"
             />
-            {projectForm?.title !== "" && projectForm?.title?.length < 6 ? (
+            {projectForm?.title !== "" && projectForm?.title?.length < 2 ? (
               <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
-                Enter atleast 6 characters
+                Enter atleast 2 characters
               </span>
             ) : (
               ""
@@ -178,9 +180,37 @@ const UserRegister = () => {
             />
             {projectForm?.anchor !== "" && (
               <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
-                {projectForm?.anchor?.length < 6
-                  ? "Enter at least 6 characters"
+                {projectForm?.anchor?.length < 2
+                  ? "Enter at least 2 characters"
                   : projectForm?.anchor?.length > 150
+                    ? "Do not exceed 150 characters"
+                    : ""}
+              </span>
+            )}
+          </div>
+
+          {/* GitHub Link */}
+          <div className="mt-3">
+            <label
+              htmlFor="github"
+              className="mb-1 block text-sm font-semibold text-gray-300"
+            >
+              Github Link<span className="text-red-400">*</span>
+            </label>
+            <input
+              onChange={handleField}
+              onBlur={handleInputFocus}
+              type="text"
+              name="github"
+              id="github"
+              placeholder="https://githublink.com"
+              className="w-full rounded-md bg-slate-500 p-2 text-sm text-gray-300"
+            />
+            {projectForm?.github !== "" && (
+              <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
+                {projectForm?.github?.length < 2
+                  ? "Enter at least 2 characters"
+                  : projectForm?.github?.length > 150
                     ? "Do not exceed 150 characters"
                     : ""}
               </span>
@@ -260,8 +290,8 @@ const UserRegister = () => {
             />
             {projectForm?.description !== "" && (
               <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
-                {projectForm?.description?.length < 6
-                  ? "Enter at least 6 characters"
+                {projectForm?.description?.length < 2
+                  ? "Enter at least 2 characters"
                   : projectForm?.description?.length > 150
                     ? "Do not exceed 150 characters"
                     : ""}
@@ -271,7 +301,7 @@ const UserRegister = () => {
 
           <div className="mt-6">
             <button
-              disabled={isLoading}
+              disabled={isLoading || isEmpty}
               type="submit"
               className={`w-full  ${
                 isLoading || isEmpty ? "cursor-not-allowed" : "cursor-pointer"
