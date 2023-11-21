@@ -10,9 +10,14 @@
     "linter": "npm i -D prettier && npm i -D eslint-plugin-prettier && npm i -D eslint-config-prettier && npm i -D eslint-plugin-node && npm i -D eslint-config-node"
   },
   "dependencies": {
+    "mongoose": "^8.0.1",
     "next": "14.0.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-icons": "^4.12.0",
+    "react-toastify": "^9.1.3",
+    "slugify": "^1.6.6",
+    "typed.js": "^2.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
