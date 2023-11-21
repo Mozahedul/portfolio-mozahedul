@@ -1,7 +1,7 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { ToastContainer } from "react-toastify";
+import { roboto } from "../utils/google-fonts/fonts";
+import "react-toastify/dist/ReactToastify.css";
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +11,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${roboto.className} relative mx-7 my-7 md:mx-9 lg:mx-11`}
+      >
+        {children}
+        <ToastContainer />
+      </body>
     </html>
   );
 }
