@@ -1,9 +1,22 @@
+"use client";
+
 import { BiSolidRightArrow } from "react-icons/bi";
+import { useEffect } from "react";
+import AOS from "aos";
 import { inter } from "@/utils/google-fonts/fonts";
+import "aos/dist/aos.css";
 
 const AboutPage = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
-    <div>
+    <div
+      data-aos="fade-up"
+      data-aos-anchor-placement="center-bottom"
+      data-aos-duration="500"
+    >
       <h3>
         <span className="text-xl font-bold text-cyan-300">01. </span>{" "}
         <strong className="text-2xl text-gray-300">About Me</strong>

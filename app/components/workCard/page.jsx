@@ -2,6 +2,9 @@ import { FiExternalLink } from "react-icons/fi";
 import { GoFileDirectory } from "react-icons/go";
 import { LuGithub } from "react-icons/lu";
 import Link from "next/link";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Card = ({
   title = "",
@@ -10,9 +13,14 @@ const Card = ({
   github = "",
   language = [],
 }) => {
-  console.log(title, description, anchor, github, language);
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <div
+      data-aos="zoom-in"
+      data-aos-duration="500"
       className="group flex cursor-pointer flex-col justify-between rounded-md p-6 transition-all duration-500 hover:scale-105"
       style={{ backgroundColor: "#0b1e3f" }}
     >

@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
+import AOS from "aos";
 import { inter } from "../../../utils/google-fonts/fonts";
 import TypeWriter from "../cssFeatures/typingAnimation/page";
+import "aos/dist/aos.css";
 
 const TitleHero = () => {
   const [viewResume, setViewResume] = useState(false);
@@ -27,8 +29,19 @@ const TitleHero = () => {
     document.body.classList.remove("body-fixed");
   };
 
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
-    <div className={`mt-20 lg:ml-40 ${inter.className}`}>
+    <div
+      data-aos="fade-zoom-in"
+      data-aos-easing="ease-in-back"
+      data-aos-delay="300"
+      data-aos-offset="0"
+      className={`mt-20 lg:ml-40 ${inter.className}`}
+    >
       <p className="font-semibold tracking-widest text-cyan-300">
         Hi, My name is
       </p>

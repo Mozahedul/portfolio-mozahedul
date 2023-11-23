@@ -1,8 +1,19 @@
+import { useEffect } from "react";
+import AOS from "aos";
 import { inter } from "@/utils/google-fonts/fonts";
+import "aos/dist/aos.css";
 
 const ContactHeader = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
-    <div className={`mt-36 flex flex-col items-center ${inter.className}`}>
+    <div
+      data-aos="flip-up"
+      data-aos-duration="500"
+      className={`mt-36 flex flex-col items-center ${inter.className}`}
+    >
       <h3 className="text-sm font-semibold tracking-widest text-cyan-400">
         04. Send a message
       </h3>

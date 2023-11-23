@@ -3,7 +3,7 @@ import { inter } from "@/utils/google-fonts/fonts";
 const FooterSection = () => {
   return (
     <div
-      className={`mt-6 text-center text-sm font-semibold tracking-wider text-gray-500 ${inter.className}`}
+      className={`mt-20 text-center text-sm font-semibold tracking-wider text-gray-500 ${inter.className}`}
     >
       Design & built by Mozahedul Islam
     </div>
