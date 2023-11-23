@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 // import AOS from "aos";
 import ContactHeader from "@/app/components/contact/contactHeader/page";
 // import "aos/dist/aos.css";

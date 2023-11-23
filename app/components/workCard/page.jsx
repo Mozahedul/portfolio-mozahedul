@@ -1,3 +1,5 @@
+"use client";
+
 import { FiExternalLink } from "react-icons/fi";
 import { GoFileDirectory } from "react-icons/go";
 import { LuGithub } from "react-icons/lu";
