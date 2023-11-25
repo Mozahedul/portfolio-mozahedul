@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from "react";
 import { FiInstagram, FiGithub, FiLinkedin } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
