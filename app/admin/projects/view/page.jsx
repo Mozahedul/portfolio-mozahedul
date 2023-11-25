@@ -1,11 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { VscEdit } from "react-icons/vsc";
-import React, { useEffect, useState } from "react";
-import Header from "@/app/sections/header/page";
-import FooterSection from "@/app/sections/footer/page";
 import Spin from "@/app/components/animation/spinner/page";
 import { toastError, toastSuccess } from "@/utils/showMessage/toastReact";
 
@@ -77,9 +75,32 @@ function ViewProjects() {
     }
   };
 
+  // useEffect(() => {
+  //   document.title = "Project admin view page";
+  // }, []);
+
+  function injectMetadata(pageTitle, pageDescription) {
+    const metaTitleElement = document.createElement("title");
+    metaTitleElement.textContent = pageTitle;
+
+    const metaDescriptionElement = document.createElement("meta");
+    metaDescriptionElement.name = "description";
+    metaDescriptionElement.content = pageDescription;
+
+    const headElement = document.getElementsByTagName("head")[0];
+    headElement.appendChild(metaTitleElement);
+    headElement.appendChild(metaDescriptionElement);
+  }
+
+  useEffect(() => {
+    const pageTitle = "Dynamic Page Title";
+    const pageDescription = "Dynamic Page Description";
+
+    injectMetadata(pageTitle, pageDescription);
+  }, []);
+
   return (
     <>
-      <Header />
       <div className="mb-3 mt-6 flex items-center justify-between">
         <h2 className="text-2xl font-bold text-gray-300">Project List</h2>
         <div>
@@ -174,8 +195,6 @@ function ViewProjects() {
           No Projects exist to show
         </button>
       )}
-
-      <FooterSection />
     </>
   );
 }

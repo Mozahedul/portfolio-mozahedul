@@ -15,7 +15,7 @@ const AboutPage = () => {
     <div
       data-aos="fade-up"
       data-aos-anchor-placement="center-bottom"
-      data-aos-duration="500"
+      data-aos-duration="1000"
     >
       <h3>
         <span className="text-xl font-bold text-cyan-300">01. </span>{" "}

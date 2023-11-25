@@ -13,7 +13,7 @@ const ContactHeader = () => {
   return (
     <div
       data-aos="flip-up"
-      data-aos-duration="500"
+      data-aos-duration="1000"
       className={`mt-36 flex flex-col items-center ${inter.className}`}
     >
       <h3 className="text-sm font-semibold tracking-widest text-cyan-400">

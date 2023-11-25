@@ -6,8 +6,6 @@ import React, { useEffect, useState } from "react";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import { ImSpinner6 } from "react-icons/im";
 import { toastError, toastSuccess } from "@/utils/showMessage/toastReact";
-import Header from "@/app/sections/header/page";
-import FooterSection from "@/app/sections/footer/page";
 
 const UserRegister = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -117,175 +115,171 @@ const UserRegister = () => {
   }, [userForm]);
 
   return (
-    <>
-      <Header />
-      <div className="mt-8 flex flex-col items-center justify-center">
-        <div className="mb-4 flex w-full items-center justify-between sm:w-3/4 md:w-2/4 xl:w-2/6">
-          <h2 className="text-lg font-bold text-gray-300 md:text-2xl">
-            Create a User
-          </h2>
-          <Link href="/admin/register/view">
-            <button
-              type="button"
-              className="rounded-md bg-cyan-600 px-3 py-2 text-sm font-medium text-gray-300 transition-all duration-500 hover:bg-cyan-400 hover:text-gray-200"
-            >
-              View User
-            </button>
-          </Link>
-        </div>
-        <form
-          onSubmit={handleSubmit}
-          className="w-full rounded-md bg-slate-700 p-5 sm:w-3/4 md:w-2/4 xl:w-2/6"
-        >
-          <div>
-            <label
-              htmlFor="name"
-              className="mb-1 block text-sm font-semibold text-gray-300"
-            >
-              Name<span className="text-red-400">*</span>
-            </label>
-            <input
-              onChange={handleField}
-              onBlur={handleInputFocus}
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Full Name"
-              className="w-full rounded-md bg-slate-500 p-2 text-sm text-gray-300"
-            />
-            {userForm.name !== "" && userForm.name.length < 6 ? (
-              <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
-                Enter atleast 6 characters
-              </span>
-            ) : (
-              ""
-            )}
-          </div>
-
-          <div className="mt-3">
-            <label
-              htmlFor="email"
-              className="mb-1 block text-sm font-semibold text-gray-300"
-            >
-              Email<span className="text-red-400">*</span>
-            </label>
-            <input
-              onChange={handleField}
-              onBlur={handleInputFocus}
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email Address"
-              className="w-full rounded-md bg-slate-500 p-2 text-sm text-gray-300"
-            />
-            {userForm.email !== "" && !checkEmailValidity(userForm.email) ? (
-              <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
-                Enter a valid E-mail address
-              </span>
-            ) : (
-              ""
-            )}
-          </div>
-          <div className="relative mt-3">
-            <label
-              htmlFor="password"
-              className="mb-1 block text-sm font-semibold text-gray-300"
-            >
-              Password<span className="text-red-400">*</span>
-            </label>
-            <input
-              onChange={handleField}
-              onBlur={handleInputFocus}
-              type={isPasswordVisible ? "text" : "password"}
-              name="password"
-              id="password"
-              placeholder="xxxxxx"
-              className="w-full rounded-md bg-slate-500 p-2 text-sm text-gray-300"
-            />
-            {userForm.password !== "" && userForm.password.length < 6 ? (
-              <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
-                Enter atleast 6 characters
-              </span>
-            ) : (
-              ""
-            )}
-
-            {/* Show and hide password */}
-            <button
-              type="button"
-              className="absolute right-3 top-8 text-xl"
-              onClick={handleTogglePassword}
-            >
-              {isPasswordVisible ? <BsEyeSlashFill /> : <BsEyeFill />}
-            </button>
-          </div>
-          <div className="relative mt-3">
-            <label
-              htmlFor="confirmPassword"
-              className="mb-1 block text-sm font-semibold text-gray-300"
-            >
-              Confirm Password<span className="text-red-400">*</span>
-            </label>
-            <input
-              type={isConfirmPasswordVisible ? "text" : "password"}
-              name="confirmPassword"
-              id="confirmPassword"
-              onChange={handleField}
-              onBlur={handleInputFocus}
-              placeholder="xxxxxx"
-              className="w-full rounded-md bg-slate-500 p-2 text-sm text-gray-300"
-            />
-
-            {/* Show and hide confirm password */}
-            {userForm.confirmPassword !== "" &&
-            userForm.confirmPassword.length < 6 ? (
-              <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
-                Enter atleast 6 characters
-              </span>
-            ) : matchPasswords(userForm.password, userForm.confirmPassword) ? (
-              <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
-                Password Matched
-              </span>
-            ) : (
-              userForm.password.length > 5 &&
-              userForm.confirmPassword.length > 5 && (
-                <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
-                  Passwords do not match
-                </span>
-              )
-            )}
-            <button
-              type="button"
-              className="absolute right-3 top-8 text-xl"
-              onClick={handleToggleConfirmPassword}
-            >
-              {isConfirmPasswordVisible ? <BsEyeSlashFill /> : <BsEyeFill />}
-            </button>
-          </div>
-          <div className="mt-6">
-            <button
-              disabled={isLoading}
-              type="submit"
-              className={`w-full  ${
-                isLoading || isEmpty ? "cursor-not-allowed" : "cursor-pointer"
-              } rounded-md bg-cyan-600 p-2 text-center text-sm font-semibold text-gray-300 transition-all duration-500 hover:bg-cyan-500 hover:text-gray-200`}
-            >
-              {isLoading && isEmpty ? (
-                <>
-                  <svg className="mr-2 inline h-5 w-5 animate-spin text-xl">
-                    <ImSpinner6 />
-                  </svg>
-                  Processing...
-                </>
-              ) : (
-                "Create User"
-              )}
-            </button>
-          </div>
-        </form>
+    <div className="mt-8 flex flex-col items-center justify-center">
+      <div className="mb-4 flex w-full items-center justify-between sm:w-3/4 md:w-2/4 xl:w-2/6">
+        <h2 className="text-lg font-bold text-gray-300 md:text-2xl">
+          Create a User
+        </h2>
+        <Link href="/admin/register/view">
+          <button
+            type="button"
+            className="rounded-md bg-cyan-600 px-3 py-2 text-sm font-medium text-gray-300 transition-all duration-500 hover:bg-cyan-400 hover:text-gray-200"
+          >
+            View User
+          </button>
+        </Link>
       </div>
-      <FooterSection />
-    </>
+      <form
+        onSubmit={handleSubmit}
+        className="w-full rounded-md bg-slate-700 p-5 sm:w-3/4 md:w-2/4 xl:w-2/6"
+      >
+        <div>
+          <label
+            htmlFor="name"
+            className="mb-1 block text-sm font-semibold text-gray-300"
+          >
+            Name<span className="text-red-400">*</span>
+          </label>
+          <input
+            onChange={handleField}
+            onBlur={handleInputFocus}
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Full Name"
+            className="w-full rounded-md bg-slate-500 p-2 text-sm text-gray-300"
+          />
+          {userForm.name !== "" && userForm.name.length < 6 ? (
+            <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
+              Enter atleast 6 characters
+            </span>
+          ) : (
+            ""
+          )}
+        </div>
+
+        <div className="mt-3">
+          <label
+            htmlFor="email"
+            className="mb-1 block text-sm font-semibold text-gray-300"
+          >
+            Email<span className="text-red-400">*</span>
+          </label>
+          <input
+            onChange={handleField}
+            onBlur={handleInputFocus}
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email Address"
+            className="w-full rounded-md bg-slate-500 p-2 text-sm text-gray-300"
+          />
+          {userForm.email !== "" && !checkEmailValidity(userForm.email) ? (
+            <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
+              Enter a valid E-mail address
+            </span>
+          ) : (
+            ""
+          )}
+        </div>
+        <div className="relative mt-3">
+          <label
+            htmlFor="password"
+            className="mb-1 block text-sm font-semibold text-gray-300"
+          >
+            Password<span className="text-red-400">*</span>
+          </label>
+          <input
+            onChange={handleField}
+            onBlur={handleInputFocus}
+            type={isPasswordVisible ? "text" : "password"}
+            name="password"
+            id="password"
+            placeholder="xxxxxx"
+            className="w-full rounded-md bg-slate-500 p-2 text-sm text-gray-300"
+          />
+          {userForm.password !== "" && userForm.password.length < 6 ? (
+            <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
+              Enter atleast 6 characters
+            </span>
+          ) : (
+            ""
+          )}
+
+          {/* Show and hide password */}
+          <button
+            type="button"
+            className="absolute right-3 top-8 text-xl"
+            onClick={handleTogglePassword}
+          >
+            {isPasswordVisible ? <BsEyeSlashFill /> : <BsEyeFill />}
+          </button>
+        </div>
+        <div className="relative mt-3">
+          <label
+            htmlFor="confirmPassword"
+            className="mb-1 block text-sm font-semibold text-gray-300"
+          >
+            Confirm Password<span className="text-red-400">*</span>
+          </label>
+          <input
+            type={isConfirmPasswordVisible ? "text" : "password"}
+            name="confirmPassword"
+            id="confirmPassword"
+            onChange={handleField}
+            onBlur={handleInputFocus}
+            placeholder="xxxxxx"
+            className="w-full rounded-md bg-slate-500 p-2 text-sm text-gray-300"
+          />
+
+          {/* Show and hide confirm password */}
+          {userForm.confirmPassword !== "" &&
+          userForm.confirmPassword.length < 6 ? (
+            <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
+              Enter atleast 6 characters
+            </span>
+          ) : matchPasswords(userForm.password, userForm.confirmPassword) ? (
+            <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
+              Password Matched
+            </span>
+          ) : (
+            userForm.password.length > 5 &&
+            userForm.confirmPassword.length > 5 && (
+              <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
+                Passwords do not match
+              </span>
+            )
+          )}
+          <button
+            type="button"
+            className="absolute right-3 top-8 text-xl"
+            onClick={handleToggleConfirmPassword}
+          >
+            {isConfirmPasswordVisible ? <BsEyeSlashFill /> : <BsEyeFill />}
+          </button>
+        </div>
+        <div className="mt-6">
+          <button
+            disabled={isLoading}
+            type="submit"
+            className={`w-full  ${
+              isLoading || isEmpty ? "cursor-not-allowed" : "cursor-pointer"
+            } rounded-md bg-cyan-600 p-2 text-center text-sm font-semibold text-gray-300 transition-all duration-500 hover:bg-cyan-500 hover:text-gray-200`}
+          >
+            {isLoading && isEmpty ? (
+              <>
+                <svg className="mr-2 inline h-5 w-5 animate-spin text-xl">
+                  <ImSpinner6 />
+                </svg>
+                Processing...
+              </>
+            ) : (
+              "Create User"
+            )}
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 

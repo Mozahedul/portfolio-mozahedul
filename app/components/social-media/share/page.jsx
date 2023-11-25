@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FiInstagram, FiGithub, FiLinkedin } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
 import { BiLogoCodepen } from "react-icons/bi";
+import AOS from "aos";
 import ToolTip from "../../cssFeatures/tooltips/page";
+import "aos/dist/aos.css";
 
 const Media = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
-    <div className="mt-12 flex justify-center text-xl text-gray-400 lg:fixed lg:bottom-0 lg:left-4 lg:flex-col lg:items-center xl:left-12">
+    <div
+      data-aos="zoom-in"
+      data-aos-duration="1000"
+      className="mt-12 flex justify-center text-xl text-gray-400 lg:fixed lg:bottom-0 lg:left-4 lg:flex-col lg:items-center xl:left-12"
+    >
       <ul className="flex lg:flex-col">
         <li className="media-btn tooltips">
           <ToolTip

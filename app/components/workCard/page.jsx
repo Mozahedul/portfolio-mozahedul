@@ -22,7 +22,7 @@ const Card = ({
   return (
     <div
       data-aos="zoom-in"
-      data-aos-duration="500"
+      data-aos-duration="1000"
       className="group flex cursor-pointer flex-col justify-between rounded-md p-6 transition-all duration-500 hover:scale-105"
       style={{ backgroundColor: "#0b1e3f" }}
     >

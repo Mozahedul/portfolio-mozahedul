@@ -13,7 +13,7 @@ const ProfileImage = () => {
   return (
     <Image
       data-aos="fade-up"
-      data-aos-duration="500"
+      data-aos-duration="1000"
       src="/profile-img.png"
       width={320}
       height={320}

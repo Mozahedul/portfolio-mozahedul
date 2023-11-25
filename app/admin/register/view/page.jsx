@@ -4,8 +4,6 @@ import Link from "next/link";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { VscEdit } from "react-icons/vsc";
 import React, { useEffect, useState } from "react";
-import Header from "@/app/sections/header/page";
-import FooterSection from "@/app/sections/footer/page";
 import Spin from "@/app/components/animation/spinner/page";
 import { toastError, toastSuccess } from "@/utils/showMessage/toastReact";
 
@@ -77,7 +75,6 @@ function ViewRegister() {
 
   return (
     <>
-      <Header />
       <div className="mb-3 mt-6 flex items-center justify-between">
         <h2 className="text-2xl font-bold text-gray-300">User List</h2>
         <div>
@@ -151,8 +148,6 @@ function ViewRegister() {
           No users exist to show
         </button>
       )}
-
-      <FooterSection />
     </>
   );
 }

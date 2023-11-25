@@ -11,7 +11,7 @@ const ContactSection = () => {
   return (
     <>
       <ContactHeader />
-      {/* <div data-aos="fade-left" data-aos-duration="500"> */}
+      {/* <div data-aos="fade-left" data-aos-duration="1000"> */}
       <button type="button" className="btn mx-auto my-6 block lg:my-10">
         <a href="mailto:mozahed001@gmail.com">Email Me</a>
       </button>

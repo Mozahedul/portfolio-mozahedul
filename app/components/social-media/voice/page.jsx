@@ -1,11 +1,23 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import { FaSkype } from "react-icons/fa";
 import { PiMessengerLogo } from "react-icons/pi";
 import ToolTip from "../../cssFeatures/tooltips/page";
 
 const Call = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
-    <div className="mt-12 flex justify-center text-xl text-gray-400 lg:fixed lg:bottom-1/2 lg:right-4 lg:translate-y-1/2 lg:flex-col lg:items-center ">
+    <div
+      data-aos="slide-right"
+      data-aos-duration="1000"
+      className="mt-12 flex justify-center text-xl text-gray-400 lg:fixed lg:bottom-1/2 lg:right-4 lg:translate-y-1/2 lg:flex-col lg:items-center "
+    >
       <ul
         className="flex rounded-3xl py-3 lg:flex-col lg:py-4"
         style={{ backgroundColor: "#0b1e3f" }}
