@@ -7,6 +7,7 @@ import { ImSpinner6 } from "react-icons/im";
 import { BsArrowDownCircleFill } from "react-icons/bs";
 import { toastError, toastSuccess } from "@/utils/showMessage/toastReact";
 import languageData from "@/utils/language/data";
+import injectMetadata from "@/app/functions/metadata/setMetadata";
 
 const UserRegister = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -93,6 +94,19 @@ const UserRegister = () => {
     }
   };
 
+  /**
+   * Set metadata for the page
+   * @param {string} pageTitle
+   * @param {string} pageDescription
+   */
+  useEffect(() => {
+    const pageTitle = "Projects Edit page - admin";
+    const pageDescription = "Edit the project for admin only";
+
+    injectMetadata(pageTitle, pageDescription);
+    router.refresh();
+  }, [router]);
+
   useEffect(() => {
     setProjectForm(prevForm => ({
       ...prevForm,
@@ -111,12 +125,13 @@ const UserRegister = () => {
         setProjectForm(data);
         // to set the language in language button
         setLanguages(data.language);
+        router.refresh();
       } catch (error) {
         toastError(error.message);
       }
     };
     fetchProject();
-  }, [param.id]);
+  }, [param.id, router]);
 
   return (
     <div className="mt-8 flex flex-col items-center justify-center">

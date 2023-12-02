@@ -7,6 +7,7 @@ import { BsArrowDownCircleFill } from "react-icons/bs";
 import { ImSpinner6 } from "react-icons/im";
 import { toastError, toastSuccess } from "@/utils/showMessage/toastReact";
 import languageData from "@/utils/language/data";
+import injectMetadata from "@/app/functions/metadata/setMetadata";
 
 const UserRegister = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -95,6 +96,19 @@ const UserRegister = () => {
       setLanguages(filteredLanguages);
     }
   };
+
+  /**
+   * Set metadata for the page
+   * @param {string} pageTitle
+   * @param {string} pageDescription
+   */
+  useEffect(() => {
+    const pageTitle = "Projects create page - admin";
+    const pageDescription = "Create project and protected for admin only";
+
+    injectMetadata(pageTitle, pageDescription);
+    // router.refresh();
+  }, [router]);
 
   // With this useEffect, the language array is inserted to projectForm state
   useEffect(() => {

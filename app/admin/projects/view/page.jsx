@@ -4,12 +4,28 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { VscEdit } from "react-icons/vsc";
+import { useRouter } from "next/navigation";
 import Spin from "@/app/components/animation/spinner/page";
 import { toastError, toastSuccess } from "@/utils/showMessage/toastReact";
+import injectMetadata from "@/app/functions/metadata/setMetadata";
 
 function ViewProjects() {
   const [projects, setProjects] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+
+  /**
+   * Set metadata for the page
+   * @param {string} pageTitle
+   * @param {string} pageDescription
+   */
+  useEffect(() => {
+    router.refresh();
+    const pageTitle = "Projects view - admin";
+    const pageDescription = "List of the projects and protected for admin only";
+
+    injectMetadata(pageTitle, pageDescription);
+  }, [router]);
 
   useEffect(() => {
     (async function fetchProjects() {
@@ -19,11 +35,12 @@ function ViewProjects() {
         const data = response.ok && (await response.json());
         setProjects(data.projects);
         setIsLoading(false);
+        router.refresh();
       } catch (error) {
         console.log(error);
       }
     })();
-  }, [setProjects]);
+  }, [setProjects, router]);
 
   /**
    * Handle a single user delete
@@ -74,30 +91,6 @@ function ViewProjects() {
       toastError(data.errMsg);
     }
   };
-
-  // useEffect(() => {
-  //   document.title = "Project admin view page";
-  // }, []);
-
-  function injectMetadata(pageTitle, pageDescription) {
-    const metaTitleElement = document.createElement("title");
-    metaTitleElement.textContent = pageTitle;
-
-    const metaDescriptionElement = document.createElement("meta");
-    metaDescriptionElement.name = "description";
-    metaDescriptionElement.content = pageDescription;
-
-    const headElement = document.getElementsByTagName("head")[0];
-    headElement.appendChild(metaTitleElement);
-    headElement.appendChild(metaDescriptionElement);
-  }
-
-  useEffect(() => {
-    const pageTitle = "Dynamic Page Title";
-    const pageDescription = "Dynamic Page Description";
-
-    injectMetadata(pageTitle, pageDescription);
-  }, []);
 
   return (
     <>

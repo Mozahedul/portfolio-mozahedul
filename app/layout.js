@@ -1,5 +1,6 @@
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
+import { useRouter } from "next/navigation";
 import { roboto } from "../utils/google-fonts/fonts";
 import "react-toastify/dist/ReactToastify.css";
 import Header from "./sections/header/page";
@@ -13,6 +14,9 @@ import FooterSection from "./sections/footer/page";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <title>Page title</title>
+      </head>
       <body
         className={`${roboto.className} relative mx-7 my-7 md:mx-9 lg:mx-11`}
       >
