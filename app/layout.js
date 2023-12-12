@@ -1,6 +1,5 @@
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
-import { useRouter } from "next/navigation";
 import { roboto } from "../utils/google-fonts/fonts";
 import "react-toastify/dist/ReactToastify.css";
 import Header from "./sections/header/page";
@@ -24,6 +23,7 @@ export default function RootLayout({ children }) {
         {children}
         <ToastContainer />
         <FooterSection />
+       
       </body>
     </html>
   );

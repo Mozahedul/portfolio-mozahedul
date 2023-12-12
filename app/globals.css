@@ -140,3 +140,19 @@ body {
   row-gap: 4px;
   column-gap: 2px;
 }
+
+#about {
+  @apply scroll-mt-36;
+}
+
+#work {
+  @apply scroll-mt-36;
+}
+
+#contact {
+  @apply scroll-mt-36;
+}
+
+#about-text {
+  @apply text-gray-200 text-sm;
+}

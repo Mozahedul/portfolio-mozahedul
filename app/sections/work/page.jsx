@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Pulse from "@/app/components/animation/pulse/page";
+import { Suspense, useEffect, useState } from "react";
+// import Pulse from "@/app/components/animation/pulse/page";
 import Card from "@/app/components/workCard/page";
 import fetchServerData from "@/app/functions/getData/fetchData";
 import { inter } from "@/utils/google-fonts/fonts";
@@ -136,7 +136,7 @@ export default function Work() {
   }, [viewportWidth]);
 
   return (
-    <div className={`mt-40 ${inter.className}`}>
+    <div className={`mt-40 ${inter.className}`} id="work">
       <h2 className="text-center text-3xl font-bold leading-5 text-gray-300">
         Notable working projects
       </h2>
@@ -148,26 +148,36 @@ export default function Work() {
         View the archive
       </button>
 
-      {Array.isArray(projects) && projects.length ? (
-        <div className="grid auto-rows-fr gap-4 md:grid-cols-2 lg:mx-8 lg:grid-cols-3 xl:mx-36">
-          {projects.slice(0, showMore).map(project => (
-            <Card
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              anchor={project.anchor}
-              github={project.github}
-              language={project.language}
-            />
-          ))}
-        </div>
-      ) : (
-        <div className="flex xl:mx-36">
-          <Pulse />
-          <Pulse />
-          <Pulse />
-        </div>
-      )}
+      {
+        Array.isArray(projects) && projects.length && (
+          <div className="grid auto-rows-fr gap-4 md:grid-cols-2 lg:mx-8 lg:grid-cols-3 xl:mx-36">
+            {projects.slice(0, showMore).map(project => (
+              <Suspense
+                key={project.id}
+                fallback={
+                  <p className="font-bold text-2xl text-white">Loading Page</p>
+                }
+              >
+                <Card
+                  title={project.title}
+                  description={project.description}
+                  anchor={project.anchor}
+                  github={project.github}
+                  language={project.language}
+                />
+              </Suspense>
+            ))}
+          </div>
+        )
+        // :
+        // (
+        //   <div className="flex xl:mx-36">
+        //     <Pulse />
+        //     <Pulse />
+        //     <Pulse />
+        //   </div>
+        // )
+      }
 
       <div className="flex justify-center">
         {showMore < projects.length ? (
