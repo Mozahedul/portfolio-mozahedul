@@ -94,7 +94,7 @@ const Header = () => {
         >
           <IoClose />
         </button>
-        <Navigation />
+        <Navigation handleMenuClose={handleMenuClose} />
         <BlogButton />
       </div>
     </div>
