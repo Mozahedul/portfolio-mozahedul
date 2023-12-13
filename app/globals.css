@@ -19,8 +19,12 @@ body {
 }
 
 .navBtn {
-  @apply transition-all duration-100 hover:border-t-2 hover:border-cyan-300 hover:pt-2 hover:text-cyan-300;
+  @apply p-2 border-2 rounded-md border-solid border-transparent hover:border-cyan-400 transition-all duration-100 hover:text-cyan-300 focus:bg-cyan-700;
 }
+
+/* .navBtn:active {
+  @apply bg-slate-600;
+} */
 
 .btn {
   @apply rounded-md border-2 border-cyan-300 px-4 py-3 text-sm text-cyan-300 transition-all duration-200;
@@ -142,11 +146,11 @@ body {
 }
 
 #about {
-  @apply scroll-mt-36;
+  @apply scroll-mt-56;
 }
 
 #work {
-  @apply scroll-mt-48;
+  @apply scroll-mt-60;
 }
 
 #contact {

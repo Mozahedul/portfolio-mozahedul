@@ -10,7 +10,7 @@ const Scroll = () => {
     window.onscroll = function () {
       const scrollPosition = window.scrollY;
       const scrollDocPosition = document.documentElement.scrollTop;
-      const viewPortHeight = window.innerHeight;
+      const viewPortHeight = window.innerHeight / 4;
 
       if (
         scrollPosition > viewPortHeight ||

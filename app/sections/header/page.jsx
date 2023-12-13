@@ -57,7 +57,7 @@ const Header = () => {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       const scrollPosition = window.scrollY;
-      const viewPortHeight = window.innerHeight;
+      const viewPortHeight = window.innerHeight / 5;
       if (scrollPosition > viewPortHeight) {
         menuRef.current?.classList.add("navbar-fixed");
       } else {

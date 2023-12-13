@@ -2,6 +2,7 @@
 
 import { Suspense, useEffect, useState } from "react";
 // import Pulse from "@/app/components/animation/pulse/page";
+import AOS from "aos";
 import Card from "@/app/components/workCard/page";
 import fetchServerData from "@/app/functions/getData/fetchData";
 import { inter } from "@/utils/google-fonts/fonts";
@@ -135,18 +136,26 @@ export default function Work() {
     }
   }, [viewportWidth]);
 
+  // For page animation with aos NPM package
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
     <div className={`mt-40 ${inter.className}`} id="work">
-      <h2 className="text-center text-3xl font-bold leading-5 text-gray-300">
-        Notable working projects
-      </h2>
+      <div data-aos="fade-up" data-aos-duration="1000">
+        <h2 className="text-center text-3xl font-bold leading-5 text-gray-300">
+          Notable working projects
+        </h2>
 
-      <button
-        type="button"
-        className="m-auto mb-8 mt-5 block border-cyan-300 text-sm tracking-widest text-cyan-300 transition-all duration-500 hover:text-cyan-500"
-      >
-        View the archive
-      </button>
+        <button
+          type="button"
+          className="m-auto mb-8 mt-5 block border-cyan-300 text-sm tracking-widest text-cyan-300 transition-all duration-500 hover:text-cyan-500"
+        >
+          View the archive
+        </button>
+      </div>
 
       {
         Array.isArray(projects) && projects.length && (
