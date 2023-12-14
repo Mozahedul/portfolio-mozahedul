@@ -63,6 +63,17 @@ const AboutPage = () => {
               <BiSolidRightArrow className="mr-2 text-cyan-300" /> Tailwind CSS
             </li>
           </ul>
+          <ul className={inter.className} style={{ marginLeft: "60px" }}>
+            <li className="flex items-center text-xs font-semibold tracking-widest text-gray-400">
+              <BiSolidRightArrow className="mr-2 text-cyan-300" /> MySQL
+            </li>
+            <li className="mt-3 flex items-center text-xs font-semibold tracking-widest text-gray-400">
+              <BiSolidRightArrow className="mr-2 text-cyan-300" /> Material UI
+            </li>
+            <li className="mt-3 flex items-center text-xs font-semibold tracking-widest text-gray-400">
+              <BiSolidRightArrow className="mr-2 text-cyan-300" /> Bootstrap
+            </li>
+          </ul>
         </div>
       </div>
     </div>

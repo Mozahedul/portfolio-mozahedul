@@ -1,11 +1,13 @@
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 // import Pulse from "@/app/components/animation/pulse/page";
 import AOS from "aos";
+import { v4 as uuidv4 } from "uuid";
 import Card from "@/app/components/workCard/page";
 import fetchServerData from "@/app/functions/getData/fetchData";
 import { inter } from "@/utils/google-fonts/fonts";
+import Pulse from "@/app/components/animation/pulse/page";
 
 export default function Work() {
   const [showMore, setShowMore] = useState(1);
@@ -146,7 +148,7 @@ export default function Work() {
     <div className={`mt-40 ${inter.className}`} id="work">
       <div data-aos="fade-up" data-aos-duration="1000">
         <h2 className="text-center text-3xl font-bold leading-5 text-gray-300">
-          Notable working projects
+          <span className="text-cyan-400">03.</span> Notable working projects
         </h2>
 
         <button
@@ -157,36 +159,26 @@ export default function Work() {
         </button>
       </div>
 
-      {
-        Array.isArray(projects) && projects.length && (
-          <div className="grid auto-rows-fr gap-4 md:grid-cols-2 lg:mx-8 lg:grid-cols-3 xl:mx-36">
-            {projects.slice(0, showMore).map(project => (
-              <Suspense
-                key={project.id}
-                fallback={
-                  <p className="font-bold text-2xl text-white">Loading Page</p>
-                }
-              >
-                <Card
-                  title={project.title}
-                  description={project.description}
-                  anchor={project.anchor}
-                  github={project.github}
-                  language={project.language}
-                />
-              </Suspense>
-            ))}
-          </div>
-        )
-        // :
-        // (
-        //   <div className="flex xl:mx-36">
-        //     <Pulse />
-        //     <Pulse />
-        //     <Pulse />
-        //   </div>
-        // )
-      }
+      {Array.isArray(projects) && projects.length ? (
+        <div className="grid auto-rows-fr gap-4 md:grid-cols-2 lg:mx-8 lg:grid-cols-3 xl:mx-36">
+          {projects.slice(0, showMore).map(project => (
+            <Card
+              key={uuidv4()}
+              title={project.title}
+              description={project.description}
+              anchor={project.anchor}
+              github={project.github}
+              language={project.language}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="grid auto-rows-fr gap-4 md:grid-cols-2 lg:mx-8 lg:grid-cols-3 xl:mx-36">
+          {[...Array(100).keys()].slice(0, showMore).map(() => (
+            <Pulse key={uuidv4()} />
+          ))}
+        </div>
+      )}
 
       <div className="flex justify-center">
         {showMore < projects.length ? (

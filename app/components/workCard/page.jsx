@@ -23,19 +23,28 @@ const Card = ({
     <div
       data-aos="zoom-in"
       data-aos-duration="1000"
-      className="group flex cursor-pointer flex-col justify-between rounded-md p-6 transition-all duration-500 hover:scale-105"
-      style={{ backgroundColor: "#0b1e3f" }}
+      className="bg-card group flex cursor-pointer flex-col justify-between rounded-md p-6 transition-all duration-1000 transform hover:bg-cardHover"
     >
       <div className="mb-4 flex items-center justify-between">
         <GoFileDirectory className="text-4xl text-cyan-300" />
         <ul className="flex">
           <li className="mr-2">
-            <Link href={github} target="_blank" rel="noreferer">
+            <Link
+              href={github}
+              target="_blank"
+              rel="noreferer"
+              title="GitHub Repository"
+            >
               <LuGithub className="ml-2 text-xl text-gray-400 transition-all duration-500 hover:text-cyan-400" />
             </Link>
           </li>
           <li>
-            <Link href={anchor} target="_blank" rel="noreferer">
+            <Link
+              href={anchor}
+              target="_blank"
+              rel="noreferer"
+              title="Visit Website"
+            >
               <FiExternalLink className="text-xl text-gray-400 transition-all duration-500 hover:text-cyan-400" />
             </Link>
           </li>

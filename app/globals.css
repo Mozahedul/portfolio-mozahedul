@@ -4,6 +4,7 @@
 
 body {
   background-color: rgb(9, 25, 47);
+  position: relative;
 }
 
 .profile-img {
@@ -19,7 +20,7 @@ body {
 }
 
 .navBtn {
-  @apply p-2 border-2 rounded-md border-solid border-transparent hover:border-cyan-400 transition-all duration-100 hover:text-cyan-300 focus:bg-cyan-700;
+  @apply p-1 border-2 rounded-md border-solid border-transparent hover:border-cyan-400 transition-all duration-100 hover:text-cyan-300 focus:bg-cyan-700;
 }
 
 /* .navBtn:active {
