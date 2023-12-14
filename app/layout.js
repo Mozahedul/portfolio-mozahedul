@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <title>Page title</title>
+        <title>Portfolio - Mozahedul Islam</title>
       </head>
       <body
         className={`${roboto.className} relative mx-7 my-7 md:mx-9 lg:mx-11`}

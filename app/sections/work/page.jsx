@@ -91,6 +91,7 @@ export default function Work() {
   };
 
   // useEffect hook for storing projects data to react state
+
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchServerData("/api/projects");
