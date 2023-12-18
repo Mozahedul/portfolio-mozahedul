@@ -16,7 +16,7 @@ const Scroll = () => {
         scrollPosition > viewPortHeight ||
         scrollDocPosition > viewPortHeight
       ) {
-        scrollRef.current.style.display = "block";
+        scrollRef.current && (scrollRef.current.style.display = "block");
       } else {
         scrollRef.current && (scrollRef.current.style.display = "none");
       }

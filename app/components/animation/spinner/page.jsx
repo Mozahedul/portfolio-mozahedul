@@ -7,7 +7,7 @@ import "../../../loader.css";
 const Spin = () => {
   return (
     <div className="grid place-items-center h-screen">
-      <div class="lds-spinner">
+      <div className="lds-spinner">
         <div />
         <div />
         <div />

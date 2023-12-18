@@ -15,6 +15,7 @@ module.exports = {
       colors: {
         card: "#0b1e40",
         cardHover: "#0f2957",
+        appBg: "#09192f",
       },
     },
   },

@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
 
   useEffect(() => {
     return setIsContentLoaded(true);
-  }, [setIsContentLoaded]);
+  }, []);
 
   return (
     <html lang="en">

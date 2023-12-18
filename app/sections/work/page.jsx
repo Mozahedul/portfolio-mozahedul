@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 // import Pulse from "@/app/components/animation/pulse/page";
 import AOS from "aos";
 import { v4 as uuidv4 } from "uuid";
+import Link from "next/link";
 import Card from "@/app/components/workCard/page";
 import fetchServerData from "@/app/functions/getData/fetchData";
 import { inter } from "@/utils/google-fonts/fonts";
@@ -152,12 +153,14 @@ export default function Work() {
           <span className="text-cyan-400">03.</span> Notable working projects
         </h2>
 
-        <button
-          type="button"
-          className="m-auto mb-8 mt-5 block border-cyan-300 text-sm tracking-widest text-cyan-300 transition-all duration-500 hover:text-cyan-500"
-        >
-          View the archive
-        </button>
+        <Link href="/pages/archive">
+          <button
+            type="button"
+            className="m-auto mb-8 px-3 py-2 rounded-full bg-card mt-5 block border-cyan-300 text-sm tracking-widest hover:bg-cardHover text-cyan-300 transition-all duration-1000 hover:text-cyan-500"
+          >
+            View the archive
+          </button>
+        </Link>
       </div>
 
       {Array.isArray(projects) && projects.length ? (

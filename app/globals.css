@@ -168,3 +168,20 @@ body {
 #about-text {
   @apply text-gray-200 text-sm;
 }
+
+/* Archive buttons styling */
+.active {
+  @apply bg-cardHover;
+}
+
+.active-bar {
+  @apply w-16 h-[2px] bg-cyan-500;
+}
+
+.active-text {
+  @apply text-cyan-500;
+}
+
+/* .all {
+  @apply hidden;
+} */
