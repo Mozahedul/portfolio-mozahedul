@@ -10,6 +10,8 @@ import { useEffect } from "react";
 import SocialMedia from "@/app/components/social-media/sidebar/page";
 import Backend from "@/app/sections/archive/backend/page";
 import Frontend from "@/app/sections/archive/frontend/page";
+import Fullstack from "@/app/sections/archive/fullstack/page";
+import UiUx from "@/app/sections/archive/uiux/page";
 
 const Archive = () => {
   /**
@@ -71,7 +73,7 @@ const Archive = () => {
         </p>
         <div className="flex flex-col items-start mt-5 gap-y-2">
           <button
-            onClick={handleToShowProjects("fullstack")}
+            onClick={() => handleToShowProjects("fullstack")}
             type="button"
             className="archBtn text-gray-400 transition-all duration-1000 flex items-center px-3 py-2 hover:bg-cardHover hover:bg-opacity-30 hover:text-slate-200 rounded-full group"
           >
@@ -101,7 +103,7 @@ const Archive = () => {
             </span>
           </button>
           <button
-            onClick={handleToShowProjects("ui-ux")}
+            onClick={() => handleToShowProjects("ui-ux")}
             type="button"
             className="archBtn text-gray-400 transition-all duration-1000 flex items-center px-3 py-2 hover:bg-cardHover hover:bg-opacity-30 hover:text-slate-200 rounded-full group"
           >
@@ -118,8 +120,10 @@ const Archive = () => {
       <div>
         {/* frontend */}
 
+        <Fullstack />
         <Frontend />
         <Backend />
+        <UiUx />
       </div>
     </div>
   );
