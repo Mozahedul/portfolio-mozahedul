@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import { BsArrowDownCircleFill } from "react-icons/bs";
 import categoriesData from "@/utils/category/data";
