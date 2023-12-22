@@ -1,3 +1,102 @@
+// import React from "react";
+
+// const Archive = () => {
+//   return (
+//     <div className="flex flex-col items-center mt-8">
+//       <h2 className="font-bold text-2xl text-gray-300">
+//         Project Archive - Create
+//       </h2>
+//       <form action="#" className="bg-card rounded-lg w-80 p-8 mt-4">
+//         <div>
+//           <label
+//             htmlFor="title"
+//             className="block text-gray-300 text-sm font-medium mb-1"
+//           >
+//             Title
+//           </label>
+//           <input
+//             placeholder="John Doe..."
+//             className="rounded-lg text-sm placeholder:text-gray-500 text-gray-300 bg-cardHover w-full border-none outline-none p-2"
+//             type="text"
+//             name="title"
+//             id="title"
+//           />
+//         </div>
+//         <div className="mt-3">
+//           <label
+//             htmlFor="description"
+//             className="block text-gray-300 text-sm font-medium mb-1"
+//           >
+//             Description
+//           </label>
+//           <textarea
+//             placeholder="Insert something..."
+//             className="rounded-lg text-sm placeholder:text-gray-500 text-gray-300 bg-cardHover w-full border-none outline-none p-2"
+//             name="title"
+//             id="title"
+//             rows="2"
+//           />
+//         </div>
+
+//         <div className="mt-3">
+//           <label
+//             htmlFor="github"
+//             className="block text-gray-300 text-sm font-medium mb-1"
+//           >
+//             GitHub Link
+//           </label>
+//           <input
+//             placeholder="https://github.com/"
+//             className="rounded-lg text-sm placeholder:text-gray-500 text-gray-300 bg-cardHover w-full border-none outline-none p-2"
+//             type="text"
+//             name="github"
+//             id="github"
+//           />
+//         </div>
+//         <div className="mt-3">
+//           <label
+//             htmlFor="externallink"
+//             className="block text-gray-300 text-sm font-medium mb-1"
+//           >
+//             External Link
+//           </label>
+//           <input
+//             placeholder="https://externallink.com/"
+//             className="rounded-lg text-sm placeholder:text-gray-500 text-gray-300 bg-cardHover w-full border-none outline-none p-2"
+//             type="text"
+//             name="externallink"
+//             id="externallink"
+//           />
+//         </div>
+//         <div className="mt-3">
+//           <label
+//             htmlFor="language"
+//             className="block text-gray-300 text-sm font-medium mb-1"
+//           >
+//             Languages
+//           </label>
+//           <input
+//             placeholder="HTML5, CSS3"
+//             className="rounded-lg text-sm placeholder:text-gray-500 text-gray-300 bg-cardHover w-full border-none outline-none p-2"
+//             type="text"
+//             name="language"
+//             id="language"
+//           />
+//         </div>
+//         <div className="mt-3">
+//           <input
+//             type="submit"
+//             className="hover:animate-ping hover:text-cyan-500 hover:bg-slate-900 cursor-pointer transition-all duration-500 rounded-lg text-sm placeholder:text-gray-500 text-gray-300 bg-slate-700 w-full border-none outline-none p-2"
+//             value="Add Profile"
+//           />
+//         </div>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default Archive;
+
 "use client";
 
 import Link from "next/link";
@@ -8,23 +107,30 @@ import { ImSpinner6 } from "react-icons/im";
 import { toastError, toastSuccess } from "@/utils/showMessage/toastReact";
 import languageData from "@/utils/language/data";
 import injectMetadata from "@/app/functions/metadata/setMetadata";
+import categoriesData from "@/utils/category/data";
 
-const CreateProject = () => {
+const CreateArchive = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [projectForm, setProjectForm] = useState({
     title: "",
     anchor: "",
     description: "",
     language: [],
+    category: [],
   });
 
   const [isEmpty, setIsEmpty] = useState(true);
   const [checkbox, setCheckbox] = useState(false);
+  const [categoryCheckbox, setCategoryCheckbox] = useState(false);
   const [languages, setLanguages] = useState([]);
+  const [categories, setCategories] = useState([]);
   // const checkRef = useRef(null);
   const router = useRouter();
 
-  // Handle input field focus with onBlur
+  /**
+   * Handle each input field focus with onBlur
+   * works when the input field loses focus
+   */
   const handleInputFocus = event => {
     const { name, value } = event.target;
     setProjectForm(prevUser => ({
@@ -33,16 +139,27 @@ const CreateProject = () => {
     }));
   };
 
-  // Handle all input fields of a form
-  const handleField = event => {
+  /**
+   * Defines a function to be triggered when a field value changes.
+   * Update the projectForm state by setProjectForm setter function by
+   * modifying the previous state with the new value of the changed field.
+   * The purpose of the function is to ensure that user inputs the form value
+   * properly or not.
+   */
+  const handleOnChangeField = event => {
     const { name, value } = event.target;
-    setProjectForm(prevUser => ({
-      ...prevUser,
+    setProjectForm(prevState => ({
+      ...prevState,
       [name]: value,
     }));
   };
 
-  // Form submit handler
+  /**
+   * This code handles the form submission for creating a new project.
+   * It sends a POST request to the '/api/projects' endpoint with the form data.
+   * If the request is successful and the project is created, a success message is shown.
+   * If the project already exists, an error message is shown.
+   */
   const handleSubmit = async event => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -78,15 +195,29 @@ const CreateProject = () => {
     }
   };
 
-  // Show checkbox by clicking a button
+  /**
+   * This function is used to handle the dropdown arrow
+   * up and down according to the current state of the dropdown
+   */
   const handleShowCheckbox = event => {
     event.preventDefault();
     setCheckbox(prevCheck => !prevCheck);
   };
 
-  // Checkbox handler
-  const handleCheckbox = event => {
-    // event.preventDefault();
+  /**
+   * This function is used to handle the dropdown arrow
+   * up and down according to the current state of the dropdown
+   */
+  const handleShowCategoryCheckbox = event => {
+    event.preventDefault();
+    setCategoryCheckbox(prevCheck => !prevCheck);
+  };
+
+  /**
+   * When a checkbox is clicked on a language list item from dropdown list
+   * it will display the language list inside the button
+   */
+  const handleCheckboxToShow = event => {
     const { checked } = event.target;
     const { value } = event.target;
     if (checked) {
@@ -98,16 +229,28 @@ const CreateProject = () => {
   };
 
   /**
-   * Set metadata for the page
-   * @param {string} pageTitle
-   * @param {string} pageDescription
+   * When a checkbox is clicked on a category list item from dropdown list
+   * it will display the category list inside the button
+   */
+  const handleCheckboxCategory = event => {
+    const { checked } = event.target;
+    const { value } = event.target;
+    if (checked) {
+      setCategories(prevCat => [...prevCat, value]);
+    } else {
+      const filteredCategories = categories.filter(cat => cat !== value);
+      setCategories(filteredCategories);
+    }
+  };
+
+  /**
+   * This useEffect is used to set the title, and description of the page
    */
   useEffect(() => {
     const pageTitle = "Projects create page - admin";
     const pageDescription = "Create project and protected for admin only";
 
     injectMetadata(pageTitle, pageDescription);
-    // router.refresh();
   }, [router]);
 
   // With this useEffect, the language array is inserted to projectForm state
@@ -118,7 +261,18 @@ const CreateProject = () => {
     }));
   }, [languages]);
 
-  // Check any of the input field of a from is empty or not
+  // With this useEffect, the categories array is inserted to projectForm state
+  useEffect(() => {
+    setProjectForm(prevForm => ({
+      ...prevForm,
+      category: categories,
+    }));
+  }, [categories]);
+
+  /**
+   * Check each field of the form to make sure that
+   * any of the input fields are empty or not
+   */
   useEffect(() => {
     const projectArr = Object.values(projectForm);
     const itemExist = projectArr.some(item => item.length < 2);
@@ -130,14 +284,14 @@ const CreateProject = () => {
     <div className="mt-8 flex flex-col items-center justify-center">
       <div className="mb-4 flex w-full items-center justify-between sm:w-3/4 md:w-2/4 xl:w-2/6">
         <h2 className="text-lg font-bold text-gray-300 md:text-2xl">
-          Create a Project
+          Create an Archive
         </h2>
         <Link href="/admin/projects/view">
           <button
             type="button"
             className="rounded-md bg-cyan-600 px-3 py-2 text-sm font-medium text-gray-300 transition-all duration-500 hover:bg-cyan-400 hover:text-gray-200"
           >
-            View Projects
+            View Archive
           </button>
         </Link>
       </div>
@@ -145,7 +299,7 @@ const CreateProject = () => {
         onSubmit={handleSubmit}
         className="w-full rounded-md bg-slate-700 p-5 sm:w-3/4 md:w-2/4 xl:w-2/6"
       >
-        {/* Project title */}
+        {/* Archive title */}
         <div>
           <label
             htmlFor="title"
@@ -154,7 +308,7 @@ const CreateProject = () => {
             Title<span className="text-red-400">*</span>
           </label>
           <input
-            onChange={handleField}
+            onChange={handleOnChangeField}
             onBlur={handleInputFocus}
             type="text"
             name="title"
@@ -171,6 +325,61 @@ const CreateProject = () => {
           )}
         </div>
 
+        {/* Category */}
+        <div className="relative mt-3">
+          <label
+            htmlFor="description"
+            className="mb-1 block text-sm font-semibold text-gray-300"
+          >
+            Category<span className="text-red-400">*</span>
+          </label>
+          <button
+            type="button"
+            onClick={event => handleShowCategoryCheckbox(event)}
+            className="lang-btn relative w-full rounded-md bg-slate-500 p-2 text-left text-sm text-gray-300"
+          >
+            {categories?.length > 0 ? (
+              categories.map(lang => (
+                <span
+                  key={lang}
+                  className="mr-2 rounded-full bg-slate-400 px-2 py-1 text-xs"
+                >
+                  {lang}
+                </span>
+              ))
+            ) : (
+              <span>Select Category</span>
+            )}
+
+            <BsArrowDownCircleFill
+              className={`absolute right-2 top-2 transition-all duration-500 ${
+                categoryCheckbox ? "-rotate-180" : "rotate-0"
+              } text-lg`}
+            />
+          </button>
+          {/* Hidden menu that will select when clicked on any menu */}
+          <div
+            className={`mt-1 transition-all duration-500 ${
+              categoryCheckbox ? "block" : "hidden"
+            } top-18 absolute left-0 rounded-md bg-slate-600 p-3`}
+          >
+            {categoriesData.length > 0 &&
+              categoriesData?.map(item => (
+                <label key={item} className="form-label">
+                  <span className="ml-5">{item}</span>
+                  <input
+                    type="checkbox"
+                    value={item}
+                    className="form-input"
+                    onClick={handleCheckboxCategory}
+                    checked={categories.includes(item)}
+                  />
+                  <span className="checkmark" />
+                </label>
+              ))}
+          </div>
+        </div>
+
         {/* anchor link */}
         <div className="mt-3">
           <label
@@ -180,7 +389,7 @@ const CreateProject = () => {
             Anchor Link<span className="text-red-400">*</span>
           </label>
           <input
-            onChange={handleField}
+            onChange={handleOnChangeField}
             onBlur={handleInputFocus}
             type="text"
             name="anchor"
@@ -208,7 +417,7 @@ const CreateProject = () => {
             Github Link<span className="text-red-400">*</span>
           </label>
           <input
-            onChange={handleField}
+            onChange={handleOnChangeField}
             onBlur={handleInputFocus}
             type="text"
             name="github"
@@ -240,6 +449,7 @@ const CreateProject = () => {
             onClick={event => handleShowCheckbox(event)}
             className="lang-btn relative w-full rounded-md bg-slate-500 p-2 text-left text-sm text-gray-300"
           >
+            {/* this section will show the languages menu when the menu is selected from dropdown */}
             {languages?.length > 0 ? (
               languages.map(lang => (
                 <span
@@ -259,10 +469,11 @@ const CreateProject = () => {
               } text-lg`}
             />
           </button>
+          {/* Languages dropdown menu */}
           <div
             className={`mt-1 transition-all duration-500 ${
               checkbox ? "block" : "hidden"
-            } top-18 absolute left-0 rounded-md bg-slate-500 p-3`}
+            } top-18 absolute left-0 rounded-md bg-slate-600 p-3`}
           >
             {languageData.length > 0 &&
               languageData?.map(item => (
@@ -272,7 +483,7 @@ const CreateProject = () => {
                     type="checkbox"
                     value={item}
                     className="form-input"
-                    onClick={handleCheckbox}
+                    onClick={handleCheckboxToShow}
                     checked={languages.includes(item)}
                   />
                   <span className="checkmark" />
@@ -290,7 +501,7 @@ const CreateProject = () => {
             Description<span className="text-red-400">*</span>
           </label>
           <textarea
-            onChange={handleField}
+            onChange={handleOnChangeField}
             onBlur={handleInputFocus}
             rows={3}
             name="description"
@@ -309,6 +520,7 @@ const CreateProject = () => {
           )}
         </div>
 
+        {/* Submit button */}
         <div className="mt-6">
           <button
             disabled={isLoading || isEmpty}
@@ -334,4 +546,4 @@ const CreateProject = () => {
   );
 };
 
-export default CreateProject;
+export default CreateArchive;

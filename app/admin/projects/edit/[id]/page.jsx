@@ -9,7 +9,7 @@ import { toastError, toastSuccess } from "@/utils/showMessage/toastReact";
 import languageData from "@/utils/language/data";
 import injectMetadata from "@/app/functions/metadata/setMetadata";
 
-const UserRegister = () => {
+const EditProject = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [projectForm, setProjectForm] = useState({
     title: "",
@@ -343,4 +343,4 @@ const UserRegister = () => {
   );
 };
 
-export default UserRegister;
+export default EditProject;

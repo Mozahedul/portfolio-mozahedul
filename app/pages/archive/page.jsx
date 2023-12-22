@@ -39,7 +39,16 @@ const Archive = () => {
     });
   }, []);
 
+  /**
+   * This function is used to toggle the visibility of different sections of the archive page.
+   * @param {string} str - The name of the section to show or hide.
+   */
+
   const handleToShowProjects = str => {
+    /**
+     * This code selects all elements with the class "all" and sets their display property to "none".
+     * It also selects all elements with the class name that matches the given string and sets their display property to "block".
+     */
     const allButtons = document.querySelectorAll(".all");
     const archiveBtns = document.querySelectorAll(`.${str}`);
 
@@ -95,10 +104,10 @@ const Archive = () => {
           <button
             onClick={() => handleToShowProjects("frontend")}
             type="button"
-            className="archBtn text-gray-400 transition-all duration-1000 flex items-center px-3 py-2 hover:bg-cardHover hover:bg-opacity-30 hover:text-slate-200 rounded-full group"
+            className="archBtn active text-gray-400 transition-all duration-1000 flex items-center px-3 py-2 hover:bg-cardHover hover:bg-opacity-30 hover:text-slate-200 rounded-full group"
           >
-            <span className="w-8 h-[1px] transition-all duration-500 block bg-gray-500 group-hover:bg-gray-400 mr-2 group-hover:w-16 group-hover:h-[2px]" />
-            <span className="block uppercase text-sm font-semibold text-gray-500 tracking-wide group-hover:text-gray-400">
+            <span className="active-bar w-8 h-[1px] transition-all duration-500 block bg-gray-500 group-hover:bg-gray-400 mr-2 group-hover:w-16 group-hover:h-[2px]" />
+            <span className="active-text block uppercase text-sm font-semibold text-gray-500 tracking-wide group-hover:text-gray-400">
               Frontend
             </span>
           </button>

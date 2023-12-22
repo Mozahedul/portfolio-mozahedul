@@ -182,6 +182,21 @@ body {
   @apply text-cyan-500;
 }
 
+.active-project-btn {
+  @apply bg-cardHover text-cyan-400 animate-pulse;
+}
+
 /* .all {
-  @apply hidden;
+  @apply relative
+  animation-name: project;
+  animation-duration: 2s;
+}
+
+@keyframes project {
+  from {
+    left: -100px;
+  }
+  to {
+    left: 0;
+  }
 } */
