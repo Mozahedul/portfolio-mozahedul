@@ -8,11 +8,18 @@ const CategorySchema = new mongoose.Schema(
       minLength: 3,
       maxLength: 40,
     },
+    slug: {
+      type: String,
+      required: true,
+      unique: true,
+      minLength: 3,
+      maxLength: 40,
+    },
   },
   { timestamps: true }
 );
 
 const Category =
-  mongoose.models.Category || mongoose.models("Category", CategorySchema);
+  mongoose.models.Category || mongoose.model("Category", CategorySchema);
 
 export default Category;

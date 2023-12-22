@@ -51,7 +51,7 @@ const Language = ({ setProjectForm, setLanguages, languages }) => {
           languages.map(lang => (
             <span
               key={lang}
-              className="mr-2 rounded-full bg-slate-400 px-2 py-1 text-xs"
+              className="mr-2 rounded-full bg-slate-600 px-2 py-1 text-xs"
             >
               {lang}
             </span>

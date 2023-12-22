@@ -107,6 +107,8 @@ import { toastError, toastSuccess } from "@/utils/showMessage/toastReact";
 import injectMetadata from "@/app/functions/metadata/setMetadata";
 import Category from "@/app/components/category/page";
 import Language from "@/app/components/language/page";
+import InputArchive from "@/app/components/archive/input/page";
+import SubCategory from "@/app/components/subCategory/page";
 
 const CreateArchive = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -121,6 +123,7 @@ const CreateArchive = () => {
   const [isEmpty, setIsEmpty] = useState(true);
   const [languages, setLanguages] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [subCategories, setSubCategories] = useState([]);
   const router = useRouter();
 
   /**
@@ -166,6 +169,8 @@ const CreateArchive = () => {
 
     projectsFormData.language = languages;
     projectsFormData.category = categories;
+
+    console.log("PROJECT FORM DATA ==> ", projectsFormData);
 
     setIsLoading(true);
     const response = await fetch(`/api/projects`, {
@@ -240,25 +245,17 @@ const CreateArchive = () => {
           >
             Title<span className="text-red-400">*</span>
           </label>
-          <input
-            onChange={handleOnChangeField}
-            onBlur={handleInputFocus}
-            type="text"
+          <InputArchive
+            changeHandler={handleOnChangeField}
+            focusHandler={handleInputFocus}
+            projectForm={projectForm}
             name="title"
-            id="title"
             placeholder="Full Title"
-            className="w-full rounded-md bg-slate-500 p-2 text-sm text-gray-300"
+            fieldText={projectForm?.title}
           />
-          {projectForm?.title !== "" && projectForm?.title?.length < 2 ? (
-            <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
-              Enter atleast 2 characters
-            </span>
-          ) : (
-            ""
-          )}
         </div>
 
-        {/* Category */}
+        {/* Project Category */}
         <div className="relative mt-3">
           <label
             htmlFor="description"
@@ -274,6 +271,22 @@ const CreateArchive = () => {
           />
         </div>
 
+        {/* Project SubCategory */}
+        <div className="relative mt-3">
+          <label
+            htmlFor="description"
+            className="mb-1 block text-sm font-semibold text-gray-300"
+          >
+            SubCategory<span className="text-red-400">*</span>
+          </label>
+
+          <SubCategory
+            setProjectForm={setProjectForm}
+            setSubCategories={setSubCategories}
+            subCategories={subCategories}
+          />
+        </div>
+
         {/* anchor link */}
         <div className="mt-3">
           <label
@@ -282,24 +295,14 @@ const CreateArchive = () => {
           >
             Anchor Link<span className="text-red-400">*</span>
           </label>
-          <input
-            onChange={handleOnChangeField}
-            onBlur={handleInputFocus}
-            type="text"
+          <InputArchive
+            changeHandler={handleOnChangeField}
+            focusHandler={handleInputFocus}
+            projectForm={projectForm}
             name="anchor"
-            id="anchor"
             placeholder="https://anchorlink.com"
-            className="w-full rounded-md bg-slate-500 p-2 text-sm text-gray-300"
+            fieldText={projectForm?.anchor}
           />
-          {projectForm?.anchor !== "" && (
-            <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
-              {projectForm?.anchor?.length < 2
-                ? "Enter at least 2 characters"
-                : projectForm?.anchor?.length > 150
-                  ? "Do not exceed 150 characters"
-                  : ""}
-            </span>
-          )}
         </div>
 
         {/* GitHub Link */}
@@ -310,24 +313,14 @@ const CreateArchive = () => {
           >
             Github Link<span className="text-red-400">*</span>
           </label>
-          <input
-            onChange={handleOnChangeField}
-            onBlur={handleInputFocus}
-            type="text"
+          <InputArchive
+            changeHandler={handleOnChangeField}
+            focusHandler={handleInputFocus}
+            projectForm={projectForm}
             name="github"
-            id="github"
             placeholder="https://githublink.com"
-            className="w-full rounded-md bg-slate-500 p-2 text-sm text-gray-300"
+            fieldText={projectForm?.github}
           />
-          {projectForm?.github !== "" && (
-            <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
-              {projectForm?.github?.length < 2
-                ? "Enter at least 2 characters"
-                : projectForm?.github?.length > 150
-                  ? "Do not exceed 150 characters"
-                  : ""}
-            </span>
-          )}
         </div>
 
         {/* Languages */}
