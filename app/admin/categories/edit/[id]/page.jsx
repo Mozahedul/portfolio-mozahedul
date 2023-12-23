@@ -1,54 +1,54 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
 import { ImSpinner6 } from "react-icons/im";
 import { toastError, toastSuccess } from "@/utils/showMessage/toastReact";
-import InputArchive from "@/app/components/archive/input/page";
+import injectMetadata from "@/app/functions/metadata/setMetadata";
 
-const Category = () => {
+const EditProject = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [isEmpty, setIsEmpty] = useState(true);
-  const [projectForm, setProjectForm] = useState({ name: "" });
+  const [categoryForm, setCategoryForm] = useState({
+    name: "",
+  });
 
+  const param = useParams();
   const router = useRouter();
 
-  /**
-   * Handle each input field focus with onBlur
-   * works when the input field loses focus
-   */
+  // Handle input field focus with onBlur
   const handleInputFocus = event => {
     const { name, value } = event.target;
-    setProjectForm(prevUser => ({
+    setCategoryForm(prevUser => ({
       ...prevUser,
       [name]: value,
     }));
   };
 
-  /**
-   * Defines a function to be triggered when a field value changes.
-   * Update the projectForm state by setProjectForm setter function by
-   * modifying the previous state with the new value of the changed field.
-   * The purpose of the function is to ensure that user inputs the form value properly or not.
-   */
-  const handleOnChangeField = event => {
+  // Handle all input fields of a form
+  const handleField = event => {
     const { name, value } = event.target;
-    setProjectForm(prevState => ({
-      ...prevState,
+    setCategoryForm(prevUser => ({
+      ...prevUser,
       [name]: value,
     }));
   };
 
+  // Form submit handler
   const handleSubmit = async event => {
     event.preventDefault();
     const formData = new FormData(event.target);
-    const catName = formData.get("name");
+    const name = formData.get("name");
+
+    const projectsFormData = {
+      name,
+      id: param.id,
+    };
 
     setIsLoading(true);
     const response = await fetch(`/api/categories`, {
-      method: "POST",
-      body: JSON.stringify({ name: catName }),
+      method: "PUT",
+      body: JSON.stringify(projectsFormData),
       headers: {
         "Content-Type": "application/json",
       },
@@ -71,28 +71,49 @@ const Category = () => {
   };
 
   /**
-   * Check each field of the form to make sure that
-   * any of the input fields are empty or not
+   * Set metadata for the page
+   * injectMetadata is a function that takes two parameters
+   * @param {string} pageTitle
+   * @param {string} pageDescription
    */
   useEffect(() => {
-    const projectArr = Object.values(projectForm);
-    const itemExist = projectArr.some(item => item.length < 2);
+    const pageTitle = "Projects Edit page - admin";
+    const pageDescription = "Edit the project for admin only";
 
-    setIsEmpty(itemExist);
-  }, [projectForm]);
+    injectMetadata(pageTitle, pageDescription);
+    // router.refresh();
+  }, [router]);
+
+  // Fetch a single project according to id from database
+  useEffect(() => {
+    const fetchCategory = async () => {
+      try {
+        const response = await fetch(
+          `/api/categories/singleCategory?categoryId=${param.id}`
+        );
+        const data = response.ok && (await response.json());
+        console.log(data);
+        setCategoryForm(data);
+        // router.refresh();
+      } catch (error) {
+        toastError(error.message);
+      }
+    };
+    fetchCategory();
+  }, [param.id, router]);
 
   return (
     <div className="mt-8 flex flex-col items-center justify-center">
       <div className="mb-4 flex w-full items-center justify-between sm:w-3/4 md:w-2/4 xl:w-2/6">
         <h2 className="text-lg font-bold text-gray-300 md:text-2xl">
-          Create a Category
+          Edit a Project
         </h2>
         <Link href="/admin/categories/view">
           <button
             type="button"
             className="rounded-md bg-cyan-600 px-3 py-2 text-sm font-medium text-gray-300 transition-all duration-500 hover:bg-cyan-400 hover:text-gray-200"
           >
-            View Category
+            View Categories
           </button>
         </Link>
       </div>
@@ -100,34 +121,41 @@ const Category = () => {
         onSubmit={handleSubmit}
         className="w-full rounded-md bg-slate-700 p-5 sm:w-3/4 md:w-2/4 xl:w-2/6"
       >
-        {/* Archive title */}
+        {/* Category name */}
         <div>
           <label
             htmlFor="name"
             className="mb-1 block text-sm font-semibold text-gray-300"
           >
-            Name<span className="text-red-400">*</span>
+            Title<span className="text-red-400">*</span>
           </label>
-          <InputArchive
-            changeHandler={handleOnChangeField}
-            focusHandler={handleInputFocus}
-            projectForm={projectForm}
+          <input
+            onChange={handleField}
+            onBlur={handleInputFocus}
+            type="text"
             name="name"
-            placeholder="Insert name"
-            fieldText={projectForm?.name}
+            id="name"
+            defaultValue={categoryForm?.name}
+            className="w-full rounded-md bg-slate-500 p-2 text-sm text-gray-300"
           />
+          {categoryForm?.name !== "" && categoryForm?.name?.length < 6 ? (
+            <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
+              Enter atleast 6 characters
+            </span>
+          ) : (
+            ""
+          )}
         </div>
 
-        {/* Submit button */}
         <div className="mt-6">
           <button
-            disabled={isLoading || isEmpty}
+            disabled={isLoading}
             type="submit"
             className={`w-full  ${
-              isLoading || isEmpty ? "cursor-not-allowed" : "cursor-pointer"
+              isLoading ? "cursor-not-allowed" : "cursor-pointer"
             } rounded-md bg-cyan-600 p-2 text-center text-sm font-semibold text-gray-300 transition-all duration-500 hover:bg-cyan-500 hover:text-gray-200`}
           >
-            {isLoading && isEmpty ? (
+            {isLoading ? (
               <>
                 <svg className="mr-2 inline h-5 w-5 animate-spin text-xl">
                   <ImSpinner6 />
@@ -135,7 +163,7 @@ const Category = () => {
                 Processing...
               </>
             ) : (
-              "Create Category"
+              "Update Project"
             )}
           </button>
         </div>
@@ -144,4 +172,4 @@ const Category = () => {
   );
 };
 
-export default Category;
+export default EditProject;

@@ -99,3 +99,31 @@ export async function DELETE(request) {
     console.log("ERROR in db", error);
   }
 }
+
+/**
+ * @param request
+ * @method PUT
+ * @description Update a category with category id
+ * @returns update success message to the client
+ */
+export async function PUT(request) {
+  const data = await request.json();
+  data.slug = slugify(data.name.toLowerCase());
+
+  try {
+    await db();
+    const response = await Category.findByIdAndUpdate(data.id, data);
+    if (Object.prototype.hasOwnProperty.call(response._doc, "_id")) {
+      return new NextResponse(
+        JSON.stringify({ success: "Category Updated Successfully" }),
+        { headers: { "Content-Type": "application/json" } }
+      );
+    }
+    return new NextResponse(
+      JSON.stringify({ errMsg: "Category not updated" }),
+      { headers: { "Content-Type": "application/json" } }
+    );
+  } catch (error) {
+    console.log("ERROR in PUT request", error);
+  }
+}
