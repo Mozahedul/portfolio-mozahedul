@@ -101,6 +101,25 @@ function ViewProjects() {
     }
   };
 
+  /**
+   * When click outside of the modal box, the modal will disappear
+   * @explanation modalRef.current means the modal is open and
+   * when click anywhere on the document, the mouse event is grabbed by
+   * event.target. Now we can check that click is over the modal or not
+   */
+  const handleClickOutsideModal = event => {
+    if (modalRef.current && !modalRef.current.contains(event.target)) {
+      setOpenModal(false);
+    }
+  };
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutsideModal);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutsideModal);
+    };
+  }, []);
+
   return (
     <>
       <div className="mb-3 mt-6 flex items-center justify-between">
