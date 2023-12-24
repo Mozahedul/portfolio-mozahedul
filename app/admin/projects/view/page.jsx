@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { VscEdit } from "react-icons/vsc";
 import { useRouter } from "next/navigation";
@@ -12,6 +12,8 @@ import injectMetadata from "@/app/functions/metadata/setMetadata";
 function ViewProjects() {
   const [projects, setProjects] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+  const modalRef = useRef();
   const router = useRouter();
 
   /**
@@ -45,7 +47,7 @@ function ViewProjects() {
   /**
    * Handle a single user delete
    */
-  const handleDelete = async projectId => {
+  const handleConfirmDelete = async projectId => {
     try {
       const response = await fetch(`/api/projects?projectId=${projectId}`, {
         method: "DELETE",
@@ -54,6 +56,7 @@ function ViewProjects() {
       const data = response.ok && (await response.json());
 
       if (data.success) {
+        setOpenModal(false);
         toastSuccess(data.success);
         const extractedProjects = projects.filter(
           project => projectId !== project._id
@@ -64,16 +67,22 @@ function ViewProjects() {
       if (data.errMsg) {
         toastError(data.errMsg);
       }
-
-      // console.log(response);
     } catch (error) {
       console.log(error);
     }
   };
 
-  /**
-   * Handler for all projects delete
-   */
+  // Delete modal handler for show / hide the modal dialog
+  const handleDeleteModal = () => {
+    setOpenModal(true);
+  };
+
+  // Cancel the delete modal handler and hide the modal dialog
+  const handleCancelDelete = () => {
+    setOpenModal(false);
+  };
+
+  // Handler for all projects delete
   const handleDeleteAll = async event => {
     event.preventDefault();
     const response = await fetch(`/api/projects/allProjects`, {
@@ -170,11 +179,53 @@ function ViewProjects() {
                   </Link>
                   <button
                     type="button"
-                    onClick={() => handleDelete(project._id)}
+                    onClick={handleDeleteModal}
                     className="ml-2 rounded-md bg-red-700 p-2 transition-all duration-500 hover:bg-red-500 hover:text-gray-300"
                   >
                     <RiDeleteBin5Fill />
                   </button>
+                  {openModal && (
+                    <div
+                      ref={modalRef}
+                      className="bg-gray-200 rounded-md w-80 h-auto z-50 p-5 fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                    >
+                      <h2 className="font-bold text-xl text-red-500 text-center mb-3">
+                        Delete Item?
+                      </h2>
+                      <p className="text-gray-700 text-sm">
+                        Are you sure you want to delete the item{" "}
+                        <strong className="font-bold text-md">
+                          {`"${project?.title}"`}?
+                        </strong>
+                      </p>
+                      <div className="mt-5 bg-orange-100 p-3">
+                        <h3 className="text-red-600 text-md font-bold">
+                          Warning!
+                        </h3>
+                        <p className="text-red-500 text-xs">
+                          By deleting this item will be removed from the list
+                          permanently.
+                        </p>
+                      </div>
+
+                      <div className="flex justify-evenly mt-7">
+                        <button
+                          type="button"
+                          onClick={handleCancelDelete}
+                          className="rounded-full flex items-center text-sm gap-x-1 bg-slate-500 px-3 py-2 transition-all duration-500 hover:bg-slate-800 hover:text-gray-300"
+                        >
+                          <RiDeleteBin5Fill /> Cancel
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => handleConfirmDelete(project?._id)}
+                          className="rounded-full flex items-center text-sm gap-x-1 bg-red-700 px-3 py-2 transition-all duration-500 hover:bg-red-500 hover:text-gray-300"
+                        >
+                          Delete Item <RiDeleteBin5Fill />
+                        </button>
+                      </div>
+                    </div>
+                  )}
                 </td>
               </tr>
             ))}
