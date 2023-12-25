@@ -7,7 +7,5 @@
     "**/.DS_Store": true,
     "**/Thumbs.db": true
   },
-  "hide-files.files": [],
-  "editor.inlineSuggest.showToolbar": "onHover",
-  "css.lint.unknownAtRules": "ignore"
+  "hide-files.files": []
 }

@@ -8,21 +8,27 @@ const SubCategorySchema = new mongoose.Schema(
     name: {
       type: String,
       required: true,
+      minLength: 5,
+      maxLength: 100,
     },
-    category: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Category",
-        required: true,
-      },
-    ],
+
+    slug: {
+      type: String,
+      require: true,
+    },
+
+    category: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Category",
+      required: true,
+    },
   },
   { timestamps: true }
 );
 
 //  Create a new SubCategory model
 const SubCategory =
-  mongoose.models.SubCategoy ||
+  mongoose.models.SubCategory ||
   mongoose.model("SubCategory", SubCategorySchema);
 
 export default SubCategory;
