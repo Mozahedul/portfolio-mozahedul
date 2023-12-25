@@ -149,18 +149,20 @@ function ViewProjects() {
               >
                 <td className="border-b-2 border-slate-800 p-3">{index + 1}</td>
                 <td className="border-b-2 border-slate-800 p-3">
-                  {`${subcategory.name.substring(0, 30)} ${
-                    subcategory.name.length > 30 ? "..." : ""
+                  {`${subcategory?.name.substring(0, 30)} ${
+                    subcategory?.name.length > 30 ? "..." : ""
                   }`}
                 </td>
-                <td className="border-b-2 border-slate-800 p-3">
-                  {`${subcategory.category.name.substring(0, 30)} ${
-                    subcategory.category.name.length > 30 ? "..." : ""
-                  }`}
+                <td className="border-b-2 border-slate-800 p-3 ellipsis">
+                  {`${
+                    subcategory?.category?.name.length > 0
+                      ? subcategory?.category?.name.substring(0, 30)
+                      : "No Category"
+                  } `}
                 </td>
 
                 <td className="border-b-2 border-slate-800 p-3">
-                  <Link href={`/admin/subcategories/edit/${subcategory._id}`}>
+                  <Link href={`/admin/subcategories/edit/${subcategory?._id}`}>
                     <button
                       type="button"
                       className="rounded-md bg-yellow-600 p-2 transition-all duration-500 hover:bg-yellow-500 hover:text-gray-500"

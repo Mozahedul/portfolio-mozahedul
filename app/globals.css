@@ -186,17 +186,9 @@ body {
   @apply bg-cardHover text-cyan-400 animate-pulse;
 }
 
-/* .all {
-  @apply relative
-  animation-name: project;
-  animation-duration: 2s;
+.ellipsis {
+  max-width: 30ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-
-@keyframes project {
-  from {
-    left: -100px;
-  }
-  to {
-    left: 0;
-  }
-} */
