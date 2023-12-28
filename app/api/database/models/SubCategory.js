@@ -8,13 +8,13 @@ const SubCategorySchema = new mongoose.Schema(
     name: {
       type: String,
       required: true,
-      minLength: 5,
+      minLength: 4,
       maxLength: 100,
     },
 
     slug: {
       type: String,
-      require: true,
+      required: true,
     },
 
     category: {

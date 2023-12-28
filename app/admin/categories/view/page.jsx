@@ -12,7 +12,8 @@ import injectMetadata from "@/app/functions/metadata/setMetadata";
 function ViewProjects() {
   const [categories, setCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [modalCat, setModalCat] = useState({});
   const modalRef = useRef();
   const router = useRouter();
 
@@ -29,6 +30,7 @@ function ViewProjects() {
     injectMetadata(pageTitle, pageDescription);
   }, [router]);
 
+  
   useEffect(() => {
     (async function fetchCategories() {
       try {
@@ -37,16 +39,18 @@ function ViewProjects() {
         const data = response.ok && (await response.json());
         setCategories(data.categories);
         setIsLoading(false);
-        // router.refresh();
       } catch (error) {
         console.log(error);
       }
     })();
   }, [setCategories, router]);
 
-  const handleModal = () => {
-    setIsModalOpen(true);
+  // two functions are used for closing / showing modal
+  const openModal = category => {
+    setModalCat(category);
+    setShowModal(true);
   };
+  const closeModal = () => setShowModal(false);
 
   /**
    * @description: The function that is responsible to delete a single category
@@ -64,35 +68,26 @@ function ViewProjects() {
       const data = response.ok && (await response.json());
 
       if (data.success) {
-        setIsModalOpen(false);
+        closeModal();
         toastSuccess(data.success);
         const extractedCategories = categories.filter(
-          category => categoryId !== category._id
+          category => category._id !== categoryId
         );
         setCategories(extractedCategories);
       }
 
       if (data.errMsg) {
+        setShowModal(false);
         toastError(data.errMsg);
       }
-
-      // console.log(response);
     } catch (error) {
       console.log(error);
     }
   };
 
-  /**
-   * This function is used to cancel the category deletion process
-   */
-  const handleCancelDelete = () => {
-    setIsModalOpen(false);
-  };
-
   const handleClickOutside = event => {
-    console.log(modalRef.current);
     if (modalRef.current && !modalRef.current.contains(event.target)) {
-      setIsModalOpen(false);
+      setShowModal(false);
     }
   };
 
@@ -156,14 +151,14 @@ function ViewProjects() {
                   <button
                     type="button"
                     // onClick={() => handleConfirmDelete(category._id)}
-                    onClick={handleModal}
+                    onClick={() => openModal(category)}
                     className="ml-2 rounded-md bg-red-700 p-2 transition-all duration-500 hover:bg-red-500 hover:text-gray-300"
                   >
                     <RiDeleteBin5Fill />
                   </button>
 
                   {/* the modal of category deletion */}
-                  {isModalOpen && (
+                  {showModal && (
                     <div
                       ref={modalRef}
                       className="bg-gray-200 rounded-md w-80 h-auto z-50 p-5 fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -174,7 +169,7 @@ function ViewProjects() {
                       <p className="text-gray-700 text-sm">
                         Are you sure you want to delete the item{" "}
                         <strong className="font-bold text-md">
-                          {`"${category?.name}"`}?
+                          {`"${modalCat?.name}"`}?
                         </strong>
                       </p>
                       <div className="mt-5 bg-orange-100 p-3">
@@ -190,14 +185,14 @@ function ViewProjects() {
                       <div className="flex justify-evenly mt-7">
                         <button
                           type="button"
-                          onClick={handleCancelDelete}
+                          onClick={closeModal}
                           className="rounded-full flex items-center text-sm gap-x-1 bg-slate-500 px-3 py-2 transition-all duration-500 hover:bg-slate-800 hover:text-gray-300"
                         >
                           <RiDeleteBin5Fill /> Cancel
                         </button>
                         <button
                           type="button"
-                          onClick={() => handleConfirmDelete(category._id)}
+                          onClick={() => handleConfirmDelete(modalCat._id)}
                           className="rounded-full flex items-center text-sm gap-x-1 bg-red-700 px-3 py-2 transition-all duration-500 hover:bg-red-500 hover:text-gray-300"
                         >
                           Delete Item <RiDeleteBin5Fill />

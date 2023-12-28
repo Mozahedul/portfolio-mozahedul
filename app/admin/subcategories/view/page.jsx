@@ -12,7 +12,8 @@ import injectMetadata from "@/app/functions/metadata/setMetadata";
 function ViewProjects() {
   const [subCategories, setSubCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [modalSubCat, setModalSubCat] = useState({});
   const modalRef = useRef();
   const router = useRouter();
 
@@ -46,9 +47,14 @@ function ViewProjects() {
     })();
   }, [setSubCategories, router]);
 
-  const handleModal = () => {
-    setIsModalOpen(true);
+  // the function is used to show the modal
+  const openModal = subCat => {
+    setModalSubCat(subCat);
+    setShowModal(true);
   };
+
+  // This function is used hide the opened modal
+  const closeModal = () => setShowModal(false);
 
   /**
    * @description: The function that is responsible to delete a single category
@@ -69,7 +75,7 @@ function ViewProjects() {
       const data = response.ok && (await response.json());
 
       if (data.success) {
-        setIsModalOpen(false);
+        setShowModal(false);
         toastSuccess(data.success);
         const extractedCategories = subCategories.filter(
           category => subcategoryId !== category._id
@@ -87,17 +93,11 @@ function ViewProjects() {
     }
   };
 
-  /**
-   * This function is used to cancel the category deletion process
-   */
-  const handleCancelDelete = () => {
-    setIsModalOpen(false);
-  };
-
+  // Modal will close if click outside of the modal
   const handleClickOutside = event => {
     console.log(modalRef.current);
     if (modalRef.current && !modalRef.current.contains(event.target)) {
-      setIsModalOpen(false);
+      setShowModal(false);
     }
   };
 
@@ -173,14 +173,14 @@ function ViewProjects() {
                   <button
                     type="button"
                     // onClick={() => handleConfirmDelete(subcategory._id)}
-                    onClick={handleModal}
+                    onClick={() => openModal(subcategory)}
                     className="ml-2 rounded-md bg-red-700 p-2 transition-all duration-500 hover:bg-red-500 hover:text-gray-300"
                   >
                     <RiDeleteBin5Fill />
                   </button>
 
                   {/* the modal of subcategory deletion */}
-                  {isModalOpen && (
+                  {showModal && (
                     <div
                       ref={modalRef}
                       className="bg-gray-200 rounded-md w-80 h-auto z-50 p-5 fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -191,7 +191,7 @@ function ViewProjects() {
                       <p className="text-gray-700 text-sm">
                         Are you sure you want to delete the item{" "}
                         <strong className="font-bold text-md">
-                          {`"${subcategory?.name}"`}?
+                          {`"${modalSubCat?.name}"`}?
                         </strong>
                       </p>
                       <div className="mt-5 bg-orange-100 p-3">
@@ -207,14 +207,14 @@ function ViewProjects() {
                       <div className="flex justify-evenly mt-7">
                         <button
                           type="button"
-                          onClick={handleCancelDelete}
+                          onClick={closeModal}
                           className="rounded-full flex items-center text-sm gap-x-1 bg-slate-500 px-3 py-2 transition-all duration-500 hover:bg-slate-800 hover:text-gray-300"
                         >
                           <RiDeleteBin5Fill /> Cancel
                         </button>
                         <button
                           type="button"
-                          onClick={() => handleConfirmDelete(subcategory._id)}
+                          onClick={() => handleConfirmDelete(modalSubCat._id)}
                           className="rounded-full flex items-center text-sm gap-x-1 bg-red-700 px-3 py-2 transition-all duration-500 hover:bg-red-500 hover:text-gray-300"
                         >
                           Delete Item <RiDeleteBin5Fill />

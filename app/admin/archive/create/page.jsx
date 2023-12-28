@@ -18,14 +18,21 @@ const CreateArchive = () => {
     anchor: "",
     description: "",
     language: [],
-    category: [],
+    category: "",
+    subcategory: "",
   });
+
+  console.log(projectForm);
 
   const [isEmpty, setIsEmpty] = useState(true);
   const [languages, setLanguages] = useState([]);
-  const [categories, setCategories] = useState([]);
+  const [showCategories, setShowCategories] = useState([]);
+  const [category, setCategory] = useState("");
   const [subCategories, setSubCategories] = useState([]);
+  const [subCatId, setSubCatId] = useState("");
   const router = useRouter();
+
+  console.log("SHOW CATEGORY ==> ", category);
 
   /**
    * Handle each input field focus with onBlur
@@ -68,13 +75,15 @@ const CreateArchive = () => {
 
     console.log(projectsFormData);
 
+    // const [subcat] = subCategories;
     projectsFormData.language = languages;
-    projectsFormData.category = categories;
+    projectsFormData.category = category;
+    projectsFormData.subcategory = subCatId;
 
     console.log("PROJECT FORM DATA ==> ", projectsFormData);
 
     setIsLoading(true);
-    const response = await fetch(`/api/projects`, {
+    const response = await fetch(`/api/archive`, {
       method: "POST",
       body: JSON.stringify(projectsFormData),
       headers: {
@@ -88,7 +97,7 @@ const CreateArchive = () => {
     if (data.success) {
       setIsLoading(false);
       toastSuccess(data.success);
-      router.push("/admin/projects/view");
+      router.push("/admin/archive/view");
     }
 
     // if user already exists, then show exist message
@@ -114,7 +123,7 @@ const CreateArchive = () => {
    */
   useEffect(() => {
     const projectArr = Object.values(projectForm);
-    const itemExist = projectArr.some(item => item.length < 2);
+    const itemExist = projectArr.some(item => item.length < 1);
 
     setIsEmpty(itemExist);
   }, [projectForm]);
@@ -167,8 +176,9 @@ const CreateArchive = () => {
 
           <Category
             setProjectForm={setProjectForm}
-            setCategories={setCategories}
-            categories={categories}
+            setShowCategories={setShowCategories}
+            showCategories={showCategories}
+            setCategory={setCategory}
           />
         </div>
 
@@ -180,11 +190,12 @@ const CreateArchive = () => {
           >
             SubCategory<span className="text-red-400">*</span>
           </label>
-
           <SubCategory
             setProjectForm={setProjectForm}
             setSubCategories={setSubCategories}
             subCategories={subCategories}
+            categorysearch={category}
+            setSubCatId={setSubCatId}
           />
         </div>
 

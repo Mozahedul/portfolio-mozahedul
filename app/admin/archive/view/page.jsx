@@ -7,13 +7,13 @@ import { VscEdit } from "react-icons/vsc";
 import { useRouter } from "next/navigation";
 import Spin from "@/app/components/animation/spinner/page";
 import { toastError, toastSuccess } from "@/utils/showMessage/toastReact";
-import injectMetadata from "@/app/functions/metadata/setMetadata";
+// import injectMetadata from "@/app/functions/metadata/setMetadata";
 
-function ViewProjects() {
-  const [projects, setProjects] = useState([]);
+function ViewArchive() {
+  const [archives, setArchives] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [modalProject, setModalProject] = useState({});
+  const [modalArchive, setModalArchive] = useState({});
   const modalRef = useRef();
   const router = useRouter();
 
@@ -22,35 +22,35 @@ function ViewProjects() {
    * @param {string} pageTitle
    * @param {string} pageDescription
    */
-  useEffect(() => {
-    router.refresh();
-    const pageTitle = "Projects view - admin";
-    const pageDescription = "List of the projects and protected for admin only";
+  // useEffect(() => {
+  //   router.refresh();
+  //   const pageTitle = "Archive view - admin";
+  //   const pageDescription = "List of the archive and protected for admin only";
 
-    injectMetadata(pageTitle, pageDescription);
-  }, [router]);
+  //   injectMetadata(pageTitle, pageDescription);
+  // }, [router]);
 
   useEffect(() => {
-    (async function fetchProjects() {
+    (async function fetchArchive() {
       try {
         setIsLoading(true);
-        const response = await fetch("/api/projects");
+        const response = await fetch("/api/archive");
         const data = response.ok && (await response.json());
-        setProjects(data.projects);
+        setArchives(data.archives);
         setIsLoading(false);
-        router.refresh();
+        // router.refresh();
       } catch (error) {
         console.log(error);
       }
     })();
-  }, [setProjects, router]);
+  }, [setArchives, router]);
 
   /**
    * Handle a single user delete
    */
-  const handleConfirmDelete = async projectId => {
+  const handleConfirmDelete = async archiveId => {
     try {
-      const response = await fetch(`/api/projects?projectId=${projectId}`, {
+      const response = await fetch(`/api/archive?archiveId=${archiveId}`, {
         method: "DELETE",
       });
 
@@ -59,10 +59,10 @@ function ViewProjects() {
       if (data.success) {
         setShowModal(false);
         toastSuccess(data.success);
-        const extractedProjects = projects.filter(
-          project => projectId !== project._id
+        const extractedArchive = archives.filter(
+          archive => archiveId !== archive._id
         );
-        setProjects(extractedProjects);
+        setArchives(extractedArchive);
       }
 
       if (data.errMsg) {
@@ -75,32 +75,13 @@ function ViewProjects() {
 
   // Delete modal handler for show / hide the modal dialog
   const openModal = proj => {
-    setModalProject(proj);
+    setModalArchive(proj);
     setShowModal(true);
   };
 
   // Cancel the delete modal handler and hide the modal dialog
   const handleCancelDelete = () => {
     setShowModal(false);
-  };
-
-  // Handler for all projects delete
-  const handleDeleteAll = async event => {
-    event.preventDefault();
-    const response = await fetch(`/api/projects/allProjects`, {
-      method: "DELETE",
-    });
-
-    const data = response.ok && (await response.json());
-
-    if (data.success) {
-      toastSuccess(data.success);
-      setProjects([]);
-    }
-
-    if (data.errMsg) {
-      toastError(data.errMsg);
-    }
   };
 
   /**
@@ -125,21 +106,14 @@ function ViewProjects() {
   return (
     <>
       <div className="mb-3 mt-6 flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-gray-300">Project List</h2>
+        <h2 className="text-2xl font-bold text-gray-300">Archive List</h2>
         <div>
-          <button
-            type="button"
-            onClick={handleDeleteAll}
-            className="mr-2 rounded-md bg-red-500 px-3 py-2 text-xs font-medium tracking-wide text-gray-200 transition-all duration-500 hover:bg-red-700 hover:text-gray-300"
-          >
-            Delete All Projects
-          </button>
-          <Link href="/admin/projects/create">
+          <Link href="/admin/archive/create">
             <button
               type="button"
               className="rounded-md bg-cyan-600 px-3 py-2 text-xs text-gray-200 transition-all duration-500 hover:bg-cyan-500 hover:text-gray-300"
             >
-              Create Project
+              Create Archive
             </button>
           </Link>
         </div>
@@ -147,12 +121,14 @@ function ViewProjects() {
 
       {isLoading ? (
         <Spin />
-      ) : projects?.length > 0 ? (
+      ) : archives?.length > 0 ? (
         <table className="w-full table-auto border-2 border-slate-800">
           <thead>
             <tr className="bg-slate-700 text-gray-400">
               <th className="px-3 py-2 text-left text-gray-200">SL No</th>
               <th className="px-3 py-2 text-left text-gray-200">Title</th>
+              <th className="px-3 py-2 text-left text-gray-200">Category</th>
+              <th className="px-3 py-2 text-left text-gray-200">SubCategory</th>
               <th className="px-3 py-2 text-left text-gray-200">Anchor</th>
               <th className="px-3 py-2 text-left text-gray-200">GitHub</th>
               <th className="px-3 py-2 text-left text-gray-200">Languages</th>
@@ -161,23 +137,29 @@ function ViewProjects() {
             </tr>
           </thead>
           <tbody>
-            {projects?.map((project, index) => (
+            {archives?.map((archive, index) => (
               <tr
-                key={project._id}
+                key={archive._id}
                 className="text-gray-300 transition-all duration-500 hover:bg-cyan-900"
               >
                 <td className="border-b-2 border-slate-800 p-3">{index + 1}</td>
                 <td className="border-b-2 border-slate-800 p-3">
-                  {`${project.title.substring(0, 20)}...`}
+                  {`${archive.title}`}
                 </td>
                 <td className="border-b-2 border-slate-800 p-3">
-                  {`${project.anchor.substring(0, 15)}...`}
+                  {`${archive.category.name}`}
                 </td>
                 <td className="border-b-2 border-slate-800 p-3">
-                  {`${project.github.substring(0, 15)}...`}
+                  {`${archive.subcategory.name}`}
+                </td>
+                <td className="border-b-2 border-slate-800 p-3">
+                  {`${archive.anchor.substring(0, 15)}...`}
+                </td>
+                <td className="border-b-2 border-slate-800 p-3">
+                  {`${archive.github.substring(0, 15)}...`}
                 </td>
                 <td className="flex flex-wrap border-b-2 border-slate-800 p-3">
-                  {project?.language?.map(lang => (
+                  {archive?.language?.map(lang => (
                     <span
                       className="m-1 rounded-full bg-slate-700 p-1 text-xs"
                       key={lang}
@@ -187,10 +169,10 @@ function ViewProjects() {
                   ))}
                 </td>
                 <td className="border-b-2 border-slate-800 p-3">
-                  {`${project.description.substring(0, 20)}...`}
+                  {`${archive.description.substring(0, 20)}...`}
                 </td>
                 <td className="border-b-2 border-slate-800 p-3">
-                  <Link href={`/admin/projects/edit/${project._id}`}>
+                  <Link href={`/admin/archive/edit/${archive._id}`}>
                     <button
                       type="button"
                       className="rounded-md bg-yellow-600 p-2 transition-all duration-500 hover:bg-yellow-500 hover:text-gray-500"
@@ -200,7 +182,7 @@ function ViewProjects() {
                   </Link>
                   <button
                     type="button"
-                    onClick={() => openModal(project)}
+                    onClick={() => openModal(archive)}
                     className="ml-2 rounded-md bg-red-700 p-2 transition-all duration-500 hover:bg-red-500 hover:text-gray-300"
                   >
                     <RiDeleteBin5Fill />
@@ -218,7 +200,7 @@ function ViewProjects() {
                       <p className="text-gray-700 text-sm">
                         Are you sure you want to delete the item{" "}
                         <strong className="font-bold text-md">
-                          {`"${modalProject?.title}"`}?
+                          {`"${modalArchive?.title}"`}?
                         </strong>
                       </p>
                       <div className="mt-5 bg-orange-100 p-3">
@@ -241,7 +223,7 @@ function ViewProjects() {
                         </button>
                         <button
                           type="button"
-                          onClick={() => handleConfirmDelete(modalProject?._id)}
+                          onClick={() => handleConfirmDelete(modalArchive?._id)}
                           className="rounded-full flex items-center text-sm gap-x-1 bg-red-700 px-3 py-2 transition-all duration-500 hover:bg-red-500 hover:text-gray-300"
                         >
                           Delete Item <RiDeleteBin5Fill />
@@ -259,11 +241,11 @@ function ViewProjects() {
           type="button"
           className="mx-auto mt-6 block w-full rounded-full bg-slate-800 py-2 text-xl font-bold text-gray-300 md:w-1/2"
         >
-          No Projects exist to show
+          No Archive exist to show
         </button>
       )}
     </>
   );
 }
 
-export default ViewProjects;
+export default ViewArchive;

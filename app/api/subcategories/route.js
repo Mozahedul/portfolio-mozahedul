@@ -77,6 +77,7 @@ export async function GET() {
 
 /**
  * @param {string} request
+ * @method DELETE
  * @returns send success message after deleting the subcategory from db
  */
 export async function DELETE(request) {

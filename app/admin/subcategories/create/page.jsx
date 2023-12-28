@@ -117,7 +117,7 @@ const SubCategory = () => {
         <h2 className="text-lg font-bold text-gray-300 md:text-2xl">
           Create a SubCategory
         </h2>
-        <Link href="/admin/categories/view">
+        <Link href="/admin/subcategories/view">
           <button
             type="button"
             className="rounded-md bg-cyan-600 px-3 py-2 text-sm font-medium text-gray-300 transition-all duration-500 hover:bg-cyan-400 hover:text-gray-200"
