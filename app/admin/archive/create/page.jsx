@@ -183,7 +183,7 @@ const CreateArchive = () => {
             fieldText={projectForm?.title}
           />
         </div>
-        {/* Project Category */}
+        {/* Archive Category */}
         <div className="relative mt-3">
           <label
             htmlFor="description"
@@ -197,10 +197,11 @@ const CreateArchive = () => {
             setShowCategories={setShowCategories}
             showCategories={showCategories}
             setCategory={setCategory}
+            setSubCategories={setSubCategories}
           />
         </div>
 
-        {/* Project SubCategory */}
+        {/* Archive SubCategory */}
         <div className="relative mt-3">
           <label
             htmlFor="description"
@@ -217,7 +218,7 @@ const CreateArchive = () => {
           />
         </div>
 
-        {/* anchor link */}
+        {/* Anchor link */}
         <div className="mt-3">
           <label
             htmlFor="anchor"

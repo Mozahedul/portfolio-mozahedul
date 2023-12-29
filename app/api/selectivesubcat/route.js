@@ -14,10 +14,11 @@ export async function GET(request) {
   const url = new URL(request.url);
   const category = url.searchParams.get("categorysearch");
   console.log(category);
+
   try {
     await db();
     const subcats = await SubCategory.find({ category });
-    console.log("SUBCATEGORIES ==> ", subcats._doc);
+    console.log("SUBCATEGORIES ==> ", subcats);
     return new NextResponse(JSON.stringify({ subcats }), {
       headers: { "Content-Type": "application/json" },
     });

@@ -8,6 +8,7 @@ const Category = ({
   setShowCategories,
   showCategories,
   setCategory,
+  setSubCategories,
 }) => {
   const [categoryCheckbox, setCategoryCheckbox] = useState(false);
   const [allCategory, setAllCategory] = useState([]);
@@ -27,6 +28,7 @@ const Category = ({
       // send a single category id to the local state
       setCategory(value);
       setShowCategories(prevCat => [...prevCat, catName]);
+      setSubCategories([]);
     } else {
       const filteredCategories = showCategories.filter(cat => cat !== value);
       setShowCategories(filteredCategories);
