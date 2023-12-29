@@ -10,6 +10,7 @@ import Category from "@/app/components/category/page";
 import Language from "@/app/components/language/page";
 import InputArchive from "@/app/components/archive/input/page";
 import SubCategory from "@/app/components/subCategory/page";
+import ArchiveImage from "@/app/components/archive/ArchiveImage/page";
 
 const CreateArchive = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -55,6 +56,7 @@ const CreateArchive = () => {
    */
   const handleOnChangeField = event => {
     const { name, value } = event.target;
+    console.log(event.target.files);
     setProjectForm(prevState => ({
       ...prevState,
       [name]: value,
@@ -165,6 +167,22 @@ const CreateArchive = () => {
           />
         </div>
 
+        {/* Archive image */}
+        <div className="mt-3">
+          <label
+            htmlFor="title"
+            className="mb-1 block text-sm font-semibold text-gray-300"
+          >
+            Image<span className="text-red-400">*</span>
+          </label>
+          <ArchiveImage
+            changeHandler={handleOnChangeField}
+            focusHandler={handleInputFocus}
+            projectForm={projectForm}
+            name="image"
+            fieldText={projectForm?.title}
+          />
+        </div>
         {/* Project Category */}
         <div className="relative mt-3">
           <label

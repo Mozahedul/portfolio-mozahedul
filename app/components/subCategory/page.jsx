@@ -56,18 +56,20 @@ const SubCategory = ({
   useEffect(() => {
     const fetchSelectiveSubCategories = async () => {
       try {
-        const response = await fetch(
-          `/api/selectivesubcat?categorysearch=${categorysearch}`
-        );
-        const data = response.ok && (await response.json());
-        setAllSubCategory(data.subcats);
+        if (categorysearch?.length > 0) {
+          const response = await fetch(
+            `/api/selectivesubcat?categorysearch=${categorysearch}`
+          );
+          const data = response.ok && (await response.json());
+          setAllSubCategory(data.subcats);
+        }
       } catch (error) {
         console.log(error);
       }
     };
 
     fetchSelectiveSubCategories();
-  }, [categorysearch]);
+  }, [categorysearch, setAllSubCategory]);
 
   return (
     <>
@@ -86,7 +88,7 @@ const SubCategory = ({
             </span>
           ))
         ) : (
-          <span>Select Category</span>
+          <span>Select SubCategory</span>
         )}
 
         <BsArrowDownCircleFill

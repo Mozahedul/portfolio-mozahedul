@@ -45,10 +45,10 @@ const ArchiveSchema = new mongoose.Schema(
       },
     ],
 
-    // image: {
-    //   type: String,
-    //   required: true,
-    // },
+    image: {
+      type: String,
+      required: true,
+    },
 
     anchor: {
       type: String,

@@ -17,7 +17,7 @@ export async function GET(request) {
   try {
     await db();
     const subcats = await SubCategory.find({ category });
-    console.log("SUBCATEGORIES ==> ", subcats);
+    console.log("SUBCATEGORIES ==> ", subcats._doc);
     return new NextResponse(JSON.stringify({ subcats }), {
       headers: { "Content-Type": "application/json" },
     });
