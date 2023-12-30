@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ImSpinner6 } from "react-icons/im";
+import Image from "next/image";
 import { toastError, toastSuccess } from "@/utils/showMessage/toastReact";
 import injectMetadata from "@/app/functions/metadata/setMetadata";
 import Category from "@/app/components/category/page";
@@ -14,13 +15,16 @@ import ArchiveImage from "@/app/components/archive/ArchiveImage/page";
 
 const CreateArchive = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedImg, setSelectedImg] = useState(null);
   const [projectForm, setProjectForm] = useState({
-    title: "",
+    archiveTitle: "",
     anchor: "",
+    github: "",
     description: "",
     language: [],
     category: "",
     subcategory: "",
+    image: [],
   });
 
   console.log(projectForm);
@@ -31,6 +35,8 @@ const CreateArchive = () => {
   const [category, setCategory] = useState("");
   const [subCategories, setSubCategories] = useState([]);
   const [subCatId, setSubCatId] = useState("");
+  // for image preview on the form
+  const [imgUrl, setImgUrl] = useState([]);
   const router = useRouter();
 
   console.log("SHOW CATEGORY ==> ", category);
@@ -41,6 +47,7 @@ const CreateArchive = () => {
    */
   const handleInputFocus = event => {
     const { name, value } = event.target;
+    console.log(name, value);
     setProjectForm(prevUser => ({
       ...prevUser,
       [name]: value,
@@ -56,11 +63,32 @@ const CreateArchive = () => {
    */
   const handleOnChangeField = event => {
     const { name, value } = event.target;
-    console.log(event.target.files);
+    console.log(name, value);
     setProjectForm(prevState => ({
       ...prevState,
       [name]: value,
     }));
+  };
+
+  // onChange event handler for image to show above the input:file field
+  const handleOnChangeImageField = event => {
+    console.log(event.target.files);
+    const pictures = event.target.files;
+
+    setSelectedImg(pictures[0]);
+
+    const imagesUrl = [];
+    for (let i = 0; i < pictures.length; i += 1) {
+      const img = URL.createObjectURL(pictures[i]);
+      const imgTypes = ["image/png", "image/jpg", "image/jpeg", "image/gif"];
+      if (imgTypes.includes(pictures[i].type)) {
+        imagesUrl.push(img);
+      }
+    }
+    // for image preview on the form
+    setImgUrl(imagesUrl);
+    // send image to projectForm state to check the image empty
+    setProjectForm(prevState => ({ ...prevState, image: imagesUrl }));
   };
 
   /**
@@ -71,26 +99,35 @@ const CreateArchive = () => {
    */
   const handleSubmit = async event => {
     event.preventDefault();
-    const formData = new FormData(event.target);
-    const entries = Array.from(formData.entries());
-    const projectsFormData = Object.fromEntries(entries);
+    const formData = new FormData();
+    formData.set("archiveTitle", projectForm.archiveTitle);
+    formData.set("anchor", projectForm.anchor);
+    formData.set("github", projectForm.github);
+    formData.set("description", projectForm.description);
+    formData.set("language", languages);
+    formData.set("image", selectedImg);
+    formData.set("category", category);
+    formData.set("subcategory", subCatId);
+    // const entries = Array.from(formData.entries());
+    // const projectsFormData = Object.fromEntries(entries);
 
-    console.log(projectsFormData);
+    // console.log(projectsFormData);
+    // console.log("EVENT FILES => ", event.target.files);
 
-    // const [subcat] = subCategories;
-    projectsFormData.language = languages;
-    projectsFormData.category = category;
-    projectsFormData.subcategory = subCatId;
+    // // const [subcat] = subCategories;
+    // projectsFormData.language = languages;
+    // projectsFormData.category = category;
+    // projectsFormData.subcategory = subCatId;
 
-    console.log("PROJECT FORM DATA ==> ", projectsFormData);
+    console.log("PROJECT FORM DATA ==> ", formData);
 
     setIsLoading(true);
     const response = await fetch(`/api/archive`, {
       method: "POST",
-      body: JSON.stringify(projectsFormData),
-      headers: {
-        "Content-Type": "application/json",
-      },
+      body: formData,
+      // headers: {
+      //   "Content-Type": "application/json",
+      // },
     });
 
     const data = response.ok && (await response.json());
@@ -136,7 +173,7 @@ const CreateArchive = () => {
         <h2 className="text-lg font-bold text-gray-300 md:text-2xl">
           Create an Archive
         </h2>
-        <Link href="/admin/projects/view">
+        <Link href="/admin/archive/view">
           <button
             type="button"
             className="rounded-md bg-cyan-600 px-3 py-2 text-sm font-medium text-gray-300 transition-all duration-500 hover:bg-cyan-400 hover:text-gray-200"
@@ -146,24 +183,25 @@ const CreateArchive = () => {
         </Link>
       </div>
       <form
+        encType="multipart/form-data"
         onSubmit={handleSubmit}
         className="w-full rounded-md bg-slate-700 p-5 sm:w-3/4 md:w-2/4 xl:w-2/6"
       >
         {/* Archive title */}
         <div>
           <label
-            htmlFor="title"
+            htmlFor="archiveTitle"
             className="mb-1 block text-sm font-semibold text-gray-300"
           >
-            Title<span className="text-red-400">*</span>
+            ArchiveTitle<span className="text-red-400">*</span>
           </label>
           <InputArchive
             changeHandler={handleOnChangeField}
             focusHandler={handleInputFocus}
             projectForm={projectForm}
-            name="title"
-            placeholder="Full Title"
-            fieldText={projectForm?.title}
+            name="archiveTitle"
+            placeholder="Full Archive Title"
+            fieldText={projectForm?.archiveTitle}
           />
         </div>
 
@@ -175,12 +213,23 @@ const CreateArchive = () => {
           >
             Image<span className="text-red-400">*</span>
           </label>
+          <div className="my-2">
+            {imgUrl?.length > 0 && (
+              <Image
+                src={imgUrl[0]}
+                width={40}
+                height={40}
+                alt={imgUrl[0]}
+                className="rounded"
+              />
+            )}
+          </div>
           <ArchiveImage
-            changeHandler={handleOnChangeField}
+            changeHandler={handleOnChangeImageField}
             focusHandler={handleInputFocus}
             projectForm={projectForm}
             name="image"
-            fieldText={projectForm?.title}
+            fieldText={projectForm?.image}
           />
         </div>
         {/* Archive Category */}

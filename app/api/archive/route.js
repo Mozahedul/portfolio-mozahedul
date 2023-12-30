@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import slugify from "slugify";
+import path from "path";
+import { writeFile } from "fs/promises";
 import db from "../database/dbconnection/db";
 import Archive from "../database/models/Archive";
 
@@ -10,39 +12,55 @@ import Archive from "../database/models/Archive";
  * @returns Archive insertion success message to the client
  */
 export async function POST(request) {
-  const data = await request.json();
-  const slug = slugify(data.title.toLowerCase());
-  data.slug = slug;
+  // const data = await request.json();
+  // const slug = slugify(data.title.toLowerCase());
+  // data.slug = slug;
 
-  const headers = {
-    headers: { "Content-Type": "application/json" },
-  };
+  const data = await request.formData();
+  const file = data.get("image");
+  console.log(file);
 
-  try {
-    await db();
+  // Extranct stream data to binary data
+  const bytes = await file.arrayBuffer();
 
-    // Check if the archive is already exists in the database
-    const isArchiveExist = await Archive.findOne({ slug });
+  // convert the ArrayBuffer to buffer object
+  const bufferObj = Buffer.from(bytes);
 
-    if (isArchiveExist) {
-      return new NextResponse(
-        JSON.stringify({ errMsg: "Archive already exist in the database" }),
-        headers
-      );
-    }
-    // Save data into database
-    const newArchive = new Archive(data);
-    const archive = await newArchive.save();
+  // Save this buffer object to file system
+  const filePath = path.join(process.cwd(), "tmp", file.name);
+  await writeFile(filePath, bufferObj);
 
-    if (Object.prototype.hasOwnProperty.call(archive._doc, "title")) {
-      return new NextResponse(
-        JSON.stringify({ success: "Archive Inserted Successfully" }),
-        headers
-      );
-    }
-  } catch (error) {
-    console.log(error);
-  }
+  
+
+  // const headers = {
+  //   headers: { "Content-Type": "application/json" },
+  // };
+
+  // try {
+  //   await db();
+
+  //   // Check if the archive is already exists in the database
+  //   const isArchiveExist = await Archive.findOne({ slug });
+
+  //   if (isArchiveExist) {
+  //     return new NextResponse(
+  //       JSON.stringify({ errMsg: "Archive already exist in the database" }),
+  //       headers
+  //     );
+  //   }
+  //   // Save data into database
+  //   const newArchive = new Archive(data);
+  //   const archive = await newArchive.save();
+
+  //   if (Object.prototype.hasOwnProperty.call(archive._doc, "title")) {
+  //     return new NextResponse(
+  //       JSON.stringify({ success: "Archive Inserted Successfully" }),
+  //       headers
+  //     );
+  //   }
+  // } catch (error) {
+  //   console.log(error);
+  // }
 }
 
 /**

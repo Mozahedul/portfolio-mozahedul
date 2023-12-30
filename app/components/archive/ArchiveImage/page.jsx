@@ -10,7 +10,8 @@ const ArchiveImage = props => {
     fieldText,
   } = props;
   return (
-    <>
+    <label className="w-full block rounded-md bg-slate-500 p-2 text-sm text-gray-300">
+      Select Image
       <input
         onChange={changeHandler}
         onBlur={focusHandler}
@@ -18,7 +19,7 @@ const ArchiveImage = props => {
         name={name}
         id={name}
         placeholder={placeholder}
-        className="w-full rounded-md bg-slate-500 p-2 text-sm text-gray-300"
+        className="hidden"
       />
       {fieldText !== "" && (
         <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
@@ -29,7 +30,7 @@ const ArchiveImage = props => {
               : ""}
         </span>
       )}
-    </>
+    </label>
   );
 };
 

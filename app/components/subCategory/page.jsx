@@ -111,7 +111,10 @@ const SubCategory = ({
                 type="checkbox"
                 value={subcat._id}
                 className="form-input"
-                onClick={event => handleCheckboxSubCategory(event, subcat.name)}
+                name="subcategory"
+                onChange={event =>
+                  handleCheckboxSubCategory(event, subcat.name)
+                }
                 checked={subCategories.includes(subcat.name)}
               />
               <span className="checkmark" />

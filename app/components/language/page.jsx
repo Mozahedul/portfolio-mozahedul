@@ -80,7 +80,8 @@ const Language = ({ setProjectForm, setLanguages, languages }) => {
                 type="checkbox"
                 value={item}
                 className="form-input"
-                onClick={handleCheckboxToShow}
+                name="language"
+                onChange={handleCheckboxToShow}
                 checked={languages.includes(item)}
               />
               <span className="checkmark" />

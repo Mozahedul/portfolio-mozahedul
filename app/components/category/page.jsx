@@ -103,7 +103,8 @@ const Category = ({
                 type="checkbox"
                 value={category._id}
                 className="form-input"
-                onClick={event => handleCheckboxCategory(event, category.name)}
+                name="category"
+                onChange={event => handleCheckboxCategory(event, category.name)}
                 checked={showCategories.includes(category.name)}
               />
               <span className="checkmark" />
