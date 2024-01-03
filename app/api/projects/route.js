@@ -56,12 +56,19 @@ export async function GET() {
   try {
     await db();
     const projects = await Project.find({}).exec();
-    console.log("PROJECTS ==> ", projects);
-    return new NextResponse(JSON.stringify({ projects }), {
+
+    if (projects.length > 0) {
+      return new NextResponse(JSON.stringify({ projects }), {
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+    return new NextResponse(JSON.stringify({ errMsg: "No projects found" }), {
       headers: { "Content-Type": "application/json" },
     });
   } catch (error) {
-    console.log("Error for fetching all project =>", error);
+    return new NextResponse(JSON.stringify({ errMsg: error.message }), {
+      headers: { "Content-Type": "application/json" },
+    });
   }
 }
 

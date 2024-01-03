@@ -108,16 +108,6 @@ const CreateArchive = () => {
     formData.set("image", selectedImg);
     formData.set("category", category);
     formData.set("subcategory", subCatId);
-    // const entries = Array.from(formData.entries());
-    // const projectsFormData = Object.fromEntries(entries);
-
-    // console.log(projectsFormData);
-    // console.log("EVENT FILES => ", event.target.files);
-
-    // // const [subcat] = subCategories;
-    // projectsFormData.language = languages;
-    // projectsFormData.category = category;
-    // projectsFormData.subcategory = subCatId;
 
     console.log("PROJECT FORM DATA ==> ", formData);
 
@@ -125,9 +115,6 @@ const CreateArchive = () => {
     const response = await fetch(`/api/archive`, {
       method: "POST",
       body: formData,
-      // headers: {
-      //   "Content-Type": "application/json",
-      // },
     });
 
     const data = response.ok && (await response.json());

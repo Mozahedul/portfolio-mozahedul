@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { VscEdit } from "react-icons/vsc";
@@ -16,6 +17,8 @@ function ViewArchive() {
   const [modalArchive, setModalArchive] = useState({});
   const modalRef = useRef();
   const router = useRouter();
+
+  console.log(archives);
 
   /**
    * Set metadata for the page
@@ -111,7 +114,7 @@ function ViewArchive() {
           <Link href="/admin/archive/create">
             <button
               type="button"
-              className="rounded-md bg-cyan-600 px-3 py-2 text-xs text-gray-200 transition-all duration-500 hover:bg-cyan-500 hover:text-gray-300"
+              className="rounded-md bg-cyan-600 px-3 py-2 text-sm text-gray-200 transition-all duration-500 hover:bg-cyan-500 hover:text-gray-300"
             >
               Create Archive
             </button>
@@ -127,6 +130,7 @@ function ViewArchive() {
             <tr className="bg-slate-700 text-gray-400">
               <th className="px-3 py-2 text-left text-gray-200">SL No</th>
               <th className="px-3 py-2 text-left text-gray-200">Title</th>
+              <th className="px-3 py-2 text-left text-gray-200">Image</th>
               <th className="px-3 py-2 text-left text-gray-200">Category</th>
               <th className="px-3 py-2 text-left text-gray-200">SubCategory</th>
               <th className="px-3 py-2 text-left text-gray-200">Anchor</th>
@@ -147,16 +151,25 @@ function ViewArchive() {
                   {`${archive.title}`}
                 </td>
                 <td className="border-b-2 border-slate-800 p-3">
-                  {`${archive.category.name}`}
+                  <Image
+                    src={archive?.image}
+                    width={30}
+                    height={30}
+                    alt={archive?.image}
+                    className="rounded-md"
+                  />
                 </td>
                 <td className="border-b-2 border-slate-800 p-3">
-                  {`${archive.subcategory.name}`}
+                  {`${archive?.category?.name}`}
                 </td>
                 <td className="border-b-2 border-slate-800 p-3">
-                  {`${archive.anchor.substring(0, 15)}...`}
+                  {`${archive?.subcategory?.name}`}
                 </td>
                 <td className="border-b-2 border-slate-800 p-3">
-                  {`${archive.github.substring(0, 15)}...`}
+                  {`${archive?.anchor.substring(0, 15)}...`}
+                </td>
+                <td className="border-b-2 border-slate-800 p-3">
+                  {`${archive?.github.substring(0, 15)}...`}
                 </td>
                 <td className="flex flex-wrap border-b-2 border-slate-800 p-3">
                   {archive?.language?.map(lang => (
@@ -169,10 +182,10 @@ function ViewArchive() {
                   ))}
                 </td>
                 <td className="border-b-2 border-slate-800 p-3">
-                  {`${archive.description.substring(0, 20)}...`}
+                  {`${archive?.description?.substring(0, 20)}...`}
                 </td>
                 <td className="border-b-2 border-slate-800 p-3">
-                  <Link href={`/admin/archive/edit/${archive._id}`}>
+                  <Link href={`/admin/archive/edit/${archive?._id}`}>
                     <button
                       type="button"
                       className="rounded-md bg-yellow-600 p-2 transition-all duration-500 hover:bg-yellow-500 hover:text-gray-500"

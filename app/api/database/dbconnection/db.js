@@ -6,7 +6,7 @@ async function db() {
     await mongoose.connect(process.env.MONGODB_ATLAS);
     console.log("MONGODB DATABASE CONNECTED");
   } catch (error) {
-    console.log("ERROR in Database connection", error);
+    console.log("ERROR in Database connection", error.message);
   }
 }
 

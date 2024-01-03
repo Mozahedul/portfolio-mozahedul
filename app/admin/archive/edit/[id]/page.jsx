@@ -5,14 +5,17 @@ import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { ImSpinner6 } from "react-icons/im";
 import { BsArrowDownCircleFill } from "react-icons/bs";
+import Image from "next/image";
 import { toastError, toastSuccess } from "@/utils/showMessage/toastReact";
 import languageData from "@/utils/language/data";
 import injectMetadata from "@/app/functions/metadata/setMetadata";
+import ArchiveImage from "@/app/components/archive/ArchiveImage/page";
 
 const EditArchive = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [archiveForm, setArchiveForm] = useState({
     title: "",
+    image: "",
     anchor: "",
     github: "",
     category: "",
@@ -32,10 +35,13 @@ const EditArchive = () => {
   const [subCatId, setSubCatId] = useState("");
   const [categoryData, setCategoryData] = useState([]);
   const [subCategoryData, setSubCategoryData] = useState([]);
+  const [selectedImg, setSelectedImg] = useState(null);
+  // for image preview on the form
+  const [imgUrl, setImgUrl] = useState([]);
   const router = useRouter();
 
   console.log(categories);
-  console.log(catId);
+  console.log("ARCHIVE FORM DATA  => ", archiveForm);
 
   // Handle input field focus with onBlur
   const handleInputFocus = event => {
@@ -58,24 +64,25 @@ const EditArchive = () => {
   // Form submit handler
   const handleSubmit = async event => {
     event.preventDefault();
-    const formData = new FormData(event.target);
-    const entries = Array.from(formData.entries());
-    const archiveFormData = Object.fromEntries(entries);
+    const formData = new FormData();
 
-    archiveFormData.language = languages;
-    archiveFormData.category = catId;
-    archiveFormData.subcategory = subCatId;
-    archiveFormData.id = param.id;
-
-    console.log(archiveFormData);
+    formData.set("title", archiveForm.title);
+    formData.set("description", archiveForm.description);
+    formData.set("anchor", archiveForm.anchor);
+    formData.set("github", archiveForm.github);
+    formData.set("publicId", archiveForm.publicId);
+    formData.set("language", languages);
+    formData.set("category", catId);
+    formData.set("subcategory", subCatId);
+    formData.set("id", param.id);
+    if (selectedImg) {
+      formData.set("image", selectedImg);
+    }
 
     setIsLoading(true);
     const response = await fetch(`/api/archive`, {
       method: "PUT",
-      body: JSON.stringify(archiveFormData),
-      headers: {
-        "Content-Type": "application/json",
-      },
+      body: formData,
     });
 
     const data = response.ok && (await response.json());
@@ -126,7 +133,6 @@ const EditArchive = () => {
 
   // Category checkbox handler
   const handleCategoryCheckbox = (event, catgId) => {
-    // event.preventDefault();
     const { checked, value } = event.target;
     console.log(checked, value);
     if (checked) {
@@ -144,7 +150,7 @@ const EditArchive = () => {
   const handleSubCategoryCheckbox = (event, catgId) => {
     // event.preventDefault();
     const { checked, value } = event.target;
-    console.log(checked, value);
+
     if (checked) {
       setSubCategories([]);
       setSubCategories(prevCat => [...prevCat, value]);
@@ -154,6 +160,26 @@ const EditArchive = () => {
       setCategories(filteredCats);
       setSubCatId("");
     }
+  };
+
+  // onChange event handler for image to show above the input:file field
+  const handleOnChangeImageField = event => {
+    const pictures = event.target.files;
+
+    setSelectedImg(pictures[0]);
+
+    const imagesUrl = [];
+    for (let i = 0; i < pictures.length; i += 1) {
+      const img = URL.createObjectURL(pictures[i]);
+      const imgTypes = ["image/png", "image/jpg", "image/jpeg", "image/gif"];
+      if (imgTypes.includes(pictures[i].type)) {
+        imagesUrl.push(img);
+      }
+    }
+    // for image preview on the form
+    setImgUrl(imagesUrl);
+    // send image to projectForm state to check the image empty
+    setArchiveForm(prevState => ({ ...prevState, image: imagesUrl }));
   };
 
   /**
@@ -191,7 +217,6 @@ const EditArchive = () => {
         );
         const data = response.ok && (await response.json());
         setArchiveForm(data);
-        console.log(data);
         // language will show inside the language button
         setLanguages(data.language);
 
@@ -208,14 +233,14 @@ const EditArchive = () => {
       }
     };
     fetchArchive();
-  }, [param.id, router]);
+  }, [param.id, router, setArchiveForm]);
 
   // Fetch all categories from database
   useEffect(() => {
     const fetchAllCategories = async () => {
       const response = await fetch("/api/categories");
       const data = response.ok && (await response.json());
-      console.log(data.categories);
+
       setCategoryData(data.categories);
     };
 
@@ -227,7 +252,7 @@ const EditArchive = () => {
     const fetchAllSubCategories = async () => {
       const response = await fetch("/api/subcategories");
       const data = response.ok && (await response.json());
-      console.log(data.subcategories);
+
       setSubCategoryData(data.subcategories);
     };
 
@@ -250,6 +275,7 @@ const EditArchive = () => {
         </Link>
       </div>
       <form
+        encType="multipart/form-data"
         onSubmit={handleSubmit}
         className="w-full rounded-md bg-slate-700 p-5 sm:w-3/4 md:w-2/4 xl:w-2/6"
       >
@@ -278,6 +304,37 @@ const EditArchive = () => {
           ) : (
             ""
           )}
+        </div>
+
+        {/* Archive image */}
+        <div className="mt-3">
+          <label
+            htmlFor="title"
+            className="mb-1 block text-sm font-semibold text-gray-300"
+          >
+            Image<span className="text-red-400">*</span>
+          </label>
+          {imgUrl[0] || archiveForm?.image ? (
+            <div className="my-2">
+              <Image
+                src={imgUrl[0] || archiveForm?.image}
+                width={40}
+                height={40}
+                alt={imgUrl[0] || archiveForm?.image}
+                className="rounded"
+              />
+            </div>
+          ) : (
+            ""
+          )}
+
+          <ArchiveImage
+            changeHandler={handleOnChangeImageField}
+            focusHandler={handleInputFocus}
+            projectForm={archiveForm}
+            name="image"
+            fieldText={archiveForm?.image}
+          />
         </div>
 
         {/* Categories */}
