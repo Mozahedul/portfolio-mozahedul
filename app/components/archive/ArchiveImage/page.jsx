@@ -21,14 +21,12 @@ const ArchiveImage = props => {
         placeholder={placeholder}
         className="hidden"
       />
-      {fieldText !== "" && (
+      {fieldText?.length < 1 ? (
         <span className="mt-2 block text-right text-xs tracking-wide text-gray-300">
-          {fieldText?.length < 2
-            ? "Enter at least 2 characters"
-            : projectForm?.title?.length > 150
-              ? "Do not exceed 150 characters"
-              : ""}
+          Enter at least 1 image
         </span>
+      ) : (
+        ""
       )}
     </label>
   );

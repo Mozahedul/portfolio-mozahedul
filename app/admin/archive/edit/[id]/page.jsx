@@ -40,6 +40,8 @@ const EditArchive = () => {
   const [imgUrl, setImgUrl] = useState([]);
   const router = useRouter();
 
+  console.log(catId);
+
   console.log(categories);
   console.log("ARCHIVE FORM DATA  => ", archiveForm);
 
@@ -247,17 +249,19 @@ const EditArchive = () => {
     fetchAllCategories();
   }, [setCategories]);
 
-  // Fetch all subcategories from database
+  // Fetch all subcategories from database according to category _id
   useEffect(() => {
     const fetchAllSubCategories = async () => {
-      const response = await fetch("/api/subcategories");
-      const data = response.ok && (await response.json());
-
-      setSubCategoryData(data.subcategories);
+      const response = await fetch(
+        `/api/subcategories/selective?categoryId=${catId}`
+      );
+      const data = response?.ok && (await response?.json());
+      console.log(data);
+      setSubCategoryData(data);
     };
 
     fetchAllSubCategories();
-  }, [setCategories]);
+  }, [setSubCategoryData, catId]);
 
   return (
     <div className="mt-8 flex flex-col items-center justify-center">
