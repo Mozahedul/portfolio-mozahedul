@@ -313,7 +313,7 @@ const EditArchive = () => {
         {/* Archive image */}
         <div className="mt-3">
           <label
-            htmlFor="title"
+            htmlFor="image"
             className="mb-1 block text-sm font-semibold text-gray-300"
           >
             Image<span className="text-red-400">*</span>
@@ -379,7 +379,11 @@ const EditArchive = () => {
           >
             {categoryData?.length > 0 &&
               categoryData?.map(category => (
-                <label key={category._id} className="form-label">
+                <label
+                  key={category._id}
+                  className="form-label"
+                  htmlFor="category"
+                >
                   <span className="ml-5">{category.name}</span>
                   <input
                     type="checkbox"
@@ -402,7 +406,7 @@ const EditArchive = () => {
         {/* Subcategories */}
         <div className="relative mt-3">
           <label
-            htmlFor="description"
+            htmlFor="subcategory"
             className="mb-1 block text-sm font-semibold text-gray-300"
           >
             Sub Category<span className="text-red-400">*</span>
@@ -516,7 +520,7 @@ const EditArchive = () => {
         {/* Languages */}
         <div className="relative mt-3">
           <label
-            htmlFor="description"
+            htmlFor="language"
             className="mb-1 block text-sm font-semibold text-gray-300"
           >
             Languages<span className="text-red-400">*</span>
@@ -552,7 +556,7 @@ const EditArchive = () => {
             } top-18 absolute left-0 rounded-md bg-slate-600 p-3`}
           >
             {languageData.map(item => (
-              <label key={item} className="form-label">
+              <label key={item} className="form-label" htmlFor="language">
                 <span className="ml-5">{item}</span>
                 <input
                   type="checkbox"
