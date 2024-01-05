@@ -384,7 +384,7 @@ const EditArchive = () => {
                 <label
                   key={category._id}
                   className="form-label"
-                  htmlFor="category"
+                  htmlFor={category._id}
                 >
                   <span className="ml-5">{category.name}</span>
                   <input
@@ -415,6 +415,7 @@ const EditArchive = () => {
           </label>
           <button
             type="button"
+            id="subcategory"
             onClick={event => handleShowSubCategoryCheckbox(event)}
             className="lang-btn relative w-full rounded-md bg-slate-500 p-2 text-left text-sm text-gray-300"
           >
@@ -435,7 +436,7 @@ const EditArchive = () => {
               } text-lg`}
             />
           </button>
-          {/* Checkbox categories dropdown */}
+          {/* Checkbox subcategories dropdown */}
           <div
             className={`mt-1 transition-all duration-500 ${
               subCategoryCheckbox ? "block" : "hidden"
@@ -443,7 +444,11 @@ const EditArchive = () => {
           >
             {subCategoryData?.length > 0 &&
               subCategoryData?.map(subCategory => (
-                <label key={subCategory._id} className="form-label">
+                <label
+                  key={subCategory._id}
+                  className="form-label"
+                  htmlFor={subCategory._id}
+                >
                   <span className="ml-5">{subCategory.name}</span>
                   <input
                     type="checkbox"
@@ -529,6 +534,7 @@ const EditArchive = () => {
           </label>
           <button
             type="button"
+            id="language"
             onClick={event => handleShowCheckbox(event)}
             className="lang-btn relative w-full rounded-md bg-slate-500 p-2 text-left text-sm text-gray-300"
           >
@@ -558,7 +564,7 @@ const EditArchive = () => {
             } top-18 absolute left-0 rounded-md bg-slate-600 p-3`}
           >
             {languageData.map(item => (
-              <label key={item} className="form-label" htmlFor="language">
+              <label key={item} className="form-label" htmlFor={item}>
                 <span className="ml-5">{item}</span>
                 <input
                   type="checkbox"
