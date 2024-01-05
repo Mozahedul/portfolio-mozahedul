@@ -344,13 +344,15 @@ const EditArchive = () => {
         {/* Categories */}
         <div className="relative mt-3 z-40">
           <label
-            htmlFor="description"
+            htmlFor="category"
             className="mb-1 block text-sm font-semibold text-gray-300"
           >
             Category<span className="text-red-400">*</span>
           </label>
           <button
             type="button"
+            name="category"
+            id="category"
             onClick={event => handleShowCategoryCheckbox(event)}
             className="lang-btn relative w-full rounded-md bg-slate-500 p-2 text-left text-sm text-gray-300"
           >
@@ -390,7 +392,7 @@ const EditArchive = () => {
                     key={category._id}
                     value={category.name}
                     className="form-input"
-                    id="category"
+                    id={category._id}
                     name="category"
                     onClick={event =>
                       handleCategoryCheckbox(event, category._id)
@@ -448,7 +450,7 @@ const EditArchive = () => {
                     key={subCategory._id}
                     value={subCategory.name}
                     className="form-input"
-                    id="subcategory"
+                    id={subCategory._id}
                     name="subcategory"
                     onClick={event =>
                       handleSubCategoryCheckbox(event, subCategory._id)
@@ -563,7 +565,7 @@ const EditArchive = () => {
                   key={item}
                   value={item}
                   className="form-input"
-                  id="language"
+                  id={item}
                   name="language"
                   onClick={handleCheckbox}
                   checked={languages?.includes(item)}
