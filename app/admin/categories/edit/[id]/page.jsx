@@ -106,7 +106,7 @@ const EditProject = () => {
     <div className="mt-8 flex flex-col items-center justify-center">
       <div className="mb-4 flex w-full items-center justify-between sm:w-3/4 md:w-2/4 xl:w-2/6">
         <h2 className="text-lg font-bold text-gray-300 md:text-2xl">
-          Edit a Project
+          Edit a Category
         </h2>
         <Link href="/admin/categories/view">
           <button

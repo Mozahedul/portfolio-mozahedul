@@ -14,6 +14,9 @@ const languageData = [
   "Git",
   "GitHub",
   "Linux",
+  "Adobe XD",
+  "Adobe Photoshop",
+  "WordPress"
 ];
 
 export default languageData;

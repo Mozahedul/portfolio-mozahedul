@@ -386,6 +386,8 @@ const EditArchive = () => {
                     key={category._id}
                     value={category.name}
                     className="form-input"
+                    id="category"
+                    name="category"
                     onClick={event =>
                       handleCategoryCheckbox(event, category._id)
                     }
@@ -442,6 +444,8 @@ const EditArchive = () => {
                     key={subCategory._id}
                     value={subCategory.name}
                     className="form-input"
+                    id="subcategory"
+                    name="subcategory"
                     onClick={event =>
                       handleSubCategoryCheckbox(event, subCategory._id)
                     }
@@ -555,6 +559,8 @@ const EditArchive = () => {
                   key={item}
                   value={item}
                   className="form-input"
+                  id="language"
+                  name="language"
                   onClick={handleCheckbox}
                   checked={languages?.includes(item)}
                 />

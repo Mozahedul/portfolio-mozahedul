@@ -1,14 +1,7 @@
 import React from "react";
 
 const ArchiveImage = props => {
-  const {
-    changeHandler,
-    focusHandler,
-    projectForm,
-    name,
-    placeholder,
-    fieldText,
-  } = props;
+  const { changeHandler, focusHandler, name, placeholder, fieldText } = props;
   return (
     <label className="w-full block rounded-md bg-slate-500 p-2 text-sm text-gray-300">
       Select Image

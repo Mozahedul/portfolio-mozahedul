@@ -133,7 +133,11 @@ const Backend = ({ category }) => {
                 <div className="rounded opacity-0 w-0 h-0 group-hover:opacity-100 group-hover:w-full group-hover:h-full overflow-hidden p-4 absolute transition-all duration-500 top-0 left-0 right-0; bottom-0 bg-card">
                   {/* Links to Github and project */}
                   <div className="bg-appBg block px-2 py-1 rounded absolute top-0 right-0">
-                    <Link href={archive?.github}>
+                    <Link
+                      target="_blank"
+                      href={archive?.github}
+                      rel="noreferrer"
+                    >
                       <button
                         title="View on Github"
                         className="text-gray-300 text-lg hover:transform hover:scale-125 transition-all duration-500 hover:text-cyan-400"
@@ -142,7 +146,11 @@ const Backend = ({ category }) => {
                         <FiGithub />
                       </button>
                     </Link>
-                    <Link href={archive?.anchor}>
+                    <Link
+                      target="_blank"
+                      href={archive?.anchor}
+                      rel="noreferrer"
+                    >
                       <button
                         title="View Live App"
                         className="text-gray-300 text-lg hover:transform hover:scale-125 transition-all duration-500 ml-2 hover:text-cyan-400"

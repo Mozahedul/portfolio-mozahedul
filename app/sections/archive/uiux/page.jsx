@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
-import { FiGithub } from "react-icons/fi";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
@@ -120,8 +119,8 @@ const UiUx = ({ category }) => {
             ))
           )}
         </div>
-        {/* Project cards */}
 
+        {/* Project cards */}
         <main className="grid grid-col-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 md:gap-8 mt-8">
           {archives?.length > 0 &&
             archives?.map(archive => (
@@ -141,16 +140,11 @@ const UiUx = ({ category }) => {
                 <div className="rounded opacity-0 w-0 h-0 group-hover:opacity-100 group-hover:w-full group-hover:h-full overflow-hidden p-4 absolute transition-all duration-500 top-0 left-0 right-0; bottom-0 bg-card">
                   {/* Links to Github and project */}
                   <div className="bg-appBg block px-2 py-1 rounded absolute top-0 right-0">
-                    <Link href={archive?.github}>
-                      <button
-                        title="View on Github"
-                        className="text-gray-300 text-lg hover:transform hover:scale-125 transition-all duration-500 hover:text-cyan-400"
-                        type="button"
-                      >
-                        <FiGithub />
-                      </button>
-                    </Link>
-                    <Link href={archive?.anchor}>
+                    <Link
+                      href={archive?.anchor}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <button
                         title="View Live App"
                         className="text-gray-300 text-lg hover:transform hover:scale-125 transition-all duration-500 ml-2 hover:text-cyan-400"
