@@ -114,7 +114,7 @@ const Backend = ({ category }) => {
         </div>
         {/* Project cards */}
 
-        <main className="grid grid-col-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 md:gap-8 mt-8">
+        <main className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-8 mt-8">
           {archives?.length > 0 &&
             archives?.map(archive => (
               <div
@@ -125,8 +125,8 @@ const Backend = ({ category }) => {
                   className="rounded-lg cursor-pointer"
                   src={archive?.image}
                   alt={archive?.image}
-                  width={150}
-                  height={150}
+                  width={500}
+                  height={500}
                   style={{ width: "100%", height: "100%" }}
                 />
                 {/* hover section */}

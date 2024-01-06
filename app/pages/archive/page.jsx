@@ -62,7 +62,7 @@ const Archive = () => {
   };
 
   useEffect(() => {
-    handleToShowProjects("658c22a05abfe2f285bdfb90", "fullstack");
+    handleToShowProjects("658c22af5abfe2f285bdfb95", "frontend");
   }, []);
 
   // Fetch categories from backend database
@@ -77,17 +77,19 @@ const Archive = () => {
   }, []);
 
   return (
-    <div className="flex gap-x-20 mt-20">
-      <div>
-        <h1 className="text-6xl font-extrabold text-gray-300">Archive.</h1>
-        <h2 className="text-4xl font-bold mt-2 text-gray-400 flex items-center">
+    <div className="flex flex-col lg:flex-row gap-x-20 mt-20">
+      <div className="lg:w-1/4">
+        <h1 className="text-4xl md:text-6xl font-extrabold text-gray-300">
+          Archive.
+        </h1>
+        <h2 className="text-2xl md:text-4xl font-bold mt-2 text-gray-400 flex items-center">
           Mozahedul Islam
         </h2>
         <p className="text-xl font-semibold text-gray-500 mt-3">
           Experienced Full-stack Developer
         </p>
         <p className="text-md font-medium mt-2 mb-4 text-gray-500">
-          I develop exclusive and genuine web projects <br /> for clients.
+          I develop exclusive and genuine web projects for clients.
         </p>
         <div className="flex flex-col items-start mt-5 gap-y-2">
           {categories.map(category => (
@@ -118,7 +120,7 @@ const Archive = () => {
         <SocialMedia />
       </div>
       {/* Main view section */}
-      <div>
+      <div className="mt-16 lg:mt-0 lg:w-3/4">
         <Fullstack category={fullstack} />
         <Frontend category={frontend} />
         <Backend category={backend} />

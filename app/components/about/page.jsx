@@ -23,9 +23,10 @@ const AboutPage = () => {
       </h3>
       <div className="mt-8 font-medium leading-7 tracking-wide text-gray-400">
         <span className="block">
-          I am a MERN stack developer with a strong understanding of the MERN
-          stack (MongoDB, Express, React, and Node.js) and I am able to use
-          these technologies to build scalable and performant web applications.
+          I am a professional full-stack developer with a strong understanding
+          of the MERN stack (MongoDB, Express, React, and Node.js) and I am able
+          to use these technologies to build scalable and performant web
+          applications.
         </span>
         <span className="mt-7 block">
           I am able to work effectively with other developers and stakeholders,

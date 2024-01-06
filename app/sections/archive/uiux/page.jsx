@@ -85,11 +85,11 @@ const UiUx = ({ category }) => {
       {/* Header section */}
       <div>
         <h1 className="text-3xl font-bold text-gray-300 flex-col">
-          <span className="block"> UiUx Projects</span>
+          <span className="block"> UI / UX Projects</span>
           <span className="h-[2px] bg-cardHover grow block mt-2" />
         </h1>
 
-        <div className="mt-5 flex gap-x-2">
+        <div className="mt-5 flex gap-2 flex-wrap">
           <button
             onClick={() => handleToShowProjectCards(null, "allProject")}
             type="button"
@@ -121,7 +121,7 @@ const UiUx = ({ category }) => {
         </div>
 
         {/* Project cards */}
-        <main className="grid grid-col-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 md:gap-8 mt-8">
+        <main className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-8 mt-8">
           {archives?.length > 0 &&
             archives?.map(archive => (
               <div
@@ -132,8 +132,8 @@ const UiUx = ({ category }) => {
                   className="rounded-lg cursor-pointer"
                   src={archive?.image}
                   alt={archive?.image}
-                  width={150}
-                  height={150}
+                  width={500}
+                  height={500}
                   style={{ width: "100%", height: "100%" }}
                 />
                 {/* hover section */}
