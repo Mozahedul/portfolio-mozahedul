@@ -149,14 +149,14 @@ export default function Work() {
   return (
     <div className={`mt-40 ${inter.className}`} id="work">
       <div data-aos="fade-up" data-aos-duration="1000">
-        <h2 className="text-center text-3xl font-bold leading-5 text-gray-300">
+        <h2 className="text-center text-2xl md:text-3xl font-bold leading-8 text-gray-300">
           <span className="text-cyan-400">03.</span> Notable working projects
         </h2>
 
         <Link href="/pages/archive">
           <button
             type="button"
-            className="m-auto mb-8 px-3 py-2 rounded-full bg-card mt-5 block border-cyan-300 text-sm tracking-widest hover:bg-cardHover text-cyan-300 transition-all duration-1000 hover:text-cyan-500"
+            className="m-auto mb-8 px-3 py-2 rounded-full bg-card mt-5 block border-cyan-300 text-[12px] md:text-sm tracking-widest hover:bg-cardHover text-cyan-300 transition-all duration-1000 hover:text-cyan-500"
           >
             View the archive
           </button>

@@ -18,7 +18,7 @@ const AboutPage = () => {
       data-aos-duration="1000"
     >
       <h3>
-        <span className="text-xl font-bold text-cyan-300">01. </span>{" "}
+        <span className="text-2xl font-bold text-cyan-300">01. </span>{" "}
         <strong className="text-2xl text-gray-300">About Me</strong>
       </h3>
       <div className="mt-8 font-medium leading-7 tracking-wide text-gray-400">
@@ -40,7 +40,7 @@ const AboutPage = () => {
           Here is the list of languages and technologies I have been working
           with recently.
         </span>
-        <div className="mt-5 flex">
+        <div className="mt-5 grid gap-4 md:grid md:grid-cols-3">
           <ul className={inter.className}>
             <li className="flex items-center text-xs font-semibold tracking-widest text-gray-400">
               <BiSolidRightArrow className="mr-2 text-cyan-300" /> JavaScript
@@ -53,7 +53,7 @@ const AboutPage = () => {
               <BiSolidRightArrow className="mr-2 text-cyan-300" /> Node.js
             </li>
           </ul>
-          <ul className={inter.className} style={{ marginLeft: "60px" }}>
+          <ul className={inter.className}>
             <li className="flex items-center text-xs font-semibold tracking-widest text-gray-400">
               <BiSolidRightArrow className="mr-2 text-cyan-300" /> Express.js
             </li>
@@ -64,7 +64,7 @@ const AboutPage = () => {
               <BiSolidRightArrow className="mr-2 text-cyan-300" /> Tailwind CSS
             </li>
           </ul>
-          <ul className={inter.className} style={{ marginLeft: "60px" }}>
+          <ul className={inter.className}>
             <li className="flex items-center text-xs font-semibold tracking-widest text-gray-400">
               <BiSolidRightArrow className="mr-2 text-cyan-300" /> MySQL
             </li>

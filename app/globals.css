@@ -15,8 +15,8 @@ body {
 }
 
 .profile-img {
-  filter: grayscale(80%);
-  filter: brightness(0.5);
+  filter: grayscale(90%);
+  filter: brightness(0.7);
 }
 
 .profile-img:hover {

@@ -19,7 +19,7 @@ const ProfileImage = () => {
       height={320}
       alt="profile avatar"
       priority
-      className="profile-img ml-10 mt-14"
+      className="profile-img md:ml-10 mt-14"
       style={{
         objectFit: "contain",
         objectPosition: "left top",
@@ -28,7 +28,7 @@ const ProfileImage = () => {
         maxWidth: "320px",
         borderRadius: "4px",
         cursor: "pointer",
-        transition: "0.5s ease-in-out",
+        transition: "all 0.5s ease-in-out",
       }}
     />
   );
