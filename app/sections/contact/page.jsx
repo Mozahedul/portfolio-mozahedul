@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import ContactHeader from "@/app/components/contact/contactHeader/page";
 import "aos/dist/aos.css";
+import ContactUs from "@/app/components/emails/contactUs/page";
 
 const ContactSection = () => {
   useEffect(() => {
@@ -17,6 +18,7 @@ const ContactSection = () => {
         <button type="button" className="btn mx-auto my-6 block lg:my-10">
           <a href="mailto:mozahed001@gmail.com">Email Me</a>
         </button>
+        <ContactUs />
       </div>
     </div>
   );
