@@ -112,24 +112,23 @@ const CreateArchive = () => {
     console.log("PROJECT FORM DATA ==> ", formData);
 
     setIsLoading(true);
-    const response = await fetch(`/api/archive`, {
+    const response = await fetch("/api/archive", {
       method: "POST",
       body: formData,
     });
-
-    const data = response.ok && (await response.json());
+    const data = response?.ok && (await response?.json());
 
     // if user created, then show success message
-    if (data.success) {
+    if (data?.success) {
       setIsLoading(false);
-      toastSuccess(data.success);
+      toastSuccess(data?.success);
       router.push("/admin/archive/view");
     }
 
     // if user already exists, then show exist message
-    if (data.errMsg) {
+    if (data?.errMsg) {
       setIsLoading(false);
-      toastError(data.errMsg);
+      toastError(data?.errMsg);
     }
   };
 

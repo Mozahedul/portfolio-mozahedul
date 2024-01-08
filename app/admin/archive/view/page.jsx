@@ -127,7 +127,7 @@ function ViewArchive() {
       ) : archives?.length > 0 ? (
         <table className="w-full table-auto border-2 border-slate-800">
           <thead>
-            <tr className="bg-slate-700 text-gray-400">
+            <tr className="bg-slate-700 text-gray-400 font-semibold">
               <th className="px-3 py-2 text-left text-gray-200">SL No</th>
               <th className="px-3 py-2 text-left text-gray-200">Title</th>
               <th className="px-3 py-2 text-left text-gray-200">Image</th>
@@ -144,13 +144,11 @@ function ViewArchive() {
             {archives?.map((archive, index) => (
               <tr
                 key={archive._id}
-                className="text-gray-300 transition-all duration-500 hover:bg-cyan-900"
+                className="text-gray-300 text-sm transition-all duration-500 hover:bg-cyan-900 border-slate-800 border-b-2"
               >
-                <td className="border-b-2 border-slate-800 p-3">{index + 1}</td>
-                <td className="border-b-2 border-slate-800 p-3">
-                  {`${archive.title}`}
-                </td>
-                <td className="border-b-2 border-slate-800 p-3">
+                <td className="p-3">{index + 1}</td>
+                <td className="p-3">{`${archive.title}`}</td>
+                <td className="p-3">
                   <Image
                     src={archive?.image}
                     width={30}
@@ -159,32 +157,28 @@ function ViewArchive() {
                     className="rounded-md"
                   />
                 </td>
-                <td className="border-b-2 border-slate-800 p-3">
-                  {`${archive?.category?.name}`}
-                </td>
-                <td className="border-b-2 border-slate-800 p-3">
-                  {`${archive?.subcategory?.name}`}
-                </td>
-                <td className="border-b-2 border-slate-800 p-3">
+                <td className="p-3">{`${archive?.category?.name}`}</td>
+                <td className="p-3">{`${archive?.subcategory?.name}`}</td>
+                <td className="p-3">
                   {`${archive?.anchor.substring(0, 15)}...`}
                 </td>
-                <td className="border-b-2 border-slate-800 p-3">
+                <td className="p-3">
                   {`${archive?.github.substring(0, 15)}...`}
                 </td>
-                <td className="flex flex-wrap border-b-2 border-slate-800 p-3">
+                <td className="flex flex-wrap p-3">
                   {archive?.language?.map(lang => (
                     <span
-                      className="m-1 rounded-full bg-slate-700 p-1 text-xs"
+                      className="m-1 rounded-full bg-slate-700 px-2 py-1 text-xs"
                       key={lang}
                     >
                       {lang}
                     </span>
                   ))}
                 </td>
-                <td className="border-b-2 border-slate-800 p-3">
+                <td className="p-3">
                   {`${archive?.description?.substring(0, 20)}...`}
                 </td>
-                <td className="border-b-2 border-slate-800 p-3">
+                <td className="p-3 flex">
                   <Link href={`/admin/archive/edit/${archive?._id}`}>
                     <button
                       type="button"

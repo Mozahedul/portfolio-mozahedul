@@ -20,7 +20,7 @@ const ContactHeader = () => {
       <h3 className="text-sm font-semibold tracking-widest text-cyan-400">
         04. Send a message
       </h3>
-      <h2 className="mt-3 text-2xl md:text-4xl font-bold text-gray-200">
+      <h2 className="mt-3 text-2xl md:text-4xl font-bold text-gray-200 textClip">
         Keep in touch
       </h2>
       <p className="font-md mt-4 max-w-md text-center text-gray-400">

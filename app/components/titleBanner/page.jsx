@@ -46,7 +46,7 @@ const TitleHero = () => {
         Hi, My name is
       </p>
       <h2 className="mt-6 font-bold">
-        <strong className="block text-3xl text-gray-300 md:text-5xl lg:text-6xl">
+        <strong className="block text-3xl text-gray-300 md:text-5xl lg:text-6xl textClip">
           Mozahedul Islam.
         </strong>
         <strong className="mt-3 block  text-2xl text-gray-500 md:text-3xl lg:text-5xl">

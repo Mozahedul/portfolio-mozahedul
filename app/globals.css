@@ -192,3 +192,14 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+.textClip {
+  background: linear-gradient(90deg, rgb(156, 110, 11), cyan, white);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.sectionId {
+  transition: transform 5s ease-in-out;
+}
