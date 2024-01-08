@@ -54,21 +54,21 @@ const Header = () => {
    * For showing fixed navigation bar afer
    * scrolling device viewport height
    */
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      const scrollPosition = window.scrollY;
-      const viewPortHeight = window.innerHeight / 5;
-      if (scrollPosition > viewPortHeight) {
-        menuRef.current?.classList.add("navbar-fixed");
-      } else {
-        menuRef.current?.classList.remove("navbar-fixed");
-      }
-      if (menuRef.current && window.innerWidth < 640) {
-        menuRef.current.style.paddingTop = "5px";
-        menuRef.current.style.paddingBottom = "5px";
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", () => {
+  //     const scrollPosition = window.scrollY;
+  //     const viewPortHeight = window.innerHeight / 5;
+  //     if (scrollPosition > viewPortHeight) {
+  //       menuRef.current?.classList.add("navbar-fixed");
+  //     } else {
+  //       menuRef.current?.classList.remove("navbar-fixed");
+  //     }
+  //     if (menuRef.current && window.innerWidth < 640) {
+  //       menuRef.current.style.paddingTop = "5px";
+  //       menuRef.current.style.paddingBottom = "5px";
+  //     }
+  //   });
+  // }, []);
 
   return (
     <div ref={menuRef} className="flex w-full items-center justify-between">

@@ -97,7 +97,7 @@ body {
   @apply visible;
 }
 
-.navbar-fixed {
+/* .navbar-fixed {
   position: fixed;
   top: 0;
   left: 0;
@@ -106,7 +106,7 @@ body {
   padding: 0 44px;
   background-color: rgba(9, 25, 47, 0.959);
   border-bottom: 1px solid rgba(0, 255, 255, 0.082);
-}
+} */
 
 .body-fixed {
   position: fixed;

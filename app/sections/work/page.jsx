@@ -141,14 +141,17 @@ export default function Work() {
   }, [viewportWidth]);
 
   // For page animation with aos NPM package
-  useEffect(() => {
-    AOS.init();
-    AOS.refresh();
-  }, []);
+  // useEffect(() => {
+  //   AOS.init();
+  //   AOS.refresh();
+  // }, []);
 
   return (
-    <div className={`mt-40 ${inter.className}`} id="work">
-      <div data-aos="fade-up" data-aos-duration="1000">
+    <div className={`mt-16 md:mt-40 ${inter.className}`} id="work">
+      <div
+      // data-aos="fade-up"
+      // data-aos-duration="1000"
+      >
         <h2 className="text-center text-2xl md:text-3xl font-bold leading-8 text-gray-300">
           <span className="text-cyan-400">03. </span>
           <span className="textClip">Notable working projects</span>

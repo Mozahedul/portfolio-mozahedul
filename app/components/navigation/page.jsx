@@ -1,18 +1,17 @@
 "use client";
 
 import React from "react";
-import { useRouter } from "next/navigation";
 
 const Navigation = ({ handleMenuClose }) => {
-  // const router = useRouter();
-
   const handleToShowSection = (event, sectionId) => {
     event.preventDefault();
     const navMenu = document.getElementById("navMenu");
     const section = document.getElementById(sectionId);
     console.log(section.offsetTop, navMenu.offsetHeight);
 
-    const scrollHeight = section.offsetTop - navMenu.offsetHeight;
+    const scrollHeight = section.offsetTop;
+    console.log(scrollHeight);
+
     window.scrollTo({
       top: scrollHeight,
       behavior: "smooth",
@@ -20,6 +19,7 @@ const Navigation = ({ handleMenuClose }) => {
 
     handleMenuClose();
   };
+
   return (
     <nav id="navMenu">
       <ul className="flex flex-col text-lg font-medium tracking-wide text-gray-300 md:flex-row md:text-sm md:font-semibold">
@@ -37,8 +37,7 @@ const Navigation = ({ handleMenuClose }) => {
           <button
             className="navBtn"
             type="button"
-            onFocus={() => handleToShowSection("/")}
-            onClick={handleMenuClose}
+            onClick={() => handleToShowSection("/")}
           >
             {" "}
             <span className="text-cyan-300">02. </span> Experience
@@ -48,8 +47,7 @@ const Navigation = ({ handleMenuClose }) => {
           <button
             className="navBtn"
             type="button"
-            onFocus={event => handleToShowSection(event, "work")}
-            onClick={handleMenuClose}
+            onClick={event => handleToShowSection(event, "work")}
           >
             {" "}
             <span className="text-cyan-300">03. </span> Work
@@ -60,8 +58,7 @@ const Navigation = ({ handleMenuClose }) => {
           <button
             className="navBtn"
             type="button"
-            onFocus={event => handleToShowSection(event, "contact")}
-            onClick={handleMenuClose}
+            onClick={event => handleToShowSection(event, "contactMe")}
           >
             {" "}
             <span className="text-cyan-300">04. </span> Contact

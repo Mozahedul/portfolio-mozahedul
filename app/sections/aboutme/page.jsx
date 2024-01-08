@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div
       id="about"
-      className="mt-48 flex flex-col md:flex-row lg:ml-48 lg:mr-48"
+      className="mt-16 md:mt-48 flex flex-col md:flex-row lg:ml-48 lg:mr-48"
     >
       <AboutPage />
       <ProfileImage />
