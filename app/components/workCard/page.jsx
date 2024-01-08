@@ -4,9 +4,9 @@ import { FiExternalLink } from "react-icons/fi";
 import { GoFileDirectory } from "react-icons/go";
 import { LuGithub } from "react-icons/lu";
 import Link from "next/link";
-// import AOS from "aos";
+import AOS from "aos";
 import "aos/dist/aos.css";
-// import { useEffect } from "react";
+import { useEffect } from "react";
 
 const Card = ({
   title = "",
@@ -15,14 +15,14 @@ const Card = ({
   github = "",
   language = [],
 }) => {
-  // useEffect(() => {
-  //   AOS.init();
-  //   AOS.refresh();
-  // }, []);
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <div
-      // data-aos="zoom-in"
-      // data-aos-duration="1000"
+      data-aos="zoom-in"
+      data-aos-duration="1000"
       className="bg-card group flex cursor-pointer flex-col justify-between rounded-md p-6 transition-all duration-1000 transform hover:bg-cardHover"
     >
       <div className="mb-4 flex items-center justify-between">

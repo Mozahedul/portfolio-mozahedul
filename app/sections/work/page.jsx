@@ -119,10 +119,7 @@ export default function Work() {
     };
   }, [setViewportWidth]);
 
-  /**
-   *  Show the project in responsive manner according to device ratio
-   */
-
+  // Show the project in responsive manner according to device ratio
   useEffect(() => {
     // For small sized device
     if (viewportWidth < 768) {
@@ -140,18 +137,15 @@ export default function Work() {
     }
   }, [viewportWidth]);
 
-  // For page animation with aos NPM package
-  // useEffect(() => {
-  //   AOS.init();
-  //   AOS.refresh();
-  // }, []);
+  // For page scroll animation with aos NPM package
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   return (
     <div className={`mt-16 md:mt-40 ${inter.className}`} id="work">
-      <div
-      // data-aos="fade-up"
-      // data-aos-duration="1000"
-      >
+      <div data-aos="fade-up" data-aos-duration="1000">
         <h2 className="text-center text-2xl md:text-3xl font-bold leading-8 text-gray-300">
           <span className="text-cyan-400">03. </span>
           <span className="textClip">Notable working projects</span>

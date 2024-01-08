@@ -6,16 +6,16 @@ import { inter } from "@/utils/google-fonts/fonts";
 import "aos/dist/aos.css";
 
 const ContactHeader = () => {
-  // useEffect(() => {
-  //   AOS.init();
-  //   AOS.refresh();
-  // }, []);
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <div
       id="contact"
-      // data-aos="flip-up"
-      // data-aos-duration="1000"
-      className={`mt-36 flex flex-col items-center ${inter.className}`}
+      data-aos="flip-up"
+      data-aos-duration="1000"
+      className={`mt-16 md:mt-36 flex flex-col items-center ${inter.className}`}
     >
       <h3 className="text-sm font-semibold tracking-widest text-cyan-400">
         04. Send a message

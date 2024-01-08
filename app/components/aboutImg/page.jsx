@@ -1,19 +1,19 @@
 "use client";
 
 import Image from "next/image";
-// import React, { useEffect } from "react";
-// import AOS from "aos";
+import React, { useEffect } from "react";
+import AOS from "aos";
 import "aos/dist/aos.css";
 
 const ProfileImage = () => {
-  // useEffect(() => {
-  //   AOS.init();
-  //   AOS.refresh();
-  // }, []);
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <Image
-      // data-aos="fade-up"
-      // data-aos-duration="1000"
+      data-aos="fade-up"
+      data-aos-duration="1000"
       src="/profile-img.png"
       width={320}
       height={320}
