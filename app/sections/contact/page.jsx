@@ -14,10 +14,7 @@ const ContactSection = () => {
   return (
     <div className="contact" id="contactMe">
       <ContactHeader />
-      <div data-aos="fade-left" data-aos-duration="1000">
-        <button type="button" className="btn mx-auto my-6 block lg:my-10">
-          <a href="mailto:mozahed001@gmail.com">Email Me</a>
-        </button>
+      <div data-aos="fade-up" data-aos-duration="1000" className="mt-10">
         <ContactUs />
       </div>
     </div>

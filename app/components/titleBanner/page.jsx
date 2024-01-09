@@ -40,7 +40,7 @@ const TitleHero = () => {
       data-aos-easing="ease-in-back"
       data-aos-delay="300"
       data-aos-offset="0"
-      className={`mt-20 lg:ml-40 ${inter.className}`}
+      className={`lg:ml-40 ${inter.className}`}
     >
       <p className="font-semibold tracking-widest text-cyan-300">
         Hi, My name is

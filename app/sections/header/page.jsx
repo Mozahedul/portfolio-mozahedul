@@ -32,9 +32,7 @@ const Header = () => {
     setIsMenuVisible(prev => !prev);
   };
 
-  /**
-   * For mobile device menu closing
-   */
+  // For mobile device menu closing
   useEffect(() => {
     const handleMobileMenuClose = event => {
       if (
@@ -50,28 +48,11 @@ const Header = () => {
     document.addEventListener("mousedown", handleMobileMenuClose);
   }, []);
 
-  /**
-   * For showing fixed navigation bar afer
-   * scrolling device viewport height
-   */
-  // useEffect(() => {
-  //   window.addEventListener("scroll", () => {
-  //     const scrollPosition = window.scrollY;
-  //     const viewPortHeight = window.innerHeight / 5;
-  //     if (scrollPosition > viewPortHeight) {
-  //       menuRef.current?.classList.add("navbar-fixed");
-  //     } else {
-  //       menuRef.current?.classList.remove("navbar-fixed");
-  //     }
-  //     if (menuRef.current && window.innerWidth < 640) {
-  //       menuRef.current.style.paddingTop = "5px";
-  //       menuRef.current.style.paddingBottom = "5px";
-  //     }
-  //   });
-  // }, []);
-
   return (
-    <div ref={menuRef} className="flex w-full items-center justify-between">
+    <div
+      ref={menuRef}
+      className="flex md:fixed md:z-[999] md:top-0 md:left-0 md:right-0 md:px-12 items-center justify-between md:bg-[#0b1e3f]"
+    >
       <Logo />
       <button
         type="button"
@@ -81,7 +62,6 @@ const Header = () => {
       >
         <RiMenu3Fill />
       </button>
-
       <div
         ref={menuCloseRef}
         className={`menu-btn ${isMenuVisible ? "w-4/5" : "w-0"} `}

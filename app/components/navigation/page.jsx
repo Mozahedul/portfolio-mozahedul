@@ -23,27 +23,26 @@ const Navigation = ({ handleMenuClose }) => {
   return (
     <nav id="navMenu">
       <ul className="flex flex-col text-lg font-medium tracking-wide text-gray-300 md:flex-row md:text-sm md:font-semibold">
-        <li className="m-5 md:m-3 lg:m-5">
+        <li className="m-5 md:m-3">
           <button
             className="navBtn"
             type="button"
-            // onFocus={() => handleToShowSection("/#about")}
             onClick={event => handleToShowSection(event, "about")}
           >
             <span className="text-cyan-300">01. </span>About
           </button>
         </li>
-        <li className="m-5 md:m-3 lg:m-5">
+        <li className="m-5 md:m-3">
           <button
             className="navBtn"
             type="button"
-            onClick={() => handleToShowSection("/")}
+            onClick={event => handleToShowSection(event, "skills")}
           >
             {" "}
-            <span className="text-cyan-300">02. </span> Experience
+            <span className="text-cyan-300">02. </span> Skills
           </button>
         </li>
-        <li className="m-5 md:m-3 lg:m-5">
+        <li className="m-5 md:m-3">
           <button
             className="navBtn"
             type="button"
@@ -53,8 +52,7 @@ const Navigation = ({ handleMenuClose }) => {
             <span className="text-cyan-300">03. </span> Work
           </button>
         </li>
-        <li className="m-5 md:m-3 lg:m-5">
-          {/* <Link href="/#contact"> */}
+        <li className="m-5 md:m-3">
           <button
             className="navBtn"
             type="button"
@@ -63,7 +61,6 @@ const Navigation = ({ handleMenuClose }) => {
             {" "}
             <span className="text-cyan-300">04. </span> Contact
           </button>
-          {/* </Link> */}
         </li>
       </ul>
     </nav>

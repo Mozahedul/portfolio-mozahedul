@@ -24,12 +24,12 @@ const Logo = () => {
         <Image
           ref={logoRef}
           src="/logo.png"
-          width={55}
-          height={55}
+          width={50}
+          height={50}
           alt="website logo"
           style={{
             position: "absolute",
-            minWidth: 55,
+            minWidth: 50,
             zIndex: 999,
             left: 0,
             top: 0,
@@ -37,9 +37,9 @@ const Logo = () => {
         />
         <Image
           src="/logo-bg.png"
-          width={55}
-          height={55}
-          style={{ minWidth: 55 }}
+          width={50}
+          height={50}
+          style={{ minWidth: 50 }}
           alt="website logo background"
         />
       </Link>
