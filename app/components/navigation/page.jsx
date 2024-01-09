@@ -3,14 +3,24 @@
 import React from "react";
 
 const Navigation = ({ handleMenuClose }) => {
+  /**
+   * @param {*} event
+   * @param {*} sectionId
+   * @description when clicking on a navigation menu, scroll to the specified
+   * section related the button and button will be active
+   */
   const handleToShowSection = (event, sectionId) => {
     event.preventDefault();
-    const navMenu = document.getElementById("navMenu");
-    const section = document.getElementById(sectionId);
-    console.log(section.offsetTop, navMenu.offsetHeight);
+    const buttons = document.querySelectorAll(".navBtn");
 
+    buttons.forEach(button => {
+      button.classList.remove("active-menu");
+    });
+
+    event.currentTarget.classList.add("active-menu");
+
+    const section = document.getElementById(sectionId);
     const scrollHeight = section.offsetTop;
-    console.log(scrollHeight);
 
     window.scrollTo({
       top: scrollHeight,

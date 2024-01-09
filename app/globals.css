@@ -27,7 +27,11 @@ body {
 }
 
 .navBtn {
-  @apply p-1 border-2 rounded-md border-solid border-transparent hover:border-cyan-400 transition-all duration-100 hover:text-cyan-300 focus:bg-cyan-700;
+  @apply p-1 border-2 rounded-md border-solid border-transparent hover:border-cyan-400 transition-all duration-100 hover:text-cyan-300;
+}
+
+.active-menu {
+  @apply bg-cyan-700;
 }
 
 /* .navBtn:active {
