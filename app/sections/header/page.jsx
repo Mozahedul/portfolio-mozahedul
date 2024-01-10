@@ -51,17 +51,19 @@ const Header = () => {
   return (
     <div
       ref={menuRef}
-      className="flex md:fixed md:z-[999] md:top-0 md:left-0 md:right-0 md:px-12 items-center justify-between md:bg-[#0b1e3f]"
+      className="max-w-[1400px] w-full mx-auto flex fixed z-[999] top-0 left-0 right-0 px-7 md:px-12 items-center justify-between bg-[#0b1e3f]"
     >
-      <Logo />
-      <button
-        type="button"
-        ref={menuShowRef}
-        onClick={handleMenuShow}
-        className="text-3xl text-cyan-400 transition-all duration-500 hover:text-cyan-500 md:hidden"
-      >
-        <RiMenu3Fill />
-      </button>
+      <div id="navMenu" className="my-1 md:my-0 flex justify-between w-full">
+        <Logo />
+        <button
+          type="button"
+          ref={menuShowRef}
+          onClick={handleMenuShow}
+          className="text-3xl text-cyan-400 transition-all duration-500 hover:text-cyan-500 md:hidden"
+        >
+          <RiMenu3Fill />
+        </button>
+      </div>
       <div
         ref={menuCloseRef}
         className={`menu-btn ${isMenuVisible ? "w-4/5" : "w-0"} `}
@@ -70,7 +72,7 @@ const Header = () => {
           type="button"
           ref={menuBtnCloseRef}
           onClick={handleMenuClose}
-          className="absolute right-10 top-10 text-4xl text-cyan-400 transition-all duration-500 hover:text-cyan-500 md:hidden"
+          className="absolute mt-2 right-0 top-0 px-7 text-4xl text-cyan-400 transition-all duration-500 hover:text-cyan-500 md:hidden"
         >
           <IoClose />
         </button>

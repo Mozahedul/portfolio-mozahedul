@@ -36,7 +36,7 @@ const SkillSection = () => {
         </h2>
       </div>
       <div
-        className="mt-12 flex flex-wrap gap-4"
+        className="mt-12 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-2 md:gap3 lg:gap-4"
         data-aos="fade-down"
         data-aos-duration="1000"
       >

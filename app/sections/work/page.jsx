@@ -68,7 +68,7 @@ export default function Work() {
       <button
         type="button"
         onClick={handleLessProject}
-        className="btn ml-2 mt-16 block"
+        className="btn ml-2 mt-8 md:mt-16 block"
       >
         Show less
       </button>
@@ -187,7 +187,7 @@ export default function Work() {
           <button
             type="button"
             onClick={handleMoreProject}
-            className="btn mr-2 mt-16 block"
+            className="btn mr-2 mt-8 md:mt-16 block"
           >
             Show more
           </button>

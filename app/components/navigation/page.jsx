@@ -19,8 +19,15 @@ const Navigation = ({ handleMenuClose }) => {
 
     event.currentTarget.classList.add("active-menu");
 
+    const navMenu = document.getElementById("navMenu");
     const section = document.getElementById(sectionId);
-    const scrollHeight = section.offsetTop;
+    const viewportWidth = window.innerWidth;
+    const scrollHeight =
+      viewportWidth < 768
+        ? section.offsetTop - navMenu.offsetHeight
+        : section.offsetTop;
+
+    console.log(scrollHeight);
 
     window.scrollTo({
       top: scrollHeight,
@@ -31,7 +38,7 @@ const Navigation = ({ handleMenuClose }) => {
   };
 
   return (
-    <nav id="navMenu">
+    <nav>
       <ul className="flex flex-col text-lg font-medium tracking-wide text-gray-300 md:flex-row md:text-sm md:font-semibold">
         <li className="m-5 md:m-3">
           <button

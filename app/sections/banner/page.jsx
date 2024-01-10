@@ -2,7 +2,7 @@ import TitleHero from "@/app/components/titleBanner/page";
 
 const Hero = () => {
   return (
-    <div className="mt-10 md:mt-36">
+    <div className="mt-24 md:mt-36">
       <TitleHero />;
     </div>
   );

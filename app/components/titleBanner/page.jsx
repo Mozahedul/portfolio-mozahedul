@@ -45,16 +45,16 @@ const TitleHero = () => {
       <p className="font-semibold tracking-widest text-cyan-300">
         Hi, My name is
       </p>
-      <h2 className="mt-6 font-bold">
+      <h2 className="mt-1 md:mt-6 font-bold">
         <strong className="block text-3xl text-gray-300 md:text-5xl lg:text-6xl textClip">
           Mozahedul Islam.
         </strong>
-        <strong className="mt-3 block  text-2xl text-gray-500 md:text-3xl lg:text-5xl">
+        <strong className="mt-2 md:mt-3 block  text-2xl text-gray-500 md:text-3xl lg:text-5xl">
           <TypeWriter animatedText={animatedText} />
         </strong>
       </h2>
       <p className="text-md mt-6 font-normal text-gray-500 lg:w-1/2">
-        As a MERN stack developer, I specialize in MongoDB, Express.js, React,
+        As a full-stack developer, I specialize in MongoDB, Express.js, React,
         and Node.js, enabling me to create end-to-end web applications. I excel
         in crafting responsive front-end interfaces and robust back-end
         solutions. My skills encompass the entire web development process,
