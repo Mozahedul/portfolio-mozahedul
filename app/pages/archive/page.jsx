@@ -63,6 +63,11 @@ const Archive = () => {
 
   useEffect(() => {
     handleToShowProjects("658c22af5abfe2f285bdfb95", "frontend");
+    const buttons = document.querySelectorAll(".navBtn");
+
+    buttons.forEach(button => {
+      button.classList.remove("active-menu");
+    });
   }, []);
 
   // Fetch categories from backend database
@@ -77,8 +82,9 @@ const Archive = () => {
   }, []);
 
   return (
-    <div className="flex flex-col lg:flex-row gap-x-20 mt-20">
-      <div className="lg:w-1/4">
+    // <div className="flex flex-col lg:flex-row lg:justify-between gap-x-20 mt-20 md:mt-32 xl:mx-12 relative max-w-[1400px] bg-red-400">
+    <div class="lg:flex lg:justify-between lg:gap-4 max-w-[1400px] mx-auto xl:px-12">
+      <header class="lg:fixed lg:py-24 lg:flex lg:max-h-screen lg:w-1/3 xl:w-1/4 lg:flex-col lg:justify-between ">
         <h1 className="text-4xl md:text-6xl font-extrabold text-gray-300">
           Archive.
         </h1>
@@ -118,14 +124,14 @@ const Archive = () => {
         </div>
         {/* Social media handles */}
         <SocialMedia />
-      </div>
+      </header>
       {/* Main view section */}
-      <div className="mt-16 lg:mt-0 lg:w-3/4">
+      <main className="pt-24 lg:w-2/3 xl-3/4 lg:pl-10 xl:pl-16 lg:ml-auto">
         <Fullstack category={fullstack} />
         <Frontend category={frontend} />
         <Backend category={backend} />
         <UiUx category={uiux} />
-      </div>
+      </main>
     </div>
   );
 };

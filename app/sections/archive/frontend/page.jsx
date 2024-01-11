@@ -79,11 +79,11 @@ const Frontend = ({ category }) => {
           <span className="h-[2px] bg-cardHover grow block mt-2" />
         </h1>
 
-        <div className="mt-5 flex gap-2 flex-wrap">
+        <div className="mt-5 flex flex-wrap gap-2">
           <button
             onClick={() => handleToShowProjectCards(null, "allArchive")}
             type="button"
-            className={`btn-project text-gray-400 transition-all hover:text-cyan-400 duration-500 text-sm bg-card hover:bg-cardHover px-3 py-2 rounded-lg ${
+            className={`btn-project text-gray-400 mr-2 mb-2 md:mb-0 md:mr-0 transition-all hover:text-cyan-400 duration-500 text-sm bg-card hover:bg-cardHover px-3 py-2 rounded-lg ${
               activeButton === null ? "active-project-btn" : ""
             }`}
           >
@@ -100,7 +100,7 @@ const Frontend = ({ category }) => {
                   handleToShowProjectCards(subcat?._id, subcat?.name)
                 }
                 type="button"
-                className={`btn-project text-gray-400 transition-all hover:text-cyan-400 duration-500 text-sm bg-card hover:bg-cardHover px-3 py-2 rounded-lg capitalize ${
+                className={`btn-project mr-2 mb-2 md:mb-0 md:mr-0 text-gray-400 transition-all hover:text-cyan-400 duration-500 text-sm bg-card hover:bg-cardHover px-3 py-2 rounded-lg capitalize ${
                   activeButton === subcat._id ? "active-project-btn" : ""
                 }`}
               >
@@ -111,11 +111,11 @@ const Frontend = ({ category }) => {
         </div>
 
         {/* Project cards */}
-        <main className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-8 mt-8">
+        <main className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 mt-8">
           {archives.map(archive => (
             <div
               key={archive?._id}
-              className={`transition-all duration-500 relative group ${archive?.subcategory?.name} allArchive hover:scale-110`}
+              className={`transition-all duration-500 relative group ${archive?.subcategory?.name} allArchive `}
             >
               <Image
                 className="rounded-lg cursor-pointer"
@@ -126,7 +126,7 @@ const Frontend = ({ category }) => {
                 style={{ width: "100%", height: "100%" }}
               />
               {/* hover section */}
-              <div className="rounded opacity-0 w-0 h-0 group-hover:opacity-100 group-hover:w-full group-hover:h-full overflow-hidden p-4 absolute transition-all duration-500 top-0 left-0 right-0; bottom-0 bg-card">
+              <div className="group-hover:w-[110%] group-hover:h-[110%] group-hover:z-[888] rounded opacity-0 w-0 h-0 group-hover:opacity-100 overflow-hidden p-4 absolute transition-all duration-500 -top-3 -left-3 right-0; bottom-0 bg-card hover:shadow-[0_0_15px_5px_rgba(0,255,255,0.1)]">
                 {/* Links to Github and project */}
                 <div className="bg-appBg block px-2 py-1 rounded absolute top-0 right-0">
                   <Link href={archive?.github} target="_blank" rl="noreferrer">

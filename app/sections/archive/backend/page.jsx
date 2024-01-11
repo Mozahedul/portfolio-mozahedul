@@ -114,7 +114,7 @@ const Backend = ({ category }) => {
         </div>
         {/* Project cards */}
 
-        <main className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-8 mt-8">
+        <main className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 mt-8">
           {archives?.length > 0 &&
             archives?.map(archive => (
               <div
@@ -130,7 +130,7 @@ const Backend = ({ category }) => {
                   style={{ width: "100%", height: "100%" }}
                 />
                 {/* hover section */}
-                <div className="rounded opacity-0 w-0 h-0 group-hover:opacity-100 group-hover:w-full group-hover:h-full overflow-hidden p-4 absolute transition-all duration-500 top-0 left-0 right-0; bottom-0 bg-card">
+                <div className="group-hover:w-[110%] group-hover:h-[110%] group-hover:z-[888] rounded opacity-0 w-0 h-0 group-hover:opacity-100 overflow-hidden p-4 absolute transition-all duration-500 -top-3 -left-3 right-0; bottom-0 bg-card hover:shadow-[0_0_15px_5px_rgba(0,255,255,0.1)]">
                   {/* Links to Github and project */}
                   <div className="bg-appBg block px-2 py-1 rounded absolute top-0 right-0">
                     <Link

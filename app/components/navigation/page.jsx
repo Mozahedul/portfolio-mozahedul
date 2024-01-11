@@ -23,9 +23,11 @@ const Navigation = ({ handleMenuClose }) => {
     const section = document.getElementById(sectionId);
     const viewportWidth = window.innerWidth;
     const scrollHeight =
-      viewportWidth < 768
-        ? section.offsetTop - navMenu.offsetHeight
-        : section.offsetTop;
+      section !== null && navMenu !== null
+        ? viewportWidth < 768
+          ? section.offsetTop - navMenu.offsetHeight
+          : section.offsetTop
+        : event.currentTarget.classList.remove("active-menu");
 
     console.log(scrollHeight);
 
