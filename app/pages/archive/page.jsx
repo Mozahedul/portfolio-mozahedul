@@ -83,7 +83,7 @@ const Archive = () => {
 
   return (
     // <div className="flex flex-col lg:flex-row lg:justify-between gap-x-20 mt-20 md:mt-32 xl:mx-12 relative max-w-[1400px] bg-red-400">
-    <div class="lg:flex lg:justify-between lg:gap-4 max-w-[1400px] mx-auto xl:px-12">
+    <div class="lg:flex lg:justify-between mt-20 md:mt-0 lg:gap-4 max-w-[1400px] mx-auto xl:px-12">
       <header class="lg:fixed lg:py-24 lg:flex lg:max-h-screen lg:w-1/3 xl:w-1/4 lg:flex-col lg:justify-between ">
         <h1 className="text-4xl md:text-6xl font-extrabold text-gray-300">
           Archive.

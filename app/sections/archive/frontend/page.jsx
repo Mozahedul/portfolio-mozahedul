@@ -79,7 +79,7 @@ const Frontend = ({ category }) => {
           <span className="h-[2px] bg-cardHover grow block mt-2" />
         </h1>
 
-        <div className="mt-5 flex flex-wrap gap-2">
+        <div className="mt-5 flex flex-wrap">
           <button
             onClick={() => handleToShowProjectCards(null, "allArchive")}
             type="button"

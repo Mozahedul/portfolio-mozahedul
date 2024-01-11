@@ -11,8 +11,17 @@ import {
   FaBootstrap,
   FaGitAlt,
   FaGithub,
+  FaWordpress,
+  FaPhp,
+  FaLaravel,
 } from "react-icons/fa6";
-import { SiExpress, SiMongodb, SiTailwindcss, SiMui } from "react-icons/si";
+import {
+  SiExpress,
+  SiMongodb,
+  SiTailwindcss,
+  SiVisualstudiocode,
+  SiMui,
+} from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io";
 import { GrMysql } from "react-icons/gr";
 import { BiLogoTypescript } from "react-icons/bi";
@@ -128,6 +137,30 @@ const SkillSection = () => {
           <TbBrandNextjs className="text-5xl" />
           <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
             Next.js
+          </strong>
+        </div>
+        <div className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg">
+          <SiVisualstudiocode className="text-5xl" />
+          <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
+            VS Code
+          </strong>
+        </div>
+        <div className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg">
+          <FaWordpress className="text-5xl" />
+          <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
+            WordPress
+          </strong>
+        </div>
+        <div className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg">
+          <FaPhp className="text-5xl" />
+          <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
+            PHP
+          </strong>
+        </div>
+        <div className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg">
+          <FaLaravel className="text-5xl" />
+          <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
+            Laravel
           </strong>
         </div>
       </div>

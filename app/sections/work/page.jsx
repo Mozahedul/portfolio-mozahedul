@@ -151,14 +151,16 @@ export default function Work() {
           <span className="textClip">Notable projects</span>
         </h2>
 
-        <Link href="/pages/archive">
-          <button
-            type="button"
-            className="m-auto mb-8 px-3 py-2 rounded-full bg-card mt-5 block border-cyan-300 text-[12px] md:text-sm tracking-widest hover:bg-cardHover text-cyan-300 transition-all duration-1000 hover:text-cyan-500"
-          >
-            View the archive
-          </button>
-        </Link>
+        <div className="flex justify-center mb-8 mt-5">
+          <Link href="/pages/archive">
+            <button
+              type="button"
+              className="px-3 py-2 rounded-full bg-card border-cyan-300 text-[12px] md:text-sm tracking-widest hover:bg-cardHover text-cyan-300 transition-all duration-1000 hover:text-cyan-500"
+            >
+              View the archive
+            </button>
+          </Link>
+        </div>
       </div>
 
       {Array.isArray(projects) && projects.length ? (
