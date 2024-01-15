@@ -17,6 +17,11 @@ const Blog = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 md:gap-6 mt-8">
         <div className="bg-[#222939] p-5 grid grid-cols-1 rounded-lg">
+          <div className="flex mb-3">
+            <span className="w-2 h-2 bg-red-600 rounded-full" />
+            <span className="w-2 h-2 bg-orange-500 rounded-full mx-1" />
+            <span className="w-2 h-2 bg-green-600 rounded-full" />
+          </div>
           <p className="text-xs text-gray-400">
             Full-stack / November 28, 2021
           </p>
@@ -62,6 +67,11 @@ const Blog = () => {
           </Link>
         </div>
         <div className="bg-cardHover p-5 grid grid-cols-1 rounded-lg">
+          <div className="flex mb-3">
+            <span className="w-2 h-2 bg-red-600 rounded-full" />
+            <span className="w-2 h-2 bg-orange-500 rounded-full mx-1" />
+            <span className="w-2 h-2 bg-green-600 rounded-full" />
+          </div>
           <p className="text-xs text-gray-400">
             Full-stack / November 28, 2021
           </p>
@@ -107,6 +117,11 @@ const Blog = () => {
           </Link>
         </div>
         <div className="bg-cardHover p-5 grid grid-cols-1 rounded-lg">
+          <div className="flex mb-3">
+            <span className="w-2 h-2 bg-red-600 rounded-full" />
+            <span className="w-2 h-2 bg-orange-500 rounded-full mx-1" />
+            <span className="w-2 h-2 bg-green-600 rounded-full" />
+          </div>
           <p className="text-xs text-gray-400">
             Full-stack / November 28, 2021
           </p>
