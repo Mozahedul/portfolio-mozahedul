@@ -7,6 +7,7 @@ import Image from "next/image";
 const Blog = () => {
   return (
     <div className="mx-36 my-16 md:my-28">
+      {/* Blog Header */}
       <div className="text-center">
         <p className="text-md text-gray-300 font-medium"> - From my blog - </p>
         <h2 className="text-cyan-400 font-bold text-2xl md:text-3xl">
@@ -15,8 +16,10 @@ const Blog = () => {
           </span>
         </h2>
       </div>
+
       <div className="grid grid-cols-1 md:grid-cols-3 md:gap-6 mt-8">
-        <div className="bg-[#222939] p-5 grid grid-cols-1 rounded-lg">
+        {/* Section 1 */}
+        <div className="bg-[#0a0919] p-5 grid grid-cols-1 rounded-lg">
           <div className="flex mb-3">
             <span className="w-2 h-2 bg-red-600 rounded-full" />
             <span className="w-2 h-2 bg-orange-500 rounded-full mx-1" />
@@ -34,15 +37,15 @@ const Blog = () => {
             rel="noreferrer"
           >
             <Image
-              src="/stripe-payment.jpg"
-              width={640}
-              height={427}
+              src="/stripe-payment.png"
+              width={600}
+              height={400}
               alt="stripe payment"
               style={{
                 width: "100%",
                 height: "100%",
                 maxWidth: "640",
-                maxHeight: "427",
+                maxHeight: "400",
                 objectFit: "contain",
                 objectPosition: "left top",
                 borderRadius: "6px",
@@ -51,7 +54,7 @@ const Blog = () => {
           </Link>
           <p className="text-sm mt-6 text-gray-200 leading-5">
             Create a project folder as for example stripe-card-payment and then
-            create a folder named backend inside the project directory
+            create a folder named backend inside the project directory...
           </p>
           <Link
             href="https://procodelearn.blogspot.com/2021/11/stripe-card-payment-setup-with-mern.html"
@@ -66,33 +69,33 @@ const Blog = () => {
             </button>
           </Link>
         </div>
-        <div className="bg-cardHover p-5 grid grid-cols-1 rounded-lg">
+
+        {/* Section 2 */}
+        <div className="bg-[#0a0919] p-5 grid grid-cols-1 rounded-lg">
           <div className="flex mb-3">
             <span className="w-2 h-2 bg-red-600 rounded-full" />
             <span className="w-2 h-2 bg-orange-500 rounded-full mx-1" />
             <span className="w-2 h-2 bg-green-600 rounded-full" />
           </div>
-          <p className="text-xs text-gray-400">
-            Full-stack / November 28, 2021
-          </p>
+          <p className="text-xs text-gray-400">Language / June 08, 2022</p>
           <h2 className="text-lg font-medium text-gray-200 leading-6 mb-5 mt-1">
-            Stripe card payment setup with MERN stack app
+            call(), bind(), apply() method with this keyword in different object
           </h2>
           <Link
-            href="https://procodelearn.blogspot.com/2021/11/stripe-card-payment-setup-with-mern.html"
+            href="https://procodelearn.blogspot.com/2022/06/const-mainobj-name-mozahedul-age-23.html"
             target="_blank"
             rel="noreferrer"
           >
             <Image
-              src="/stripe-payment.jpg"
-              width={640}
-              height={427}
-              alt="stripe payment"
+              src="/call-bind-apply.png"
+              width={600}
+              height={400}
+              alt="Call, bind, and apply method"
               style={{
                 width: "100%",
                 height: "100%",
-                maxWidth: "640",
-                maxHeight: "427",
+                maxWidth: "600",
+                maxHeight: "400",
                 objectFit: "contain",
                 objectPosition: "left top",
                 borderRadius: "6px",
@@ -100,11 +103,11 @@ const Blog = () => {
             />
           </Link>
           <p className="text-sm mt-6 text-gray-200 leading-5">
-            Create a project folder as for example stripe-card-payment and then
-            create a folder named backend inside the project directory
+            methods are used to refer "this" keyword to any object. With these
+            methods, an object can use the method belonging to another object...
           </p>
           <Link
-            href="https://procodelearn.blogspot.com/2021/11/stripe-card-payment-setup-with-mern.html"
+            href="https://procodelearn.blogspot.com/2022/06/const-mainobj-name-mozahedul-age-23.html"
             target="_blank"
             rel="noreferrer"
           >
@@ -116,33 +119,33 @@ const Blog = () => {
             </button>
           </Link>
         </div>
-        <div className="bg-cardHover p-5 grid grid-cols-1 rounded-lg">
+
+        {/* Section 3 */}
+        <div className="bg-[#0a0919] p-5 grid grid-cols-1 rounded-lg">
           <div className="flex mb-3">
             <span className="w-2 h-2 bg-red-600 rounded-full" />
             <span className="w-2 h-2 bg-orange-500 rounded-full mx-1" />
             <span className="w-2 h-2 bg-green-600 rounded-full" />
           </div>
-          <p className="text-xs text-gray-400">
-            Full-stack / November 28, 2021
-          </p>
+          <p className="text-xs text-gray-400">Language / June 20, 2022</p>
           <h2 className="text-lg font-medium text-gray-200 leading-6 mb-5 mt-1">
-            Stripe card payment setup with MERN stack app
+            Difference between autofit and autofill
           </h2>
           <Link
-            href="https://procodelearn.blogspot.com/2021/11/stripe-card-payment-setup-with-mern.html"
+            href="https://procodelearn.blogspot.com/2022/06/css-grid-difference-between-autofit-and.html?m=1"
             target="_blank"
             rel="noreferrer"
           >
             <Image
-              src="/stripe-payment.jpg"
-              width={640}
-              height={427}
+              src="/css-grid.png"
+              width={600}
+              height={400}
               alt="stripe payment"
               style={{
                 width: "100%",
                 height: "100%",
-                maxWidth: "640",
-                maxHeight: "427",
+                maxWidth: "600",
+                maxHeight: "400",
                 objectFit: "contain",
                 objectPosition: "left top",
                 borderRadius: "6px",
@@ -150,11 +153,11 @@ const Blog = () => {
             />
           </Link>
           <p className="text-sm mt-6 text-gray-200 leading-5">
-            Create a project folder as for example stripe-card-payment and then
-            create a folder named backend inside the project directory
+            With autofit when there are not enough grid items to fill the number
+            of tracks created, the created empty tracks are collapsed.
           </p>
           <Link
-            href="https://procodelearn.blogspot.com/2021/11/stripe-card-payment-setup-with-mern.html"
+            href="https://procodelearn.blogspot.com/2022/06/css-grid-difference-between-autofit-and.html?m=1"
             target="_blank"
             rel="noreferrer"
           >
@@ -166,6 +169,14 @@ const Blog = () => {
             </button>
           </Link>
         </div>
+      </div>
+      <div className="flex justify-center">
+        <button
+          type="button"
+          className="mt-10 py-2 px-4 text-sm rounded-full hover:bg-[#1e195e] bg-[#0a0919] text-gray-200"
+        >
+          View Blog
+        </button>
       </div>
     </div>
   );
