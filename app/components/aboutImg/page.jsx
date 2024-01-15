@@ -14,7 +14,7 @@ const ProfileImage = () => {
     <Image
       data-aos="fade-up"
       data-aos-duration="1000"
-      src="/profile-img.png"
+      src="/profile-image.jpg"
       width={320}
       height={320}
       alt="profile avatar"

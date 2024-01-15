@@ -148,7 +148,7 @@ export default function Work() {
       <div data-aos="fade-up" data-aos-duration="1000">
         <h2 className="text-center text-2xl md:text-3xl font-bold leading-8 text-gray-300">
           <span className="text-cyan-400">03. </span>
-          <span className="textClip">Notable projects</span>
+          <span className="textClip">My Beautiful Works</span>
         </h2>
 
         <div className="flex justify-center mb-8 mt-5">
@@ -164,7 +164,7 @@ export default function Work() {
       </div>
 
       {Array.isArray(projects) && projects.length ? (
-        <div className="grid auto-rows-fr gap-4 md:grid-cols-2 lg:mx-8 lg:grid-cols-3 xl:mx-36">
+        <div className="grid auto-rows-fr gap-4 sm:grid-cols-2 lg:mx-8 lg:grid-cols-3 xl:mx-36">
           {projects.slice(0, showMore).map(project => (
             <Card
               key={uuidv4()}
@@ -185,7 +185,7 @@ export default function Work() {
       )}
 
       <div className="flex justify-center">
-        {showMore < projects.length ? (
+        {showMore < projects?.length ? (
           <button
             type="button"
             onClick={handleMoreProject}

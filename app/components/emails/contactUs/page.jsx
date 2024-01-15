@@ -83,14 +83,18 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="flex justify-center">
+    <div>
       <form
         ref={form}
         onSubmit={sendEmail}
-        className="flex flex-col w-full md:w-1/2 lg:w-1/4 bg-cardHover p-6 rounded-lg"
+        className="bg-cardHover flex flex-col p-6 rounded-lg"
       >
-        <h2 className="text-lg font-bold text-cyan-500 mb-5 uppercase tracking-wide">
-          Let Me Know
+        <h2 className="text-lg font-bold mb-5 uppercase tracking-wide">
+          <strong className="text-gray-200 tracking-wide">
+            Got a Project?
+          </strong>
+          <br />{" "}
+          <span className="text-cyan-500 tracking-wide">Let's Talk!</span>
         </h2>
         <label className="text-sm font-medium text-gray-200 mb-1">Name</label>
         <input
@@ -100,7 +104,7 @@ const ContactUs = () => {
           placeholder="John Doe"
           className="bg-card p-2 rounded-md text-gray-300 text-sm placeholder:text-gray-600"
         />
-        <label className="text-sm font-medium text-gray-200 mt-4 mb-1">
+        <label className="text-sm font-medium text-gray-200 mt-5 mb-1">
           Email
         </label>
         <input
@@ -110,7 +114,7 @@ const ContactUs = () => {
           placeholder="johndoe@gmail.com"
           className="bg-card p-2 rounded-md text-gray-300 text-sm placeholder:text-gray-600"
         />
-        <label className="text-sm font-medium text-gray-200 mt-4 mb-1 ">
+        <label className="text-sm font-medium text-gray-200 mt-5 mb-1 ">
           Message
         </label>
         <textarea
@@ -121,7 +125,7 @@ const ContactUs = () => {
         />
         <button
           type="submit"
-          className="bg-cyan-800 cursor-pointer transition duration-500 tracking-wide p-2 mt-5 rounded-md text-gray-200 text-sm placeholder:text-gray-600 uppercase font-semibold hover:bg-cyan-900 hover:text-white"
+          className="bg-gray-200 cursor-pointer transition duration-500 tracking-wide p-2 mt-8 rounded-md text-gray-800 text-sm placeholder:text-gray-600 capitalize font-semibold hover:bg-cyan-900 hover:text-white"
         >
           {sendEmailMessage()}
         </button>

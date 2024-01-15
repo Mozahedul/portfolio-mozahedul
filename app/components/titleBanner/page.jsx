@@ -11,10 +11,12 @@ const TitleHero = () => {
   const [viewResume, setViewResume] = useState(false);
 
   const animatedText = [
-    "full stack web developer.",
-    "MERN stack developer.",
-    "web designer.",
-    "blogger.",
+    "Full-stack Web Developer.",
+    "MERN Stack Developer.",
+    "Web Designer.",
+    "Web Developer.",
+    "Programmer.",
+    "Blogger.",
   ];
 
   // Pdf container show and hide controller
@@ -40,30 +42,27 @@ const TitleHero = () => {
       data-aos-easing="ease-in-back"
       data-aos-delay="300"
       data-aos-offset="0"
-      className={`lg:ml-40 ${inter.className}`}
+      className={`grid justify-center ${inter.className}`}
     >
-      <p className="font-semibold tracking-widest text-cyan-300">
-        Hi, My name is
-      </p>
-      <h2 className="mt-1 md:mt-6 font-bold">
-        <strong className="block text-3xl text-gray-300 md:text-5xl lg:text-6xl textClip">
-          Mozahedul Islam.
+      <h2 className="mt-1 md:mt-2 font-bold">
+        <strong className="block text-center text-3xl text-gray-300 sm:hidden textClip">
+          Hey, It's <br /> Mozahedul Islam.
         </strong>
-        <strong className="mt-2 md:mt-3 block  text-2xl text-gray-500 md:text-3xl lg:text-5xl">
+        <strong className="hidden sm:block text-center text-3xl sm:text-3xl text-gray-300 md:text-5xl textClip">
+          Hey, It's Mozahedul Islam.
+        </strong>
+        <strong className="mt-2 md:mt-3 text-center block text-2xl text-gray-500 md:text-3xl lg:text-4xl">
           <TypeWriter animatedText={animatedText} />
         </strong>
       </h2>
-      <p className="text-md mt-6 font-normal text-gray-500 lg:w-1/2">
+      <p className="text-sm mt-6 font-normal text-gray-400 text-center sm:mx-auto sm:w-3/4 md:w-3/5">
         As a full-stack developer, I specialize in MongoDB, Express.js, React,
-        and Node.js, enabling me to create end-to-end web applications. I excel
-        in crafting responsive front-end interfaces and robust back-end
-        solutions. My skills encompass the entire web development process,
-        making me a valuable asset for MERN stack projects.
+        and Node.js, enabling me to create end-to-end web applications.
       </p>
       <button
         type="button"
         onClick={handlePdf}
-        className="btn mt-14 block animate-pulse font-normal"
+        className="btn mt-10 animate-pulse font-normal w-40 mx-auto"
       >
         View My Resume
       </button>

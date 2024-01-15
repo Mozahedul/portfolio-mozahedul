@@ -1,10 +1,9 @@
 "use client";
 
-import { BiSolidRightArrow } from "react-icons/bi";
 import { useEffect } from "react";
 import AOS from "aos";
-import { inter } from "@/utils/google-fonts/fonts";
-// import "aos/dist/aos.css";
+// import { inter } from "@/utils/google-fonts/fonts";
+import "aos/dist/aos.css";
 
 const AboutPage = () => {
   useEffect(() => {
@@ -21,7 +20,7 @@ const AboutPage = () => {
         <span className="text-2xl font-bold text-cyan-300">01. </span>{" "}
         <strong className="text-2xl text-gray-300">About Me</strong>
       </h3>
-      <div className="mt-8 font-medium leading-7 tracking-wide text-gray-400">
+      <div className="mt-4 md:mt-8 font-medium leading-7 tracking-wide text-gray-400">
         <span className="block">
           I am a professional full-stack developer with a strong understanding
           of the MERN stack (MongoDB, Express, React, and Node.js) and I am able

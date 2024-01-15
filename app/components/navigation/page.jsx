@@ -25,11 +25,11 @@ const Navigation = ({ handleMenuClose }) => {
     const scrollHeight =
       section !== null && navMenu !== null
         ? viewportWidth < 768
-          ? section.offsetTop - navMenu.offsetHeight
+          ? section.offsetTop - (navMenu.offsetHeight + 70)
           : section.offsetTop
         : event.currentTarget.classList.remove("active-menu");
 
-    console.log(scrollHeight);
+    console.log("SCROLL HEIGHT ==> ", scrollHeight);
 
     window.scrollTo({
       top: scrollHeight,

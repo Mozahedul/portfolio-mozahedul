@@ -6,10 +6,10 @@ const BlogButton = () => {
       <Link
         target="_blank"
         rel="noreferrer"
-        href="https://procodelearn.blogspot.com/"
+        href="https://www.upwork.com/freelancers/~015a5d106c74f13430"
       >
-        <button type="button" className="btn-blog tracking-wide">
-          View blog
+        <button type="button" className="animate-pulse tracking-wide hire-btn">
+          Hire Me
         </button>
       </Link>
     </div>
