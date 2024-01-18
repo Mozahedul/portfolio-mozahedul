@@ -126,7 +126,7 @@ const Frontend = ({ category }) => {
                 style={{ width: "100%", height: "100%" }}
               />
               {/* hover section */}
-              <div className="group-hover:w-[110%] group-hover:h-[110%] group-hover:z-[888] rounded opacity-0 w-0 h-0 group-hover:opacity-100 overflow-hidden p-4 absolute transition-all duration-500 -top-3 -left-3 right-0; bottom-0 bg-card hover:shadow-[0_0_15px_5px_rgba(0,255,255,0.1)]">
+              <div className="group-hover:w-[110%] group-hover:h-[110%] group-hover:z-[888] rounded opacity-0 w-0 h-0 group-hover:opacity-100 overflow-hidden p-4 absolute transition-all duration-500 -top-3 -left-3 right-0; bottom-0 bg-card hover:shadow-[0_0_15px_5px_rgba(255,255,255,0.1)]">
                 {/* Links to Github and project */}
                 <div className="bg-appBg block px-2 py-1 rounded absolute top-0 right-0">
                   <Link href={archive?.github} target="_blank" rl="noreferrer">

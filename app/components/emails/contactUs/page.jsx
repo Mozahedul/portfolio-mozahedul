@@ -89,41 +89,45 @@ const ContactUs = () => {
         onSubmit={sendEmail}
         className="bg-cardHover flex flex-col p-6 rounded-lg"
       >
-        <h2 className="text-lg font-bold mb-5 uppercase tracking-wide">
+        <h2 className="text-lg font-bold mb-5 uppercase tracking-wide" data-aos="fade-left" data-aos-duration="500" data-aos-delay="500">
           <strong className="text-gray-200 tracking-wide">
             Got a Project?
           </strong>
           <br />{" "}
           <span className="text-cyan-500 tracking-wide">Let's Talk!</span>
         </h2>
-        <label className="text-sm font-medium text-gray-200 mb-1">Name</label>
+        <label className="text-sm font-medium text-gray-200 mb-1" data-aos="zoom-in-up" data-aos-duration="500" data-aos-delay="500">Name</label>
         <input
+          data-aos="fade-left" data-aos-duration="500" data-aos-delay="500"
           required
           type="text"
           name="user_name"
           placeholder="John Doe"
           className="bg-card p-2 rounded-md text-gray-300 text-sm placeholder:text-gray-600"
         />
-        <label className="text-sm font-medium text-gray-200 mt-5 mb-1">
+        <label className="text-sm font-medium text-gray-200 mt-5 mb-1" data-aos="zoom-in-up" data-aos-duration="500" data-aos-delay="500">
           Email
         </label>
         <input
+          data-aos="fade-left" data-aos-duration="500" data-aos-delay="500"
           required
           type="email"
           name="user_email"
           placeholder="johndoe@gmail.com"
           className="bg-card p-2 rounded-md text-gray-300 text-sm placeholder:text-gray-600"
         />
-        <label className="text-sm font-medium text-gray-200 mt-5 mb-1 ">
+        <label className="text-sm font-medium text-gray-200 mt-5 mb-1" data-aos="zoom-in-up" data-aos-duration="500" data-aos-delay="500">
           Message
         </label>
         <textarea
+          data-aos="fade-left" data-aos-duration="500" data-aos-delay="500"
           required
           placeholder="Write Message..."
           name="message"
           className="bg-card p-2 rounded-md text-gray-300 text-sm placeholder:text-gray-600"
         />
         <button
+          data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500"
           type="submit"
           className="bg-gray-200 cursor-pointer transition duration-500 tracking-wide p-2 mt-8 rounded-md text-gray-800 text-sm placeholder:text-gray-600 capitalize font-semibold hover:bg-cyan-900 hover:text-white"
         >

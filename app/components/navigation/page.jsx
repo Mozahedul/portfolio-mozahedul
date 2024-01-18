@@ -75,10 +75,20 @@ const Navigation = ({ handleMenuClose }) => {
           <button
             className="navBtn"
             type="button"
+            onClick={event => handleToShowSection(event, "blog")}
+          >
+            {" "}
+            <span className="text-cyan-300">04. </span> Blog
+          </button>
+        </li>
+        <li className="m-5 md:m-3">
+          <button
+            className="navBtn"
+            type="button"
             onClick={event => handleToShowSection(event, "contactMe")}
           >
             {" "}
-            <span className="text-cyan-300">04. </span> Contact
+            <span className="text-cyan-300">05. </span> Contact
           </button>
         </li>
       </ul>

@@ -53,7 +53,7 @@ const Header = () => {
       ref={menuRef}
       className="max-w-[1400px] w-full mx-auto flex fixed z-[666] top-0 left-0 right-0 px-7 md:px-12 items-center justify-between bg-[#0b1e3f]"
     >
-      <div id="navMenu" className="my-1 md:my-0 flex justify-between w-full">
+      <div id="navMenu" className="my-1 md:my-0 flex justify-between w-full md:w-0">
         <Logo />
         <button
           type="button"

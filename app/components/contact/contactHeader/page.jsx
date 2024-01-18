@@ -36,10 +36,10 @@ const ContactHeader = () => {
       {/* Address */}
       <div className="text-left mt-4 md:mt-0">
         <div className="flex items-center mb-4">
-          <div className="bg-blue-500 bg-opacity-30 text-gray-300 p-3 rounded-full">
+          <div className="bg-blue-500 bg-opacity-30 text-gray-300 p-3 rounded-full"data-aos="fade-right" data-aos-duration="500" data-aos-delay="500">
             <MdEmail />
           </div>
-          <p className="flex flex-col ml-3">
+          <p className="flex flex-col ml-3" data-aos="fade-left" data-aos-duration="500" data-aos-delay="500">
             <strong className="text-sm font-bold text-cyan-500">Email:</strong>
             <span className="text-xs text-gray-200 tracking-wide">
               {" "}
@@ -48,10 +48,10 @@ const ContactHeader = () => {
           </p>
         </div>
         <div className="flex items-center my-4">
-          <div className="bg-green-500 bg-opacity-30 text-gray-300 p-3 rounded-full">
+          <div className="bg-green-500 bg-opacity-30 text-gray-300 p-3 rounded-full" data-aos="fade-right" data-aos-duration="500" data-aos-delay="500">
             <FaPhone />
           </div>
-          <p className="flex flex-col ml-3">
+          <p className="flex flex-col ml-3" data-aos="fade-left" data-aos-duration="500" data-aos-delay="500">
             <strong className="text-sm font-bold text-cyan-500">Mobile:</strong>
             <span className="text-xs text-gray-200 tracking-wide">
               {" "}
@@ -60,10 +60,10 @@ const ContactHeader = () => {
           </p>
         </div>
         <div className="flex items-center mt-4">
-          <div className="bg-violet-500 bg-opacity-30 text-gray-300 p-3 rounded-full">
+          <div className="bg-violet-500 bg-opacity-30 text-gray-300 p-3 rounded-full" data-aos="fade-right" data-aos-duration="500" data-aos-delay="500">
             <CgWebsite />
           </div>
-          <p className="flex flex-col ml-3">
+          <p className="flex flex-col ml-3" data-aos="fade-left" data-aos-duration="500" data-aos-delay="500">
             <strong className="text-sm font-bold text-cyan-500">
               Blog Website:
             </strong>

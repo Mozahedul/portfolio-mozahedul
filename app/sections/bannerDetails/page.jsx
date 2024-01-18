@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
+import AOS from 'aos';
+
+import "aos/dist/aos.css"
 
 const BannerDetails = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, [])
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-1 md:gap-8 mt-16">
       <section className="inline-grid items-center gap-y-6 py-8">
-        <div>
+        <div data-aos="fade-left" data-aos-duration="500" data-aos-delay="500">
           <h2 className="tracking-wide uppercase text-gray-500 text-sm mb-1">
             Lives in{" "}
           </h2>
@@ -14,7 +21,7 @@ const BannerDetails = () => {
             Rangpur, Bangladesh
           </p>
         </div>
-        <div>
+        <div data-aos="fade-left" data-aos-duration="500" data-aos-delay="500">
           <h2 className="tracking-wide uppercase text-gray-500 text-sm mb-1">
             Special Expertise
           </h2>
@@ -24,7 +31,7 @@ const BannerDetails = () => {
             with full functionalities
           </p>
         </div>
-        <div>
+        <div data-aos="fade-left" data-aos-duration="500" data-aos-delay="500">
           <h2 className="tracking-wide uppercase text-gray-500 text-sm mb-1">
             Hobbies{" "}
           </h2>
@@ -48,7 +55,7 @@ const BannerDetails = () => {
         />
       </section>
       <section className="inline-grid py-8 items-center gap-y-6">
-        <div className="text-right">
+        <div className="text-right" data-aos="fade-right" data-aos-duration="500" data-aos-delay="500">
           <h2 className="tracking-wide uppercase text-gray-500 text-sm mb-1">
             Experience{" "}
           </h2>
@@ -57,7 +64,7 @@ const BannerDetails = () => {
             <br /> as a web developer
           </p>
         </div>
-        <div className="text-right">
+        <div className="text-right" data-aos="fade-right" data-aos-duration="500" data-aos-delay="500">
           <h2 className="tracking-wide uppercase text-gray-500 text-sm mb-1">
             Projects done
           </h2>
@@ -66,7 +73,7 @@ const BannerDetails = () => {
             <br /> so far
           </p>
         </div>
-        <div className="text-right">
+        <div className="text-right" data-aos="fade-right" data-aos-duration="500" data-aos-delay="500">
           <h2 className="tracking-wide uppercase text-gray-500 text-sm mb-1">
             Certifications
           </h2>
