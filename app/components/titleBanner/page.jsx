@@ -38,10 +38,8 @@ const TitleHero = () => {
 
   return (
     <div
-      data-aos="fade-left"
-      data-aos-easing="ease-in-back"
+      data-aos="zoom-in"
       data-aos-delay="300"
-      data-aos-offset="0"
       className={`grid justify-center ${inter.className}`}
     >
       <h2 className="mt-1 md:mt-2 font-bold">
@@ -51,9 +49,9 @@ const TitleHero = () => {
         <strong className="hidden sm:block text-center text-3xl sm:text-3xl text-gray-300 md:text-5xl textClip">
           Hey, It's Mozahedul Islam.
         </strong>
-        <strong className="mt-2 md:mt-3 text-center block text-2xl text-gray-500 md:text-3xl lg:text-4xl">
+        <div className="mt-2 md:mt-3 text-center block text-2xl text-gray-500 md:text-3xl lg:text-4xl">
           <TypeWriter animatedText={animatedText} />
-        </strong>
+        </div>
       </h2>
       <p className="text-sm mt-6 font-normal text-gray-400 text-center sm:mx-auto sm:w-3/4 md:w-3/5">
         As a full-stack developer, I specialize in MongoDB, Express.js, React,

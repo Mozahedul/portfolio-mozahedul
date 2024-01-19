@@ -16,7 +16,7 @@ const Logo = () => {
   };
   return (
     <div
-      className="relative animate-pulse cursor-pointer"
+      className="animate-pulse cursor-pointer"
       onMouseEnter={handleLogoHover}
       onMouseLeave={handleLogoHoverOut}
     >
@@ -24,23 +24,9 @@ const Logo = () => {
         <Image
           ref={logoRef}
           src="/logo.png"
-          width={50}
-          height={50}
+          width={45}
+          height={45}
           alt="website logo"
-          style={{
-            position: "absolute",
-            minWidth: 50,
-            zIndex: 999,
-            left: 0,
-            top: 0,
-          }}
-        />
-        <Image
-          src="/logo-bg.png"
-          width={50}
-          height={50}
-          style={{ minWidth: 50 }}
-          alt="website logo background"
         />
       </Link>
     </div>

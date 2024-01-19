@@ -51,9 +51,12 @@ const Header = () => {
   return (
     <div
       ref={menuRef}
-      className="max-w-[1400px] w-full mx-auto flex fixed z-[666] top-0 left-0 right-0 px-7 md:px-12 items-center justify-between bg-[#0b1e3f]"
+      className="fixed z-[666] flex justify-center px-4 left-0 top-0 right-0 bg-[#0b1e3f]"
     >
-      <div id="navMenu" className="my-1 md:my-0 flex justify-between w-full md:w-0">
+      <div
+        id="navMenu"
+        className="my-1 w-full md:w-16 md:my-0 flex justify-between items-center"
+      >
         <Logo />
         <button
           type="button"
@@ -64,10 +67,12 @@ const Header = () => {
           <RiMenu3Fill />
         </button>
       </div>
+
       <div
         ref={menuCloseRef}
-        className={`menu-btn ${isMenuVisible ? "w-4/5" : "w-0"} `}
+        className={`menu-btn ${isMenuVisible ? "w-4/5" : "w-0"}`}
       >
+        {/* Close button for small devices */}
         <button
           type="button"
           ref={menuBtnCloseRef}

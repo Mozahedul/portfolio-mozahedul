@@ -26,9 +26,9 @@ const ContactHeader = () => {
           Send a message
         </h3>
         <h2 className="mt-1 text-2xl md:text-4xl font-bold text-gray-200 textClip">
-          04. Keep in touch
+          05. Keep in touch
         </h2>
-        <p className="font-md mt-4 max-w-md text-left text-sm tracking-wide text-gray-400">
+        <p className="font-md mt-4 text-left text-sm tracking-wide text-gray-400">
           Got a question or proposal, or just want to say hello? Go ahead. I
           will try my best to get back to you.
         </p>
@@ -36,10 +36,20 @@ const ContactHeader = () => {
       {/* Address */}
       <div className="text-left mt-4 md:mt-0">
         <div className="flex items-center mb-4">
-          <div className="bg-blue-500 bg-opacity-30 text-gray-300 p-3 rounded-full"data-aos="fade-right" data-aos-duration="500" data-aos-delay="500">
+          <div
+            className="bg-blue-500 bg-opacity-30 text-gray-300 p-3 rounded-full"
+            data-aos="zoom-in"
+            data-aos-duration="500"
+            data-aos-delay="200"
+          >
             <MdEmail />
           </div>
-          <p className="flex flex-col ml-3" data-aos="fade-left" data-aos-duration="500" data-aos-delay="500">
+          <p
+            className="flex flex-col ml-3"
+            data-aos="zoom-in"
+            data-aos-duration="500"
+            data-aos-delay="200"
+          >
             <strong className="text-sm font-bold text-cyan-500">Email:</strong>
             <span className="text-xs text-gray-200 tracking-wide">
               {" "}
@@ -48,10 +58,20 @@ const ContactHeader = () => {
           </p>
         </div>
         <div className="flex items-center my-4">
-          <div className="bg-green-500 bg-opacity-30 text-gray-300 p-3 rounded-full" data-aos="fade-right" data-aos-duration="500" data-aos-delay="500">
+          <div
+            className="bg-green-500 bg-opacity-30 text-gray-300 p-3 rounded-full"
+            data-aos="zoom-in"
+            data-aos-duration="500"
+            data-aos-delay="200"
+          >
             <FaPhone />
           </div>
-          <p className="flex flex-col ml-3" data-aos="fade-left" data-aos-duration="500" data-aos-delay="500">
+          <p
+            className="flex flex-col ml-3"
+            data-aos="zoom-in"
+            data-aos-duration="500"
+            data-aos-delay="200"
+          >
             <strong className="text-sm font-bold text-cyan-500">Mobile:</strong>
             <span className="text-xs text-gray-200 tracking-wide">
               {" "}
@@ -60,10 +80,20 @@ const ContactHeader = () => {
           </p>
         </div>
         <div className="flex items-center mt-4">
-          <div className="bg-violet-500 bg-opacity-30 text-gray-300 p-3 rounded-full" data-aos="fade-right" data-aos-duration="500" data-aos-delay="500">
+          <div
+            className="bg-violet-500 bg-opacity-30 text-gray-300 p-3 rounded-full"
+            data-aos="zoom-in"
+            data-aos-duration="500"
+            data-aos-delay="200"
+          >
             <CgWebsite />
           </div>
-          <p className="flex flex-col ml-3" data-aos="fade-left" data-aos-duration="500" data-aos-delay="500">
+          <p
+            className="flex flex-col ml-3"
+            data-aos="zoom-in"
+            data-aos-duration="500"
+            data-aos-delay="200"
+          >
             <strong className="text-sm font-bold text-cyan-500">
               Blog Website:
             </strong>

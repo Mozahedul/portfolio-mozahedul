@@ -16,13 +16,11 @@ const Call = () => {
 
   return (
     <div
-      data-aos="slide-right"
-      data-aos-duration="1000"
+      data-aos="zoom-in"
+      data-aos-duration="500"
       className="mt-12 flex justify-center text-xl text-gray-400 lg:fixed lg:bottom-1/2 lg:right-4 lg:translate-y-1/2 lg:flex-col lg:items-center "
     >
-      <ul
-        className="flex rounded-3xl py-3 lg:flex-col lg:py-4 bg-[#0b1e3f]"
-      >
+      <ul className="flex rounded-3xl py-3 lg:flex-col lg:py-4 bg-[#0b1e3f]">
         <li className="media-btn tooltips ">
           <ToolTip
             tipText="Messenger"

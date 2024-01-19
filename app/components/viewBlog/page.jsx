@@ -8,7 +8,10 @@ const BlogButton = () => {
         rel="noreferrer"
         href="https://www.upwork.com/freelancers/~015a5d106c74f13430"
       >
-        <button type="button" className="animate-pulse tracking-wide hire-btn">
+        <button
+          type="button"
+          className="animate-pulse tracking-wide hire-btn whitespace-nowrap"
+        >
           Hire Me
         </button>
       </Link>

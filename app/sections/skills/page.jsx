@@ -49,115 +49,210 @@ const SkillSection = () => {
         data-aos="fade-down"
         data-aos-duration="1000"
       >
-        <div className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg">
+        <div
+          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="200"
+        >
           <FaHtml5 className="text-5xl" />
           <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
             HTML5
           </strong>
         </div>
-        <div className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg">
+        <div
+          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="200"
+        >
           <FaCss3Alt className="text-5xl" />
           <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
             CSS3
           </strong>
         </div>
-        <div className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg">
+        <div
+          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="200"
+        >
           <IoLogoJavascript className="text-5xl" />
           <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
             JavaScript
           </strong>
         </div>
-        <div className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg">
+        <div
+          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="200"
+        >
           <FaReact className="text-5xl" />
           <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
             React.js
           </strong>
         </div>
-        <div className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg">
+        <div
+          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="200"
+        >
           <FaNodeJs className="text-5xl" />
           <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
             Node.js
           </strong>
         </div>
-        <div className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg">
+        <div
+          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="200"
+        >
           <SiExpress className="text-5xl" />
           <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
             Express.js
           </strong>
         </div>
-        <div className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg">
+        <div
+          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="200"
+        >
           <SiMongodb className="text-5xl" />
           <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
             MongoDB
           </strong>
         </div>
-        <div className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg">
+        <div
+          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="200"
+        >
           <GrMysql className="text-5xl" />
           <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
             MySQL
           </strong>
         </div>
-        <div className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg">
+        <div
+          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="200"
+        >
           <SiTailwindcss className="text-5xl" />
           <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
             Tailwind CSS
           </strong>
         </div>
-        <div className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg">
+        <div
+          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="200"
+        >
           <FaBootstrap className="text-5xl" />
           <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
             Bootstrap
           </strong>
         </div>
-        <div className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg">
+        <div
+          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="200"
+        >
           <SiMui className="text-5xl" />
           <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
             Material UI
           </strong>
         </div>
-        <div className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg">
+        <div
+          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="200"
+        >
           <FaGitAlt className="text-5xl" />
           <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
             Git
           </strong>
         </div>
-        <div className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg">
+        <div
+          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="200"
+        >
           <FaGithub className="text-5xl" />
           <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
             GitHub
           </strong>
         </div>
-        <div className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg">
+        <div
+          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="200"
+        >
           <BiLogoTypescript className="text-5xl" />
           <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
             TypeScript
           </strong>
         </div>
-        <div className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg">
+        <div
+          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="200"
+        >
           <TbBrandNextjs className="text-5xl" />
           <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
             Next.js
           </strong>
         </div>
-        <div className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg">
+        <div
+          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="200"
+        >
           <SiVisualstudiocode className="text-5xl" />
           <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
             VS Code
           </strong>
         </div>
-        <div className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg">
+        <div
+          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="200"
+        >
           <FaWordpress className="text-5xl" />
           <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
             WordPress
           </strong>
         </div>
-        <div className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg">
+        <div
+          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="200"
+        >
           <FaPhp className="text-5xl" />
           <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
             PHP
           </strong>
         </div>
-        <div className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg">
+        <div
+          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="200"
+        >
           <FaLaravel className="text-5xl" />
           <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
             Laravel

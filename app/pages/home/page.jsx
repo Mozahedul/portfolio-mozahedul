@@ -19,6 +19,7 @@ const MainPage = () => {
       <Work />
       <Blog />
       <ContactSection />
+      {/* Sidebar and scroll button */}
       <Call />
       <Media />
       <Scroll />
