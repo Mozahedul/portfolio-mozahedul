@@ -24,9 +24,9 @@ body {
   box-shadow: 10px 10px 3px 0 rgb(0, 255, 255);
 }
 
-.navBtn {
+/* .navBtn {
   @apply p-1 border-2 rounded-md border-solid border-transparent hover:border-cyan-400 transition-all duration-100 hover:text-cyan-300;
-}
+} */
 
 .active-menu {
   @apply bg-cyan-700;

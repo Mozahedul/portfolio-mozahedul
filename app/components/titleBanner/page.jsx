@@ -21,12 +21,18 @@ const TitleHero = () => {
 
   // Pdf container show and hide controller
   const handlePdf = () => {
+    // For listening audio sound when user click on the menu button
+    const audio = new Audio("/button-click-sound.mp3");
+    audio.play();
+
     setViewResume(true);
     document.body.classList.add("body-fixed");
   };
 
   // handleing pdf close
   const handleClosePdf = () => {
+    const audio = new Audio("/ping.mp3");
+    audio.play();
     setViewResume(false);
     document.body.classList.remove("body-fixed");
   };

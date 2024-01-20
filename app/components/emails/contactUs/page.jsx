@@ -71,6 +71,8 @@ const ContactUs = () => {
     }
 
     if (success) {
+      const audio = new Audio("/success.mp3");
+      audio.play();
       return (
         <>
           <FaCircleCheck className="text-green-600 mr-2 inline text-lg" />

@@ -26,6 +26,9 @@ const Header = () => {
   };
 
   const handleMenuClose = () => {
+    const audio = new Audio("/ping.mp3");
+    audio.play();
+
     menuShowRef.current.style.transform = "rotate(0deg)";
     menuBtnCloseRef.current.style.transform = "rotate(0deg)";
     document.querySelector("body").classList.remove("body-scroll");

@@ -24,6 +24,8 @@ const Scroll = () => {
   }, []);
 
   const handleScroll = () => {
+    const audio = new Audio("/ping.mp3");
+    audio.play();
     document.body.scrollY = 0;
     document.documentElement.scrollTop = 0;
   };

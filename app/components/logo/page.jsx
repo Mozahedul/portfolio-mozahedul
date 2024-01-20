@@ -14,13 +14,19 @@ const Logo = () => {
   const handleLogoHoverOut = () => {
     logoRef.current.style.transform = "translate(0, 0)";
   };
+
+  const handleHomeLogo = () => {
+    // For listening audio sound when user click on the menu button
+    const audio = new Audio("/button-click-sound.mp3");
+    audio.play();
+  };
   return (
     <div
       className="animate-pulse cursor-pointer"
       onMouseEnter={handleLogoHover}
       onMouseLeave={handleLogoHoverOut}
     >
-      <Link href="/">
+      <Link href="/" onClick={handleHomeLogo}>
         <Image
           ref={logoRef}
           src="/logo.png"

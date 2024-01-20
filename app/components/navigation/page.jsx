@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import "../../assets/css/bubblyButtons.css";
 
 const Navigation = ({ handleMenuClose }) => {
   /**
@@ -11,12 +12,19 @@ const Navigation = ({ handleMenuClose }) => {
    */
   const handleToShowSection = (event, sectionId) => {
     event.preventDefault();
-    const buttons = document.querySelectorAll(".navBtn");
 
-    buttons.forEach(button => {
-      button.classList.remove("active-menu");
-    });
+    // For listening audio sound when user click on the menu button
+    const audio = new Audio("/button-click-sound.mp3");
+    audio.play();
 
+    const bubblyButtons = document.getElementsByClassName("bubbly-button");
+
+    for (let i = 0; i < bubblyButtons.length; i += 1) {
+      bubblyButtons[i].classList.remove("animate");
+      bubblyButtons[i].classList.remove("active-menu");
+    }
+
+    event.currentTarget.classList.add("animate");
     event.currentTarget.classList.add("active-menu");
 
     const navMenu = document.getElementById("navMenu");
@@ -36,7 +44,9 @@ const Navigation = ({ handleMenuClose }) => {
       behavior: "smooth",
     });
 
-    handleMenuClose();
+    if (viewportWidth < 768) {
+      handleMenuClose();
+    }
   };
 
   return (
@@ -44,7 +54,7 @@ const Navigation = ({ handleMenuClose }) => {
       <ul className="flex flex-col text-lg font-medium tracking-wide text-gray-300 md:flex-row md:text-sm md:font-semibold">
         <li className="m-5 md:m-3">
           <button
-            className="navBtn flex"
+            className="flex bubbly-button"
             type="button"
             onClick={event => handleToShowSection(event, "about")}
           >
@@ -54,7 +64,7 @@ const Navigation = ({ handleMenuClose }) => {
         </li>
         <li className="m-5 md:m-3">
           <button
-            className="navBtn flex"
+            className="flex bubbly-button"
             type="button"
             onClick={event => handleToShowSection(event, "skills")}
           >
@@ -65,7 +75,7 @@ const Navigation = ({ handleMenuClose }) => {
         </li>
         <li className="m-5 md:m-3">
           <button
-            className="navBtn flex"
+            className="flex bubbly-button"
             type="button"
             onClick={event => handleToShowSection(event, "work")}
           >
@@ -76,7 +86,7 @@ const Navigation = ({ handleMenuClose }) => {
         </li>
         <li className="m-5 md:m-3">
           <button
-            className="navBtn flex"
+            className="flex bubbly-button"
             type="button"
             onClick={event => handleToShowSection(event, "blog")}
           >
@@ -87,7 +97,7 @@ const Navigation = ({ handleMenuClose }) => {
         </li>
         <li className="m-5 md:m-3">
           <button
-            className="navBtn flex"
+            className="flex bubbly-button"
             type="button"
             onClick={event => handleToShowSection(event, "contactMe")}
           >
