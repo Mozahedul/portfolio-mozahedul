@@ -91,8 +91,13 @@ export default function Work() {
     return true;
   };
 
-  // useEffect hook for storing projects data to react state
+  // For handling the sound effect during button click
+  const handleArchive = () => {
+    const audio = new Audio("/ping.mp3");
+    audio.play();
+  };
 
+  // useEffect hook for storing projects data to react state
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchServerData("/api/projects");
@@ -146,15 +151,15 @@ export default function Work() {
   return (
     <div className={`mt-16 md:mt-40 ${inter.className}`} id="work">
       <div data-aos="fade-up" data-aos-duration="1000">
-        <h2 className="text-center text-2xl md:text-3xl font-bold leading-8 text-gray-300">
-          <span className="text-cyan-400">03. </span>
-          <span className="textClip">My Beautiful Works</span>
+        <h2 className="text-center text-2xl md:text-3xl font-bold leading-8 text-gray-200">
+          My Beautiful Works
         </h2>
 
         <div className="flex justify-center mb-8 mt-5">
           <Link href="/pages/archive">
             <button
               type="button"
+              onClick={handleArchive}
               className="px-3 py-2 rounded-full bg-card border-cyan-300 text-[12px] md:text-sm tracking-widest hover:bg-cardHover text-cyan-300 transition-all duration-1000 hover:text-cyan-500"
             >
               View the archive

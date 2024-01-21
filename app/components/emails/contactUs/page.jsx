@@ -92,16 +92,18 @@ const ContactUs = () => {
         className="bg-cardHover flex flex-col p-6 rounded-lg"
       >
         <h2
-          className="text-lg font-bold mb-5 uppercase tracking-wide"
+          className="text-lg mb-5 uppercase tracking-wide"
           data-aos="fade-up"
           data-aos-duration="500"
           data-aos-delay="200"
         >
-          <strong className="text-gray-200 tracking-wide">
+          <strong className="text-gray-200 tracking-wide font-bold">
             Got a Project?
           </strong>
           <br />{" "}
-          <span className="text-cyan-500 tracking-wide">Let's Talk!</span>
+          <span className="text-[#a36aff] tracking-wide font-semibold">
+            Let's Talk!
+          </span>
         </h2>
         <label
           className="text-sm font-medium text-gray-200 mb-1"

@@ -51,15 +51,14 @@ const Navigation = ({ handleMenuClose }) => {
 
   return (
     <nav>
-      <ul className="flex flex-col text-lg font-medium tracking-wide text-gray-300 md:flex-row md:text-sm md:font-semibold">
+      <ul className="flex flex-col font-medium tracking-wide text-gray-300 md:flex-row">
         <li className="m-5 md:m-3">
           <button
-            className="flex bubbly-button"
+            className="bubbly-button"
             type="button"
             onClick={event => handleToShowSection(event, "about")}
           >
-            <span className="text-cyan-300 mr-1">01.</span>
-            <span>About</span>
+            About
           </button>
         </li>
         <li className="m-5 md:m-3">
@@ -68,9 +67,7 @@ const Navigation = ({ handleMenuClose }) => {
             type="button"
             onClick={event => handleToShowSection(event, "skills")}
           >
-            {" "}
-            <span className="text-cyan-300 mr-1">02.</span>
-            <span>Skills</span>
+            Skills
           </button>
         </li>
         <li className="m-5 md:m-3">
@@ -79,9 +76,7 @@ const Navigation = ({ handleMenuClose }) => {
             type="button"
             onClick={event => handleToShowSection(event, "work")}
           >
-            {" "}
-            <span className="text-cyan-300 mr-1">03.</span>
-            <span>Work</span>
+            Work
           </button>
         </li>
         <li className="m-5 md:m-3">
@@ -90,9 +85,7 @@ const Navigation = ({ handleMenuClose }) => {
             type="button"
             onClick={event => handleToShowSection(event, "blog")}
           >
-            {" "}
-            <span className="text-cyan-300 mr-1">04.</span>
-            <span>Blog</span>
+            Blog
           </button>
         </li>
         <li className="m-5 md:m-3">
@@ -101,9 +94,7 @@ const Navigation = ({ handleMenuClose }) => {
             type="button"
             onClick={event => handleToShowSection(event, "contactMe")}
           >
-            {" "}
-            <span className="text-cyan-300 mr-1">05.</span>
-            <span>Contact</span>
+            Contact
           </button>
         </li>
       </ul>

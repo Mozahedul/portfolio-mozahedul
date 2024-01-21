@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
+import { FaEye } from "react-icons/fa";
 import AOS from "aos";
 import { inter } from "../../../utils/google-fonts/fonts";
 import TypeWriter from "../cssFeatures/typingAnimation/page";
@@ -46,30 +47,33 @@ const TitleHero = () => {
     <div
       data-aos="zoom-in"
       data-aos-delay="300"
-      className={`grid justify-center ${inter.className}`}
+      className={`flex flex-col justify-center ${inter.className}`}
     >
-      <h2 className="mt-1 md:mt-2 font-bold">
-        <strong className="block text-center text-3xl text-gray-300 sm:hidden textClip">
-          Hey, It's <br /> Mozahedul Islam.
+      <p className="text-gray-300 text-lg mb-1 font-medium">
+        Hello, My Name is
+      </p>
+      <h2 className="mt-1">
+        <strong className="font-bold text-left text-3xl md:text-4xl lg:text-5xl text-gray-300 textClip">
+          Mozahedul Islam.
         </strong>
-        <strong className="hidden sm:block text-center text-3xl sm:text-3xl text-gray-300 md:text-5xl textClip">
-          Hey, It's Mozahedul Islam.
-        </strong>
-        <div className="mt-2 md:mt-3 text-center block text-2xl text-gray-500 md:text-3xl lg:text-4xl">
-          <TypeWriter animatedText={animatedText} />
-        </div>
       </h2>
-      <p className="text-sm mt-6 font-normal text-gray-400 text-center sm:mx-auto sm:w-3/4 md:w-3/5">
+      <div className="mt-2 md:mt-3 text-left block text-gray-300">
+        <TypeWriter animatedText={animatedText} />
+      </div>
+      <p className="text-sm mt-3 md:mt-6 font-normal text-gray-400 text-left mr-2">
         As a full-stack developer, I specialize in MongoDB, Express.js, React,
         and Node.js, enabling me to create end-to-end web applications.
       </p>
-      <button
-        type="button"
-        onClick={handlePdf}
-        className="btn mt-10 animate-pulse font-normal w-40 mx-auto"
-      >
-        View My Resume
-      </button>
+      <div className="mt-6 md:mt-12 lg:mt-16 xl:mt-20">
+        <button
+          type="button"
+          onClick={handlePdf}
+          className="hire-btn py-3 px-4 flex items-center"
+        >
+          <FaEye className="inline text-lg mr-2" />
+          <span>View My Resume</span>
+        </button>
+      </div>
       {viewResume && (
         <div className="fixed left-0 right-0 top-0 bottom-0 z-50 p-4">
           <button

@@ -3,7 +3,7 @@ import React from "react";
 const Pulse = () => {
   return (
     <div
-      className="mx-2 w-full max-w-sm rounded-md   p-4 shadow"
+      className="mx-2 w-full max-w-sm rounded-md p-4 shadow"
       style={{ backgroundColor: "#0b1e3f" }}
     >
       <div className="flex flex-col animate-pulse space-x-4">

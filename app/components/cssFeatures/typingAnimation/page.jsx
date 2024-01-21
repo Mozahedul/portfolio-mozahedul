@@ -19,8 +19,8 @@ const TypeWriter = ({ animatedText }) => {
     };
   }, [animatedText]);
   return (
-    <div className="text-lg sm:text-xl md:text-3xl lg:text-4xl">
-      <span ref={typeRef} className="text-gray-200" />
+    <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl">
+      A <span ref={typeRef} className="text-gray-200" />
     </div>
   );
 };

@@ -22,8 +22,8 @@ const Blog = () => {
           <span className="w-10 h-[1px] bg-cyan-500 bg-opacity-50" />
         </p>
         <h2 className="text-cyan-400 font-bold text-2xl md:text-3xl text-center">
-          <span className="textClip">
-            04. Visit my blog and keep <br /> your feedback
+          <span className="text-gray-200">
+            Visit my blog and keep <br /> your feedback
           </span>
         </h2>
       </div>

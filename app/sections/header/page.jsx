@@ -54,7 +54,7 @@ const Header = () => {
   return (
     <div
       ref={menuRef}
-      className="fixed z-[666] flex justify-center px-4 left-0 top-0 right-0 bg-[#0b1e3f]"
+      className="fixed z-[666] flex justify-center px-4 left-0 top-0 right-0 bg-[#060813] border-b-[1px] border-b-[#111733ce]"
     >
       <div
         id="navMenu"

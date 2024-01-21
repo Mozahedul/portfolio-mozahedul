@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div
       id="about"
-      className="mt-12 md:mt-48 grid grid-cols-1 md:grid-cols-2 lg:mx-48"
+      className="mt-24 md:mt-48 grid grid-cols-1 md:grid-cols-2 lg:mx-48"
     >
       <AboutPage />
       {/* <ProfileImage /> */}

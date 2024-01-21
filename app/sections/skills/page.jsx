@@ -39,9 +39,8 @@ const SkillSection = () => {
       id="skills"
     >
       <div data-aos="fade-up" data-aos-duration="1000">
-        <h2 className="text-center text-2xl md:text-3xl font-bold leading-8 text-gray-300">
-          <span className="text-cyan-400">02. </span>
-          <span className="textClip">Coding Skills</span>
+        <h2 className="text-center text-2xl md:text-3xl font-bold leading-8 text-gray-200">
+          Coding Skills
         </h2>
       </div>
       <div

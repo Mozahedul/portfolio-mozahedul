@@ -22,11 +22,11 @@ const ContactHeader = () => {
       className={`flex flex-col justify-between py-10 ${inter.className}`}
     >
       <div>
-        <h3 className="text-sm font-semibold tracking-widest text-cyan-400">
+        <button type="button" className="send-message textClip">
           Send a message
-        </h3>
-        <h2 className="mt-1 text-2xl md:text-4xl font-bold text-gray-200 textClip">
-          05. Keep in touch
+        </button>
+        <h2 className="mt-1 text-2xl md:text-4xl font-bold text-gray-200">
+          Keep in touch
         </h2>
         <p className="font-md mt-4 text-left text-sm tracking-wide text-gray-400">
           Got a question or proposal, or just want to say hello? Go ahead. I
@@ -37,7 +37,7 @@ const ContactHeader = () => {
       <div className="text-left mt-4 md:mt-0">
         <div className="flex items-center mb-4">
           <div
-            className="bg-blue-500 bg-opacity-30 text-gray-300 p-3 rounded-full"
+            className="bg-gradient-contact bg-opacity-30 text-gray-300 p-3 rounded-full"
             data-aos="zoom-in"
             data-aos-duration="500"
             data-aos-delay="200"
@@ -50,7 +50,7 @@ const ContactHeader = () => {
             data-aos-duration="500"
             data-aos-delay="200"
           >
-            <strong className="text-sm font-bold text-cyan-500">Email:</strong>
+            <strong className="text-sm font-bold text-[#a36aff]">Email:</strong>
             <span className="text-xs text-gray-200 tracking-wide">
               {" "}
               mozahed001@gmail.com
@@ -59,7 +59,7 @@ const ContactHeader = () => {
         </div>
         <div className="flex items-center my-4">
           <div
-            className="bg-green-500 bg-opacity-30 text-gray-300 p-3 rounded-full"
+            className="bg-gradient-contact bg-opacity-30 text-gray-300 p-3 rounded-full"
             data-aos="zoom-in"
             data-aos-duration="500"
             data-aos-delay="200"
@@ -72,7 +72,9 @@ const ContactHeader = () => {
             data-aos-duration="500"
             data-aos-delay="200"
           >
-            <strong className="text-sm font-bold text-cyan-500">Mobile:</strong>
+            <strong className="text-sm font-bold text-[#a36aff]">
+              Mobile:
+            </strong>
             <span className="text-xs text-gray-200 tracking-wide">
               {" "}
               +880-1738-648-749
@@ -81,7 +83,7 @@ const ContactHeader = () => {
         </div>
         <div className="flex items-center mt-4">
           <div
-            className="bg-violet-500 bg-opacity-30 text-gray-300 p-3 rounded-full"
+            className="bg-gradient-contact bg-opacity-30 text-gray-300 p-3 rounded-full"
             data-aos="zoom-in"
             data-aos-duration="500"
             data-aos-delay="200"
@@ -94,14 +96,14 @@ const ContactHeader = () => {
             data-aos-duration="500"
             data-aos-delay="200"
           >
-            <strong className="text-sm font-bold text-cyan-500">
+            <strong className="text-sm font-bold text-[#a36aff]">
               Blog Website:
             </strong>
             <Link
               target="_blank"
               rel="noreferrer"
               href="https://procodelearn.blogspot.com/"
-              className="text-blue-500 text-xs tracking-wide"
+              className="text-[#ffac5e] text-xs tracking-wide"
             >
               https://procodelearn.blogspot.com/
             </Link>

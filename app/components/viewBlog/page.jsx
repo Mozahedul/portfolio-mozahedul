@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { HiRefresh } from "react-icons/hi";
 
 const BlogButton = () => {
   const hanldeHireMeButton = () => {
@@ -19,9 +20,10 @@ const BlogButton = () => {
         <button
           type="button"
           onClick={hanldeHireMeButton}
-          className="animate-pulse tracking-wide hire-btn whitespace-nowrap"
+          className="tracking-wide hire-btn whitespace-nowrap py-2 px-4 flex items-center"
         >
-          Hire Me
+          <HiRefresh className="inline mr-[6px]" />
+          <span>Hire Me</span>
         </button>
       </Link>
     </div>
