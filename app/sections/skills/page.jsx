@@ -3,39 +3,80 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaReact,
-  FaNodeJs,
-  FaBootstrap,
-  FaGitAlt,
-  FaGithub,
-  FaWordpress,
-  FaPhp,
-  FaLaravel,
-} from "react-icons/fa6";
-import {
-  SiExpress,
-  SiMongodb,
-  SiTailwindcss,
-  SiVisualstudiocode,
-  SiMui,
-} from "react-icons/si";
-import { IoLogoJavascript } from "react-icons/io";
-import { GrMysql } from "react-icons/gr";
-import { BiLogoTypescript } from "react-icons/bi";
-import { TbBrandNextjs } from "react-icons/tb";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import skills from "@/utils/technologies/languages";
 import { inter } from "@/utils/google-fonts/fonts";
 
 const SkillSection = () => {
+  let scrollPosition = 0;
+
+  useEffect(() => {
+    const buttonLeft = document.getElementById("leftBtn");
+    buttonLeft.setAttribute("disabled", "");
+  }, []);
+
+  const forwardHandler = () => {
+    const slider = document.getElementById("langs");
+    const buttonRight = document.getElementById("rightBtn");
+    const buttonLeft = document.getElementById("leftBtn");
+    const singleElmWidth = slider.scrollWidth / skills.length;
+    scrollPosition += singleElmWidth;
+    const lastScrollPosition =
+      slider.scrollWidth - (scrollPosition + slider.offsetWidth);
+
+    console.log(lastScrollPosition);
+
+    if (lastScrollPosition < singleElmWidth) {
+      scrollPosition += lastScrollPosition;
+      buttonRight.setAttribute("disabled", "");
+      // buttonLeft.removeAttribute("disabled");
+    }
+
+    if (scrollPosition >= singleElmWidth) {
+      buttonLeft.removeAttribute("disabled");
+    }
+
+    console.log(scrollPosition);
+
+    slider?.scrollTo({
+      top: 0,
+      left: scrollPosition,
+      behavior: "smooth",
+    });
+  };
+
+  const backwardHandler = () => {
+    const slider = document.getElementById("langs");
+    const buttonLeft = document.getElementById("leftBtn");
+    const buttonRight = document.getElementById("rightBtn");
+    const singleElmWidth = slider.scrollWidth / skills.length;
+
+    scrollPosition -= singleElmWidth;
+
+    if (scrollPosition < singleElmWidth) {
+      scrollPosition = 0;
+      buttonLeft.setAttribute("disabled", "");
+    }
+
+    if (scrollPosition + slider.offsetWidth < slider.scrollWidth) {
+      buttonRight.removeAttribute("disabled");
+    }
+    console.log(scrollPosition);
+
+    slider?.scrollTo({
+      top: 0,
+      left: scrollPosition,
+      behavior: "smooth",
+    });
+  };
+
   useEffect(() => {
     AOS.init();
     AOS.refresh();
   }, []);
   return (
     <section
-      className={`mt-16 md:mt-40 lg:mx-8 xl:mx-36 ${inter.className}`}
+      className={`mt-16 bg-[#0c1027] py-10 md:py-12 lg:py-16 xl:pt-32 xl:pb-20 md:mt-48 lg:px-24 xl:px-36 ${inter.className}`}
       id="skills"
     >
       <div data-aos="fade-up" data-aos-duration="1000">
@@ -44,219 +85,43 @@ const SkillSection = () => {
         </h2>
       </div>
       <div
-        className="mt-12 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-2 md:gap3 lg:gap-4"
+        id="langs"
+        className="mt-12 skill-one-row pr-6 relative"
         data-aos="fade-down"
         data-aos-duration="1000"
       >
-        <div
-          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
+        {skills.map(skill => (
+          <div
+            key={skill.title}
+            className="flex flex-col items-center bg-[#060813] border-[1px] border-[#9bc2f518] flex-1 text-gray-400 p-5 rounded-lg"
+            data-aos="zoom-in"
+            data-aos-duration="500"
+            data-aos-delay="200"
+          >
+            <skill.icon className="text-5xl" />
+            <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
+              {skill.title}
+            </strong>
+          </div>
+        ))}
+      </div>
+      <div className="flex justify-center items-center mt-4">
+        <button
+          id="leftBtn"
+          onClick={backwardHandler}
+          type="button"
+          className="text-xl text-gray-200 rounded-md p-2 mr-[2px] bg-[#060813] border-[1px] border-[#9bc2f518]"
         >
-          <FaHtml5 className="text-5xl" />
-          <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
-            HTML5
-          </strong>
-        </div>
-        <div
-          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
+          <IoIosArrowBack />
+        </button>
+        <button
+          id="rightBtn"
+          onClick={forwardHandler}
+          type="button"
+          className="text-xl text-gray-200 rounded-md p-2 ml-[2px] bg-[#060813] border-[1px] border-[#9bc2f518]"
         >
-          <FaCss3Alt className="text-5xl" />
-          <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
-            CSS3
-          </strong>
-        </div>
-        <div
-          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
-        >
-          <IoLogoJavascript className="text-5xl" />
-          <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
-            JavaScript
-          </strong>
-        </div>
-        <div
-          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
-        >
-          <FaReact className="text-5xl" />
-          <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
-            React.js
-          </strong>
-        </div>
-        <div
-          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
-        >
-          <FaNodeJs className="text-5xl" />
-          <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
-            Node.js
-          </strong>
-        </div>
-        <div
-          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
-        >
-          <SiExpress className="text-5xl" />
-          <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
-            Express.js
-          </strong>
-        </div>
-        <div
-          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
-        >
-          <SiMongodb className="text-5xl" />
-          <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
-            MongoDB
-          </strong>
-        </div>
-        <div
-          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
-        >
-          <GrMysql className="text-5xl" />
-          <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
-            MySQL
-          </strong>
-        </div>
-        <div
-          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
-        >
-          <SiTailwindcss className="text-5xl" />
-          <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
-            Tailwind CSS
-          </strong>
-        </div>
-        <div
-          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
-        >
-          <FaBootstrap className="text-5xl" />
-          <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
-            Bootstrap
-          </strong>
-        </div>
-        <div
-          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
-        >
-          <SiMui className="text-5xl" />
-          <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
-            Material UI
-          </strong>
-        </div>
-        <div
-          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
-        >
-          <FaGitAlt className="text-5xl" />
-          <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
-            Git
-          </strong>
-        </div>
-        <div
-          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
-        >
-          <FaGithub className="text-5xl" />
-          <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
-            GitHub
-          </strong>
-        </div>
-        <div
-          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
-        >
-          <BiLogoTypescript className="text-5xl" />
-          <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
-            TypeScript
-          </strong>
-        </div>
-        <div
-          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
-        >
-          <TbBrandNextjs className="text-5xl" />
-          <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
-            Next.js
-          </strong>
-        </div>
-        <div
-          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
-        >
-          <SiVisualstudiocode className="text-5xl" />
-          <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
-            VS Code
-          </strong>
-        </div>
-        <div
-          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
-        >
-          <FaWordpress className="text-5xl" />
-          <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
-            WordPress
-          </strong>
-        </div>
-        <div
-          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
-        >
-          <FaPhp className="text-5xl" />
-          <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
-            PHP
-          </strong>
-        </div>
-        <div
-          className="flex flex-col items-center flex-1 text-gray-400 bg-cardHover bg-opacity-30 p-5 rounded-lg"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
-        >
-          <FaLaravel className="text-5xl" />
-          <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
-            Laravel
-          </strong>
-        </div>
+          <IoIosArrowForward />
+        </button>
       </div>
     </section>
   );

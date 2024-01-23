@@ -284,6 +284,10 @@ body {
   -webkit-background-clip: text;
 }
 
+.textClip:after {
+  color: red;
+}
+
 .sectionId {
   transition: transform 5s ease-in-out;
 }
@@ -310,19 +314,19 @@ body {
 
 .bg-gradient-contact {
   background: rgb(156, 95, 255);
-  background: -moz-radial-gradient(
-    circle,
-    rgba(156, 95, 255, 1) 50%,
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(156, 95, 255, 1) 0%,
     rgba(255, 172, 94, 1) 100%
   );
-  background: -webkit-radial-gradient(
-    circle,
-    rgba(156, 95, 255, 1) 50%,
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(156, 95, 255, 1) 0%,
     rgba(255, 172, 94, 1) 100%
   );
-  background: radial-gradient(
-    circle,
-    rgba(156, 95, 255, 1) 50%,
+  background: linear-gradient(
+    90deg,
+    rgba(156, 95, 255, 1) 0%,
     rgba(255, 172, 94, 1) 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9c5fff",endColorstr="#ffac5e",GradientType=1);
@@ -337,4 +341,12 @@ body {
   grid-gap: 20px;
   align-items: center;
   grid-template-columns: min-content 1fr;
+}
+
+.skill-one-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-gap: 15px;
+  grid-auto-flow: column;
+  overflow: hidden;
 }

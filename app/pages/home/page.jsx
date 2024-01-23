@@ -14,8 +14,8 @@ const MainPage = () => {
   return (
     <>
       <Hero />
-      <About />
       <SkillSection />
+      <About />
       <Work />
       <Blog />
       <ContactSection />

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { HiRefresh } from "react-icons/hi";
+import { PiPlugsConnectedBold } from "react-icons/pi";
 
 const BlogButton = () => {
   const hanldeHireMeButton = () => {
@@ -22,7 +22,7 @@ const BlogButton = () => {
           onClick={hanldeHireMeButton}
           className="tracking-wide hire-btn whitespace-nowrap py-2 px-4 flex items-center"
         >
-          <HiRefresh className="inline mr-[6px]" />
+          <PiPlugsConnectedBold className="inline mr-[6px]" />
           <span>Hire Me</span>
         </button>
       </Link>
