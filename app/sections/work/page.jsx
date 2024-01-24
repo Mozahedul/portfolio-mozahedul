@@ -149,10 +149,91 @@ export default function Work() {
   }, []);
 
   return (
-    <div className={`mt-16 md:mt-40 ${inter.className}`} id="work">
+    <div
+      className={`mt-16 md:mt-32 py-12 md:py-24 lg:py-28 bg-[#ffac5e07] ${inter.className}`}
+      id="work"
+    >
       <div data-aos="fade-up" data-aos-duration="1000">
-        <h2 className="text-center text-2xl md:text-3xl font-bold leading-8 text-gray-200">
-          My Beautiful Works
+        <h2 className="text-center text-2xl md:text-3xl font-bold leading-8 text-gray-200 flex items-center justify-center">
+          <p className="flex items-center mr-3">
+            <span
+              className="w-1 h-1 bg-gray-300 rounded-full mr-1"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="100"
+            />
+            <span
+              className="w-[5px] h-[5px] bg-gray-300 rounded-full mr-1"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="200"
+            />
+            <span
+              className="w-[6px] h-[6px] bg-gray-300 rounded-full mr-1"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="300"
+            />
+            <span
+              className="w-[7px] h-[7px] bg-gray-300 rounded-full mr-1"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="400"
+            />
+            <span
+              className="w-[8px] h-[8px] bg-gray-300 rounded-full mr-1"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="500"
+            />
+            <span
+              className="w-[9px] h-[10px] bg-gray-300 rounded-full"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="600"
+            />
+          </p>
+          <span data-aos="zoom-in" data-aos-duration="500" data-aos-delay="700">
+            My Works
+          </span>
+          <p className="flex items-center ml-3">
+            <span
+              className="w-[9px] h-[10px] bg-gray-300 rounded-full mr-1"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="600"
+            />
+            <span
+              className="w-[8px] h-[8px] bg-gray-300 rounded-full mr-1"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="500"
+            />
+            <span
+              className="w-[7px] h-[7px] bg-gray-300 rounded-full mr-1"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="400"
+            />
+            <span
+              className="w-[6px] h-[6px] bg-gray-300 rounded-full mr-1"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="300"
+            />
+            <span
+              className="w-[5px] h-[5px] bg-gray-300 rounded-full mr-1"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="200"
+            />
+            <span
+              className="w-1 h-1 bg-gray-300 rounded-full"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="100"
+            />
+          </p>
         </h2>
 
         <div className="flex justify-center mb-8 mt-5">
@@ -160,7 +241,7 @@ export default function Work() {
             <button
               type="button"
               onClick={handleArchive}
-              className="px-3 py-2 rounded-full bg-card border-cyan-300 text-[12px] md:text-sm tracking-widest hover:bg-cardHover text-cyan-300 transition-all duration-1000 hover:text-cyan-500"
+              className="px-3 py-2 rounded-full bg-[#0c0c21] border-[2px] border-[#9bc2f518] text-[12px] md:text-sm tracking-wide hover:bg-cardHover text-gray-200 transition-all duration-1000 hover:text-[#ffac5e]"
             >
               View the archive
             </button>

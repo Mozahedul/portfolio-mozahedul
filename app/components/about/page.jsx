@@ -13,14 +13,15 @@ const AboutPage = () => {
   }, []);
   return (
     <div>
-      <button type="button" className="send-message textClip">
+      <button
+        type="button"
+        className="send-message textClip"
+        data-aos="zoom-in"
+        data-aos-duration="500"
+      >
         About me
       </button>
-      <h3
-        data-aos="fade-up"
-        data-aos-anchor-placement="center-bottom"
-        data-aos-duration="1000"
-      >
+      <h3 data-aos="zoom-in" data-aos-duration="500">
         <strong className="text-2xl md:text-3xl text-gray-300 capitalize">
           Transforming dreams into real project{" "}
           <LuSun className="inline text-3xl md:text-4xl text-[#ffac5e]" />
@@ -51,7 +52,7 @@ const AboutPage = () => {
           <span>
             I am able to work effectively with other developers and
             stakeholders, and I am currently looking for a new opportunity where
-            I can use my skills and experience.
+            I can utilize my skills and experience.
           </span>
         </p>
         <p

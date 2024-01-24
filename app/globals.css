@@ -10,6 +10,8 @@ body {
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .profile-img {
@@ -117,7 +119,11 @@ body {
 }
 
 .media-btn {
-  @apply mx-3 text-xl transition-all duration-500 hover:-translate-y-1.5 hover:text-cyan-400 lg:mb-6;
+  @apply mx-3 text-sm md:text-lg lg:text-2xl transition-all duration-500 hover:-translate-y-1.5 hover:text-gray-100;
+}
+
+.social-media-btn {
+  @apply mx-3 text-lg md:text-xl lg:text-2xl transition-all duration-500 hover:-translate-y-1.5 hover:text-gray-200;
 }
 
 .menu-btn {
@@ -134,7 +140,7 @@ body {
 
 .tooltips-text-left,
 .tooltips-text-right {
-  @apply absolute z-50 hidden rounded-sm bg-cyan-600 px-3 py-1 text-xs text-gray-200 transition-all duration-300 lg:invisible lg:block;
+  @apply absolute z-50 hidden rounded-sm bg-[#a36aff] px-3 py-1 text-xs text-gray-100 transition-all duration-300 lg:invisible lg:block;
 }
 
 .tooltips-text-left::after {
@@ -144,17 +150,18 @@ body {
   top: 5px;
   border-width: 8px;
   border-style: solid;
-  border-color: transparent transparent transparent rgb(8 145 178);
+  border-color: transparent transparent transparent #a36aff;
 }
 
 .tooltips-text-right::after {
   content: "";
   position: absolute;
-  left: -15px;
-  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -15px;
   border-width: 8px;
   border-style: solid;
-  border-color: transparent rgb(8 145 178) transparent transparent;
+  border-color: #a36aff transparent transparent transparent;
 }
 
 .tooltips:hover .tooltips-text-left {
@@ -348,5 +355,25 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   grid-gap: 15px;
   grid-auto-flow: column;
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+.voice-bg-gradient {
+  background: rgb(156, 95, 255);
+  background: -moz-linear-gradient(
+    190deg,
+    rgba(156, 95, 255, 1) 0%,
+    rgba(255, 172, 94, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    190deg,
+    rgba(156, 95, 255, 1) 0%,
+    rgba(255, 172, 94, 1) 100%
+  );
+  background: linear-gradient(
+    190deg,
+    rgba(156, 95, 255, 1) 0%,
+    rgba(255, 172, 94, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9c5fff",endColorstr="#ffac5e",GradientType=1);
 }

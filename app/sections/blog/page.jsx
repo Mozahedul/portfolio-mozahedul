@@ -16,22 +16,107 @@ const Blog = () => {
     <div className="lg:mx-8 xl:mx-36 my-16 md:my-28" id="blog">
       {/* Blog Header */}
       <div data-aos="flip-up" data-aos-duration="500">
-        <p className="text-md mb-1 text-gray-300 font-medium flex items-center justify-center">
-          <span className="w-10 h-[1px] bg-cyan-500 bg-opacity-50" />
-          <span className="mx-2 text-sm">From my blog </span>
-          <span className="w-10 h-[1px] bg-cyan-500 bg-opacity-50" />
-        </p>
-        <h2 className="text-cyan-400 font-bold text-2xl md:text-3xl text-center">
-          <span className="text-gray-200">
-            Visit my blog and keep <br /> your feedback
+        <h2 className="text-cyan-400 font-bold text-2xl md:text-3xl text-center flex justify-center items-center">
+          <p className="flex items-center mr-3">
+            <span
+              className="w-1 h-1 bg-gray-300 rounded-full mr-1"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="100"
+            />
+            <span
+              className="w-[5px] h-[5px] bg-gray-300 rounded-full mr-1"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="200"
+            />
+            <span
+              className="w-[6px] h-[6px] bg-gray-300 rounded-full mr-1"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="300"
+            />
+            <span
+              className="w-[7px] h-[7px] bg-gray-300 rounded-full mr-1"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="400"
+            />
+            <span
+              className="w-[8px] h-[8px] bg-gray-300 rounded-full mr-1"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="500"
+            />
+            <span
+              className="w-[9px] h-[10px] bg-gray-300 rounded-full"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="600"
+            />
+          </p>
+          <span
+            className="text-gray-200"
+            data-aos="zoom-in"
+            data-aos-duration="500"
+            data-aos-delay="700"
+          >
+            Latest Blog
           </span>
+          <p className="flex items-center ml-3">
+            <span
+              className="w-[9px] h-[10px] bg-gray-300 rounded-full mr-1"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="600"
+            />
+            <span
+              className="w-[8px] h-[8px] bg-gray-300 rounded-full mr-1"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="500"
+            />
+            <span
+              className="w-[7px] h-[7px] bg-gray-300 rounded-full mr-1"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="400"
+            />
+            <span
+              className="w-[6px] h-[6px] bg-gray-300 rounded-full mr-1"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="300"
+            />
+            <span
+              className="w-[5px] h-[5px] bg-gray-300 rounded-full mr-1"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="200"
+            />
+            <span
+              className="w-1 h-1 bg-gray-300 rounded-full"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              data-aos-delay="100"
+            />
+          </p>
         </h2>
+        <p className="text-md mb-1 mt-2 text-gray-300 font-medium flex items-center justify-center">
+          <span
+            className="text-sm tracking-wide"
+            data-aos="zoom-in"
+            data-aos-duration="500"
+          >
+            Visit my blog and keep your feedback
+          </span>
+        </p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 mt-8">
         {/* Section 1 */}
         <div
-          className="bg-[#0a0919] p-5 grid rounded-lg"
+          className="bg-[#0a0919] p-5 grid rounded-lg border-[2px] border-[#a36aff10]"
           data-aos="fade-up"
           data-aos-duration="500"
         >
@@ -49,7 +134,7 @@ const Blog = () => {
             Full-stack / November 28, 2021
           </p>
           <h2
-            className="text-lg font-medium text-gray-200 leading-6 mb-5 mt-1"
+            className="text-lg font-semibold tracking-wide text-gray-200 leading-6 mb-5 mt-1"
             data-aos="zoom-in"
             data-aos-delay="200"
             data-aos-duration="500"
@@ -81,7 +166,7 @@ const Blog = () => {
             />
           </Link>
           <p
-            className="text-sm mt-6 text-gray-200 leading-5"
+            className="text-sm mt-6 text-gray-200 leading-5 tracking-wide"
             data-aos="zoom-in"
             data-aos-delay="200"
             data-aos-duration="500"
@@ -108,7 +193,7 @@ const Blog = () => {
 
         {/* Section 2 */}
         <div
-          className="bg-[#0a0919] p-5 grid rounded-lg"
+          className="bg-[#0a0919] p-5 grid rounded-lg border-[2px] border-[#a36aff10]"
           data-aos="fade-up"
           data-aos-duration="500"
         >
@@ -126,7 +211,7 @@ const Blog = () => {
             Language / June 08, 2022
           </p>
           <h2
-            className="text-lg font-medium text-gray-200 leading-6 mb-5 mt-1"
+            className="text-lg text-gray-200 leading-6 mb-5 mt-1 font-semibold tracking-wide"
             data-aos="zoom-in"
             data-aos-delay="200"
             data-aos-duration="500"
@@ -158,7 +243,7 @@ const Blog = () => {
             />
           </Link>
           <p
-            className="text-sm mt-6 text-gray-200 leading-5"
+            className="text-sm mt-6 text-gray-200 leading-5 tracking-wide"
             data-aos="zoom-in"
             data-aos-delay="200"
             data-aos-duration="500"
@@ -185,7 +270,7 @@ const Blog = () => {
 
         {/* Section 3 */}
         <div
-          className="bg-[#0a0919] p-5 grid rounded-lg"
+          className="bg-[#0a0919] p-5 grid rounded-lg border-[2px] border-[#a36aff10]"
           data-aos="fade-up"
           data-aos-duration="500"
         >
@@ -203,7 +288,7 @@ const Blog = () => {
             Language / June 20, 2022
           </p>
           <h2
-            className="text-lg font-medium text-gray-200 leading-6 mb-5 mt-1"
+            className="text-lg font-semibold tracking-wide text-gray-200 leading-6 mb-5 mt-1"
             data-aos="zoom-in"
             data-aos-delay="200"
             data-aos-duration="500"
@@ -235,7 +320,7 @@ const Blog = () => {
             />
           </Link>
           <p
-            className="text-sm mt-6 text-gray-200 leading-5"
+            className="text-sm mt-6 text-gray-200 leading-5 tracking-wide"
             data-aos="zoom-in"
             data-aos-delay="200"
             data-aos-duration="500"
@@ -272,7 +357,7 @@ const Blog = () => {
         >
           <button
             type="button"
-            className="mt-10 py-2 px-4 text-sm rounded-full hover:bg-[#1e195e] bg-[#0a0919] text-gray-200"
+            className="mt-10 py-2 px-4 text-sm transition-all duration-500 rounded-full hover:bg-[#1e195e] bg-[#0a0919] text-gray-300 border-[2px] border-[#a36aff10] hover:text-[#ffac5e]"
           >
             View Blog
           </button>

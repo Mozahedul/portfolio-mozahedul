@@ -23,10 +23,10 @@ const Card = ({
     <div
       data-aos="zoom-in"
       data-aos-duration="1000"
-      className="bg-card group flex cursor-pointer flex-col justify-between rounded-md p-6 transition-all duration-1000 transform hover:bg-cardHover"
+      className="bg-[#060813] border-[2px] border-[#9bc2f518] group flex cursor-pointer flex-col justify-between rounded-xl p-6 transition-all duration-1000 transform hover:bg-cardHover"
     >
       <div className="mb-4 flex items-center justify-between">
-        <GoFileDirectory className="text-4xl text-cyan-300" />
+        <GoFileDirectory className="text-4xl text-[#ffac53]" />
         <ul className="flex">
           <li className="mr-2">
             <Link
@@ -35,7 +35,7 @@ const Card = ({
               rel="noreferer"
               title="GitHub Repository"
             >
-              <LuGithub className="ml-2 text-xl text-gray-400 transition-all duration-500 hover:text-cyan-400" />
+              <LuGithub className="ml-2 text-xl text-gray-400 transition-all duration-500 hover:text-[#ffac53]" />
             </Link>
           </li>
           <li>
@@ -45,12 +45,12 @@ const Card = ({
               rel="noreferer"
               title="Visit Website"
             >
-              <FiExternalLink className="text-xl text-gray-400 transition-all duration-500 hover:text-cyan-400" />
+              <FiExternalLink className="text-xl text-gray-400 transition-all duration-500 hover:text-[#ffac53]" />
             </Link>
           </li>
         </ul>
       </div>
-      <h2 className="text-lg font-semibold text-gray-300 transition-all duration-500 group-hover:text-cyan-400">
+      <h2 className="text-lg font-semibold text-gray-300 transition-all duration-500 group-hover:text-[#ffac53]">
         {title}
       </h2>
       <p className="mt-4 text-sm font-medium tracking-wide text-gray-400">
