@@ -12,6 +12,7 @@ const AboutRight = () => {
   }, []);
   return (
     <section className="flex flex-col justify-between">
+      {/* UI/UX section */}
       <div
         className="bg-[#060813] border-[2px] border-[#9bc2f518] p-5 rounded-2xl flex"
         data-aos="zoom-in"
@@ -33,8 +34,9 @@ const AboutRight = () => {
           </p>
         </div>
       </div>
+      {/* Web design section */}
       <div
-        className="bg-[#060813] border-[2px] border-[#9bc2f518] p-5 rounded-2xl flex"
+        className="bg-[#060813] border-[2px] border-[#9bc2f518] p-5 rounded-2xl flex my-3 md:my-0"
         data-aos="zoom-in"
         data-aos-duration="500"
       >
@@ -53,6 +55,7 @@ const AboutRight = () => {
           </p>
         </div>
       </div>
+      {/* Web development section */}
       <div
         className="bg-[#060813] border-[2px] border-[#9bc2f518] p-5 rounded-2xl flex"
         data-aos="zoom-in"
@@ -68,9 +71,8 @@ const AboutRight = () => {
             Website development
           </h2>
           <p className="text-gray-300 tracking-wide text-sm mt-2">
-            Initially, I sketch the design with pencil or online whiteboard.
-            Later I transform the design with Adobe XD, Adobe Photoshop, and
-            Figma for stunning web projects.{" "}
+            Finally, I develop the website with the languages like Node.js,
+            Express.js, MongoDB, React.js, PHP, MySQL, and Laravel framework.
           </p>
         </div>
       </div>

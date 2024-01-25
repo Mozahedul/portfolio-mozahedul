@@ -18,9 +18,9 @@ const Call = () => {
     <div
       data-aos="zoom-in"
       data-aos-duration="500"
-      className="mt-12 flex justify-center text-xl text-gray-300 lg:h-screen lg:fixed lg:right-4 lg:top-0 lg:flex-col lg:items-center "
+      className="mt-12 flex justify-center text-gray-300 lg:h-screen lg:fixed lg:right-4 lg:top-0 lg:flex-col lg:items-center "
     >
-      <ul className="flex rounded-3xl py-3 lg:flex-col lg:py-4 voice-bg-gradient border-[1px] border-[#a36aff]">
+      <ul className="flex rounded-3xl px-2 md:px-0 py-1 md:py-2 lg:flex-col lg:py-3 voice-bg-gradient border-[1px] border-[#a36aff]">
         <li className="media-btn tooltips py-1">
           <ToolTip
             tipText="Messenger"

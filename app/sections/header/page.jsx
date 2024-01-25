@@ -15,6 +15,9 @@ const Header = () => {
   const menuRef = useRef(null);
 
   const handleMenuShow = () => {
+    const audio = new Audio("/button-click-sound.mp3");
+    audio.play();
+
     menuShowRef.current.style.transform = "rotate(180deg)";
     menuBtnCloseRef.current.style.transform = "rotate(180deg)";
     menuShowRef.current.style.transition = "0.3s ease-in-out";
@@ -35,13 +38,16 @@ const Header = () => {
     setIsMenuVisible(prev => !prev);
   };
 
-  // For mobile device menu closing
+  // For mobile device menu closing by clicking outside of the menu
   useEffect(() => {
     const handleMobileMenuClose = event => {
       if (
         menuCloseRef.current &&
         !menuCloseRef.current.contains(event.target)
       ) {
+        const audio = new Audio("/ping.mp3");
+        audio.play();
+
         document.querySelector("body").classList.remove("body-scroll");
         menuShowRef.current.style.transform = "rotate(0deg)";
         menuBtnCloseRef.current.style.transform = "rotate(0deg)";
@@ -65,7 +71,7 @@ const Header = () => {
           type="button"
           ref={menuShowRef}
           onClick={handleMenuShow}
-          className="text-3xl text-cyan-400 transition-all duration-500 hover:text-cyan-500 md:hidden"
+          className="text-3xl text-[#a36aff] transition-all duration-500 hover:text-[#a36aff] md:hidden"
         >
           <RiMenu3Fill />
         </button>
@@ -80,7 +86,7 @@ const Header = () => {
           type="button"
           ref={menuBtnCloseRef}
           onClick={handleMenuClose}
-          className="absolute mt-2 right-0 top-0 px-7 text-4xl text-cyan-400 transition-all duration-500 hover:text-cyan-500 md:hidden"
+          className="absolute mt-2 right-0 top-0 px-7 text-4xl text-[#a36aff] transition-all duration-500 hover:text-[#a36aff] md:hidden"
         >
           <IoClose />
         </button>

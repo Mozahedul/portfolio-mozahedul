@@ -1,71 +1,50 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+// import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import skills from "@/utils/technologies/languages";
 import { inter } from "@/utils/google-fonts/fonts";
 import SocialMedia from "../media/page";
 
 const SkillSection = () => {
-  let scrollPosition = 0;
+  const scrollPosition = useRef(0);
 
-  useEffect(() => {
-    const buttonLeft = document.getElementById("leftBtn");
-    buttonLeft.setAttribute("disabled", "");
-  }, []);
-
-  const forwardHandler = () => {
+  const forwardHandler = useCallback(() => {
     const slider = document.getElementById("langs");
-    const buttonRight = document.getElementById("rightBtn");
-    const buttonLeft = document.getElementById("leftBtn");
     const singleElmWidth = slider.scrollWidth / skills.length;
-    scrollPosition += singleElmWidth;
-    const lastScrollPosition =
-      slider.scrollWidth - (scrollPosition + slider.offsetWidth);
 
-    console.log(lastScrollPosition);
+    scrollPosition.current += singleElmWidth;
+    const lastScrollPosition =
+      slider.scrollWidth - (scrollPosition.current + slider.offsetWidth);
 
     if (lastScrollPosition < singleElmWidth) {
-      scrollPosition += lastScrollPosition;
-      buttonRight.setAttribute("disabled", "");
+      scrollPosition.current += lastScrollPosition;
     }
 
-    if (scrollPosition >= singleElmWidth) {
-      buttonLeft.removeAttribute("disabled");
-    }
-
-    slider?.scrollTo({
-      top: 0,
-      left: scrollPosition,
-      behavior: "smooth",
-    });
-  };
-
-  const backwardHandler = () => {
-    const slider = document.getElementById("langs");
-    const buttonLeft = document.getElementById("leftBtn");
-    const buttonRight = document.getElementById("rightBtn");
-    const singleElmWidth = slider.scrollWidth / skills.length;
-
-    scrollPosition -= singleElmWidth;
-
-    if (scrollPosition < singleElmWidth) {
-      scrollPosition = 0;
-      buttonLeft.setAttribute("disabled", "");
-    }
-
-    if (scrollPosition + slider.offsetWidth < slider.scrollWidth) {
-      buttonRight.removeAttribute("disabled");
+    const currentScrollPos = scrollPosition.current + slider.offsetWidth;
+    if (currentScrollPos === slider.scrollWidth) {
+      scrollPosition.current = 0;
     }
 
     slider?.scrollTo({
       top: 0,
-      left: scrollPosition,
+      left: scrollPosition.current,
       behavior: "smooth",
     });
-  };
+  }, []);
+
+  // automatic scrolling effect for skill section after every 3 seconds
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      forwardHandler();
+    }, 3000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [forwardHandler]);
 
   useEffect(() => {
     AOS.init();
@@ -166,7 +145,7 @@ const SkillSection = () => {
       </div>
       <div
         id="langs"
-        className="mt-12 skill-one-row pr-6"
+        className="mt-12 skill-one-row pr-6 horizontal-scrollbar"
         data-aos="fade-down"
         data-aos-duration="1000"
       >
@@ -185,7 +164,7 @@ const SkillSection = () => {
           </div>
         ))}
       </div>
-      <div className="flex justify-center items-center mt-4">
+      {/* <div className="flex justify-center items-center mt-4">
         <button
           id="leftBtn"
           onClick={backwardHandler}
@@ -202,7 +181,7 @@ const SkillSection = () => {
         >
           <IoIosArrowForward />
         </button>
-      </div>
+      </div> */}
     </section>
   );
 };

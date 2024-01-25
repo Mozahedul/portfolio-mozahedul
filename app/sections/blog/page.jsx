@@ -116,7 +116,7 @@ const Blog = () => {
       <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 mt-8">
         {/* Section 1 */}
         <div
-          className="bg-[#0a0919] p-5 grid rounded-lg border-[2px] border-[#a36aff10]"
+          className="bg-[#0a0919] p-5 grid rounded-2xl border-[2px] border-[#a36aff10]"
           data-aos="fade-up"
           data-aos-duration="500"
         >
@@ -193,7 +193,7 @@ const Blog = () => {
 
         {/* Section 2 */}
         <div
-          className="bg-[#0a0919] p-5 grid rounded-lg border-[2px] border-[#a36aff10]"
+          className="bg-[#0a0919] p-5 grid rounded-2xl border-[2px] border-[#a36aff10]"
           data-aos="fade-up"
           data-aos-duration="500"
         >
@@ -270,7 +270,7 @@ const Blog = () => {
 
         {/* Section 3 */}
         <div
-          className="bg-[#0a0919] p-5 grid rounded-lg border-[2px] border-[#a36aff10]"
+          className="bg-[#0a0919] p-5 grid rounded-2xl border-[2px] border-[#a36aff10]"
           data-aos="fade-up"
           data-aos-duration="500"
         >

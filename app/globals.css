@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -119,7 +123,7 @@ body {
 }
 
 .media-btn {
-  @apply mx-3 text-sm md:text-lg lg:text-2xl transition-all duration-500 hover:-translate-y-1.5 hover:text-gray-100;
+  @apply mx-2 text-2xl lg:text-3xl transition-all duration-500 hover:-translate-y-1.5 hover:text-gray-100;
 }
 
 .social-media-btn {
@@ -353,7 +357,7 @@ body {
 .skill-one-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  grid-gap: 15px;
+  grid-gap: 20px;
   grid-auto-flow: column;
   overflow-x: hidden;
 }
@@ -376,4 +380,33 @@ body {
     rgba(255, 172, 94, 1) 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9c5fff",endColorstr="#ffac5e",GradientType=1);
+}
+
+.horizontal-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+
+.horizontal-scrollbar::-webkit-scrollbar-track {
+  display: none;
+}
+
+.horizontal-scrollbar::-webkit-scrollbar-thumb {
+  background: rgb(156, 95, 255);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(156, 95, 255, 1) 0%,
+    rgba(255, 172, 94, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(156, 95, 255, 1) 0%,
+    rgba(255, 172, 94, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(156, 95, 255, 1) 0%,
+    rgba(255, 172, 94, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9c5fff",endColorstr="#ffac5e",GradientType=1);
+  border-radius: 10px;
 }
