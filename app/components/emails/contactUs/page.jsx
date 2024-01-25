@@ -89,7 +89,7 @@ const ContactUs = () => {
       <form
         ref={form}
         onSubmit={sendEmail}
-        className="bg-cardHover flex flex-col p-6 rounded-lg"
+        className="bg-[#0c0c21] border-[2px] border-[#9bc2f518] flex flex-col p-6 rounded-2xl"
       >
         <h2
           className="text-lg mb-5 uppercase tracking-wide"
@@ -120,8 +120,8 @@ const ContactUs = () => {
           required
           type="text"
           name="user_name"
-          placeholder="John Doe"
-          className="bg-card p-2 rounded-md text-gray-300 text-sm placeholder:text-gray-600"
+          placeholder="Your Name"
+          className="bg-card py-3 px-4 rounded-full text-gray-300 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#a36affb4]"
         />
         <label
           className="text-sm font-medium text-gray-200 mt-5 mb-1"
@@ -138,8 +138,8 @@ const ContactUs = () => {
           required
           type="email"
           name="user_email"
-          placeholder="johndoe@gmail.com"
-          className="bg-card p-2 rounded-md text-gray-300 text-sm placeholder:text-gray-600"
+          placeholder="example@mail.com"
+          className="bg-card py-3 px-4 rounded-full text-gray-300 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#a36affb4]"
         />
         <label
           className="text-sm font-medium text-gray-200 mt-5 mb-1"
@@ -154,16 +154,16 @@ const ContactUs = () => {
           data-aos-duration="500"
           data-aos-delay="200"
           required
-          placeholder="Write Message..."
+          placeholder="Write Your Message..."
           name="message"
-          className="bg-card p-2 rounded-md text-gray-300 text-sm placeholder:text-gray-600"
+          className="bg-card py-3 px-4 rounded-full text-gray-300 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#a36affb4]"
         />
         <button
           data-aos="zoom-in"
           data-aos-duration="500"
           data-aos-delay="200"
           type="submit"
-          className="bg-gray-200 cursor-pointer transition duration-500 tracking-wide p-2 mt-8 rounded-md text-gray-800 text-sm placeholder:text-gray-600 capitalize font-semibold hover:bg-cyan-900 hover:text-white"
+          className="hire-btn cursor-pointer transition duration-500 tracking-widest p-2 mt-8 text-gray-800 text-sm placeholder:text-gray-600 font-semibold hover:bg-cyan-900 hover:text-white uppercase"
         >
           {sendEmailMessage()}
         </button>

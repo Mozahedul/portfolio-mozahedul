@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import { BsArrowUpCircleFill } from "react-icons/bs";
+import { FaArrowUp } from "react-icons/fa";
 
 const Scroll = () => {
   const scrollRef = useRef(null);
@@ -26,8 +26,10 @@ const Scroll = () => {
   const handleScroll = () => {
     const audio = new Audio("/ping.mp3");
     audio.play();
-    document.body.scrollY = 0;
-    document.documentElement.scrollTop = 0;
+    setTimeout(() => {
+      document.body.scrollY = 0;
+      document.documentElement.scrollTop = 0;
+    }, 1000);
   };
 
   return (
@@ -35,9 +37,9 @@ const Scroll = () => {
       type="button"
       ref={scrollRef}
       onClick={handleScroll}
-      className="fixed bottom-16 right-20 hidden animate-bounce text-4xl text-gray-200 transition-all duration-500 hover:-translate-y-1.5 hover:text-cyan-600"
+      className="fixed bottom-16 p-3 rounded-full bg-[#a36aff] right-20 hidden animate-bounce text-xl text-gray-200 transition-all duration-500 hover:bg-gray-200 hover:-translate-y-1.5 hover:text-[#a36aff]"
     >
-      <BsArrowUpCircleFill />
+      <FaArrowUp />
     </button>
   );
 };

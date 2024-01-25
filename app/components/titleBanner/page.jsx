@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AiFillCloseCircle } from "react-icons/ai";
 import { FaEye } from "react-icons/fa";
 import AOS from "aos";
+import Link from "next/link";
 import { inter } from "../../../utils/google-fonts/fonts";
 import TypeWriter from "../cssFeatures/typingAnimation/page";
 import "aos/dist/aos.css";
@@ -28,14 +28,6 @@ const TitleHero = () => {
 
     setViewResume(true);
     document.body.classList.add("body-fixed");
-  };
-
-  // handleing pdf close
-  const handleClosePdf = () => {
-    const audio = new Audio("/ping.mp3");
-    audio.play();
-    setViewResume(false);
-    document.body.classList.remove("body-fixed");
   };
 
   useEffect(() => {
@@ -65,34 +57,20 @@ const TitleHero = () => {
         and Node.js, enabling me to create end-to-end web applications.
       </p>
       <div className="mt-6 md:mt-12 lg:mt-16 xl:mt-20">
-        <button
-          type="button"
-          onClick={handlePdf}
-          className="hire-btn py-3 px-4 flex items-center"
+        <Link
+          href="https://drive.google.com/file/d/1KLtQYOs3X0GXVvFGWnh2M0pjueVgezTE/preview"
+          target="_blank"
+          rel="noreferrer"
         >
-          <FaEye className="inline text-lg mr-2" />
-          <span>View My Resume</span>
-        </button>
-      </div>
-      {viewResume && (
-        <div className="fixed left-0 right-0 top-0 bottom-0 z-50 p-4">
           <button
             type="button"
-            onClick={handleClosePdf}
-            className="absolute left-8 top-6 text-red-600 transition-all duration-500 hover:text-red-400 md:left-20 md:top-7"
-            title="Close PDF"
+            className="hire-btn py-3 px-4 flex items-center"
           >
-            <AiFillCloseCircle className="text-5xl" />
+            <FaEye className="inline text-lg mr-2" />
+            <span>View My Resume</span>
           </button>
-          <iframe
-            title="View My Resume"
-            src="https://drive.google.com/file/d/1KLtQYOs3X0GXVvFGWnh2M0pjueVgezTE/preview"
-            width="100%"
-            height="100%"
-            allow="autoplay"
-          />
-        </div>
-      )}
+        </Link>
+      </div>
     </div>
   );
 };
