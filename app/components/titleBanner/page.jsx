@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { FaEye } from "react-icons/fa";
 import AOS from "aos";
 import Link from "next/link";
@@ -9,8 +9,6 @@ import TypeWriter from "../cssFeatures/typingAnimation/page";
 import "aos/dist/aos.css";
 
 const TitleHero = () => {
-  const [viewResume, setViewResume] = useState(false);
-
   const animatedText = [
     "Full-stack Web Developer.",
     "MERN Stack Developer.",
@@ -19,16 +17,6 @@ const TitleHero = () => {
     "Programmer.",
     "Blogger.",
   ];
-
-  // Pdf container show and hide controller
-  const handlePdf = () => {
-    // For listening audio sound when user click on the menu button
-    const audio = new Audio("/button-click-sound.mp3");
-    audio.play();
-
-    setViewResume(true);
-    document.body.classList.add("body-fixed");
-  };
 
   useEffect(() => {
     AOS.init();

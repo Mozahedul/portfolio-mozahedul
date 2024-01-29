@@ -138,7 +138,7 @@ const SkillSection = () => {
             />
           </p>
         </h2>
-        <p className="text-center text-sm text-gray-300 mt-3 tracking-wide leading-6 md:w-[450px] md:px-auto">
+        <p className="text-center text-sm text-gray-300 mt-3 tracking-wide leading-6 md:w-[450px] md:mx-auto">
           The languages & frameworks encourage me to code for my client to
           fulfill their demands and make some amazing projects.
         </p>

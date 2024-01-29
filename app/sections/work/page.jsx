@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 // import Pulse from "@/app/components/animation/pulse/page";
 import AOS from "aos";
 import { v4 as uuidv4 } from "uuid";
@@ -99,12 +99,16 @@ export default function Work() {
 
   // useEffect hook for storing projects data to react state
   useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetchServerData("/api/projects");
-      setProjects(data.projects);
-    };
-    fetchData();
-  }, [setProjects]);
+    try {
+      const fetchProjects = async () => {
+        const data = await fetchServerData("/api/projects");
+        setProjects(data.projects);
+      };
+      fetchProjects();
+    } catch (error) {
+      console.log("Error during the project fetching");
+    }
+  }, []);
 
   // Calculate the viewport width accordance with window resizing
   useEffect(() => {
