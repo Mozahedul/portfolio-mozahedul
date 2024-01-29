@@ -3,11 +3,11 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Link from "next/link";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import { FaSkype } from "react-icons/fa";
 import { PiMessengerLogo } from "react-icons/pi";
 import ToolTip from "../../cssFeatures/tooltips/page";
-import Link from "next/link";
 
 const Call = () => {
   useEffect(() => {
