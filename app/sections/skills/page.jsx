@@ -35,11 +35,11 @@ const SkillSection = () => {
     });
   }, []);
 
-  // automatic scrolling effect for skill section after every 3 seconds
+  // automatic scrolling effect for skill section after every 2 seconds
   useEffect(() => {
     const intervalId = setInterval(() => {
       forwardHandler();
-    }, 3000);
+    }, 2000);
 
     return () => {
       clearInterval(intervalId);
@@ -52,7 +52,7 @@ const SkillSection = () => {
   }, []);
   return (
     <section
-      className={`mt-24 relative px-4 bg-[#0c1027] py-10 md:py-12 lg:py-16 xl:pt-32 xl:pb-20 md:mt-48 lg:px-24 xl:px-36 ${inter.className}`}
+      className={`mt-24 relative px-6 sm:px-10 md:px-16 lg:px-32 xl:px-48 bg-[#0c1027] py-10 md:py-12 lg:py-16 xl:pt-32 xl:pb-20 md:mt-48 ${inter.className}`}
       id="skills"
     >
       <SocialMedia />
@@ -138,7 +138,7 @@ const SkillSection = () => {
             />
           </p>
         </h2>
-        <p className="text-center text-sm text-gray-300 mt-3 tracking-wide leading-6 md:w-[450px] md:mx-auto">
+        <p className="text-center text-sm text-gray-300 mt-3 tracking-wide leading-6 md:w-[450px] md:px-auto">
           The languages & frameworks encourage me to code for my client to
           fulfill their demands and make some amazing projects.
         </p>

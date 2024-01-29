@@ -121,7 +121,7 @@ const ContactUs = () => {
           type="text"
           name="user_name"
           placeholder="Your Name"
-          className="bg-card py-3 px-4 rounded-full text-gray-300 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#a36affb4]"
+          className="bg-[#060813] py-3 px-4 rounded-full text-gray-300 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#a36affb4]"
         />
         <label
           className="text-sm font-medium text-gray-200 mt-5 mb-1"
@@ -139,7 +139,7 @@ const ContactUs = () => {
           type="email"
           name="user_email"
           placeholder="example@mail.com"
-          className="bg-card py-3 px-4 rounded-full text-gray-300 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#a36affb4]"
+          className="bg-[#060813] py-3 px-4 rounded-full text-gray-300 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#a36affb4]"
         />
         <label
           className="text-sm font-medium text-gray-200 mt-5 mb-1"
@@ -156,7 +156,7 @@ const ContactUs = () => {
           required
           placeholder="Write Your Message..."
           name="message"
-          className="bg-card py-3 px-4 rounded-full text-gray-300 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#a36affb4]"
+          className="bg-[#060813] py-3 px-4 rounded-full text-gray-300 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#a36affb4]"
         />
         <button
           data-aos="zoom-in"

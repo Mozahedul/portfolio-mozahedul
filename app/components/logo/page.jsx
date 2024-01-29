@@ -31,8 +31,12 @@ const Logo = () => {
           ref={logoRef}
           src="/logo.png"
           width={45}
-          height={45}
+          height={36}
           alt="website logo"
+          style={{
+            aspectRatio: "1/1",
+            objectFit: "contain",
+          }}
         />
       </Link>
     </div>

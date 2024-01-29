@@ -19,10 +19,13 @@ const ContactHeader = () => {
       id="contact"
       data-aos="flip-up"
       data-aos-duration="1000"
-      className={`flex flex-col justify-between py-10 ${inter.className}`}
+      className={`flex flex-col justify-between ${inter.className} md:my-10`}
     >
       <div>
-        <button type="button" className="send-message textClip">
+        <button
+          type="button"
+          className="send-message text-[#ffac5ebd] cursor-default"
+        >
           Send a message
         </button>
         <h2 className="mt-1 text-2xl md:text-4xl font-bold text-gray-200">

@@ -45,8 +45,8 @@ const Header = () => {
         menuCloseRef.current &&
         !menuCloseRef.current.contains(event.target)
       ) {
-        const audio = new Audio("/ping.mp3");
-        audio.play();
+        // const audio = new Audio("/ping.mp3");
+        // audio.play();
 
         document.querySelector("body").classList.remove("body-scroll");
         menuShowRef.current.style.transform = "rotate(0deg)";
@@ -77,9 +77,10 @@ const Header = () => {
         </button>
       </div>
 
+      {/* Navigtion menu with close button for mobile */}
       <div
         ref={menuCloseRef}
-        className={`menu-btn ${isMenuVisible ? "w-4/5" : "w-0"}`}
+        className={`menu-btn ${isMenuVisible ? "w-3/4 sm:w-1/2" : "w-0"}`}
       >
         {/* Close button for small devices */}
         <button

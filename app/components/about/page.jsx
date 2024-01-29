@@ -15,7 +15,7 @@ const AboutPage = () => {
     <div>
       <button
         type="button"
-        className="send-message textClip"
+        className="send-message text-[#ffac5ece] cursor-default"
         data-aos="zoom-in"
         data-aos-duration="500"
       >

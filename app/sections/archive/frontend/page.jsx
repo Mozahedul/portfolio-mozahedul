@@ -75,15 +75,15 @@ const Frontend = ({ category }) => {
       {/* Header section */}
       <div>
         <h1 className="text-3xl font-bold text-gray-300 flex-col">
-          <span className="block"> Frontend Projects</span>
+          <span className="block">Frontend Projects</span>
           <span className="h-[2px] bg-cardHover grow block mt-2" />
         </h1>
 
-        <div className="mt-5 flex flex-wrap">
+        <div className="mt-5 flex">
           <button
             onClick={() => handleToShowProjectCards(null, "allArchive")}
             type="button"
-            className={`btn-project text-gray-400 mr-2 mb-2 md:mb-0 md:mr-0 transition-all hover:text-cyan-400 duration-500 text-sm bg-card hover:bg-cardHover px-3 py-2 rounded-lg ${
+            className={`btn-project text-gray-400 block mr-2 mb-0 transition-all hover:text-cyan-400 duration-500 text-sm bg-card hover:bg-cardHover px-3 py-2 rounded-lg ${
               activeButton === null ? "active-project-btn" : ""
             }`}
           >
@@ -100,7 +100,7 @@ const Frontend = ({ category }) => {
                   handleToShowProjectCards(subcat?._id, subcat?.name)
                 }
                 type="button"
-                className={`btn-project mr-2 mb-2 md:mb-0 md:mr-0 text-gray-400 transition-all hover:text-cyan-400 duration-500 text-sm bg-card hover:bg-cardHover px-3 py-2 rounded-lg capitalize ${
+                className={`btn-project mr-2 mb-0 text-gray-400 transition-all hover:text-cyan-400 duration-500 text-sm bg-card hover:bg-cardHover px-3 py-1 rounded-lg capitalize ${
                   activeButton === subcat._id ? "active-project-btn" : ""
                 }`}
               >

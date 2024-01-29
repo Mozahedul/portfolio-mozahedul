@@ -13,7 +13,7 @@ const ContactSection = () => {
   }, []);
   return (
     <div
-      className="contact mt-12 md:mt-16 lg:mt-32 grid grid-clos-1 sm:grid-cols-2 md:gap-x-16 lg:mx-64 lg:justify-between"
+      className="contact mt-12 md:mt-16 lg:mt-32 px-6 sm:px-10 md:px-16 lg:px-32 xl:px-48 bg-[#56637f1a] grid grid-clos-1 sm:grid-cols-2 md:gap-x-16 lg:py-16 lg:justify-between py-10"
       id="contactMe"
     >
       <ContactHeader />

@@ -13,7 +13,10 @@ const Blog = () => {
     AOS.refresh();
   }, []);
   return (
-    <div className="lg:mx-8 xl:mx-36 my-16 md:my-28" id="blog">
+    <section
+      className="px-6 sm:px-10 md:px-16 lg:px-32 xl:px-36 my-16 md:my-28"
+      id="blog"
+    >
       {/* Blog Header */}
       <div data-aos="flip-up" data-aos-duration="500">
         <h2 className="text-cyan-400 font-bold text-2xl md:text-3xl text-center flex justify-center items-center">
@@ -184,7 +187,7 @@ const Blog = () => {
               data-aos-delay="200"
               data-aos-duration="500"
               type="button"
-              className="bg-card text-xs transition-all duration-500 hover:bg-gray-200 hover:text-card hover:bg-opacity-400 text-gray-300 leading-5 py-1 px-3 mt-4 rounded-full tracking-wide"
+              className="bg-[#ffac539c] text-xs transition-all duration-500 hover:bg-gray-200 hover:text-card text-gray-300 leading-5 py-1 px-3 mt-4 rounded-full tracking-wide"
             >
               View Details
             </button>
@@ -261,7 +264,7 @@ const Blog = () => {
               data-aos-delay="200"
               data-aos-duration="500"
               type="button"
-              className="bg-card text-xs transition-all duration-500 hover:bg-gray-200 hover:text-card hover:bg-opacity-400 text-gray-300 leading-5 py-1 px-3 mt-4 rounded-full tracking-wide"
+              className="bg-[#ffac539c] text-xs transition-all duration-500 hover:bg-gray-200 hover:text-card text-gray-300 leading-5 py-1 px-3 mt-4 rounded-full tracking-wide"
             >
               View Details
             </button>
@@ -338,7 +341,7 @@ const Blog = () => {
               data-aos-delay="200"
               data-aos-duration="500"
               type="button"
-              className="bg-card text-xs transition-all duration-500 hover:bg-gray-200 hover:text-card hover:bg-opacity-400 text-gray-300 leading-5 py-1 px-3 mt-4 rounded-full tracking-wide"
+              className="bg-[#ffac539c] text-xs transition-all duration-500 hover:bg-gray-200 hover:text-card text-gray-300 leading-5 py-1 px-3 mt-4 rounded-full tracking-wide"
             >
               View Details
             </button>
@@ -363,7 +366,7 @@ const Blog = () => {
           </button>
         </Link>
       </div>
-    </div>
+    </section>
   );
 };
 

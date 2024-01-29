@@ -68,7 +68,7 @@ export default function Work() {
       <button
         type="button"
         onClick={handleLessProject}
-        className="btn ml-2 mt-8 md:mt-16 block"
+        className="btn ml-2 transition-all duration-500 mt-8 md:mt-16 block font-medium tracking-wide hover:text-gray-300 hover:bg-[#ffac5eab] bg-[#ffac5e] rounded-full px-3 py-2 text-xs text-gray-900"
       >
         Show less
       </button>
@@ -101,7 +101,6 @@ export default function Work() {
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchServerData("/api/projects");
-      console.log("WORK DATA => ", data);
       setProjects(data.projects);
     };
     fetchData();
@@ -150,7 +149,7 @@ export default function Work() {
 
   return (
     <div
-      className={`mt-16 md:mt-32 py-12 md:py-24 lg:py-28 bg-[#ffac5e07] ${inter.className}`}
+      className={`mt-16 md:mt-32 px-6 sm:px-10 md:px-16 lg:px-32 xl:px-36 py-12 md:py-24 lg:py-28 bg-[#ffac5e07] ${inter.className}`}
       id="work"
     >
       <div data-aos="fade-up" data-aos-duration="1000">
@@ -250,7 +249,7 @@ export default function Work() {
       </div>
 
       {Array.isArray(projects) && projects.length ? (
-        <div className="grid auto-rows-fr gap-4 sm:grid-cols-2 lg:mx-8 lg:grid-cols-3 xl:mx-36">
+        <div className="grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {projects.slice(0, showMore).map(project => (
             <Card
               key={uuidv4()}
@@ -263,7 +262,7 @@ export default function Work() {
           ))}
         </div>
       ) : (
-        <div className="grid auto-rows-fr gap-4 md:grid-cols-2 lg:mx-8 lg:grid-cols-3 xl:mx-36">
+        <div className="grid auto-rows-fr gap-4 md:grid-cols-2 lg:grid-cols-3">
           {[...Array(100).keys()].slice(0, showMore).map(() => (
             <Pulse key={uuidv4()} />
           ))}
@@ -275,7 +274,7 @@ export default function Work() {
           <button
             type="button"
             onClick={handleMoreProject}
-            className="btn mr-2 mt-8 md:mt-16 block"
+            className="btn mr-2 mt-8 transition-all duration-500 md:mt-16 block font-medium tracking-wide hover:text-[#ffac5e] hover:bg-[#a36affad] bg-[#a36aff] rounded-full px-3 py-2 text-xs text-gray-200"
           >
             Show more
           </button>

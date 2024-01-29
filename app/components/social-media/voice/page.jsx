@@ -7,6 +7,7 @@ import { AiOutlineWhatsApp } from "react-icons/ai";
 import { FaSkype } from "react-icons/fa";
 import { PiMessengerLogo } from "react-icons/pi";
 import ToolTip from "../../cssFeatures/tooltips/page";
+import Link from "next/link";
 
 const Call = () => {
   useEffect(() => {
@@ -24,12 +25,12 @@ const Call = () => {
         <li className="media-btn tooltips py-1">
           <ToolTip
             tipText="Messenger"
-            alignToolTipText="right-8 top-0"
+            alignToolTipText="right-8 top-1"
             tooltipsText="tooltips-text-left"
           />
-          <a target="_blank" rel="noreferrer" href="https://m.me/mozahed07/">
+          <Link target="_blank" rel="noreferrer" href="https://m.me/mozahed07/">
             <PiMessengerLogo />
-          </a>
+          </Link>
         </li>
         <li className="media-btn tooltips py-1">
           <ToolTip
@@ -37,9 +38,13 @@ const Call = () => {
             alignToolTipText="right-8 top-0"
             tooltipsText="tooltips-text-left"
           />
-          <a target="_blank" rel="noreferrer" href="https://wa.me/1738648749">
+          <Link
+            target="_blank"
+            rel="noreferrer"
+            href="https://wa.me/1738648749"
+          >
             <AiOutlineWhatsApp />
-          </a>
+          </Link>
         </li>
 
         <li className="media-btn tooltips py-1" style={{ marginBottom: "0" }}>
@@ -48,13 +53,13 @@ const Call = () => {
             alignToolTipText="right-8 top-0"
             tooltipsText="tooltips-text-left"
           />
-          <a
+          <Link
             target="_blank"
             rel="noreferrer"
             href="https://join.skype.com/invite/xz3jzNbe4WVK"
           >
             <FaSkype />
-          </a>
+          </Link>
         </li>
       </ul>
     </div>

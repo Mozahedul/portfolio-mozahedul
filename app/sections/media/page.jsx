@@ -6,7 +6,7 @@ import ToolTip from "@/app/components/cssFeatures/tooltips/page";
 
 const SocialMedia = () => {
   return (
-    <div className="absolute w-full sm:w-8/12 md:w-6/12 lg:w-5/12 xl:w-4/12 left-1/2 p-2 md:p-3 lg:p-4 -translate-x-1/2 -top-8 md:-top-12 border-[1px] border-[#9bc2f523] bg-[#0608139c] rounded-full">
+    <div className="absolute w-11/12 sm:w-8/12 md:w-6/12 lg:w-5/12 xl:w-4/12 left-1/2 p-2 md:p-3 lg:p-4 -translate-x-1/2 -top-8 md:-top-12 border-[1px] border-[#9bc2f523] bg-[#0608139c] rounded-full">
       <div
         data-aos="zoom-in"
         data-aos-duration="500"
