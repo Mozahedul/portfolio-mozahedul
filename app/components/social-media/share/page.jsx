@@ -5,6 +5,7 @@ import { FiInstagram, FiGithub, FiLinkedin } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
 import { BiLogoCodepen } from "react-icons/bi";
 import AOS from "aos";
+import Link from "next/link";
 import ToolTip from "../../cssFeatures/tooltips/page";
 import "aos/dist/aos.css";
 
@@ -27,13 +28,14 @@ const Media = () => {
             alignToolTipText="left-8 top-0"
             tooltipsText="tooltips-text-right"
           />
-          <a
+          <Link
             target="_blank"
             rel="noreferrer"
             href="https://github.com/Mozahedul"
+            aria-label="Twitter"
           >
             <FiGithub />
-          </a>
+          </Link>
         </li>
         <li className="media-btn tooltips">
           <ToolTip
@@ -41,14 +43,15 @@ const Media = () => {
             alignToolTipText="left-8 top-0"
             tooltipsText="tooltips-text-right"
           />
-          <a
+          <Link
             target="_blank"
             rel="noreferrer"
             href="https://www.linkedin.com/in/mozahedul27/"
             title="Linkedin"
+            aria-label="Linkedin"
           >
             <FiLinkedin />
-          </a>
+          </Link>
         </li>
         <li className="media-btn tooltips">
           <ToolTip
@@ -56,14 +59,15 @@ const Media = () => {
             alignToolTipText="left-8 top-0"
             tooltipsText="tooltips-text-right"
           />
-          <a
+          <Link
             target="_blank"
             rel="noreferrer"
             href="https://www.instagram.com/mozahedul07/"
             title="Instagram"
+            aria-label="Instagram"
           >
             <FiInstagram />
-          </a>
+          </Link>
         </li>
         <li className="media-btn tooltips">
           <ToolTip
@@ -71,14 +75,15 @@ const Media = () => {
             alignToolTipText="left-8 top-0"
             tooltipsText="tooltips-text-right"
           />
-          <a
+          <Link
             target="_blank"
             rel="noreferrer"
             href="https://twitter.com/mozahedul07"
             title="X/Twitter"
+            aria-label="Twitter or X"
           >
             <FaXTwitter />
-          </a>
+          </Link>
         </li>
         <li className="media-btn tooltips">
           <ToolTip
@@ -86,14 +91,15 @@ const Media = () => {
             alignToolTipText="left-8 top-0"
             tooltipsText="tooltips-text-right"
           />
-          <a
+          <Link
             target="_blank"
             rel="noreferrer"
             href="https://codepen.io/mozahedul"
             title="CodePen"
+            aria-label="CodePen"
           >
             <BiLogoCodepen />
-          </a>
+          </Link>
         </li>
       </ul>
       <div

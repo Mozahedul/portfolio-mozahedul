@@ -69,6 +69,7 @@ const SocialMedia = () => {
               target="_blank"
               rel="noreferrer"
               href="https://twitter.com/mozahedul07"
+              aria-label="Twitter or X"
             >
               <FaXTwitter />
             </Link>
