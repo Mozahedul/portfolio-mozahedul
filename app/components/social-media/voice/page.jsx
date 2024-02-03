@@ -28,7 +28,12 @@ const Call = () => {
             alignToolTipText="right-8 top-1"
             tooltipsText="tooltips-text-left"
           />
-          <Link target="_blank" rel="noreferrer" href="https://m.me/mozahed07/">
+          <Link
+            target="_blank"
+            rel="noreferrer"
+            href="https://m.me/mozahed07/"
+            aria-label="The button navigates to the Facebook Messenger"
+          >
             <PiMessengerLogo />
           </Link>
         </li>
@@ -42,6 +47,7 @@ const Call = () => {
             target="_blank"
             rel="noreferrer"
             href="https://wa.me/1738648749"
+            aria-label="The button navigates to the WhatsApp"
           >
             <AiOutlineWhatsApp />
           </Link>
@@ -57,6 +63,7 @@ const Call = () => {
             target="_blank"
             rel="noreferrer"
             href="https://join.skype.com/invite/xz3jzNbe4WVK"
+            aria-label="The button navigates to the Skype"
           >
             <FaSkype />
           </Link>

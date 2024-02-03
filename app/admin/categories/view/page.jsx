@@ -30,7 +30,6 @@ function ViewProjects() {
     injectMetadata(pageTitle, pageDescription);
   }, [router]);
 
-  
   useEffect(() => {
     (async function fetchCategories() {
       try {
@@ -100,11 +99,14 @@ function ViewProjects() {
   }, []);
 
   return (
-    <>
-      <div className="mb-3 mt-6 flex items-center justify-between">
+    <div className="mt-24 mx-8">
+      <div className="mb-3 flex items-center justify-between">
         <h2 className="text-2xl font-bold text-gray-300">Category List</h2>
         <div>
-          <Link href="/admin/categories/create">
+          <Link
+            href="/admin/categories/create"
+            aria-label="Button navigates to category create page"
+          >
             <button
               type="button"
               className="rounded-md bg-cyan-600 px-3 py-2 text-sm text-gray-200 transition-all duration-500 hover:bg-cyan-500 hover:text-gray-300"
@@ -140,10 +142,13 @@ function ViewProjects() {
                 </td>
 
                 <td className="border-b-2 border-slate-800 p-3">
-                  <Link href={`/admin/categories/edit/${category._id}`}>
+                  <Link
+                    href={`/admin/categories/edit/${category._id}`}
+                    aria-label="The button navigates to project edit page"
+                  >
                     <button
                       type="button"
-                      className="rounded-md bg-yellow-600 p-2 transition-all duration-500 hover:bg-yellow-500 hover:text-gray-500"
+                      className="rounded-md bg-yellow-600 p-2 transition-all duration-500 hover:bg-yellow-500 hover:text-gray-200"
                     >
                       <VscEdit />
                     </button>
@@ -213,7 +218,7 @@ function ViewProjects() {
           No Categories exist to show
         </button>
       )}
-    </>
+    </div>
   );
 }
 

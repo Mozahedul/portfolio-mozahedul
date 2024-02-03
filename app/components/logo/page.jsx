@@ -26,8 +26,13 @@ const Logo = () => {
       onMouseEnter={handleLogoHover}
       onMouseLeave={handleLogoHoverOut}
     >
-      <Link href="/" onClick={handleHomeLogo}>
+      <Link
+        href="/"
+        onClick={handleHomeLogo}
+        aria-label="The button navigates to the home page"
+      >
         <Image
+          loading="lazy"
           ref={logoRef}
           src="/logo.png"
           width={45}

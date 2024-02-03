@@ -148,8 +148,10 @@ const Blog = () => {
             href="https://procodelearn.blogspot.com/2021/11/stripe-card-payment-setup-with-mern.html"
             target="_blank"
             rel="noreferrer"
+            aria-label="The button navigates to the blog website"
           >
             <Image
+              loading="lazy"
               data-aos="zoom-in"
               data-aos-duration="500"
               data-aos-delay="200"
@@ -181,6 +183,7 @@ const Blog = () => {
             href="https://procodelearn.blogspot.com/2021/11/stripe-card-payment-setup-with-mern.html"
             target="_blank"
             rel="noreferrer"
+            aria-label="The button navigates to the single blog post details"
           >
             <button
               data-aos="zoom-in"
@@ -225,8 +228,10 @@ const Blog = () => {
             href="https://procodelearn.blogspot.com/2022/06/const-mainobj-name-mozahedul-age-23.html"
             target="_blank"
             rel="noreferrer"
+            aria-label="The button navigates to the single blog post details"
           >
             <Image
+              loading="lazy"
               data-aos="zoom-in"
               data-aos-duration="500"
               data-aos-delay="200"
@@ -258,6 +263,7 @@ const Blog = () => {
             href="https://procodelearn.blogspot.com/2022/06/const-mainobj-name-mozahedul-age-23.html"
             target="_blank"
             rel="noreferrer"
+            aria-label="The button navigates to the single blog post details"
           >
             <button
               data-aos="zoom-in"
@@ -302,8 +308,10 @@ const Blog = () => {
             href="https://procodelearn.blogspot.com/2022/06/css-grid-difference-between-autofit-and.html?m=1"
             target="_blank"
             rel="noreferrer"
+            aria-label="The button navigates to the single blog post details"
           >
             <Image
+              loading="lazy"
               src="/css-grid.png"
               width={600}
               height={400}
@@ -335,6 +343,7 @@ const Blog = () => {
             href="https://procodelearn.blogspot.com/2022/06/css-grid-difference-between-autofit-and.html?m=1"
             target="_blank"
             rel="noreferrer"
+            aria-label="The button navigates to the single blog post details"
           >
             <button
               data-aos="zoom-in"
@@ -357,6 +366,7 @@ const Blog = () => {
           href="https://procodelearn.blogspot.com"
           target="_blank"
           rel="noreferrer"
+          aria-label="The button navigates to the single blog post details"
         >
           <button
             type="button"

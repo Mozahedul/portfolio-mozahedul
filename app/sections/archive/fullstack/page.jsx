@@ -122,6 +122,7 @@ const Fullstack = ({ category }) => {
                   className={`transition-all duration-500 relative group ${archive?.subcategory?.name} allArchives`}
                 >
                   <Image
+                    loading="lazy"
                     className="rounded-lg cursor-pointer"
                     src={archive?.image}
                     alt="project"
@@ -133,7 +134,11 @@ const Fullstack = ({ category }) => {
                   <div className="group-hover:w-[110%] group-hover:h-[110%] group-hover:z-[888] rounded opacity-0 w-0 h-0 group-hover:opacity-100 overflow-hidden p-4 absolute transition-all duration-500 -top-3 -left-3 right-0; bottom-0 bg-card hover:shadow-[0_0_15px_5px_rgba(0,255,255,0.1)]">
                     {/* Links to Github and project */}
                     <div className="bg-appBg block px-2 py-1 rounded absolute top-0 right-0">
-                      <Link href={archive?.github} target="_blank">
+                      <Link
+                        href={archive?.github}
+                        target="_blank"
+                        aria-label="The button navigates to the GitHub"
+                      >
                         <button
                           title="View on Github"
                           className="text-gray-300 text-lg hover:transform hover:scale-125 transition-all duration-500 hover:text-cyan-400"
@@ -142,7 +147,11 @@ const Fullstack = ({ category }) => {
                           <FiGithub />
                         </button>
                       </Link>
-                      <Link href={archive?.anchor} target="_blank">
+                      <Link
+                        href={archive?.anchor}
+                        target="_blank"
+                        aria-label="The button navigates to the archive website"
+                      >
                         <button
                           title="View Live App"
                           className="text-gray-300 text-lg hover:transform hover:scale-125 transition-all duration-500 ml-2 hover:text-cyan-400"

@@ -122,6 +122,7 @@ const Backend = ({ category }) => {
                 className={`transition-all duration-500 relative group ${archive?.subcategory?.name} allProject`}
               >
                 <Image
+                  loading="lazy"
                   className="rounded-lg cursor-pointer"
                   src={archive?.image}
                   alt={archive?.image}
@@ -137,6 +138,7 @@ const Backend = ({ category }) => {
                       target="_blank"
                       href={archive?.github}
                       rel="noreferrer"
+                      aria-label="The button navigates to the GitHub website"
                     >
                       <button
                         title="View on Github"
@@ -150,6 +152,7 @@ const Backend = ({ category }) => {
                       target="_blank"
                       href={archive?.anchor}
                       rel="noreferrer"
+                      aria-label="The button navigates to the archive website"
                     >
                       <button
                         title="View Live App"

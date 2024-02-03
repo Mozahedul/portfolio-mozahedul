@@ -169,7 +169,7 @@ const SkillSection = () => {
           id="leftBtn"
           onClick={backwardHandler}
           type="button"
-          className="text-xl disabled:bg-[#06081342] disabled:text-gray-500 disabled:cursor-not-allowed text-gray-200 rounded-md p-2 mr-[2px] bg-[#060813] border-[1px] border-[#9bc2f518]"
+          className="text-xl disabled:bg-[#06081342] disabled:text-gray-200 disabled:cursor-not-allowed text-gray-200 rounded-md p-2 mr-[2px] bg-[#060813] border-[1px] border-[#9bc2f518]"
         >
           <IoIosArrowBack />
         </button>
@@ -177,7 +177,7 @@ const SkillSection = () => {
           id="rightBtn"
           onClick={forwardHandler}
           type="button"
-          className="text-xl disabled:bg-[#06081342] disabled:text-gray-500 disabled:cursor-not-allowed text-gray-200 rounded-md p-2 ml-[2px] bg-[#060813] border-[1px] border-[#9bc2f518]"
+          className="text-xl disabled:bg-[#06081342] disabled:text-gray-200 disabled:cursor-not-allowed text-gray-200 rounded-md p-2 ml-[2px] bg-[#060813] border-[1px] border-[#9bc2f518]"
         >
           <IoIosArrowForward />
         </button>

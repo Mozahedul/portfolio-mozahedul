@@ -34,6 +34,7 @@ const Card = ({
               target="_blank"
               rel="noreferer"
               title="GitHub Repository"
+              aria-label="The button navigates to the GitHub"
             >
               <LuGithub className="ml-2 text-xl text-gray-400 transition-all duration-500 hover:text-[#ffac53]" />
             </Link>
@@ -44,6 +45,7 @@ const Card = ({
               target="_blank"
               rel="noreferer"
               title="Visit Website"
+              aria-label="The button navigates to the project website"
             >
               <FiExternalLink className="text-xl text-gray-400 transition-all duration-500 hover:text-[#ffac53]" />
             </Link>
@@ -56,7 +58,7 @@ const Card = ({
       <p className="mt-4 text-sm font-medium tracking-wide text-gray-400">
         {description}
       </p>
-      <ul className="mt-5 flex flex-wrap font-semibold text-gray-500">
+      <ul className="mt-5 flex flex-wrap font-semibold text-gray-200">
         {Array.isArray(language) &&
           language.length > 0 &&
           language.map(lang => (

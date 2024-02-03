@@ -23,6 +23,7 @@ const SocialMedia = () => {
               target="_blank"
               rel="noreferrer"
               href="https://github.com/Mozahedul"
+              aria-label="The button navigates to the GitHub"
             >
               <FiGithub />
             </Link>
@@ -37,6 +38,7 @@ const SocialMedia = () => {
               target="_blank"
               rel="noreferrer"
               href="https://www.linkedin.com/in/mozahedul27/"
+              aria-label="The button navigates to the Linkedin"
             >
               <FiLinkedin />
             </Link>
@@ -51,6 +53,7 @@ const SocialMedia = () => {
               target="_blank"
               rel="noreferrer"
               href="https://www.instagram.com/mozahedul07/"
+              aria-label="The button navigates to the Instagram"
             >
               <FiInstagram />
             </Link>
@@ -60,6 +63,7 @@ const SocialMedia = () => {
               tipText="X/Twitter"
               alignToolTipText="left-1/2 -translate-x-1/2 bottom-12"
               tooltipsText="tooltips-text-right"
+              aria-label="The button navigates to the Twitter"
             />
             <Link
               target="_blank"
@@ -74,6 +78,7 @@ const SocialMedia = () => {
               tipText="CodePen"
               alignToolTipText="left-1/2 -translate-x-1/2 bottom-12"
               tooltipsText="tooltips-text-right"
+              aria-label="The button navigates to the Codepen"
             />
             <Link
               target="_blank"

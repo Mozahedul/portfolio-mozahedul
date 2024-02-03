@@ -91,10 +91,10 @@ const Archive = () => {
         <h2 className="text-2xl md:text-4xl font-bold mt-2 text-gray-400 flex items-center">
           Mozahedul Islam
         </h2>
-        <p className="text-xl font-semibold text-gray-500 mt-3">
+        <p className="text-xl font-semibold text-gray-200 mt-3">
           Experienced Full-stack Developer
         </p>
-        <p className="text-md font-medium mt-2 mb-4 text-gray-500">
+        <p className="text-md font-medium mt-2 mb-4 text-gray-200">
           I develop exclusive and genuine web projects for clients.
         </p>
         <div className="flex flex-col items-start mt-5 gap-y-2">
@@ -113,7 +113,7 @@ const Archive = () => {
                 }`}
               />
               <span
-                className={`block uppercase text-sm font-semibold text-gray-500 tracking-wide group-hover:text-gray-400 ${
+                className={`block uppercase text-sm font-semibold text-gray-200 tracking-wide group-hover:text-gray-400 ${
                   activeButton === category._id ? "active-text" : ""
                 }`}
               >

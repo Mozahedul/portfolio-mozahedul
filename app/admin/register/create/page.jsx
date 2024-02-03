@@ -120,7 +120,10 @@ const UserRegister = () => {
         <h2 className="text-lg font-bold text-gray-300 md:text-2xl">
           Create a User
         </h2>
-        <Link href="/admin/register/view">
+        <Link
+          href="/admin/register/view"
+          aria-label="The button navigates to the user view page"
+        >
           <button
             type="button"
             className="rounded-md bg-cyan-600 px-3 py-2 text-sm font-medium text-gray-300 transition-all duration-500 hover:bg-cyan-400 hover:text-gray-200"

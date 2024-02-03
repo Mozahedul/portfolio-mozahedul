@@ -123,8 +123,8 @@ function ViewProjects() {
   }, []);
 
   return (
-    <>
-      <div className="mb-3 mt-6 flex items-center justify-between">
+    <div className="mt-28 mx-8">
+      <div className="mb-3 flex items-center justify-between">
         <h2 className="text-2xl font-bold text-gray-300">Project List</h2>
         <div>
           <button
@@ -134,7 +134,10 @@ function ViewProjects() {
           >
             Delete All Projects
           </button>
-          <Link href="/admin/projects/create">
+          <Link
+            href="/admin/projects/create"
+            aria-label="The button navigates to the project create page"
+          >
             <button
               type="button"
               className="rounded-md bg-cyan-600 px-3 py-2 text-xs text-gray-200 transition-all duration-500 hover:bg-cyan-500 hover:text-gray-300"
@@ -190,10 +193,13 @@ function ViewProjects() {
                   {`${project.description.substring(0, 20)}...`}
                 </td>
                 <td className="border-b-2 border-slate-800 p-3">
-                  <Link href={`/admin/projects/edit/${project._id}`}>
+                  <Link
+                    href={`/admin/projects/edit/${project._id}`}
+                    aria-label="The button navigates to the project edit page"
+                  >
                     <button
                       type="button"
-                      className="rounded-md bg-yellow-600 p-2 transition-all duration-500 hover:bg-yellow-500 hover:text-gray-500"
+                      className="rounded-md bg-yellow-600 p-2 transition-all duration-500 hover:bg-yellow-500 hover:text-gray-200"
                     >
                       <VscEdit />
                     </button>
@@ -262,7 +268,7 @@ function ViewProjects() {
           No Projects exist to show
         </button>
       )}
-    </>
+    </div>
   );
 }
 

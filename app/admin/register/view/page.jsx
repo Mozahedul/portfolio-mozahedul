@@ -85,7 +85,10 @@ function ViewRegister() {
           >
             Delete All Users
           </button>
-          <Link href="/admin/register/create">
+          <Link
+            href="/admin/register/create"
+            aria-label="The button navigates to the user create page"
+          >
             <button
               type="button"
               className="rounded-md bg-cyan-600 px-3 py-2 text-xs text-gray-200 transition-all duration-500 hover:bg-cyan-500 hover:text-gray-300"
@@ -120,10 +123,13 @@ function ViewRegister() {
                   {user.email}
                 </td>
                 <td className="border-b-2 border-slate-800 p-3">
-                  <Link href={`/admin/register/edit/${user._id}`}>
+                  <Link
+                    href={`/admin/register/edit/${user._id}`}
+                    aria-label="The button navigates to the register view page"
+                  >
                     <button
                       type="button"
-                      className="rounded-md bg-yellow-600 p-2 transition-all duration-500 hover:bg-yellow-500 hover:text-gray-500"
+                      className="rounded-md bg-yellow-600 p-2 transition-all duration-500 hover:bg-yellow-500 hover:text-gray-200"
                     >
                       <VscEdit />
                     </button>

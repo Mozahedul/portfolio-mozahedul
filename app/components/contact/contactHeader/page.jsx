@@ -107,6 +107,7 @@ const ContactHeader = () => {
               rel="noreferrer"
               href="https://procodelearn.blogspot.com/"
               className="text-[#ffac5e] text-xs tracking-wide"
+              aria-label="The button navigates to the blog website"
             >
               https://procodelearn.blogspot.com/
             </Link>

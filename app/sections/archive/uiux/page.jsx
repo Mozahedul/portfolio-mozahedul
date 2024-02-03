@@ -129,6 +129,7 @@ const UiUx = ({ category }) => {
                 className={`transition-all duration-500 relative group ${archive?.subcategory?.name}  allProject`}
               >
                 <Image
+                  loading="lazy"
                   className="rounded-lg cursor-pointer"
                   src={archive?.image}
                   alt={archive?.image}
@@ -144,6 +145,7 @@ const UiUx = ({ category }) => {
                       href={archive?.anchor}
                       target="_blank"
                       rel="noreferrer"
+                      aria-label="The button navigates to the archive website"
                     >
                       <button
                         title="View Live App"

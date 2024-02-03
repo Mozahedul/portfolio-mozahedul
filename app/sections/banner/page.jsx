@@ -14,6 +14,7 @@ const Hero = () => {
         data-aos-duration="500"
       >
         <Image
+          loading="lazy"
           src="/profile.png"
           width={280}
           height={280}

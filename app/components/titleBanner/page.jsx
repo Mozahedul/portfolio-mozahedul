@@ -49,6 +49,7 @@ const TitleHero = () => {
           href="https://drive.google.com/file/d/1KLtQYOs3X0GXVvFGWnh2M0pjueVgezTE/preview"
           target="_blank"
           rel="noreferrer"
+          aria-label="The button navigates to Resume PDF file"
         >
           <button
             type="button"

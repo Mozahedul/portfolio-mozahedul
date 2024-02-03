@@ -15,7 +15,7 @@ const BannerDetails = () => {
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-1 md:gap-8 mt-10 md:mt-16">
       <section className="inline-grid items-center gap-y-6 py-8">
         <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
-          <h2 className="tracking-wide uppercase text-gray-500 text-sm mb-1">
+          <h2 className="tracking-wide uppercase text-gray-200 text-sm mb-1">
             Lives in{" "}
           </h2>
           <p className="text-xs text-gray-300 tracking-wide leading-5">
@@ -24,7 +24,7 @@ const BannerDetails = () => {
           </p>
         </div>
         <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
-          <h2 className="tracking-wide uppercase text-gray-500 text-sm mb-1">
+          <h2 className="tracking-wide uppercase text-gray-200 text-sm mb-1">
             Special Expertise
           </h2>
           <p className="text-xs text-gray-300 tracking-wide leading-5">
@@ -34,7 +34,7 @@ const BannerDetails = () => {
           </p>
         </div>
         <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
-          <h2 className="tracking-wide uppercase text-gray-500 text-sm mb-1">
+          <h2 className="tracking-wide uppercase text-gray-200 text-sm mb-1">
             Hobbies{" "}
           </h2>
           <p className="text-xs text-gray-300 tracking-wide leading-5">
@@ -45,6 +45,7 @@ const BannerDetails = () => {
       </section>
       <section>
         <Image
+          loading="lazy"
           data-aos="zoom-in"
           data-aos-duration="500"
           src="/profile-image.jpg"
@@ -65,7 +66,7 @@ const BannerDetails = () => {
           data-aos-duration="500"
           data-aos-delay="200"
         >
-          <h2 className="tracking-wide uppercase text-gray-500 text-sm mb-1">
+          <h2 className="tracking-wide uppercase text-gray-200 text-sm mb-1">
             Experience{" "}
           </h2>
           <p className="text-xs text-gray-300 tracking-wide leading-5">
@@ -79,7 +80,7 @@ const BannerDetails = () => {
           data-aos-duration="500"
           data-aos-delay="200"
         >
-          <h2 className="tracking-wide uppercase text-gray-500 text-sm mb-1">
+          <h2 className="tracking-wide uppercase text-gray-200 text-sm mb-1">
             Projects done
           </h2>
           <p className="text-xs text-gray-300 tracking-wide leading-5">
@@ -93,7 +94,7 @@ const BannerDetails = () => {
           data-aos-duration="500"
           data-aos-delay="200"
         >
-          <h2 className="tracking-wide uppercase text-gray-500 text-sm mb-1">
+          <h2 className="tracking-wide uppercase text-gray-200 text-sm mb-1">
             Certifications
           </h2>
           <p className="text-xs text-gray-300 tracking-wide leading-5">

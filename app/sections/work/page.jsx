@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 // import Pulse from "@/app/components/animation/pulse/page";
 import AOS from "aos";
 import { v4 as uuidv4 } from "uuid";
@@ -240,7 +240,11 @@ export default function Work() {
         </h2>
 
         <div className="flex justify-center mb-8 mt-5">
-          <Link href="/pages/archive">
+          <Link
+            href="/pages/archive"
+            alt="View archive button"
+            aria-label="The button navigates to the archive page"
+          >
             <button
               type="button"
               onClick={handleArchive}

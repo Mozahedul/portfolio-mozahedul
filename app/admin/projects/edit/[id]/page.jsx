@@ -134,12 +134,15 @@ const EditProject = () => {
   }, [param.id, router]);
 
   return (
-    <div className="mt-8 flex flex-col items-center justify-center">
+    <div className="mt-24 flex flex-col items-center justify-center">
       <div className="mb-4 flex w-full items-center justify-between sm:w-3/4 md:w-2/4 xl:w-2/6">
         <h2 className="text-lg font-bold text-gray-300 md:text-2xl">
           Edit a Project
         </h2>
-        <Link href="/admin/projects/view">
+        <Link
+          href="/admin/projects/view"
+          aria-label="The button navigates to project view page"
+        >
           <button
             type="button"
             className="rounded-md bg-cyan-600 px-3 py-2 text-sm font-medium text-gray-300 transition-all duration-500 hover:bg-cyan-400 hover:text-gray-200"
