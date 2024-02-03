@@ -72,6 +72,7 @@ const Header = () => {
           ref={menuShowRef}
           onClick={handleMenuShow}
           className="text-3xl text-[#a36aff] transition-all duration-500 hover:text-[#a36aff] md:hidden"
+          aria-label="Button for mobile navigation menu showing"
         >
           <RiMenu3Fill />
         </button>
@@ -88,6 +89,7 @@ const Header = () => {
           ref={menuBtnCloseRef}
           onClick={handleMenuClose}
           className="absolute mt-2 right-0 top-0 px-7 text-4xl text-[#a36aff] transition-all duration-500 hover:text-[#a36aff] md:hidden"
+          aria-label="Button for mobile navigation menu closing"
         >
           <IoClose />
         </button>

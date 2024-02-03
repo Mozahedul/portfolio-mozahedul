@@ -276,6 +276,7 @@ const EditArchive = () => {
           <button
             type="button"
             className="rounded-md bg-cyan-600 px-3 py-2 text-sm font-medium text-gray-300 transition-all duration-500 hover:bg-cyan-400 hover:text-gray-200"
+            aria-label="The page navigates to view arhive page"
           >
             View Archives
           </button>
@@ -359,6 +360,7 @@ const EditArchive = () => {
             id="category"
             onClick={event => handleShowCategoryCheckbox(event)}
             className="lang-btn relative w-full rounded-md bg-slate-500 p-2 text-left text-sm text-gray-300"
+            aria-label="select button for category selection"
           >
             {categories.length > 0 ? (
               <span
@@ -422,6 +424,7 @@ const EditArchive = () => {
             id="subcategory"
             onClick={event => handleShowSubCategoryCheckbox(event)}
             className="lang-btn relative w-full rounded-md bg-slate-500 p-2 text-left text-sm text-gray-300"
+            aria-label="Button for subcategory selection"
           >
             {subCategories.length > 0 ? (
               <span
@@ -541,6 +544,7 @@ const EditArchive = () => {
             id="language"
             onClick={event => handleShowCheckbox(event)}
             className="lang-btn relative w-full rounded-md bg-slate-500 p-2 text-left text-sm text-gray-300"
+            aria-label="Select button for language selection"
           >
             {languages?.length > 0 ? (
               languages.map(lang => (
@@ -621,6 +625,7 @@ const EditArchive = () => {
             className={`w-full  ${
               isLoading ? "cursor-not-allowed" : "cursor-pointer"
             } rounded-md bg-cyan-600 p-2 text-center text-sm font-semibold text-gray-300 transition-all duration-500 hover:bg-cyan-500 hover:text-gray-200`}
+            aria-label="Update project button"
           >
             {isLoading ? (
               <>

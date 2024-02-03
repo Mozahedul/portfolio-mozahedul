@@ -62,6 +62,7 @@ const Navigation = ({ handleMenuClose }) => {
             className="bubbly-button"
             type="button"
             onClick={event => handleToShowSection(event, "about")}
+            aria-label="Button for about menu"
           >
             About
           </button>
@@ -71,6 +72,7 @@ const Navigation = ({ handleMenuClose }) => {
             className="flex bubbly-button"
             type="button"
             onClick={event => handleToShowSection(event, "skills")}
+            aria-label="Button for skills menu"
           >
             Skills
           </button>
@@ -80,6 +82,7 @@ const Navigation = ({ handleMenuClose }) => {
             className="flex bubbly-button"
             type="button"
             onClick={event => handleToShowSection(event, "work")}
+            aria-label="Button for work menu"
           >
             Work
           </button>
@@ -89,6 +92,7 @@ const Navigation = ({ handleMenuClose }) => {
             className="flex bubbly-button"
             type="button"
             onClick={event => handleToShowSection(event, "blog")}
+            aria-label="Button for blog menu"
           >
             Blog
           </button>
@@ -98,6 +102,7 @@ const Navigation = ({ handleMenuClose }) => {
             className="flex bubbly-button"
             type="button"
             onClick={event => handleToShowSection(event, "contactMe")}
+            aria-label="Button for contact menu"
           >
             Contact
           </button>

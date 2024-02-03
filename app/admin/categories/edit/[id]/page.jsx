@@ -115,6 +115,7 @@ const EditProject = () => {
           <button
             type="button"
             className="rounded-md bg-cyan-600 px-3 py-2 text-sm font-medium text-gray-300 transition-all duration-500 hover:bg-cyan-400 hover:text-gray-200"
+            aria-label="View category button"
           >
             View Categories
           </button>
@@ -157,6 +158,7 @@ const EditProject = () => {
             className={`w-full  ${
               isLoading ? "cursor-not-allowed" : "cursor-pointer"
             } rounded-md bg-cyan-600 p-2 text-center text-sm font-semibold text-gray-300 transition-all duration-500 hover:bg-cyan-500 hover:text-gray-200`}
+            aria-label="Update project button"
           >
             {isLoading ? (
               <>

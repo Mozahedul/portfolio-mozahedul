@@ -18,6 +18,7 @@ const AboutPage = () => {
         className="send-message text-[#ffac5ece] cursor-default"
         data-aos="zoom-in"
         data-aos-duration="500"
+        aria-label="Button for about me"
       >
         About me
       </button>

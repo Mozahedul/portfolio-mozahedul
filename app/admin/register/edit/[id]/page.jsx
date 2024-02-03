@@ -91,6 +91,7 @@ const UpdateUserRegister = () => {
           <button
             type="button"
             className="rounded-md bg-cyan-600 px-3 py-2 text-sm font-medium text-gray-300 transition-all duration-500 hover:bg-cyan-400 hover:text-gray-200"
+            aria-label="Button for viewing user"
           >
             View User
           </button>
@@ -151,6 +152,7 @@ const UpdateUserRegister = () => {
             type="button"
             className="absolute right-3 top-8 text-xl"
             onClick={handleTogglePwd}
+            aria-label="Button for showing and hiding password"
           >
             {isPwdVisible ? <BsEyeSlashFill /> : <BsEyeFill />}
           </button>
@@ -173,6 +175,7 @@ const UpdateUserRegister = () => {
             type="button"
             className="absolute right-3 top-8 text-xl"
             onClick={handleTglConfPwd}
+            aria-label="Button for showing and hiding password"
           >
             {isConfPwdVisible ? <BsEyeSlashFill /> : <BsEyeFill />}
           </button>
@@ -181,6 +184,7 @@ const UpdateUserRegister = () => {
           <button
             type="submit"
             className="w-full cursor-pointer rounded-md bg-cyan-600 p-2 text-sm font-semibold text-gray-300 transition-all duration-500 hover:bg-cyan-500 hover:text-gray-200"
+            aria-label="Button for updating user"
           >
             Update User
           </button>

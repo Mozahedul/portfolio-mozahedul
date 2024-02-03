@@ -45,6 +45,7 @@ const Language = ({ setProjectForm, setLanguages, languages }) => {
         type="button"
         onClick={event => handleShowCheckbox(event)}
         className="lang-btn relative w-full rounded-md bg-slate-500 p-2 text-left text-sm text-gray-300"
+        aria-label="Button for showing languages"
       >
         {/* this section will show the languages menu when the menu is selected from dropdown */}
         {languages?.length > 0 ? (

@@ -139,6 +139,7 @@ const CreateProject = () => {
           <button
             type="button"
             className="rounded-md bg-cyan-600 px-3 py-2 text-sm font-medium text-gray-300 transition-all duration-500 hover:bg-cyan-400 hover:text-gray-200"
+            aria-label="The button for project view page"
           >
             View Projects
           </button>
@@ -242,6 +243,7 @@ const CreateProject = () => {
             type="button"
             onClick={event => handleShowCheckbox(event)}
             className="lang-btn relative w-full rounded-md bg-slate-500 p-2 text-left text-sm text-gray-300"
+            aria-label="Button to show languages"
           >
             {languages?.length > 0 ? (
               languages.map(lang => (
@@ -319,6 +321,7 @@ const CreateProject = () => {
             className={`w-full  ${
               isLoading || isEmpty ? "cursor-not-allowed" : "cursor-pointer"
             } rounded-md bg-cyan-600 p-2 text-center text-sm font-semibold text-gray-300 transition-all duration-500 hover:bg-cyan-500 hover:text-gray-200`}
+            aria-label="Create project button"
           >
             {isLoading && isEmpty ? (
               <>

@@ -69,6 +69,7 @@ const Category = ({
         type="button"
         onClick={event => handleShowCategoryCheckbox(event)}
         className="lang-btn relative w-full rounded-md bg-slate-500 p-2 text-left text-sm text-gray-300"
+        aria-label="Button for showing categories"
       >
         {showCategories?.length > 0 ? (
           showCategories.map(cat => (

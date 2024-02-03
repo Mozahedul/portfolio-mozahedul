@@ -94,6 +94,7 @@ const Category = () => {
           <button
             type="button"
             className="rounded-md bg-cyan-600 px-3 py-2 text-sm font-medium text-gray-300 transition-all duration-500 hover:bg-cyan-400 hover:text-gray-200"
+            aria-label="View category button"
           >
             View Category
           </button>
@@ -129,6 +130,7 @@ const Category = () => {
             className={`w-full  ${
               isLoading || isEmpty ? "cursor-not-allowed" : "cursor-pointer"
             } rounded-md bg-cyan-600 p-2 text-center text-sm font-semibold text-gray-300 transition-all duration-500 hover:bg-cyan-500 hover:text-gray-200`}
+            aria-label="Category submit button"
           >
             {isLoading && isEmpty ? (
               <>

@@ -127,6 +127,7 @@ const UserRegister = () => {
           <button
             type="button"
             className="rounded-md bg-cyan-600 px-3 py-2 text-sm font-medium text-gray-300 transition-all duration-500 hover:bg-cyan-400 hover:text-gray-200"
+            aria-label="Button for user view"
           >
             View User
           </button>
@@ -214,6 +215,7 @@ const UserRegister = () => {
             type="button"
             className="absolute right-3 top-8 text-xl"
             onClick={handleTogglePassword}
+            aria-label="Button for show and hide password"
           >
             {isPasswordVisible ? <BsEyeSlashFill /> : <BsEyeFill />}
           </button>
@@ -257,6 +259,7 @@ const UserRegister = () => {
             type="button"
             className="absolute right-3 top-8 text-xl"
             onClick={handleToggleConfirmPassword}
+            aria-label="Button for showing and hiding password"
           >
             {isConfirmPasswordVisible ? <BsEyeSlashFill /> : <BsEyeFill />}
           </button>
@@ -268,6 +271,7 @@ const UserRegister = () => {
             className={`w-full  ${
               isLoading || isEmpty ? "cursor-not-allowed" : "cursor-pointer"
             } rounded-md bg-cyan-600 p-2 text-center text-sm font-semibold text-gray-300 transition-all duration-500 hover:bg-cyan-500 hover:text-gray-200`}
+            aria-label="Button for creating user"
           >
             {isLoading && isEmpty ? (
               <>

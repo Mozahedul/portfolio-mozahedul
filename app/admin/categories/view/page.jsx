@@ -105,11 +105,12 @@ function ViewProjects() {
         <div>
           <Link
             href="/admin/categories/create"
-            aria-label="Button navigates to category create page"
+            aria-label="Button for category creation"
           >
             <button
               type="button"
               className="rounded-md bg-cyan-600 px-3 py-2 text-sm text-gray-200 transition-all duration-500 hover:bg-cyan-500 hover:text-gray-300"
+              aria-label="Category create button"
             >
               Create Category
             </button>
@@ -149,6 +150,7 @@ function ViewProjects() {
                     <button
                       type="button"
                       className="rounded-md bg-yellow-600 p-2 transition-all duration-500 hover:bg-yellow-500 hover:text-gray-200"
+                      aria-label="Button for project edit"
                     >
                       <VscEdit />
                     </button>
@@ -158,6 +160,7 @@ function ViewProjects() {
                     // onClick={() => handleConfirmDelete(category._id)}
                     onClick={() => openModal(category)}
                     className="ml-2 rounded-md bg-red-700 p-2 transition-all duration-500 hover:bg-red-500 hover:text-gray-300"
+                    aria-label="Button for project delete"
                   >
                     <RiDeleteBin5Fill />
                   </button>
@@ -192,6 +195,7 @@ function ViewProjects() {
                           type="button"
                           onClick={closeModal}
                           className="rounded-full flex items-center text-sm gap-x-1 bg-slate-500 px-3 py-2 transition-all duration-500 hover:bg-slate-800 hover:text-gray-300"
+                          aria-label="Button for project cancel"
                         >
                           <RiDeleteBin5Fill /> Cancel
                         </button>
@@ -199,6 +203,7 @@ function ViewProjects() {
                           type="button"
                           onClick={() => handleConfirmDelete(modalCat._id)}
                           className="rounded-full flex items-center text-sm gap-x-1 bg-red-700 px-3 py-2 transition-all duration-500 hover:bg-red-500 hover:text-gray-300"
+                          aria-label="Button for project delete"
                         >
                           Delete Item <RiDeleteBin5Fill />
                         </button>
@@ -214,6 +219,7 @@ function ViewProjects() {
         <button
           type="button"
           className="mx-auto mt-6 block w-full rounded-full bg-slate-800 py-2 text-xl font-bold text-gray-300 md:w-1/2"
+          aria-label="Button for no category exist"
         >
           No Categories exist to show
         </button>

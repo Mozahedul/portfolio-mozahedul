@@ -118,6 +118,7 @@ function ViewArchive() {
             <button
               type="button"
               className="rounded-md bg-cyan-600 px-3 py-2 text-sm text-gray-200 transition-all duration-500 hover:bg-cyan-500 hover:text-gray-300"
+              aria-label="Create archive button"
             >
               Create Archive
             </button>
@@ -190,6 +191,7 @@ function ViewArchive() {
                     <button
                       type="button"
                       className="rounded-md bg-yellow-600 p-2 transition-all duration-500 hover:bg-yellow-500 hover:text-gray-200"
+                      aria-label="Button will navigate to single archive edit page"
                     >
                       <VscEdit />
                     </button>
@@ -198,6 +200,7 @@ function ViewArchive() {
                     type="button"
                     onClick={() => openModal(archive)}
                     className="ml-2 rounded-md bg-red-700 p-2 transition-all duration-500 hover:bg-red-500 hover:text-gray-300"
+                    aria-label="Archive delete button"
                   >
                     <RiDeleteBin5Fill />
                   </button>
@@ -232,6 +235,7 @@ function ViewArchive() {
                           type="button"
                           onClick={handleCancelDelete}
                           className="rounded-full flex items-center text-sm gap-x-1 bg-slate-500 px-3 py-2 transition-all duration-500 hover:bg-slate-800 hover:text-gray-300"
+                          aria-label="Archive cancel button"
                         >
                           <RiDeleteBin5Fill /> Cancel
                         </button>
@@ -239,6 +243,7 @@ function ViewArchive() {
                           type="button"
                           onClick={() => handleConfirmDelete(modalArchive?._id)}
                           className="rounded-full flex items-center text-sm gap-x-1 bg-red-700 px-3 py-2 transition-all duration-500 hover:bg-red-500 hover:text-gray-300"
+                          aria-label="Archive delete button"
                         >
                           Delete Item <RiDeleteBin5Fill />
                         </button>
@@ -254,6 +259,7 @@ function ViewArchive() {
         <button
           type="button"
           className="mx-auto mt-6 block w-full rounded-full bg-slate-800 py-2 text-xl font-bold text-gray-300 md:w-1/2"
+          aria-label="No archive button"
         >
           No Archive exist to show
         </button>

@@ -38,6 +38,7 @@ const Scroll = () => {
       ref={scrollRef}
       onClick={handleScroll}
       className="fixed bottom-16 p-3 rounded-full bg-[#a36aff] right-20 hidden animate-bounce text-xl text-gray-200 transition-all duration-500 hover:bg-gray-200 hover:-translate-y-1.5 hover:text-[#a36aff]"
+      aria-label="Button for scrolling top"
     >
       <FaArrowUp />
     </button>

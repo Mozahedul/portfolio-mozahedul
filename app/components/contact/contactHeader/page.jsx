@@ -25,6 +25,7 @@ const ContactHeader = () => {
         <button
           type="button"
           className="send-message text-[#ffac5ebd] cursor-default"
+          aria-label="Button for sending message"
         >
           Send a message
         </button>

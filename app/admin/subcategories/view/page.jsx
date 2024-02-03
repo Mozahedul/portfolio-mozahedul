@@ -121,6 +121,7 @@ function ViewProjects() {
             <button
               type="button"
               className="rounded-md bg-cyan-600 px-3 py-2 text-sm text-gray-200 transition-all duration-500 hover:bg-cyan-500 hover:text-gray-300"
+              aria-label="Button for creating subCategory"
             >
               Create SubCategory
             </button>
@@ -172,6 +173,7 @@ function ViewProjects() {
                     <button
                       type="button"
                       className="rounded-md bg-yellow-600 p-2 transition-all duration-500 hover:bg-yellow-500 hover:text-gray-200"
+                      aria-label="Button for updating project"
                     >
                       <VscEdit />
                     </button>
@@ -181,6 +183,7 @@ function ViewProjects() {
                     // onClick={() => handleConfirmDelete(subcategory._id)}
                     onClick={() => openModal(subcategory)}
                     className="ml-2 rounded-md bg-red-700 p-2 transition-all duration-500 hover:bg-red-500 hover:text-gray-300"
+                    aria-label="Button for deleting project"
                   >
                     <RiDeleteBin5Fill />
                   </button>
@@ -215,6 +218,7 @@ function ViewProjects() {
                           type="button"
                           onClick={closeModal}
                           className="rounded-full flex items-center text-sm gap-x-1 bg-slate-500 px-3 py-2 transition-all duration-500 hover:bg-slate-800 hover:text-gray-300"
+                          aria-label="Button for cancelling subCategory"
                         >
                           <RiDeleteBin5Fill /> Cancel
                         </button>
@@ -222,6 +226,7 @@ function ViewProjects() {
                           type="button"
                           onClick={() => handleConfirmDelete(modalSubCat._id)}
                           className="rounded-full flex items-center text-sm gap-x-1 bg-red-700 px-3 py-2 transition-all duration-500 hover:bg-red-500 hover:text-gray-300"
+                          aria-label="Button for deleting subcategory"
                         >
                           Delete Item <RiDeleteBin5Fill />
                         </button>
@@ -237,6 +242,7 @@ function ViewProjects() {
         <button
           type="button"
           className="mx-auto mt-6 block w-full rounded-full bg-slate-800 py-2 text-xl font-bold text-gray-300 md:w-1/2"
+          aria-label="Button for subCategory exist or not"
         >
           No SubCategories exist to show
         </button>

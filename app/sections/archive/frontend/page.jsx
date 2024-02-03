@@ -86,6 +86,7 @@ const Frontend = ({ category }) => {
             className={`btn-project text-gray-400 block mr-2 mb-0 transition-all hover:text-cyan-400 duration-500 text-sm bg-card hover:bg-cardHover px-3 py-2 rounded-lg ${
               activeButton === null ? "active-project-btn" : ""
             }`}
+            aria-label="Button for showing all projects"
           >
             Show All
           </button>
@@ -103,6 +104,7 @@ const Frontend = ({ category }) => {
                 className={`btn-project mr-2 mb-0 text-gray-400 transition-all hover:text-cyan-400 duration-500 text-sm bg-card hover:bg-cardHover px-3 py-1 rounded-lg capitalize ${
                   activeButton === subcat._id ? "active-project-btn" : ""
                 }`}
+                aria-label="Button for showing all projects"
               >
                 {subcat?.name}
               </button>
@@ -140,6 +142,7 @@ const Frontend = ({ category }) => {
                       title="View on Github"
                       className="text-gray-300 text-lg hover:transform hover:scale-125 transition-all duration-500 hover:text-cyan-400"
                       type="button"
+                      aria-label="Button for GitHub"
                     >
                       <FiGithub />
                     </button>
@@ -177,6 +180,7 @@ const Frontend = ({ category }) => {
                         key={uuidv4()}
                         type="button"
                         className="text-xs font-medium rounded-lg bg-appBg px-2 text-gray-400 py-1"
+                        aria-label="Button for showing languages"
                       >
                         {lang}
                       </button>

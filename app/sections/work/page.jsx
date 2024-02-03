@@ -69,6 +69,7 @@ export default function Work() {
         type="button"
         onClick={handleLessProject}
         className="btn ml-2 transition-all duration-500 mt-8 md:mt-16 block font-medium tracking-wide hover:text-gray-300 hover:bg-[#ffac5eab] bg-[#ffac5e] rounded-full px-3 py-2 text-xs text-gray-900"
+        aria-label="Button for show less"
       >
         Show less
       </button>
@@ -249,6 +250,7 @@ export default function Work() {
               type="button"
               onClick={handleArchive}
               className="px-3 py-2 rounded-full bg-[#0c0c21] border-[2px] border-[#9bc2f518] text-[12px] md:text-sm tracking-wide hover:bg-cardHover text-gray-200 transition-all duration-1000 hover:text-[#ffac5e]"
+              aria-label="Button for view archive"
             >
               View the archive
             </button>
@@ -283,6 +285,7 @@ export default function Work() {
             type="button"
             onClick={handleMoreProject}
             className="btn mr-2 mt-8 transition-all duration-500 md:mt-16 block font-medium tracking-wide hover:text-[#ffac5e] hover:bg-[#a36affad] bg-[#a36aff] rounded-full px-3 py-2 text-xs text-gray-200"
+            aria-label="Button for show more"
           >
             Show more
           </button>

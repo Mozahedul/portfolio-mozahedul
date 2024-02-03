@@ -82,6 +82,7 @@ function ViewRegister() {
             type="button"
             onClick={handleDeleteAll}
             className="mr-2 rounded-md bg-red-500 px-3 py-2 text-xs font-medium tracking-wide text-gray-200 transition-all duration-500 hover:bg-red-700 hover:text-gray-300"
+            aria-label="Button for deleting all user"
           >
             Delete All Users
           </button>
@@ -92,6 +93,7 @@ function ViewRegister() {
             <button
               type="button"
               className="rounded-md bg-cyan-600 px-3 py-2 text-xs text-gray-200 transition-all duration-500 hover:bg-cyan-500 hover:text-gray-300"
+              aria-label="Button for creating user"
             >
               Create User
             </button>
@@ -130,6 +132,7 @@ function ViewRegister() {
                     <button
                       type="button"
                       className="rounded-md bg-yellow-600 p-2 transition-all duration-500 hover:bg-yellow-500 hover:text-gray-200"
+                      aria-label="Button for updating user"
                     >
                       <VscEdit />
                     </button>
@@ -138,6 +141,7 @@ function ViewRegister() {
                     type="button"
                     onClick={() => handleDelete(user._id)}
                     className="ml-2 rounded-md bg-red-700 p-2 transition-all duration-500 hover:bg-red-500 hover:text-gray-300"
+                    aria-label="Button for viewing user"
                   >
                     <RiDeleteBin5Fill />
                   </button>
@@ -150,6 +154,7 @@ function ViewRegister() {
         <button
           type="button"
           className="mx-auto mt-6 block w-full rounded-full bg-slate-800 py-2 text-xl font-bold text-gray-300 md:w-1/2"
+          aria-label="Button for checking the user exist or not"
         >
           No users exist to show
         </button>

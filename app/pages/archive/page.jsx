@@ -106,6 +106,7 @@ const Archive = () => {
               className={`archBtn text-gray-400 transition-all duration-1000 flex items-center px-3 py-2 hover:bg-cardHover hover:bg-opacity-30 hover:text-slate-200 rounded-full group ${
                 activeButton === category._id ? "active" : ""
               }`}
+              aria-label="Button for showing categories"
             >
               <span
                 className={`w-8 h-[1px] transition-all duration-500 block bg-gray-500 group-hover:bg-gray-400 mr-2 group-hover:w-16 group-hover:h-[2px] ${

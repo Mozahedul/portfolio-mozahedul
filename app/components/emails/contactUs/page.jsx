@@ -164,6 +164,7 @@ const ContactUs = () => {
           data-aos-delay="200"
           type="submit"
           className="hire-btn cursor-pointer transition duration-500 tracking-wide p-2 mt-8 text-gray-800 text-sm placeholder:text-gray-600 font-semibold hover:bg-cyan-900 hover:text-white uppercase"
+          aria-label="Button for sending email message"
         >
           {sendEmailMessage()}
         </button>
