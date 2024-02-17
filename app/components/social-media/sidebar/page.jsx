@@ -60,7 +60,7 @@ const SocialMedia = () => {
             rel="noreferrer"
             href="https://codepen.io/mozahedul"
             title="CodePen"
-            aria-label="CodePen"
+            aria-label="Link for CodePen"
           >
             <BiLogoCodepen />
           </Link>
