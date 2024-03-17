@@ -12,6 +12,7 @@ import Backend from "@/app/sections/archive/backend/page";
 import Frontend from "@/app/sections/archive/frontend/page";
 import Fullstack from "@/app/sections/archive/fullstack/page";
 import UiUx from "@/app/sections/archive/uiux/page";
+import Email from "@/app/sections/archive/email/page";
 
 const Archive = () => {
   const [categories, setCategories] = useState([]);
@@ -19,9 +20,10 @@ const Archive = () => {
   const [backend, setBackend] = useState("");
   const [frontend, setFrontend] = useState("");
   const [uiux, setUiux] = useState("");
+  const [emails, setEmails] = useState("");
   const [activeButton, setActiveButton] = useState(null);
 
-  console.log(categories);
+  console.log("SHOW CATEGORIES ==> ", categories);
 
   /**
    * This function is used to toggle the visibility of different sections of the archive page.
@@ -42,6 +44,9 @@ const Archive = () => {
     }
     if (catName === "ui-ux") {
       setUiux(catId);
+    }
+    if (catName === "emails") {
+      setEmails(catId);
     }
     /**
      * This code selects all elements with the class "all" and sets their display property to "none".
@@ -132,6 +137,7 @@ const Archive = () => {
         <Frontend category={frontend} />
         <Backend category={backend} />
         <UiUx category={uiux} />
+        <Email category={emails} />
       </main>
     </div>
   );
