@@ -85,23 +85,23 @@ function ViewProjects() {
   };
 
   // Handler for all projects delete
-  const handleDeleteAll = async event => {
-    event.preventDefault();
-    const response = await fetch(`/api/projects/allProjects`, {
-      method: "DELETE",
-    });
+  // const handleDeleteAll = async event => {
+  //   event.preventDefault();
+  //   const response = await fetch(`/api/projects/allProjects`, {
+  //     method: "DELETE",
+  //   });
 
-    const data = response.ok && (await response.json());
+  //   const data = response.ok && (await response.json());
 
-    if (data.success) {
-      toastSuccess(data.success);
-      setProjects([]);
-    }
+  //   if (data.success) {
+  //     toastSuccess(data.success);
+  //     setProjects([]);
+  //   }
 
-    if (data.errMsg) {
-      toastError(data.errMsg);
-    }
-  };
+  //   if (data.errMsg) {
+  //     toastError(data.errMsg);
+  //   }
+  // };
 
   /**
    * When click outside of the modal box, the modal will disappear
@@ -127,14 +127,15 @@ function ViewProjects() {
       <div className="mb-3 flex items-center justify-between">
         <h2 className="text-2xl font-bold text-gray-300">Project List</h2>
         <div>
-          <button
+          {/* <button
             type="button"
             onClick={handleDeleteAll}
             className="mr-2 rounded-md bg-red-500 px-3 py-2 text-xs font-medium tracking-wide text-gray-200 transition-all duration-500 hover:bg-red-700 hover:text-gray-300"
             aria-label="Delete all project button"
           >
             Delete All Projects
-          </button>
+          </button> */}
+
           <Link
             href="/admin/projects/create"
             aria-label="The button navigates to the project create page"
