@@ -157,8 +157,10 @@ export default function Work() {
       className={`mt-16 md:mt-32 px-6 sm:px-10 md:px-16 lg:px-32 xl:px-36 py-12 md:py-24 lg:py-28 bg-[#ffac5e07] ${inter.className}`}
       id="work"
     >
+      {/* My works section */}
       <div data-aos="fade-up" data-aos-duration="1000">
         <h2 className="text-center text-2xl md:text-3xl font-bold leading-8 text-gray-200 flex items-center justify-center">
+          {/* Left animation circles */}
           <p className="flex items-center mr-3">
             <span
               className="w-1 h-1 bg-gray-300 rounded-full mr-1"
@@ -197,9 +199,10 @@ export default function Work() {
               data-aos-delay="600"
             />
           </p>
-          <span data-aos="zoom-in" data-aos-duration="500" data-aos-delay="700">
-            My Works
-          </span>
+          <p data-aos="zoom-in" data-aos-duration="500" data-aos-delay="700">
+            <span>My Recent Works</span>
+          </p>
+          {/* Right animation section */}
           <p className="flex items-center ml-3">
             <span
               className="w-[9px] h-[10px] bg-gray-300 rounded-full mr-1"
@@ -240,6 +243,19 @@ export default function Work() {
           </p>
         </h2>
 
+        {/* subtitle text for recent works */}
+        <p className="text-center ">
+          <span className="text-sm text-white mt-4">
+            Here are a few past web development projects I've worked on.{" "}
+            <a
+              className="text-blue-400 cursor-pointer"
+              href="mailto:mozahed001@gmail.com"
+            >
+              Email me
+            </a>
+          </span>
+        </p>
+        {/* Start view archive button */}
         <div className="flex justify-center mb-8 mt-5">
           <Link
             href="/pages/archive"
@@ -256,6 +272,7 @@ export default function Work() {
             </button>
           </Link>
         </div>
+        {/* End view archive button */}
       </div>
 
       {Array.isArray(projects) && projects.length ? (
