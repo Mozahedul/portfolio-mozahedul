@@ -66,8 +66,9 @@ const Archive = () => {
     });
   };
 
+  // to show items when page refresh or first load
   useEffect(() => {
-    handleToShowProjects("658c22af5abfe2f285bdfb95", "frontend");
+    handleToShowProjects("65f68738604332798974c209", "emails");
     const buttons = document.querySelectorAll(".navBtn");
 
     buttons.forEach(button => {
