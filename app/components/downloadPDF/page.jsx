@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { PiPlugsConnectedBold } from "react-icons/pi";
+import { MdDownload } from "react-icons/md";
 
-const BlogButton = () => {
+const DownloadPDFBtn = () => {
   const hanldeHireMeButton = () => {
     // For listening audio sound when user click on the menu button
     const audio = new Audio("/button-click-sound.mp3");
@@ -15,20 +15,21 @@ const BlogButton = () => {
       <Link
         target="_blank"
         rel="noreferrer"
-        href="https://www.upwork.com/freelancers/~015a5d106c74f13430"
-        aria-label="The button navigates to the hire me to Upwork"
+        href="/resume.pdf"
+        download
+        aria-label="PDF resume download link"
       >
         <button
           type="button"
           onClick={hanldeHireMeButton}
           className="tracking-wide hire-btn whitespace-nowrap py-2 px-4 flex items-center"
         >
-          <PiPlugsConnectedBold className="inline mr-[6px]" />
-          <span>Hire Me</span>
+          <MdDownload className="inline mr-[6px]" />
+          <span>Resume</span>
         </button>
       </Link>
     </div>
   );
 };
 
-export default BlogButton;
+export default DownloadPDFBtn;

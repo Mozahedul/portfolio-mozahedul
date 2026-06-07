@@ -5,7 +5,7 @@ import { IoClose } from "react-icons/io5";
 import { RiMenu3Fill } from "react-icons/ri";
 import Logo from "@/app/components/logo/page";
 import Navigation from "@/app/components/navigation/page";
-import BlogButton from "@/app/components/viewBlog/page";
+import DownloadPDFBtn from "@/app/components/downloadPDF/page";
 
 const Header = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -60,30 +60,31 @@ const Header = () => {
   return (
     <div
       ref={menuRef}
-      className="fixed z-[666] flex justify-center px-4 left-0 top-0 right-0 bg-[#060813] border-b-[1px] border-b-[#111733ce]"
+      className="fixed z-[666] flex justify-between px-4 left-0 top-0 right-0 bg-[#060813] border-b-[1px] border-b-[#111733ce]"
     >
       <div
         id="navMenu"
         className="my-1 w-full md:w-16 md:my-0 flex justify-between items-center"
       >
         <Logo />
+        {/* MOBILE NAVIGATION MENU OPENER */}
         <button
           type="button"
           ref={menuShowRef}
           onClick={handleMenuShow}
-          className="text-3xl text-[#a36aff] transition-all duration-500 hover:text-[#a36aff] md:hidden"
+          className="text-3xl text-[#a36aff] transition-all duration-500 hover:text-[#a36aff] md:hidden mr-3"
           aria-label="Button for mobile navigation menu showing"
         >
           <RiMenu3Fill />
         </button>
       </div>
 
-      {/* Navigtion menu with close button for mobile */}
+      {/* MOBILE NAVIGATION MENU CLOSER */}
       <div
         ref={menuCloseRef}
-        className={`menu-btn ${isMenuVisible ? "w-3/4 sm:w-1/2" : "w-0"}`}
+        className={`menu-btn ${isMenuVisible ? "w-3/4 sm:w-1/2" : "w-0"} bg-blue-400`}
       >
-        {/* Close button for small devices */}
+        {/* CLOSE BUTTON for small devices */}
         <button
           type="button"
           ref={menuBtnCloseRef}
@@ -94,7 +95,9 @@ const Header = () => {
           <IoClose />
         </button>
         <Navigation handleMenuClose={handleMenuClose} />
-        <BlogButton />
+      </div>
+      <div className="flex items-center">
+        <DownloadPDFBtn />
       </div>
     </div>
   );

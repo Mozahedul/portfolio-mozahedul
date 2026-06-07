@@ -55,9 +55,9 @@ const Navigation = ({ handleMenuClose }) => {
   };
 
   return (
-    <nav>
-      <ul className="flex flex-col font-medium tracking-wide text-gray-300 md:flex-row">
-        <li className="m-5 sm:m-2 md:m-3">
+    <nav className="flex flex-grow justify-center">
+      <ul className="flex flex-col font-md tracking-wide text-gray-300 md:flex-row">
+        <li className="m-5 sm:m-2 md:my-3 md:mx-2">
           <button
             className="bubbly-button"
             type="button"
@@ -67,7 +67,7 @@ const Navigation = ({ handleMenuClose }) => {
             About
           </button>
         </li>
-        <li className="m-5 sm:m-2 md:m-3">
+        <li className="m-5 sm:m-2 md:my-3 md:mx-2">
           <button
             className="flex bubbly-button"
             type="button"
@@ -77,7 +77,29 @@ const Navigation = ({ handleMenuClose }) => {
             Skills
           </button>
         </li>
-        <li className="m-5 sm:m-2 md:m-3">
+
+        <li className="m-5 sm:m-2 md:my-3 md:mx-2">
+          <button
+            className="flex bubbly-button"
+            type="button"
+            onClick={event => handleToShowSection(event, "skills")}
+            aria-label="Button for skills menu"
+          >
+            Projects
+          </button>
+        </li>
+
+        <li className="m-5 sm:m-2 md:my-3 md:mx-2">
+          <button
+            className="flex bubbly-button"
+            type="button"
+            onClick={event => handleToShowSection(event, "skills")}
+            aria-label="Button for skills menu"
+          >
+            Email Works
+          </button>
+        </li>
+        <li className="m-5 sm:m-2 md:my-3 md:mx-2">
           <button
             className="flex bubbly-button"
             type="button"
@@ -87,7 +109,7 @@ const Navigation = ({ handleMenuClose }) => {
             Work
           </button>
         </li>
-        <li className="m-5 sm:m-2 md:m-3">
+        <li className="m-5 sm:m-2 md:my-3 md:mx-2">
           <button
             className="flex bubbly-button"
             type="button"
@@ -97,7 +119,7 @@ const Navigation = ({ handleMenuClose }) => {
             Blog
           </button>
         </li>
-        <li className="m-5 sm:m-2 md:m-3">
+        <li className="m-5 sm:m-2 md:my-3 md:mx-2">
           <button
             className="flex bubbly-button"
             type="button"
