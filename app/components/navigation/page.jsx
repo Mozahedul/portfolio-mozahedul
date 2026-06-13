@@ -40,8 +40,6 @@ const Navigation = ({ handleMenuClose }) => {
           : section.offsetTop
         : event?.currentTarget.classList.remove("active-menu");
 
-    console.log("SCROLL HEIGHT ==> ", scrollHeight);
-
     setTimeout(() => {
       window.scrollTo({
         top: scrollHeight,
@@ -57,7 +55,7 @@ const Navigation = ({ handleMenuClose }) => {
   return (
     <nav className="flex flex-grow justify-center">
       <ul className="flex flex-col font-md tracking-wide text-gray-300 md:flex-row">
-        <li className="m-5 sm:m-2 md:my-3 md:mx-2">
+        <li className="m-5 sm:m-2 md:mx-2">
           <button
             className="bubbly-button"
             type="button"
@@ -67,18 +65,18 @@ const Navigation = ({ handleMenuClose }) => {
             About
           </button>
         </li>
-        <li className="m-5 sm:m-2 md:my-3 md:mx-2">
+        <li className="m-5 sm:m-2 md:mx-2">
           <button
             className="flex bubbly-button"
             type="button"
             onClick={event => handleToShowSection(event, "skills")}
             aria-label="Button for skills menu"
           >
-            Skills
+            Stacks
           </button>
         </li>
 
-        <li className="m-5 sm:m-2 md:my-3 md:mx-2">
+        <li className="m-5 sm:m-2 md:mx-2">
           <button
             className="flex bubbly-button"
             type="button"
@@ -89,27 +87,27 @@ const Navigation = ({ handleMenuClose }) => {
           </button>
         </li>
 
-        <li className="m-5 sm:m-2 md:my-3 md:mx-2">
+        <li className="m-5 sm:m-2 md:mx-2">
           <button
             className="flex bubbly-button"
             type="button"
             onClick={event => handleToShowSection(event, "skills")}
             aria-label="Button for skills menu"
           >
-            Email Works
+            Email Portfolio
           </button>
         </li>
-        <li className="m-5 sm:m-2 md:my-3 md:mx-2">
+        <li className="m-5 sm:m-2 md:mx-2">
           <button
             className="flex bubbly-button"
             type="button"
             onClick={event => handleToShowSection(event, "work")}
             aria-label="Button for work menu"
           >
-            Work
+            Services
           </button>
         </li>
-        <li className="m-5 sm:m-2 md:my-3 md:mx-2">
+        {/* <li className="m-5 sm:m-2 md:mx-2">
           <button
             className="flex bubbly-button"
             type="button"
@@ -118,8 +116,8 @@ const Navigation = ({ handleMenuClose }) => {
           >
             Blog
           </button>
-        </li>
-        <li className="m-5 sm:m-2 md:my-3 md:mx-2">
+        </li> */}
+        <li className="m-5 sm:m-2 md:mx-2">
           <button
             className="flex bubbly-button"
             type="button"

@@ -55,7 +55,7 @@ const SkillSection = () => {
       className={`mt-24 relative px-6 sm:px-10 md:px-16 lg:px-32 xl:px-48 bg-[#0c1027] py-10 md:py-12 lg:py-16 xl:pt-32 xl:pb-20 md:mt-48 ${inter.className}`}
       id="skills"
     >
-      <SocialMedia />
+      {/* <SocialMedia /> */}
       <div data-aos="fade-up" data-aos-duration="500">
         <h2 className="text-center mt-6 flex items-center justify-center text-2xl md:text-3xl font-bold leading-8 text-gray-200">
           <p className="flex items-center mr-3">

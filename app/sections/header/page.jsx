@@ -5,7 +5,7 @@ import { IoClose } from "react-icons/io5";
 import { RiMenu3Fill } from "react-icons/ri";
 import Logo from "@/app/components/logo/page";
 import Navigation from "@/app/components/navigation/page";
-import DownloadPDFBtn from "@/app/components/downloadPDF/page";
+import DownloadCV from "@/app/components/downloadPDF/page";
 
 const Header = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -58,13 +58,13 @@ const Header = () => {
   }, []);
 
   return (
-    <div
+    <section
       ref={menuRef}
-      className="fixed z-[666] flex justify-between px-4 left-0 top-0 right-0 bg-[#060813] border-b-[1px] border-b-[#111733ce]"
+      className="fixed lg:max-w-[1280px] mx-4 md:mx-6 lg:mx-8 xl:mx-auto z-[666] flex justify-between px-4 left-0 top-0 right-0 border-[1px] border-slate-900 bg-[#0c1027] rounded-2xl mt-1"
     >
       <div
         id="navMenu"
-        className="my-1 w-full md:w-16 md:my-0 flex justify-between items-center"
+        className="my-[2px] w-full md:w-16 md:my-0 flex justify-between items-center"
       >
         <Logo />
         {/* MOBILE NAVIGATION MENU OPENER */}
@@ -97,9 +97,9 @@ const Header = () => {
         <Navigation handleMenuClose={handleMenuClose} />
       </div>
       <div className="flex items-center">
-        <DownloadPDFBtn />
+        <DownloadCV />
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,6 +1,6 @@
 .bubbly-button {
   padding: 5px 16px;
-  border-radius: 50px;
+  border-radius: 8px;
   transition:
     transform ease-in 0.1s,
     box-shadow ease-in 0.25s;

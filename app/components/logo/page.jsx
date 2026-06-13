@@ -35,8 +35,8 @@ const Logo = () => {
           loading="lazy"
           ref={logoRef}
           src="/logo.png"
-          width={45}
-          height={36}
+          width={40}
+          height={32}
           alt="website logo"
           style={{
             aspectRatio: "1/1",

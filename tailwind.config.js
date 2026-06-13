@@ -12,6 +12,19 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
+      },
+      animation: {
+        "spin-slow": "spin 10s linear infinite",
+        "dash-move": "dash-move 2s linear infinite",
+      },
+      keyframes: {
+        "dash-move": {
+          to: { strokeDashoffset: "-300" },
+        },
+      },
       colors: {
         card: "#0b1e40",
         cardHover: "#0f2957",

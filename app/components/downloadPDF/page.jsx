@@ -1,9 +1,8 @@
 "use client";
 
-import Link from "next/link";
-import { MdDownload } from "react-icons/md";
+import { HiOutlineDownload } from "react-icons/hi";
 
-const DownloadPDFBtn = () => {
+const DownloadCV = () => {
   const hanldeHireMeButton = () => {
     // For listening audio sound when user click on the menu button
     const audio = new Audio("/button-click-sound.mp3");
@@ -11,25 +10,18 @@ const DownloadPDFBtn = () => {
   };
 
   return (
-    <div className="my-4 md:my-0 md:ml-4">
-      <Link
-        target="_blank"
-        rel="noreferrer"
-        href="/resume.pdf"
+    <div className="my-2 md:my-0 md:ml-4">
+      <a
+        href="./resume-modify.pdf"
         download
-        aria-label="PDF resume download link"
+        onClick={hanldeHireMeButton}
+        className="tracking-wide  whitespace-nowrap py-2 px-4 flex items-center text-gray-300 text-sm border-2 hover:border-gray-400 hover:border-opacity-10 rounded-xl hover:text-purple-400 hover:transition hover:duration-300 border-purple-500 border-opacity-20"
       >
-        <button
-          type="button"
-          onClick={hanldeHireMeButton}
-          className="tracking-wide hire-btn whitespace-nowrap py-2 px-4 flex items-center"
-        >
-          <MdDownload className="inline mr-[6px]" />
-          <span>Resume</span>
-        </button>
-      </Link>
+        <span>Download CV</span>
+        <HiOutlineDownload className="inline ml-[6px]" />
+      </a>
     </div>
   );
 };
 
-export default DownloadPDFBtn;
+export default DownloadCV;
