@@ -1,15 +1,14 @@
-import AboutPage from "@/app/components/about/page";
-import AboutRight from "@/app/components/aboutRight/page";
+import AboutLeftSection from "@/app/components/about/page";
+import AboutRightSection from "@/app/components/aboutRight/page";
 
 const About = () => {
   return (
-    <section id="about" className="px-6 sm:px-10 md:px-16 lg:px-32 xl:px-36">
-      <div className="mt-24 md:mt-28 gap-8 grid p-7 grid-cols-1 md:grid-cols-2 bg-[#0c0c21] rounded-2xl border-[2px] border-[#9bc2f518]">
-        <AboutPage />
-        <AboutRight />
+    <section id="about" className="px-0 mt-8 bg-[#080C10]">
+      <div className="gap-8 px-4 py-4 sm:py-6 md:py-8 sm:px-6 md:px-8 grid grid-cols-1 sm:grid-cols-2 items-start">
+        <AboutLeftSection />
+        <AboutRightSection />
       </div>
     </section>
   );
 };
-
 export default About;

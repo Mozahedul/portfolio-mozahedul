@@ -344,14 +344,20 @@ body {
 }
 
 .send-message {
-  @apply text-xs uppercase tracking-wide mb-2 py-1 px-3 bg-[#24130b] border-[1px] border-[#3c2007] rounded-full;
+  @apply text-xs tracking-wide mb-2 py-[2px] px-4 bg-purple-900 bg-opacity-20 border-[1px] border-purple-400 border-opacity-20 rounded-full;
 }
 
 .about-paragraph {
-  display: grid;
-  grid-gap: 20px;
-  align-items: center;
   grid-template-columns: min-content 1fr;
+  @apply grid gap-4 items-center;
+}
+
+.journey {
+  @apply flex gap-3 relative pb-3;
+}
+
+.journey:not(:last-child)::before {
+  @apply content-[""] absolute w-[1px] bg-[#1a2a38] left-2 top-3 bottom-0 z-0;
 }
 
 .skill-one-row {
@@ -423,4 +429,58 @@ body {
     rgba(6, 8, 19, 1) 70%,
     rgba(6, 8, 19, 0) 100%
   );
+}
+
+/* Progress bars */
+
+@keyframes progress-react {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 90%;
+  }
+}
+
+@keyframes progress-express {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 80%;
+  }
+}
+
+@keyframes progress-mongodb {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 88%;
+  }
+}
+
+@keyframes progress-email {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 98%;
+  }
+}
+
+.animate-progress-reactjs {
+  animation: progress-react 1.5s ease forwards;
+}
+
+.animate-progress-expressjs {
+  animation: progress-express 1.5s ease forwards;
+}
+
+.animate-progress-mongodb {
+  animation: progress-mongodb 1.5s ease forwards;
+}
+
+.animate-progress-email {
+  animation: progress-email 1.5s ease forwards;
 }
