@@ -66,7 +66,7 @@ const AboutLeftSection = () => {
         <div className="mt-3">
           <div className="journey">
             {/* Dot */}
-            <div className="w-4 h-4 border-2 border-purple-600 bg-[#060813] rounded-full z-10" />
+            <div className="flex-shrink-0 w-4 h-4 border-2 border-purple-600 bg-[#060813] rounded-full z-10" />
             <div>
               <p className="text-cyan-100 text-xs text-opacity-30">2019</p>
               <h3 className="text-gray-400 text-sm font-bold">
@@ -79,7 +79,7 @@ const AboutLeftSection = () => {
           </div>
           <div className="journey">
             {/* Dot */}
-            <div className="w-4 h-4 border-2 border-purple-600 bg-[#060813] rounded-full z-10" />
+            <div className="flex-shrink-0 w-4 h-4 border-2 border-purple-600 bg-[#060813] rounded-full z-10" />
             <div>
               <p className="text-cyan-100 text-xs text-opacity-30">2020</p>
               <h3 className="text-gray-400 text-sm font-bold">
@@ -92,7 +92,7 @@ const AboutLeftSection = () => {
           </div>
           <div className="journey">
             {/* Dot */}
-            <div className="w-4 h-4 border-2 border-purple-600 bg-[#060813] rounded-full z-10" />
+            <div className="flex-shrink-0 w-4 h-4 border-2 border-purple-600 bg-[#060813] rounded-full z-10" />
             <div>
               <p className="text-cyan-100 text-xs text-opacity-30">2022</p>
               <h3 className="text-gray-400 text-sm font-bold">
@@ -105,7 +105,7 @@ const AboutLeftSection = () => {
           </div>
           <div className="journey">
             {/* Dot */}
-            <div className="w-4 h-4 border-2 border-purple-600 bg-[#060813] rounded-full z-10" />
+            <div className="flex-shrink-0 w-4 h-4 border-2 border-purple-600 bg-[#060813] rounded-full z-10" />
             <div>
               <p className="text-cyan-100 text-xs text-opacity-30">Now</p>
               <h3 className="text-gray-400 text-sm font-bold">

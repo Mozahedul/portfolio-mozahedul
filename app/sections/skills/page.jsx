@@ -1,187 +1,268 @@
 "use client";
 
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useEffect } from "react";
+import { RiReactjsLine } from "react-icons/ri";
+import { FaCheck, FaNodeJs } from "react-icons/fa6";
+import { IoRocketOutline } from "react-icons/io5";
+import { FaHtml5, FaBootstrap, FaGithub, FaGitAlt } from "react-icons/fa";
+import { TbBrandNextjs, TbApi } from "react-icons/tb";
+import {
+  SiMui,
+  SiTypescript,
+  SiMongodb,
+  SiTailwindcss,
+  SiExpress,
+} from "react-icons/si";
 import AOS from "aos";
 import "aos/dist/aos.css";
 // import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import skills from "@/utils/technologies/languages";
 import { inter } from "@/utils/google-fonts/fonts";
-import SocialMedia from "../media/page";
 
 const SkillSection = () => {
-  const scrollPosition = useRef(0);
-
-  const forwardHandler = useCallback(() => {
-    const slider = document.getElementById("langs");
-    const singleElmWidth = slider.scrollWidth / skills.length;
-
-    scrollPosition.current += singleElmWidth;
-    const lastScrollPosition =
-      slider.scrollWidth - (scrollPosition.current + slider.offsetWidth);
-
-    if (lastScrollPosition < singleElmWidth) {
-      scrollPosition.current += lastScrollPosition;
-    }
-
-    const currentScrollPos = scrollPosition.current + slider.offsetWidth;
-    if (currentScrollPos === slider.scrollWidth) {
-      scrollPosition.current = 0;
-    }
-
-    slider?.scrollTo({
-      top: 0,
-      left: scrollPosition.current,
-      behavior: "smooth",
-    });
-  }, []);
-
-  // automatic scrolling effect for skill section after every 2 seconds
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      forwardHandler();
-    }, 2000);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, [forwardHandler]);
-
+  const skills = [
+    {
+      icon: RiReactjsLine,
+      title: "React.js",
+      skillLevel: "Expert",
+      SkillAchieved: 90,
+    },
+    {
+      icon: TbBrandNextjs,
+      title: "Next.js",
+      skillLevel: "Advanced",
+      SkillAchieved: 85,
+    },
+    {
+      icon: FaNodeJs,
+      title: "Next.js",
+      skillLevel: "Advanced",
+      SkillAchieved: 85,
+    },
+    {
+      icon: SiMongodb,
+      title: "MongoDB",
+      skillLevel: "Advanced",
+      SkillAchieved: 80,
+    },
+    {
+      icon: SiMongodb,
+      title: "TypeScript",
+      skillLevel: "Advanced",
+      SkillAchieved: 85,
+    },
+    {
+      icon: SiTailwindcss,
+      title: "Tailwind CSS",
+      skillLevel: "Expert",
+      SkillAchieved: 89,
+    },
+    {
+      icon: SiExpress,
+      title: "Express.js",
+      skillLevel: "Expert",
+      SkillAchieved: 92,
+    },
+    {
+      icon: FaGitAlt,
+      title: "Git",
+      skillLevel: "Expert",
+      SkillAchieved: 96,
+    },
+    {
+      icon: FaGithub,
+      title: "GitHub",
+      skillLevel: "Expert",
+      SkillAchieved: 95,
+    },
+    {
+      icon: TbApi,
+      title: "REST API",
+      skillLevel: "Expert",
+      SkillAchieved: 91,
+    },
+    {
+      icon: FaBootstrap,
+      title: "BootStrap",
+      skillLevel: "Expert",
+      SkillAchieved: 98,
+    },
+    {
+      icon: SiMui,
+      title: "Material UI",
+      skillLevel: "Expert",
+      SkillAchieved: 94,
+    },
+    {
+      icon: FaHtml5,
+      title: "HTML & CSS",
+      skillLevel: "Expert",
+      SkillAchieved: 99,
+    },
+  ];
   useEffect(() => {
     AOS.init();
     AOS.refresh();
   }, []);
   return (
     <section
-      className={`mt-24 relative px-6 sm:px-10 md:px-16 lg:px-32 xl:px-48 bg-[#0c1027] py-10 md:py-12 lg:py-16 xl:pt-32 xl:pb-20 md:mt-48 ${inter.className}`}
+      className={`mt-8 relative px-4 sm:px-6 md:px-8 bg-[#000000] py-4 sm:py-6 md:py-8 ${inter.className} rounded-xl`}
       id="skills"
     >
-      {/* <SocialMedia /> */}
-      <div data-aos="fade-up" data-aos-duration="500">
-        <h2 className="text-center mt-6 flex items-center justify-center text-2xl md:text-3xl font-bold leading-8 text-gray-200">
-          <p className="flex items-center mr-3">
-            <span
-              className="w-1 h-1 bg-gray-300 rounded-full mr-1"
-              data-aos="zoom-in"
-              data-aos-duration="500"
-              data-aos-delay="100"
-            />
-            <span
-              className="w-[5px] h-[5px] bg-gray-300 rounded-full mr-1"
-              data-aos="zoom-in"
-              data-aos-duration="500"
-              data-aos-delay="200"
-            />
-            <span
-              className="w-[6px] h-[6px] bg-gray-300 rounded-full mr-1"
-              data-aos="zoom-in"
-              data-aos-duration="500"
-              data-aos-delay="300"
-            />
-            <span
-              className="w-[7px] h-[7px] bg-gray-300 rounded-full mr-1"
-              data-aos="zoom-in"
-              data-aos-duration="500"
-              data-aos-delay="400"
-            />
-            <span
-              className="w-[8px] h-[8px] bg-gray-300 rounded-full mr-1"
-              data-aos="zoom-in"
-              data-aos-duration="500"
-              data-aos-delay="500"
-            />
-            <span
-              className="w-[9px] h-[10px] bg-gray-300 rounded-full"
-              data-aos="zoom-in"
-              data-aos-duration="500"
-              data-aos-delay="600"
-            />
-          </p>
-          <span data-aos="zoom-in" data-aos-duration="500" data-aos-delay="700">
-            My Skills
-          </span>
-          <p className="flex items-center ml-3">
-            <span
-              className="w-[9px] h-[10px] bg-gray-300 rounded-full mr-1"
-              data-aos="zoom-in"
-              data-aos-duration="500"
-              data-aos-delay="600"
-            />
-            <span
-              className="w-[8px] h-[8px] bg-gray-300 rounded-full mr-1"
-              data-aos="zoom-in"
-              data-aos-duration="500"
-              data-aos-delay="500"
-            />
-            <span
-              className="w-[7px] h-[7px] bg-gray-300 rounded-full mr-1"
-              data-aos="zoom-in"
-              data-aos-duration="500"
-              data-aos-delay="400"
-            />
-            <span
-              className="w-[6px] h-[6px] bg-gray-300 rounded-full mr-1"
-              data-aos="zoom-in"
-              data-aos-duration="500"
-              data-aos-delay="300"
-            />
-            <span
-              className="w-[5px] h-[5px] bg-gray-300 rounded-full mr-1"
-              data-aos="zoom-in"
-              data-aos-duration="500"
-              data-aos-delay="200"
-            />
-            <span
-              className="w-1 h-1 bg-gray-300 rounded-full"
-              data-aos="zoom-in"
-              data-aos-duration="500"
-              data-aos-delay="100"
-            />
-          </p>
-        </h2>
-        <p className="text-center text-sm text-gray-300 mt-3 tracking-wide leading-6 md:w-[450px] md:mx-auto">
-          The languages & frameworks encourage me to code for my client to
-          fulfill their demands and make some amazing projects.
-        </p>
-      </div>
-      <div
-        id="langs"
-        className="mt-12 skill-one-row pr-6 horizontal-scrollbar"
-        data-aos="fade-down"
-        data-aos-duration="1000"
+      <button
+        type="button"
+        className="text-xs border-[1px] border-cyan-300 border-opacity-20 rounded-full px-3 py-[2px] flex items-left justify-center gap-[2px] text-cyan-200 text-opacity-70 cursor-default mb-2"
+        aria-label="Button for about me"
       >
-        {skills.map(skill => (
-          <div
-            key={skill.title}
-            className="flex flex-col items-center bg-[#060813] border-[1px] border-[#9bc2f518] flex-1 text-gray-400 p-5 rounded-lg"
-            data-aos="zoom-in"
-            data-aos-duration="500"
-            data-aos-delay="200"
-          >
-            <skill.icon className="text-5xl" />
-            <strong className="whitespace-nowrap tracking-wide text-sm mt-3">
-              {skill.title}
-            </strong>
-          </div>
-        ))}
+        <span>Technical skills</span>
+      </button>
+      <h2 className="text-2xl font-bold text-gray-300">
+        <span>My tech </span>
+        <span className="text-cyan-400">stack</span>
+      </h2>
+      <p className="text-cyan-200 text-xs tracking-wide text-opacity-40 mt-1">
+        Technologies and tools I used to bring ideas to life.
+      </p>
+
+      {/* frontend and backend section */}
+      <div className="mt-6">
+        <h2 className="text-xs text-cyan-300 text-opacity-30 uppercase font-extralight">
+          Frontend & Backend
+        </h2>
+        <div className="tech-stack mt-3">
+          {/* React.js */}
+          {skills?.map(skill => (
+            <div
+              key={skill.icon}
+              className="relative flex flex-col gap-3 items-center bg-[#0D1520] rounded-xl border-[1px] border-gray-200 border-opacity-10 p-5 "
+            >
+              <button
+                type="button"
+                className="cursor-text absolute right-1 top-1 text-[10px] text-gray-200 bg-gray-800 border-[1px] border-gray-600 border-opacity-30 py-[2px] px-2 rounded-full"
+              >
+                {skill.SkillAchieved}%
+              </button>
+              <skill.icon size="24" className="text-cyan-500" />
+              <p className="text-cyan-200 text-opacity-30 text-sm">
+                {skill.title}
+              </p>
+              <button
+                type="button"
+                className="text-[10px] tracking-wider px-2 py-[2px] rounded-full text-purple-400 bg-purple-500 bg-opacity-20"
+              >
+                {skill.skillLevel}
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
-      {/* <div className="flex justify-center items-center mt-4">
-        <button
-          id="leftBtn"
-          onClick={backwardHandler}
-          type="button"
-          className="text-xl disabled:bg-[#06081342] disabled:text-gray-200 disabled:cursor-not-allowed text-gray-200 rounded-md p-2 mr-[2px] bg-[#060813] border-[1px] border-[#9bc2f518]"
-        >
-          <IoIosArrowBack />
-        </button>
-        <button
-          id="rightBtn"
-          onClick={forwardHandler}
-          type="button"
-          className="text-xl disabled:bg-[#06081342] disabled:text-gray-200 disabled:cursor-not-allowed text-gray-200 rounded-md p-2 ml-[2px] bg-[#060813] border-[1px] border-[#9bc2f518]"
-        >
-          <IoIosArrowForward />
-        </button>
-      </div> */}
+
+      {/* Email client compatibility */}
+      <div className="mt-6">
+        <h2 className="text-xs text-cyan-300 text-opacity-30 uppercase font-extralight">
+          Email client compatibility
+        </h2>
+        <div className="mt-3 email-client">
+          {/* Gmail */}
+          <div className="relative flex flex-col items-center bg-[#0D1520] rounded-xl border-[1px] border-gray-200 border-opacity-10 p-5 ">
+            <FaCheck size="24" className="text-green-500" />
+            <p
+              type="button"
+              className="text-xs tracking-wider px-2 py-[2px] text-gray-600 mt-2"
+            >
+              GMail
+            </p>
+            <h3 className="text-gray-200  text-md">100%</h3>
+          </div>
+
+          {/* Outlook */}
+          <div className="relative flex flex-col items-center bg-[#0D1520] rounded-xl border-[1px] border-gray-200 border-opacity-10 p-5 ">
+            <FaCheck size="24" className="text-green-500" />
+            <p
+              type="button"
+              className="text-xs tracking-wider px-2 py-[2px] text-gray-600 mt-2"
+            >
+              Outlook
+            </p>
+            <h3 className="text-gray-200  text-md">98%</h3>
+          </div>
+
+          {/* Outlook */}
+          <div className="relative flex flex-col items-center bg-[#0D1520] rounded-xl border-[1px] border-gray-200 border-opacity-10 p-5 ">
+            <FaCheck size="24" className="text-green-500" />
+            <p
+              type="button"
+              className="text-xs tracking-wider px-2 py-[2px] text-gray-600 mt-2"
+            >
+              Apple Mail
+            </p>
+            <h3 className="text-gray-200  text-md">100%</h3>
+          </div>
+
+          {/* Yahoo mail */}
+          <div className="relative flex flex-col items-center bg-[#0D1520] rounded-xl border-[1px] border-gray-200 border-opacity-10 p-5 ">
+            <FaCheck size="24" className="text-green-500" />
+            <p
+              type="button"
+              className="text-xs tracking-wider px-2 py-[2px] text-gray-600 mt-2"
+            >
+              Yahoo Mail
+            </p>
+            <h3 className="text-gray-200  text-md">97%</h3>
+          </div>
+
+          {/* Other mail */}
+          <div className="relative flex flex-col items-center bg-[#0D1520] rounded-xl border-[1px] border-gray-200 border-opacity-10 p-5 ">
+            <FaCheck size="24" className="text-green-500" />
+            <p
+              type="button"
+              className="text-xs tracking-wider px-2 py-[2px] text-gray-600 mt-2"
+            >
+              Other Mails
+            </p>
+            <h3 className="text-gray-200  text-md">95%</h3>
+          </div>
+        </div>
+      </div>
+
+      {/* Currently leveing up section */}
+      <div className="bg-[#0D1520] rounded-r-xl border-l-8 border-l-cyan-400 border-r-[1px] border-r-gray-700 border-t-gray-700 border-t-[1px] border-b-[1px] border-b-gray-700 p-5 mt-4">
+        {/* icon */}
+        <div>
+          <IoRocketOutline size="18" className="text-gray-300" />
+        </div>
+
+        {/* text + button */}
+        <div>
+          <p>
+            <span className="text-cyan-400 text-xs">
+              Currently leveling up --{" "}
+            </span>
+            <span className="text-cyan-100 text-xs text-opacity-30">
+              exploring new tools to stay ahead
+            </span>
+          </p>
+          <div className="mt-2 flex flex-wrap gap-2">
+            <button
+              type="button"
+              className="text-cyan-400 text-xs border-[1px] border-cyan-500 border-opacity-20 px-2 py-[2px] rounded-full"
+            >
+              GraphQL
+            </button>
+            <button
+              type="button"
+              className="text-cyan-400 text-xs border-[1px] border-cyan-500 border-opacity-20 px-2 py-[2px] rounded-full"
+            >
+              Next.js 15
+            </button>
+            <button
+              type="button"
+              className="text-cyan-400 text-xs border-[1px] border-cyan-500 border-opacity-20 px-2 py-[2px] rounded-full"
+            >
+              AI Integration
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
