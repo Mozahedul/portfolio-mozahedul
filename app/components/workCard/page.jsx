@@ -22,6 +22,8 @@ const Card = ({
   return (
     <div
       data-aos="zoom-in"
+      data-aos-mirror="false"
+      data-aos-once="true"
       data-aos-duration="1000"
       className="bg-[#060813] border-[2px] border-[#9bc2f518] group flex cursor-pointer flex-col justify-between rounded-xl p-6 transition-all duration-1000 transform hover:bg-cardHover"
     >

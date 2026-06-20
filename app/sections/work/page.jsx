@@ -153,13 +153,214 @@ export default function Work() {
   }, []);
 
   return (
+    // <div className="wrap">
+    //   <div className="glow-1" />
+    //   <div className="glow-2" />
+
+    //   <div className="content">
+    //     <div className="eyebrow">
+    //       <div className="eyebrow-dot" />
+    //       <div className="eyebrow-text">Selected work</div>
+    //     </div>
+    //     <h2 className="hero-title">
+    //       Frontend, backend &<br />
+    //       <span>email</span> — crafted with care
+    //     </h2>
+    //     <p className="hero-sub">
+    //       A curated collection of full-stack applications and email systems
+    //       built for real clients.
+    //     </p>
+
+    //     <div className="tab-row">
+    //       <div className="tab active">
+    //         <i
+    //           className="ti ti-apps"
+    //           style={{ fontSize: "13px" }}
+    //           aria-hidden="true"
+    //         />
+    //         All
+    //       </div>
+    //       <div className="tab">
+    //         <i
+    //           className="ti ti-layout-grid"
+    //           style={{ fontSize: "13px" }}
+    //           aria-hidden="true"
+    //         />
+    //         Frontend
+    //       </div>
+    //       <div className="tab">
+    //         <i
+    //           className="ti ti-server"
+    //           style={{ fontSize: "13px" }}
+    //           aria-hidden="true"
+    //         />
+    //         Backend
+    //       </div>
+    //       <div className="tab">
+    //         <i
+    //           className="ti ti-mail"
+    //           style={{ fontSize: "13px" }}
+    //           aria-hidden="true"
+    //         />
+    //         Email
+    //       </div>
+    //     </div>
+
+    //     <div className="grid">
+    //       <div className="panel">
+    //         <div className="thumb purple">
+    //           <i className="ti ti-layout-grid" aria-hidden="true" />
+    //         </div>
+    //         <div className="cat-chip purple">frontend</div>
+    //         <div className="p-title">SaaS dashboard UI</div>
+    //         <p className="p-desc">
+    //           Dark-themed analytics interface with custom chart components.
+    //         </p>
+    //         <div className="tag-row">
+    //           <span className="tag">React</span>
+    //           <span className="tag">Tailwind</span>
+    //         </div>
+    //         <div className="foot">
+    //           <div className="link purple">
+    //             View project{" "}
+    //             <i className="ti ti-arrow-right" aria-hidden="true" />
+    //           </div>
+    //           <div className="icon-btn">
+    //             <i className="ti ti-brand-github" aria-hidden="true" />
+    //           </div>
+    //         </div>
+    //       </div>
+
+    //       <div className="panel">
+    //         <div className="thumb cyan">
+    //           <i className="ti ti-server" aria-hidden="true" />
+    //         </div>
+    //         <div className="cat-chip cyan">backend</div>
+    //         <div className="p-title">E-commerce REST API</div>
+    //         <p className="p-desc">
+    //           Order management, auth & Stripe webhook handling.
+    //         </p>
+    //         <div className="tag-row">
+    //           <span className="tag">Node.js</span>
+    //           <span className="tag">MongoDB</span>
+    //         </div>
+    //         <div className="foot">
+    //           <div className="link cyan">
+    //             View project{" "}
+    //             <i className="ti ti-arrow-right" aria-hidden="true" />
+    //           </div>
+    //           <div className="icon-btn">
+    //             <i className="ti ti-brand-github" aria-hidden="true" />
+    //           </div>
+    //         </div>
+    //       </div>
+
+    //       <div className="panel">
+    //         <div className="thumb green">
+    //           <i className="ti ti-mail" aria-hidden="true" />
+    //         </div>
+    //         <div className="cat-chip green">email</div>
+    //         <div className="p-title">Onboarding email series</div>
+    //         <p className="p-desc">5-part welcome flow for a fintech startup.</p>
+    //         <div className="tag-row">
+    //           <span className="tag">MJML</span>
+    //           <span className="tag">Klaviyo</span>
+    //         </div>
+    //         <div className="foot">
+    //           <div className="link green">
+    //             Preview <i className="ti ti-eye" aria-hidden="true" />
+    //           </div>
+    //           <div className="icon-btn">
+    //             <i className="ti ti-brand-github" aria-hidden="true" />
+    //           </div>
+    //         </div>
+    //       </div>
+
+    //       <div className="panel">
+    //         <div className="thumb purple">
+    //           <i className="ti ti-device-mobile" aria-hidden="true" />
+    //         </div>
+    //         <div className="cat-chip purple">frontend</div>
+    //         <div className="p-title">Fitness app UI kit</div>
+    //         <p className="p-desc">
+    //           Mobile-first design system with reusable components.
+    //         </p>
+    //         <div className="tag-row">
+    //           <span className="tag">Next.js</span>
+    //           <span className="tag">Framer</span>
+    //         </div>
+    //         <div className="foot">
+    //           <div className="link purple">
+    //             View project{" "}
+    //             <i className="ti ti-arrow-right" aria-hidden="true" />
+    //           </div>
+    //           <div className="icon-btn">
+    //             <i className="ti ti-brand-github" aria-hidden="true" />
+    //           </div>
+    //         </div>
+    //       </div>
+
+    //       <div className="panel">
+    //         <div className="thumb cyan">
+    //           <i className="ti ti-message-2" aria-hidden="true" />
+    //         </div>
+    //         <div className="cat-chip cyan">backend</div>
+    //         <div className="p-title">Real-time chat server</div>
+    //         <p className="p-desc">
+    //           Socket.io rooms, message queue & file storage.
+    //         </p>
+    //         <div className="tag-row">
+    //           <span className="tag">Socket.io</span>
+    //           <span className="tag">Express</span>
+    //         </div>
+    //         <div className="foot">
+    //           <div className="link cyan">
+    //             View project{" "}
+    //             <i className="ti ti-arrow-right" aria-hidden="true" />
+    //           </div>
+    //           <div className="icon-btn">
+    //             <i className="ti ti-brand-github" aria-hidden="true" />
+    //           </div>
+    //         </div>
+    //       </div>
+
+    //       <div className="panel">
+    //         <div className="thumb green">
+    //           <i className="ti ti-discount-2" aria-hidden="true" />
+    //         </div>
+    //         <div className="cat-chip green">email</div>
+    //         <div className="p-title">Black Friday campaign</div>
+    //         <p className="p-desc">
+    //           Promo template tested across 15+ email clients.
+    //         </p>
+    //         <div className="tag-row">
+    //           <span className="tag">HTML</span>
+    //           <span className="tag">Mailchimp</span>
+    //         </div>
+    //         <div className="foot">
+    //           <div className="link green">
+    //             Preview <i className="ti ti-eye" aria-hidden="true" />
+    //           </div>
+    //           <div className="icon-btn">
+    //             <i className="ti ti-brand-github" aria-hidden="true" />
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
     <div
-      className={`mt-16 md:mt-32 px-6 sm:px-10 md:px-16 lg:px-32 xl:px-36 py-12 md:py-24 lg:py-28 bg-[#ffac5e07] ${inter.className}`}
+      className={`mt-8 px-4 sm:px-6 py-12 bg-[#080C10] rounded-2xl ${inter.className}`}
       id="work"
     >
       {/* My works section */}
-      <div data-aos="fade-up" data-aos-duration="1000">
-        <h2 className="text-center text-2xl md:text-3xl font-bold leading-8 text-gray-200 flex items-center justify-center">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-mirror="false"
+        data-aos-once="true"
+      >
+        <h2 className="text-left text-2xl md:text-3xl font-bold leading-8 text-gray-200 flex items-center justify-start">
           {/* Left animation circles */}
           <p className="flex items-center mr-3">
             <span
@@ -167,39 +368,57 @@ export default function Work() {
               data-aos="zoom-in"
               data-aos-duration="500"
               data-aos-delay="100"
+              data-aos-mirror="false"
+              data-aos-once="true"
             />
             <span
               className="w-[5px] h-[5px] bg-gray-300 rounded-full mr-1"
               data-aos="zoom-in"
+              data-aos-mirror="false"
+              data-aos-once="true"
               data-aos-duration="500"
               data-aos-delay="200"
             />
             <span
               className="w-[6px] h-[6px] bg-gray-300 rounded-full mr-1"
               data-aos="zoom-in"
+              data-aos-mirror="false"
+              data-aos-once="true"
               data-aos-duration="500"
               data-aos-delay="300"
             />
             <span
               className="w-[7px] h-[7px] bg-gray-300 rounded-full mr-1"
               data-aos="zoom-in"
+              data-aos-mirror="false"
+              data-aos-once="true"
               data-aos-duration="500"
               data-aos-delay="400"
             />
             <span
               className="w-[8px] h-[8px] bg-gray-300 rounded-full mr-1"
               data-aos="zoom-in"
+              data-aos-mirror="false"
+              data-aos-once="true"
               data-aos-duration="500"
               data-aos-delay="500"
             />
             <span
               className="w-[9px] h-[10px] bg-gray-300 rounded-full"
               data-aos="zoom-in"
+              data-aos-mirror="false"
+              data-aos-once="true"
               data-aos-duration="500"
               data-aos-delay="600"
             />
           </p>
-          <p data-aos="zoom-in" data-aos-duration="500" data-aos-delay="700">
+          <p
+            data-aos="zoom-in"
+            data-aos-mirror="false"
+            data-aos-once="true"
+            data-aos-duration="500"
+            data-aos-delay="700"
+          >
             <span>My Recent Works</span>
           </p>
           {/* Right animation section */}
@@ -207,36 +426,48 @@ export default function Work() {
             <span
               className="w-[9px] h-[10px] bg-gray-300 rounded-full mr-1"
               data-aos="zoom-in"
+              data-aos-mirror="false"
+              data-aos-once="true"
               data-aos-duration="500"
               data-aos-delay="600"
             />
             <span
               className="w-[8px] h-[8px] bg-gray-300 rounded-full mr-1"
               data-aos="zoom-in"
+              data-aos-mirror="false"
+              data-aos-once="true"
               data-aos-duration="500"
               data-aos-delay="500"
             />
             <span
               className="w-[7px] h-[7px] bg-gray-300 rounded-full mr-1"
               data-aos="zoom-in"
+              data-aos-mirror="false"
+              data-aos-once="true"
               data-aos-duration="500"
               data-aos-delay="400"
             />
             <span
               className="w-[6px] h-[6px] bg-gray-300 rounded-full mr-1"
               data-aos="zoom-in"
+              data-aos-mirror="false"
+              data-aos-once="true"
               data-aos-duration="500"
               data-aos-delay="300"
             />
             <span
               className="w-[5px] h-[5px] bg-gray-300 rounded-full mr-1"
               data-aos="zoom-in"
+              data-aos-mirror="false"
+              data-aos-once="true"
               data-aos-duration="500"
               data-aos-delay="200"
             />
             <span
               className="w-1 h-1 bg-gray-300 rounded-full"
               data-aos="zoom-in"
+              data-aos-mirror="false"
+              data-aos-once="true"
               data-aos-duration="500"
               data-aos-delay="100"
             />
@@ -244,7 +475,7 @@ export default function Work() {
         </h2>
 
         {/* subtitle text for recent works */}
-        <p className="text-center ">
+        <p className="text-left">
           <span className="text-sm text-white mt-4">
             Here are a few past web development projects I've worked on.{" "}
             <a

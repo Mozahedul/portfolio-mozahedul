@@ -28,8 +28,14 @@ const TitleHero = () => {
 
   return (
     <section
-      data-aos="zoom-in"
-      data-aos-delay="300"
+      data-aos="fade-up"
+      data-aos-offset="200"
+      data-aos-delay="50"
+      data-aos-duration="500"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="false"
+      data-aos-once="true"
+      data-aos-anchor-placement="center-bottom"
       className={`flex flex-col justify-center ${inter.className}`}
     >
       <p className="mb-6">

@@ -13,53 +13,53 @@ const AboutLeftSection = () => {
     AOS.refresh();
   }, []);
   return (
-    <div>
-      {/* TOP ABOUT ME BUTTON */}
-      <button
-        type="button"
-        className="send-message flex items-center justify-center gap-[2px] text-purple-200 cursor-default"
-        data-aos="zoom-in"
-        data-aos-duration="500"
-        aria-label="Button for about me"
-      >
-        <span>About me</span>
-      </button>
-      {/* TITLE */}
-      <h3
-        data-aos="zoom-in"
-        data-aos-duration="500"
-        className="text-2xl md:text-3xl font-bold text-gray-300"
-      >
-        I build things for the <span className="text-purple-700">web</span> &{" "}
-        <span>inbox</span>
-      </h3>
-
-      {/* SUBTITLE */}
-      <div className="mt-6 font-medium leading-7 tracking-wide text-gray-400">
-        <p
-          className="about-paragraph text-gray-400 mt-2 text-sm"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
+    <div
+      data-aos="fade-up"
+      data-aos-offset="200"
+      data-aos-delay="50"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="false"
+      data-aos-once="true"
+      data-aos-anchor-placement="center-bottom"
+    >
+      {/* About me = button, title, & subtitle */}
+      <div>
+        <button
+          type="button"
+          className="send-message flex items-center justify-center gap-[2px] text-purple-200 cursor-default"
+          aria-label="Button for about me"
         >
-          <span className="w-[1px] h-full bg-[#a36aff] bg-opacity-20 rounded-full" />
-          <span>
-            A passionate{" "}
-            <span className="text-cyan-500 font-medium">
-              Full Stack Developer{" "}
+          <span>About me</span>
+        </button>
+        {/* TITLE */}
+        <h3 className="text-2xl md:text-3xl font-bold text-gray-300">
+          I build things for the <span className="text-purple-700">web</span> &{" "}
+          <span>inbox</span>
+        </h3>
+
+        {/* SUBTITLE */}
+        <div className="mt-6 font-medium leading-7 tracking-wide text-gray-400">
+          <p className="about-paragraph text-gray-400 mt-2 text-sm">
+            <span className="w-[1px] h-full bg-[#a36aff] bg-opacity-20 rounded-full" />
+            <span>
+              A passionate{" "}
+              <span className="text-cyan-500 font-medium">
+                Full Stack Developer{" "}
+              </span>
+              specializing in the MERN stack - building everything from scalable
+              APIs to pixel perfect UIs. I also craft{" "}
+              <span className="text-cyan-500 font-medium">
+                high-converting email templates
+              </span>{" "}
+              that render flawlessly across every client.
             </span>
-            specializing in the MERN stack - building everything from scalable
-            APIs to pixel perfect UIs. I also craft{" "}
-            <span className="text-cyan-500 font-medium">
-              high-converting email templates
-            </span>{" "}
-            that render flawlessly across every client.
-          </span>
-        </p>
+          </p>
+        </div>
       </div>
 
       {/* VERTICAL STEPPER */}
-      <div className="mt-6">
+      <div>
         <h3 className="text-xs uppercase font-extralight text-cyan-200 text-opacity-25">
           My Journey
         </h3>
@@ -72,7 +72,7 @@ const AboutLeftSection = () => {
               <h3 className="text-gray-400 text-sm font-bold">
                 Started web development
               </h3>
-              <p className="text-xs text-cyan-300 text-opacity-30 font-extralight mt-[2px]">
+              <p className="text-xs text-cyan-300 text-opacity-40 font-extralight mt-[2px]">
                 Fell in love with HTML & CSS. Built first portfolio.
               </p>
             </div>
@@ -85,7 +85,7 @@ const AboutLeftSection = () => {
               <h3 className="text-gray-400 text-sm font-bold">
                 Went full stack with MERN
               </h3>
-              <p className="text-xs text-cyan-300 text-opacity-30 font-extralight mt-[2px]">
+              <p className="text-xs text-cyan-300 text-opacity-40 font-extralight mt-[2px]">
                 Built real-world apps with React, Nodejs, Next.js & MongoDB.
               </p>
             </div>
@@ -98,7 +98,7 @@ const AboutLeftSection = () => {
               <h3 className="text-gray-400 text-sm font-bold">
                 Specialized in email development
               </h3>
-              <p className="text-xs text-cyan-300 text-opacity-30 font-extralight mt-[2px]">
+              <p className="text-xs text-cyan-300 text-opacity-40 font-extralight mt-[2px]">
                 Delivered 60+ pixel-perfect email template globally.
               </p>
             </div>
@@ -111,45 +111,13 @@ const AboutLeftSection = () => {
               <h3 className="text-gray-400 text-sm font-bold">
                 Freelancing worldwide
               </h3>
-              <p className="text-xs text-cyan-300 text-opacity-30 font-extralight mt-[2px]">
+              <p className="text-xs text-cyan-300 text-opacity-40 font-extralight mt-[2px]">
                 Open to new projects. 100% client satisfaction.
               </p>
             </div>
           </div>
         </div>
       </div>
-
-      {/* QUALIFICATION BUTTONS */}
-      {/* <div className="mt-6 flex gap-2">
-        <button
-          type="button"
-          className="flex items-center gap-1 bg-purple-900 bg-opacity-20 border-[1px] border-purple-800 border-opacity-20 text-purple-200 text-xs tracking-wide px-2 py-1 rounded-md"
-        >
-          <TbTopologyFullHierarchy size="16" />
-          <span>Full Stack Dev</span>
-        </button>
-        <button
-          type="button"
-          className="flex items-center gap-1 bg-cyan-900 bg-opacity-20 border-[1px] border-cyan-800 border-opacity-20 text-cyan-200 text-xs tracking-wide px-2 py-1 rounded-md"
-        >
-          <GoStack size="16" />
-          <span> MERN Stack</span>
-        </button>
-        <button
-          type="button"
-          className="flex items-center gap-1 bg-green-900 bg-opacity-20 border-[1px] border-green-800 border-opacity-20 text-green-200 text-xs tracking-wide px-2 py-1 rounded-md"
-        >
-          <MdDesignServices size="16" />
-          <span>Web Design</span>
-        </button>
-        <button
-          type="button"
-          className="flex items-center gap-1 bg-green-900 bg-opacity-20 border-[1px] border-green-800 border-opacity-20 text-green-200 text-xs tracking-wide px-2 py-1 rounded-md"
-        >
-          <MdOutlineMarkEmailUnread size="16" />
-          <span>Email Dev</span>
-        </button>
-      </div> */}
 
       {/* PERFORMACE SECTION = 3 COLUMNS */}
       <div className="flex flex-wrap gap-3 mt-8">

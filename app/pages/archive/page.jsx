@@ -104,7 +104,7 @@ const Archive = () => {
           I develop exclusive and genuine web projects for clients.
         </p>
         <div className="flex flex-col items-start mt-5 gap-y-2">
-          {categories.map(category => (
+          {categories?.map(category => (
             <button
               key={category._id}
               onClick={() => handleToShowProjects(category._id, category.name)}

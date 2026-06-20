@@ -184,3 +184,15 @@
       0% 0%;
   }
 }
+
+@media (min-width: 640px) {
+  .bubbly-button {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bubbly-button {
+    font-size: 14px;
+  }
+}

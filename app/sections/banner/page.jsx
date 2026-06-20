@@ -18,8 +18,14 @@ const Hero = () => {
       {/* COLUMN 2 */}
       <div
         className="justify-self-start mt-10 sm:mt-0"
-        data-aos="zoom-in"
-        data-aos-duration="500"
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="false"
+        data-aos-once="true"
+        data-aos-anchor-placement="center-bottom"
       >
         <Image
           loading="lazy"
@@ -39,7 +45,17 @@ const Hero = () => {
       </div>
 
       {/* COLUMN 3 */}
-      <div className="flex flex-col items-start border-slate-400 border-opacity-10 border-2 rounded-xl p-6 bg-[#080D15] sm:mt-6 xl:mt-0">
+      <div
+        className="flex flex-col items-start border-slate-400 border-opacity-10 border-2 rounded-xl p-6 bg-[#080D15] sm:mt-6 xl:mt-0"
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1500"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="false"
+        data-aos-once="true"
+        data-aos-anchor-placement="center-bottom"
+      >
         {/* PING BUTTON = Available for Freelance */}
         <div className="flex items-center gap-2">
           <span className="flex size-3 relative">

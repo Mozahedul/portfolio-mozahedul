@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
         <title>Portfolio - Mozahedul Islam</title>
       </head>
       <body
-        className={`${roboto.className} relative max-w-[1280px] xl:mx-auto`}
+        className={`${roboto.className} relative max-w-[1200px] xl:mx-auto`}
       >
         {!isContentLoaded ? (
           <Spin />

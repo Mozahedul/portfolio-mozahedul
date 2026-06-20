@@ -60,7 +60,7 @@ const Header = () => {
   return (
     <section
       ref={menuRef}
-      className="fixed lg:max-w-[1280px] mx-4 md:mx-6 lg:mx-8 xl:mx-auto z-[666] flex justify-between px-4 left-0 top-0 right-0 border-[1px] border-slate-900 bg-[#0c1027] rounded-2xl mt-1"
+      className="fixed lg:max-w-[1200px] mx-4 md:mx-6 lg:mx-8 xl:mx-auto z-[666] flex justify-between px-4 left-0 top-0 right-0 border-[1px] border-slate-900 bg-[#0c1027] rounded-2xl mt-1"
     >
       <div
         id="navMenu"

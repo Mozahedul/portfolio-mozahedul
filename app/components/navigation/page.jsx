@@ -65,7 +65,7 @@ const Navigation = ({ handleMenuClose }) => {
             About
           </button>
         </li>
-        <li className="m-5 sm:m-2 md:mx-2">
+        <li className="m-5 sm:m-2 md:mx-1 lg:mx-2">
           <button
             className="flex bubbly-button"
             type="button"
@@ -76,7 +76,7 @@ const Navigation = ({ handleMenuClose }) => {
           </button>
         </li>
 
-        <li className="m-5 sm:m-2 md:mx-2">
+        <li className="m-5 sm:m-2 md:mx-1 lg:mx-2">
           <button
             className="flex bubbly-button"
             type="button"
@@ -87,17 +87,17 @@ const Navigation = ({ handleMenuClose }) => {
           </button>
         </li>
 
-        <li className="m-5 sm:m-2 md:mx-2">
+        <li className="m-5 sm:m-2 md:mx-1 lg:mx-2">
           <button
             className="flex bubbly-button"
             type="button"
             onClick={event => handleToShowSection(event, "skills")}
             aria-label="Button for skills menu"
           >
-            Email Portfolio
+            Email
           </button>
         </li>
-        <li className="m-5 sm:m-2 md:mx-2">
+        <li className="m-5 sm:m-2 md:mx-1 lg:mx-2">
           <button
             className="flex bubbly-button"
             type="button"
@@ -107,7 +107,7 @@ const Navigation = ({ handleMenuClose }) => {
             Services
           </button>
         </li>
-        {/* <li className="m-5 sm:m-2 md:mx-2">
+        {/* <li className="m-5 sm:m-2 md:mx-1 lg:mx-2">
           <button
             className="flex bubbly-button"
             type="button"
@@ -117,7 +117,7 @@ const Navigation = ({ handleMenuClose }) => {
             Blog
           </button>
         </li> */}
-        <li className="m-5 sm:m-2 md:mx-2">
+        <li className="m-5 sm:m-2 md:mx-1 lg:mx-2">
           <button
             className="flex bubbly-button"
             type="button"

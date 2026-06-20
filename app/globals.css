@@ -487,11 +487,11 @@ body {
 
 /* tech stack */
 .tech-stack {
-  grid-template-columns: repeat(auto-fill, minmax(min(150px, 100%), 1fr));
-  @apply grid gap-3;
+  grid-template-columns: repeat(auto-fill, minmax(min(120px, 100%), 1fr));
+  @apply grid gap-4;
 }
 
 .email-client {
-  grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
-  @apply grid gap-3;
+  grid-template-columns: repeat(auto-fit, minmax(min(80px, 100%), 1fr));
+  @apply grid gap-4;
 }

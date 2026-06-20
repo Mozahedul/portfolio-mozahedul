@@ -13,8 +13,26 @@ const AboutRightSection = () => {
     AOS.refresh();
   }, []);
   return (
-    <section className="bg-[#0D1520] p-3 md:p-6 flex items-center flex-col rounded-xl border-[1px] border-slate-500 border-opacity-20">
+    <section
+      className="bg-[#0D1520] p-3 md:p-6 flex items-center flex-col rounded-xl border-[1px] border-slate-500 border-opacity-20"
+      data-aos="fade-left"
+      data-aos-offset="200"
+      data-aos-delay="50"
+      data-aos-duration="300"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="false"
+      data-aos-once="true"
+      data-aos-anchor-placement="center-bottom"
+    >
+      {/* 3 dots */}
+      <div className="flex gap-[6px] absolute left-3 top-3 w-full">
+        <span className="w-[10px] h-[10px] bg-red-600 bg-opacity-50 inline-block rounded-full" />
+        <span className="w-[10px] h-[10px] bg-orange-600 bg-opacity-50 inline-block rounded-full" />
+        <span className="w-[10px] h-[10px] bg-green-600 bg-opacity-50 inline-block rounded-full" />
+      </div>
+      {/* About me Header */}
       {/* profile image + title + subtitle */}
+
       <div className="relative">
         {/* Dot for active status */}
         <div className="w-4 h-4 bg-green-400 before:bg-blue-400 rounded-full absolute right-[-6px] top-1/3 animate-bounce border-2 border-[#0D1520] " />
@@ -41,7 +59,7 @@ const AboutRightSection = () => {
           What I specialize in
         </h2>
       </div>
-      <div className="w-full flex flex-wrap gap-2 mt-2 border-b-[1px] border-gray-300 border-opacity-10 pb-6">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2 border-b-[1px] border-gray-300 border-opacity-10 pb-6">
         {/* Full stack */}
         <div className="flex gap-3 items-center bg-[#0D1520] px-3 py-2 border-[1px] border-cyan-800 border-opacity-15 rounded-lg">
           <button
@@ -55,7 +73,7 @@ const AboutRightSection = () => {
               Full Stack Web Apps
             </h2>
             <p className="text-gray-600 text-xs leading-4 mt-[2px]">
-              End-to-end MERN development
+              MERN development
             </p>
           </div>
         </div>
@@ -73,7 +91,7 @@ const AboutRightSection = () => {
               Responsive UI / UX
             </h2>
             <p className="text-gray-600 text-xs leading-4 mt-[2px]">
-              Mobile-first, pixel-perfect interfaces
+              All device supported
             </p>
           </div>
         </div>
@@ -91,7 +109,7 @@ const AboutRightSection = () => {
               Email Template Dev
             </h2>
             <p className="text-gray-600 text-xs leading-4 mt-[2px]">
-              Works in Gmail, Outlook, Apple Mail
+              Compatible to all clients
             </p>
           </div>
         </div>
