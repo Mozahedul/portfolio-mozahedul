@@ -6,6 +6,7 @@ import { LuDroplet } from "react-icons/lu";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
+import aosFadeUp from "@/utils/animation/aosFadeUp";
 
 const AboutRightSection = () => {
   useEffect(() => {
@@ -14,11 +15,11 @@ const AboutRightSection = () => {
   }, []);
   return (
     <section
-      className="bg-[#0D1520] p-3 md:p-6 flex items-center flex-col rounded-xl border-[1px] border-slate-500 border-opacity-20"
-      data-aos="fade-left"
+      className="bg-[#0D1520] relative p-3 md:p-6 flex items-center flex-col rounded-xl border-[1px] border-slate-500 border-opacity-20"
+      data-aos="fade-up"
       data-aos-offset="200"
       data-aos-delay="50"
-      data-aos-duration="300"
+      data-aos-duration="1000"
       data-aos-easing="ease-in-out"
       data-aos-mirror="false"
       data-aos-once="true"
@@ -33,9 +34,12 @@ const AboutRightSection = () => {
       {/* About me Header */}
       {/* profile image + title + subtitle */}
 
-      <div className="relative">
+      <div className="relative" {...aosFadeUp}>
         {/* Dot for active status */}
-        <div className="w-4 h-4 bg-green-400 before:bg-blue-400 rounded-full absolute right-[-6px] top-1/3 animate-bounce border-2 border-[#0D1520] " />
+        <div
+          className="w-4 h-4 bg-green-400 before:bg-blue-400 rounded-full absolute right-[-6px] top-1/3 animate-bounce border-2 border-[#0D1520] "
+          {...aosFadeUp}
+        />
         <Image
           src="/profile-img.jpg"
           width="90"
@@ -44,22 +48,32 @@ const AboutRightSection = () => {
           className="rounded-full border-2 border-purple-600 p-1 "
         />
       </div>
-      <h3 className="text-gray-300 mt-2 text-lg font-bold capitalize text-center">
+
+      <h3
+        className="text-gray-300 mt-2 text-lg font-bold capitalize text-center"
+        {...aosFadeUp}
+      >
         Mozahedul Islam
       </h3>
-      <p className="text-cyan-200 text-opacity-20 text-sm mt-1 text-center border-b-[1px] border-gray-300 border-opacity-10 w-full pb-6">
+      <p
+        className="text-cyan-200 text-opacity-20 text-sm mt-1 text-center border-b-[1px] border-gray-300 border-opacity-10 w-full pb-6"
+        {...aosFadeUp}
+      >
         <span>MERN Stack Developer</span>
         <br />
         <span>& Email Template Developer</span>
       </p>
 
       {/* specialize */}
-      <div className="w-full mt-4">
+      <div className="w-full mt-4" {...aosFadeUp}>
         <h2 className="text-xs tracking-wider uppercase font-extralight text-gray-600 text-left">
           What I specialize in
         </h2>
       </div>
-      <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2 border-b-[1px] border-gray-300 border-opacity-10 pb-6">
+      <div
+        className="w-full grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2 border-b-[1px] border-gray-300 border-opacity-10 pb-6"
+        {...aosFadeUp}
+      >
         {/* Full stack */}
         <div className="flex gap-3 items-center bg-[#0D1520] px-3 py-2 border-[1px] border-cyan-800 border-opacity-15 rounded-lg">
           <button
@@ -116,7 +130,10 @@ const AboutRightSection = () => {
       </div>
 
       {/* Core stack */}
-      <div className="mt-4 border-b-[1px] border-gray-300 border-opacity-10 w-full pb-6">
+      <div
+        className="mt-4 border-b-[1px] border-gray-300 border-opacity-10 w-full pb-6"
+        {...aosFadeUp}
+      >
         <h2 className="text-xs uppercase text-cyan-300 text-opacity-30 font-extralight">
           Core stack
         </h2>
@@ -185,7 +202,10 @@ const AboutRightSection = () => {
       </div>
 
       {/* Fun fact section */}
-      <div className="flex gap-3 items-start bg-[#0D1520] px-3 py-2 border-t-[1px] border-r-[1px] border-b-[1px] border-l-8 border-b-purple-800 border-r-purple-800 border-t-purple-800 border-l-purple-800 border-opacity-15 rounded-tr-xl rounded-br-xl mt-8">
+      <div
+        className="flex gap-3 items-start bg-[#0D1520] px-3 py-2 border-t-[1px] border-r-[1px] border-b-[1px] border-l-8 border-b-purple-800 border-r-purple-800 border-t-purple-800 border-l-purple-800 border-opacity-15 rounded-tr-xl rounded-br-xl mt-8"
+        {...aosFadeUp}
+      >
         <div className="text-purple-600">
           <LuDroplet size="32" />
         </div>

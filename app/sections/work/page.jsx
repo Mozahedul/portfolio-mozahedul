@@ -9,6 +9,7 @@ import Card from "@/app/components/workCard/page";
 import fetchServerData from "@/app/functions/getData/fetchData";
 import { inter } from "@/utils/google-fonts/fonts";
 import Pulse from "@/app/components/animation/pulse/page";
+import aosFadeUp from "@/utils/animation/aosFadeUp";
 
 export default function Work() {
   const [showMore, setShowMore] = useState(1);
@@ -361,121 +362,11 @@ export default function Work() {
         data-aos-once="true"
       >
         <h2 className="text-left text-2xl md:text-3xl font-bold leading-8 text-gray-200 flex items-center justify-start">
-          {/* Left animation circles */}
-          <p className="flex items-center mr-3">
-            <span
-              className="w-1 h-1 bg-gray-300 rounded-full mr-1"
-              data-aos="zoom-in"
-              data-aos-duration="500"
-              data-aos-delay="100"
-              data-aos-mirror="false"
-              data-aos-once="true"
-            />
-            <span
-              className="w-[5px] h-[5px] bg-gray-300 rounded-full mr-1"
-              data-aos="zoom-in"
-              data-aos-mirror="false"
-              data-aos-once="true"
-              data-aos-duration="500"
-              data-aos-delay="200"
-            />
-            <span
-              className="w-[6px] h-[6px] bg-gray-300 rounded-full mr-1"
-              data-aos="zoom-in"
-              data-aos-mirror="false"
-              data-aos-once="true"
-              data-aos-duration="500"
-              data-aos-delay="300"
-            />
-            <span
-              className="w-[7px] h-[7px] bg-gray-300 rounded-full mr-1"
-              data-aos="zoom-in"
-              data-aos-mirror="false"
-              data-aos-once="true"
-              data-aos-duration="500"
-              data-aos-delay="400"
-            />
-            <span
-              className="w-[8px] h-[8px] bg-gray-300 rounded-full mr-1"
-              data-aos="zoom-in"
-              data-aos-mirror="false"
-              data-aos-once="true"
-              data-aos-duration="500"
-              data-aos-delay="500"
-            />
-            <span
-              className="w-[9px] h-[10px] bg-gray-300 rounded-full"
-              data-aos="zoom-in"
-              data-aos-mirror="false"
-              data-aos-once="true"
-              data-aos-duration="500"
-              data-aos-delay="600"
-            />
-          </p>
-          <p
-            data-aos="zoom-in"
-            data-aos-mirror="false"
-            data-aos-once="true"
-            data-aos-duration="500"
-            data-aos-delay="700"
-          >
-            <span>My Recent Works</span>
-          </p>
-          {/* Right animation section */}
-          <p className="flex items-center ml-3">
-            <span
-              className="w-[9px] h-[10px] bg-gray-300 rounded-full mr-1"
-              data-aos="zoom-in"
-              data-aos-mirror="false"
-              data-aos-once="true"
-              data-aos-duration="500"
-              data-aos-delay="600"
-            />
-            <span
-              className="w-[8px] h-[8px] bg-gray-300 rounded-full mr-1"
-              data-aos="zoom-in"
-              data-aos-mirror="false"
-              data-aos-once="true"
-              data-aos-duration="500"
-              data-aos-delay="500"
-            />
-            <span
-              className="w-[7px] h-[7px] bg-gray-300 rounded-full mr-1"
-              data-aos="zoom-in"
-              data-aos-mirror="false"
-              data-aos-once="true"
-              data-aos-duration="500"
-              data-aos-delay="400"
-            />
-            <span
-              className="w-[6px] h-[6px] bg-gray-300 rounded-full mr-1"
-              data-aos="zoom-in"
-              data-aos-mirror="false"
-              data-aos-once="true"
-              data-aos-duration="500"
-              data-aos-delay="300"
-            />
-            <span
-              className="w-[5px] h-[5px] bg-gray-300 rounded-full mr-1"
-              data-aos="zoom-in"
-              data-aos-mirror="false"
-              data-aos-once="true"
-              data-aos-duration="500"
-              data-aos-delay="200"
-            />
-            <span
-              className="w-1 h-1 bg-gray-300 rounded-full"
-              data-aos="zoom-in"
-              data-aos-mirror="false"
-              data-aos-once="true"
-              data-aos-duration="500"
-              data-aos-delay="100"
-            />
-          </p>
+          <p {...aosFadeUp}>My Recent Works</p>
         </h2>
 
         {/* subtitle text for recent works */}
-        <p className="text-left">
+        <p className="text-left" {...aosFadeUp}>
           <span className="text-sm text-white mt-4">
             Here are a few past web development projects I've worked on.{" "}
             <a
@@ -487,7 +378,7 @@ export default function Work() {
           </span>
         </p>
         {/* Start view archive button */}
-        <div className="flex justify-center mb-8 mt-5">
+        <div className="mb-8 mt-5" {...aosFadeUp}>
           <Link
             href="/pages/archive"
             alt="View archive button"
@@ -496,10 +387,12 @@ export default function Work() {
             <button
               type="button"
               onClick={handleArchive}
-              className="px-3 py-2 rounded-full bg-[#0c0c21] border-[2px] border-[#9bc2f518] text-[12px] md:text-sm tracking-wide hover:bg-cardHover text-gray-200 transition-all duration-1000 hover:text-[#ffac5e]"
+              className="group relative px-3 py-2 text-xs tracking-wide text-gray-200 transition-all duration-1000 hover:text-purple-400"
               aria-label="Button for view archive"
             >
-              View the archive
+              <span className="absolute left-0 top-0 w-6 h-5 border-l-2 border-t-2 border-purple-400 border-opacity-40 transition-all duration-1000 group-hover:border-opacity-100" />
+              View all works
+              <span className="absolute right-0 bottom-0 w-6 h-5 rounded-ss-lg border-r-2 border-b-2 border-purple-400 border-opacity-40 transition-all duration-1000 group-hover:border-opacity-100" />
             </button>
           </Link>
         </div>

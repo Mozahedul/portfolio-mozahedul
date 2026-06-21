@@ -6,6 +6,7 @@ import { FaHeart } from "react-icons/fa";
 import AOS from "aos";
 // import { inter } from "@/utils/google-fonts/fonts";
 import "aos/dist/aos.css";
+import aosFadeUp from "@/utils/animation/aosFadeUp";
 
 const AboutLeftSection = () => {
   useEffect(() => {
@@ -13,18 +14,9 @@ const AboutLeftSection = () => {
     AOS.refresh();
   }, []);
   return (
-    <div
-      data-aos="fade-up"
-      data-aos-offset="200"
-      data-aos-delay="50"
-      data-aos-duration="1000"
-      data-aos-easing="ease-in-out"
-      data-aos-mirror="false"
-      data-aos-once="true"
-      data-aos-anchor-placement="center-bottom"
-    >
+    <div>
       {/* About me = button, title, & subtitle */}
-      <div>
+      <div {...aosFadeUp}>
         <button
           type="button"
           className="send-message flex items-center justify-center gap-[2px] text-purple-200 cursor-default"
@@ -59,7 +51,7 @@ const AboutLeftSection = () => {
       </div>
 
       {/* VERTICAL STEPPER */}
-      <div>
+      <div {...aosFadeUp} className="mt-4">
         <h3 className="text-xs uppercase font-extralight text-cyan-200 text-opacity-25">
           My Journey
         </h3>
@@ -120,7 +112,7 @@ const AboutLeftSection = () => {
       </div>
 
       {/* PERFORMACE SECTION = 3 COLUMNS */}
-      <div className="flex flex-wrap gap-3 mt-8">
+      <div {...aosFadeUp} className="flex flex-wrap gap-3 mt-8">
         <div className="flex gap-3 items-center bg-[#0D1520] px-2 py-1 border-[1px] border-cyan-800 border-opacity-15 rounded-lg">
           <button
             type="button"

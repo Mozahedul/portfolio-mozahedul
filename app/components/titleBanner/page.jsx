@@ -9,6 +9,7 @@ import { inter } from "../../../utils/google-fonts/fonts";
 import TypeWriter from "../cssFeatures/typingAnimation/page";
 import "aos/dist/aos.css";
 import SocialMedia from "@/app/sections/media/page";
+import aosFadeUp from "@/utils/animation/aosFadeUp";
 
 const TitleHero = () => {
   const animatedText = [
@@ -27,27 +28,20 @@ const TitleHero = () => {
   }, []);
 
   return (
-    <section
-      data-aos="fade-up"
-      data-aos-offset="200"
-      data-aos-delay="50"
-      data-aos-duration="500"
-      data-aos-easing="ease-in-out"
-      data-aos-mirror="false"
-      data-aos-once="true"
-      data-aos-anchor-placement="center-bottom"
-      className={`flex flex-col justify-center ${inter.className}`}
-    >
-      <p className="mb-6">
+    <section className={`flex flex-col justify-center ${inter.className}`}>
+      <p className="mb-6" {...aosFadeUp}>
         <span className="text-sm text-green-500 border-[1px] border-green-800 border-opacity-20 bg-green-900 bg-opacity-10 py-1 px-2 rounded-lg inline-flex items-center gap-2">
           <span className="size-2 bg-green-400 rounded-full" />
           <span>Available for Work</span>
         </span>
       </p>
-      <p className="text-xl text-gray-300 mb-1 font-semibold capitalize font-roboto">
+      <p
+        className="text-xl text-gray-300 mb-1 font-semibold capitalize font-roboto"
+        {...aosFadeUp}
+      >
         Hello, I'm
       </p>
-      <h2 className="mt-1">
+      <h2 className="mt-1" {...aosFadeUp}>
         <strong className="font-bold text-left text-3xl md:text-4xl lg:text-5xl text-gray-300 ">
           Mozahedul&nbsp;
         </strong>
@@ -55,10 +49,16 @@ const TitleHero = () => {
           Islam.
         </strong>
       </h2>
-      <div className="mt-2 md:mt-3 text-left block text-gray-300">
+      <div
+        className="mt-2 md:mt-3 text-left block text-gray-300"
+        {...aosFadeUp}
+      >
         <TypeWriter animatedText={animatedText} />
       </div>
-      <p className="text-sm mt-3 md:mt-6 font-normal text-gray-400 text-left mr-2 leading-6">
+      <p
+        className="text-sm mt-3 md:mt-6 font-normal text-gray-400 text-left mr-2 leading-6"
+        {...aosFadeUp}
+      >
         I'm a{" "}
         <span className="text-purple-500">
           Full-Stack Developer & Email Developer
@@ -66,7 +66,7 @@ const TitleHero = () => {
         developing frontend and backend supported web application and responsive
         email templates that are compatible to major email clients.
       </p>
-      <div className="mt-8 flex items-center gap-1 md:gap-3">
+      <div className="mt-8 flex items-center gap-1 md:gap-3" {...aosFadeUp}>
         <Link
           href="#work"
           aria-label="Navigate to work section"
@@ -127,7 +127,7 @@ const TitleHero = () => {
         </Link>
       </div>
       {/* Social media icons */}
-      <div className="relative mt-4">
+      <div className="relative mt-4" {...aosFadeUp}>
         <p className="text-gray-400 text-sm my-3">Let's connect</p>
         <SocialMedia />
       </div>

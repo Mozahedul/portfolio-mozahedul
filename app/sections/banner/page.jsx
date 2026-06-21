@@ -6,6 +6,7 @@ import { MdOutlineMail } from "react-icons/md";
 import { GiElectric } from "react-icons/gi";
 import { FaLocationDot, FaCode } from "react-icons/fa6";
 import TitleHero from "@/app/components/titleBanner/page";
+import aosFadeUp from "@/utils/animation/aosFadeUp";
 // import BannerDetails from "../bannerDetails/page";
 
 const Hero = () => {
@@ -16,17 +17,7 @@ const Hero = () => {
         <TitleHero />
       </div>
       {/* COLUMN 2 */}
-      <div
-        className="justify-self-start mt-10 sm:mt-0"
-        data-aos="fade-up"
-        data-aos-offset="200"
-        data-aos-delay="50"
-        data-aos-duration="1000"
-        data-aos-easing="ease-in-out"
-        data-aos-mirror="false"
-        data-aos-once="true"
-        data-aos-anchor-placement="center-bottom"
-      >
+      <div className="justify-self-start mt-10 sm:mt-0" {...aosFadeUp}>
         <Image
           loading="lazy"
           src="/profile.png"
@@ -45,19 +36,9 @@ const Hero = () => {
       </div>
 
       {/* COLUMN 3 */}
-      <div
-        className="flex flex-col items-start border-slate-400 border-opacity-10 border-2 rounded-xl p-6 bg-[#080D15] sm:mt-6 xl:mt-0"
-        data-aos="fade-up"
-        data-aos-offset="200"
-        data-aos-delay="50"
-        data-aos-duration="1500"
-        data-aos-easing="ease-in-out"
-        data-aos-mirror="false"
-        data-aos-once="true"
-        data-aos-anchor-placement="center-bottom"
-      >
+      <div className="flex flex-col items-start border-slate-400 border-opacity-10 border-2 rounded-xl p-6 bg-[#080D15] sm:mt-6 xl:mt-0">
         {/* PING BUTTON = Available for Freelance */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2" {...aosFadeUp}>
           <span className="flex size-3 relative">
             <span className="animate-ping inline-flex absolute rounded-full w-full h-full bg-green-400 opacity-75" />
             <span className="bg-green-500 inline-flex size-3 relative rounded-full" />
@@ -67,14 +48,17 @@ const Hero = () => {
           </p>
         </div>
         {/* SUBTITLE */}
-        <p className="text-gray-400 text-xs mt-1 pb-4 border-b-2 border-gray-900 block w-full">
+        <p
+          className="text-gray-400 text-xs mt-1 pb-4 border-b-2 border-gray-900 block w-full"
+          {...aosFadeUp}
+        >
           Open to new opportunities
         </p>
 
         {/* MAIN BODY OF EXPERIENCE */}
         <div className="mt-4 flex flex-col gap-6 w-full">
           {/*  5+ YEARS EXPERIENCE */}
-          <div className="flex gap-3 items-center">
+          <div className="flex gap-3 items-center" {...aosFadeUp}>
             <button
               type="button"
               className="bg-gray-900 border-[1px] border-slate-800 text-xl text-purple-400 w-10 h-10 text-center inline-block rounded-md"
@@ -88,7 +72,7 @@ const Hero = () => {
           </div>
 
           {/* 60+ EMAIL TEMPLATES */}
-          <div className="flex gap-3 items-center">
+          <div className="flex gap-3 items-center" {...aosFadeUp}>
             <button
               type="button"
               className="bg-gray-900 border-[1px] border-slate-800 text-xl text-purple-400 w-10 h-10 text-center inline-block rounded-md"
@@ -102,7 +86,7 @@ const Hero = () => {
           </div>
 
           {/* 70+ PROJECTS COMPLETED */}
-          <div className="flex gap-3 items-center">
+          <div className="flex gap-3 items-center" {...aosFadeUp}>
             <button
               type="button"
               className="bg-gray-900 border-[1px] border-slate-800 text-xl text-purple-400 w-10 h-10 text-center inline-block rounded-md"
@@ -116,7 +100,10 @@ const Hero = () => {
           </div>
 
           {/* Client satisfaction */}
-          <div className="flex gap-3 items-center border-b-2 border-gray-900 w-full pb-4">
+          <div
+            className="flex gap-3 items-center border-b-2 border-gray-900 w-full pb-4"
+            {...aosFadeUp}
+          >
             <button
               type="button"
               className="bg-gray-900 border-[1px] border-slate-800 text-xl text-purple-400 w-10 h-10 text-center inline-block rounded-md"
@@ -132,7 +119,7 @@ const Hero = () => {
           </div>
 
           {/* BASED IN BANGLADESH */}
-          <div className="flex gap-3 items-center">
+          <div className="flex gap-3 items-center" {...aosFadeUp}>
             <button
               type="button"
               className="bg-gray-900 border-[1px] border-slate-800 text-xl text-purple-400 w-10 h-10 text-center inline-block rounded-xl"
@@ -148,7 +135,7 @@ const Hero = () => {
           </div>
 
           {/* RESPONSE TIME */}
-          <div className="flex gap-3 items-center">
+          <div className="flex gap-3 items-center" {...aosFadeUp}>
             <button
               type="button"
               className="bg-gray-900 border-[1px] border-slate-800 text-xl text-purple-400 w-10 h-10 text-center inline-block rounded-xl"

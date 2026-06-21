@@ -17,6 +17,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 // import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { inter } from "@/utils/google-fonts/fonts";
+import aosFadeUp from "@/utils/animation/aosFadeUp";
+import aosZoomIn from "@/utils/animation/aosZoomIn";
 
 const SkillSection = () => {
   const skills = [
@@ -141,28 +143,23 @@ const SkillSection = () => {
       id="skills"
     >
       {/* skills header */}
-      <div
-        data-aos="zoom-in"
-        data-aos-offset="100"
-        data-aos-delay="50"
-        data-aos-duration="500"
-        data-aos-easing="ease-in-out"
-        data-aos-mirror="false"
-        data-aos-once="true"
-        data-aos-anchor-placement="center-bottom"
-      >
+      <div>
         <button
           type="button"
           className="text-xs border-[1px] border-cyan-300 border-opacity-20 rounded-full px-3 py-[2px] flex items-left justify-center gap-[2px] text-cyan-200 text-opacity-70 cursor-default mb-2"
           aria-label="Button for about me"
+          {...aosFadeUp}
         >
           <span>Technical skills</span>
         </button>
-        <h2 className="text-3xl font-bold text-gray-300">
+        <h2 className="text-3xl font-bold text-gray-300" {...aosFadeUp}>
           <span>My tech </span>
           <span className="text-cyan-400">stack</span>
         </h2>
-        <p className="text-cyan-200 text-xs tracking-wide text-opacity-40 mt-1">
+        <p
+          className="text-cyan-200 text-xs tracking-wide text-opacity-40 mt-1"
+          {...aosFadeUp}
+        >
           Technologies and tools I used to bring ideas to life.
         </p>
       </div>
@@ -173,7 +170,10 @@ const SkillSection = () => {
         <div>
           {/* Skills with icons + percentages */}
           <div>
-            <h2 className="text-xs text-cyan-300 text-opacity-30 uppercase font-extralight">
+            <h2
+              className="text-xs text-cyan-300 text-opacity-30 uppercase font-extralight"
+              {...aosFadeUp}
+            >
               Frontend & Backend
             </h2>
             <div className="tech-stack mt-4">
@@ -182,14 +182,7 @@ const SkillSection = () => {
                 <div
                   key={skill.icon}
                   className="relative flex flex-col gap-1 items-center bg-[#0D1520] rounded-xl border-[1px] border-gray-200 border-opacity-10 py-3 px-1 "
-                  data-aos="zoom-in"
-                  data-aos-offset="200"
-                  data-aos-delay="50"
-                  data-aos-duration="500"
-                  data-aos-easing="ease-in-out"
-                  data-aos-mirror="false"
-                  data-aos-once="true"
-                  data-aos-anchor-placement="center-bottom"
+                  {...aosZoomIn}
                 >
                   <button
                     type="button"
@@ -221,17 +214,11 @@ const SkillSection = () => {
         {/* Right section */}
         <div>
           {/* Email client compatibility */}
-          <div
-            data-aos="fade-up"
-            data-aos-offset="100"
-            data-aos-delay="50"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="false"
-            data-aos-once="true"
-            data-aos-anchor-placement="center-bottom"
-          >
-            <h2 className="text-xs text-cyan-300 text-opacity-30 uppercase font-extralight">
+          <div>
+            <h2
+              className="text-xs text-cyan-300 text-opacity-30 uppercase font-extralight"
+              {...aosFadeUp}
+            >
               Email client compatibility
             </h2>
             <div className="mt-4 email-client">
@@ -239,6 +226,7 @@ const SkillSection = () => {
                 <div
                   key={email.name}
                   className="relative flex flex-col items-center justify-center bg-[#0D1520] rounded-xl border-[1px] border-gray-200 border-opacity-10 p-2 "
+                  {...aosZoomIn}
                 >
                   <FaCheck size="24" className="text-green-800" />
                   <p
@@ -258,14 +246,7 @@ const SkillSection = () => {
           {/* Currently leveling up section */}
           <div
             className="bg-[#0D1520] rounded-r-xl border-l-8 border-l-cyan-400 border-r-[1px] border-r-gray-700 border-t-gray-700 border-t-[1px] border-b-[1px] border-b-gray-700 p-5 mt-4"
-            data-aos="zoom-in"
-            data-aos-offset="100"
-            data-aos-delay="50"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="false"
-            data-aos-once="true"
-            data-aos-anchor-placement="center-bottom"
+            {...aosZoomIn}
           >
             {/* icon */}
             <div>
