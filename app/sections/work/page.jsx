@@ -369,12 +369,12 @@ export default function Work() {
         <p className="text-left" {...aosFadeUp}>
           <span className="text-sm text-white mt-4">
             Here are a few past web development projects I've worked on.{" "}
-            <a
+            <Link
               className="text-blue-400 cursor-pointer"
               href="mailto:mozahed001@gmail.com"
             >
               Email me
-            </a>
+            </Link>
           </span>
         </p>
         {/* Start view archive button */}

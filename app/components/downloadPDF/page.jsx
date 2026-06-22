@@ -16,12 +16,12 @@ const DownloadCV = () => {
         href="./resume-modify.pdf"
         download
         onClick={hanldeHireMeButton}
-        className="group relative tracking-wide  whitespace-nowrap py-2 px-4 sm:py-1 sm:px-2 lg:py-2 lg:px-4 flex items-center text-gray-300 text-[13px] hover:text-purple-400 hover:transition hover:duration-300"
+        className="group relative tracking-wide  whitespace-nowrap py-[6px] px-3 flex items-center text-gray-300 text-[13px] hover:text-purple-400 hover:transition hover:duration-300"
       >
-        <span className="absolute left-0 top-0 w-6 h-5 border-l-2 border-t-2 border-purple-400 border-opacity-40 transition-all duration-1000 group-hover:border-opacity-100" />
+        <span className="absolute left-0 top-0 w-6 h-5 border-l-2 border-t-2 border-gray-500 border-opacity-40 transition-all duration-1000 group-hover:border-opacity-100 group-hover:border-purple-400" />
         Download CV
         <HiOutlineDownload className="inline ml-[6px]" />
-        <span className="absolute right-0 bottom-0 w-6 h-5 rounded-ss-lg border-r-2 border-b-2 border-purple-400 border-opacity-40 transition-all duration-1000 group-hover:border-opacity-100" />
+        <span className="absolute right-0 bottom-0 w-6 h-5 rounded-ss-lg border-r-2 border-b-2 border-gray-500 border-opacity-40 transition-all duration-1000 group-hover:border-opacity-100 group-hover:border-purple-400" />
       </Link>
     </div>
   );
