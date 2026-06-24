@@ -1,31 +1,39 @@
 # Project Name
 
-portfolio - A Web Developer Portfolio 
+Portfolio - A Web Developer and Email Developer Portfolio
 
 ## Description
-A personal portfolio website to showcase my skills, projects, and experience as a web developer. This responsive site highlights my work through interactive projects, an about section, and contact information for potential clients or employers.
+A responsive portfolio website showcasing my expertise as a Web Developer and Email Developer, featuring projects, skills, experience, and contact information for clients and employers.
 
 
 ## Table of Contents
-- [Demo](#demo)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Screenshots](#screenshots)
+- [Project Name](#project-name)
+  - [Description](#description)
+  - [Table of Contents](#table-of-contents)
+  - [Demo](#demo)
+  - [Features](#features)
+  - [Installation](#installation)
+    - [Prerequisites](#prerequisites)
+    - [Steps](#steps)
 - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
+  - [Frontend:](#frontend)
+  - [Backend:](#backend)
+  - [Other:](#other)
 - [License](#license)
 
 ## Demo
-[live demo](https://eshop-tawny-seven.vercel.app/)  
+[live demo](https://portfolio-mozahedul.vercel.app/)
 
 ## Features
-- List out key features or functionality of the website.
-  - User Authentication: Secure sign-up, login, and account management.
-  - Product Catalog: Browse and search products by category, name, or price range.
-  - Shopping Cart: Add, remove, and update products in the cart.
-  - Order Management: Complete purchase through secure checkout and track orders.
-  - Responsive Design: Optimized for mobile, tablet, and desktop use.
+* Responsive Design: Fully optimized for desktop, tablet, and mobile devices.
+* Project Showcase: Display frontend, backend, full-stack, and email development projects with live demos and source code links.
+* Skills Overview: Highlight technical skills, tools, and technologies in an organized layout.
+* About Section: Present professional background, experience, and career goals.
+* Contact Form: Enable visitors to send inquiries directly through the website.
+* Resume Download: Provide quick access to download or view the latest resume.
+* Smooth User Experience: Modern UI with clean navigation, animations, and fast performance.
+* Social Media Integration: Connect visitors to GitHub, LinkedIn, Fiverr, and other professional profiles.
+
 
 ## Installation
 ### Prerequisites
@@ -35,68 +43,35 @@ A personal portfolio website to showcase my skills, projects, and experience as 
 ### Steps
 1. Clone the repository
    ```bash
-   git clone git@github.com:Mozahedul/eshop.git
+   git clone git@github.com:Mozahedul/portfolio-mozahedul.git
 
 2. Navigate to the project directory
    ```bash
-   cd your-repo
+   cd your-repo-name
 
 
 3. Install dependencies
    ```bash
-   npm run install-all
+   npm install
 
 4. Run the application locally
    ```bash
-   npm start
+   npm run dev
 
-5. Visit http://localhost:3000 to view the website.
-
-
-## Usage
-How you can interact with the website:
-
-1. Create an account (if there’s a registration feature).
-2. Log in and start using the features.
-3. Describe any specific interaction patterns or workflows (e.g., how to add posts, interact with the content).
-
-## Screenshots
-Include relevant screenshots or GIFs to give readers a visual preview of the website. For example:
-
-- [Home Page](https://i.imgur.com/BWenKEf.png)
-- [Product Details Page](https://i.imgur.com/coGn0rY.png)
-- [Product Filter](https://i.imgur.com/eCYE0kh.png)
-- [Payment](https://i.imgur.com/xqD5tG5.png)
-- [Payment Method](https://i.imgur.com/UABUEiH.png)
-- [Shop](https://i.imgur.com/X8YTcw6.png)
-- [Shipping Address](https://i.imgur.com/mlBi0CB.png)
-- [Place Order](https://i.imgur.com/0JeKdX3.png)
-- [Register Page](https://i.imgur.com/9ziMSSM.png)
-- [Shopping Cart](https://i.imgur.com/yTkNm6B.png)
-- [Shopping Address](https://i.imgur.com/BOA0ZJg.png)
-
+5. Open browser and Visit http://localhost:3000 to view the website.
 
 # Technologies Used
 ## Frontend:
 - React.js
 - HTML5, CSS3, JavaScript (ES6+)
-- Material UI
+- Tailwind CSS
 
 ## Backend:
 - Node.js / Next.js
 - MongoDB
 
 ## Other:
-- JWT for authentication
 - REST API backend communication
-
-# Contributing
-1. Fork the repository.
-2. Create a new branch (git checkout -b feature-branch).
-3. Make your changes and commit them (git commit -m "Add new feature").
-4. Push to the branch (git push origin feature-branch).
-5. Create a pull request.
-6. Feel free to improve the project or report issues!
 
 # License
 This project is licensed under the MIT License. See the LICENSE file for details.
