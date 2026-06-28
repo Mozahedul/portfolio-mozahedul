@@ -4,7 +4,12 @@ import React, { useRef, useState } from "react";
 import { CgSpinner } from "react-icons/cg";
 import { FaCircleCheck } from "react-icons/fa6";
 import { MdError } from "react-icons/md";
+import { CiClock2, CiLock, CiStar } from "react-icons/ci";
+import { LuSend } from "react-icons/lu";
+import { GrShieldSecurity } from "react-icons/gr";
+import { TiWarningOutline } from "react-icons/ti";
 import emailjs from "@emailjs/browser";
+import aosZoomIn from "@/utils/animation/aosZoomIn";
 // import { toastError, toastSuccess } from "@/utils/showMessage/toastReact";
 
 const ContactUs = () => {
@@ -12,6 +17,7 @@ const ContactUs = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState(null);
+  const [charCount, setCharCount] = useState(0);
 
   const sendEmail = async e => {
     e.preventDefault();
@@ -84,91 +90,147 @@ const ContactUs = () => {
     return "Send Message";
   };
 
+  // handler for counting characters
+  const handleCharCount = e => {
+    const { value } = e.target;
+    setCharCount(value.length);
+  };
+
   return (
-    <div>
+    <div className="bg-[#0f1014] px-4 sm:px-6 lg:px-12 py-4 sm:py-6 lg:py-16 border-l-[1px] border-r-[1px] border-b-[1px] border-gray-500 border-opacity-30">
+      {/* contact form header */}
+      <div className="mb-6">
+        <button
+          type="button"
+          className="flex items-center text-xs text-purple-300 tracking-wider gap-2 border-[1px] border-purple-500 border-opacity-25 py-1 px-2 mb-6"
+        >
+          <LuSend />
+          <span>Send a message</span>
+        </button>
+        <h2 className="text-3xl font-bold">
+          <span className="text-gray-200">
+            Start a conversation —<br /> tell me what you
+          </span>{" "}
+          <span className="text-purple-400">need.</span>
+        </h2>
+        <p className="text-gray-400 text-xs mt-4 tracking-wider">
+          All fields required. I read every single message personally.
+        </p>
+      </div>
       <form
         ref={form}
         onSubmit={sendEmail}
-        className="bg-[#0c0c21] border-[2px] border-[#9bc2f518] flex flex-col p-6 rounded-2xl"
+        className="flex flex-col border-[1px] border-gray-600 border-opacity-30"
       >
-        <h2
-          className="text-lg mb-5 uppercase tracking-wide"
-          data-aos="fade-up"
-          data-aos-duration="500"
-          data-aos-delay="200"
-        >
-          <strong className="text-gray-200 tracking-wide font-bold">
-            Got a Project?
-          </strong>
-          <br />{" "}
-          <span className="text-[#a36aff] tracking-wide font-semibold">
-            Let's Talk!
-          </span>
-        </h2>
-        <label
-          className="text-sm font-medium text-gray-200 mb-1"
-          data-aos="zoom-in-up"
-          data-aos-duration="500"
-          data-aos-delay="200"
-        >
-          Name
-        </label>
-        <input
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
-          required
-          type="text"
-          name="user_name"
-          placeholder="Your Name"
-          className="bg-[#060813] py-3 px-4 rounded-full text-gray-300 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#a36affb4]"
-        />
-        <label
-          className="text-sm font-medium text-gray-200 mt-5 mb-1"
-          data-aos="zoom-in-up"
-          data-aos-duration="500"
-          data-aos-delay="200"
-        >
-          Email
-        </label>
-        <input
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
-          required
-          type="email"
-          name="user_email"
-          placeholder="example@mail.com"
-          className="bg-[#060813] py-3 px-4 rounded-full text-gray-300 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#a36affb4]"
-        />
-        <label
-          className="text-sm font-medium text-gray-200 mt-5 mb-1"
-          data-aos="zoom-in-up"
-          data-aos-duration="500"
-          data-aos-delay="200"
-        >
-          Message
-        </label>
-        <textarea
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
-          required
-          placeholder="Write Your Message..."
-          name="message"
-          className="bg-[#060813] py-3 px-4 rounded-full text-gray-300 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#a36affb4]"
-        />
-        <button
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
-          type="submit"
-          className="hire-btn cursor-pointer transition duration-500 tracking-wide p-2 mt-8 text-gray-800 text-sm placeholder:text-gray-600 font-semibold hover:bg-cyan-900 hover:text-white uppercase"
-          aria-label="Button for sending email message"
-        >
-          {sendEmailMessage()}
-        </button>
+        <div className="grid grid-cols-2 border-b-[1px] border-gray-600 border-opacity-30">
+          <div className="flex flex-col justify-center p-4 border-r-[1px] border-gray-600 border-opacity-30">
+            <label
+              {...aosZoomIn}
+              className="text-[10px] font-medium tracking-widest text-gray-500 mb-2 uppercase"
+            >
+              Full name
+            </label>
+            <input
+              {...aosZoomIn}
+              required
+              type="text"
+              name="user_name"
+              placeholder="Your full name"
+              className="bg-transparent text-gray-400 text-xs placeholder:text-gray-800 focus:outline-none"
+            />
+          </div>
+          <div className="flex flex-col p-4">
+            <label
+              {...aosZoomIn}
+              className="text-[10px] font-medium tracking-widest text-gray-500 mb-2 uppercase"
+            >
+              Email address
+            </label>
+            <input
+              {...aosZoomIn}
+              required
+              type="email"
+              name="user_email"
+              placeholder="example@mail.com"
+              className="bg-transparent text-gray-400 text-xs placeholder:text-gray-800 focus:outline-none"
+            />
+          </div>
+        </div>
+
+        {/* Message */}
+        <div className="flex flex-col justify-center p-4 border-b-[1px] border-gray-600 border-opacity-30">
+          <label
+            {...aosZoomIn}
+            className="text-[10px] font-medium tracking-widest text-gray-500 mb-2 uppercase"
+          >
+            Your message
+          </label>
+          <textarea
+            {...aosZoomIn}
+            required
+            rows={5}
+            onChange={handleCharCount}
+            maxLength={500}
+            placeholder="Hi Mozahedul, I'd like to discuss a project with you. I need..."
+            name="message"
+            className="bg-transparent text-gray-400 text-xs placeholder:text-gray-800 focus:outline-none"
+          />
+        </div>
+        {/* Show warning if user input > 500 characters */}
+        {charCount === 500 && (
+          <p className="flex items-center gap-2 text-red-500 text-xs mx-4 mt-2 bg-gray-900 tracking-wider font-semibold px-3 py-2">
+            <TiWarningOutline size="20" />
+            <span>Maximum 500 characters reached</span>
+          </p>
+        )}
+        <div className="flex items-center gap-6 p-4 justify-between">
+          <button
+            {...aosZoomIn}
+            type="submit"
+            className="hire-btn flex-grow cursor-pointer transition duration-500 tracking-wide py-3 text-gray-800 text-sm placeholder:text-gray-600 font-semibold hover:bg-cyan-900 hover:text-white uppercase"
+            aria-label="Button for sending email message"
+          >
+            {sendEmailMessage()}
+          </button>
+          <p className="text-gray-300 text-xs tracking-wider">
+            {charCount} / 500 characters
+          </p>
+        </div>
       </form>
+      {/* Buttons after form */}
+      <div className="mt-2 flex flex-wrap gap-2 items-center">
+        <button
+          type="button"
+          className="flex items-center gap-2 text-gray-300 cursor-text text-xs font-light px-3 py-[6px] bg-[#22222C] tracking-widest"
+        >
+          <CiClock2 size="18" className="text-purple-300 border-opacity-40 " />
+          <span>Reply in &lt; 24 hrs </span>
+        </button>
+        <button
+          type="button"
+          className="flex items-center gap-2 text-gray-300 cursor-text text-xs font-light px-3 py-[6px] bg-[#22222C] tracking-widest"
+        >
+          <GrShieldSecurity
+            size="18"
+            className="text-purple-300 border-opacity-40 "
+          />
+          <span>No spam</span>
+        </button>
+        <button
+          type="button"
+          className="flex items-center gap-2 text-gray-300 cursor-text text-xs font-light px-3 py-[6px] bg-[#22222C] tracking-widest"
+        >
+          <CiLock size="18" className="text-purple-300 border-opacity-40 " />
+          <span>Private & secure</span>
+        </button>
+        <button
+          type="button"
+          className="flex items-center gap-2 text-gray-300 cursor-text text-xs font-light px-3 py-[6px] bg-[#22222C] tracking-widest"
+        >
+          <CiStar size="18" className="text-purple-300 border-opacity-40 " />
+          <span>100% satisfaction</span>
+        </button>
+      </div>
     </div>
   );
 };

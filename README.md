@@ -44,20 +44,15 @@ A responsive portfolio website showcasing my expertise as a Web Developer and Em
 1. Clone the repository
    ```bash
    git clone git@github.com:Mozahedul/portfolio-mozahedul.git
-
 2. Navigate to the project directory
    ```bash
    cd your-repo-name
-
-
 3. Install dependencies
    ```bash
    npm install
-
 4. Run the application locally
    ```bash
    npm run dev
-
 5. Open browser and Visit http://localhost:3000 to view the website.
 
 # Technologies Used

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { BiLogoCodepen } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
 import { FiGithub, FiInstagram, FiLinkedin } from "react-icons/fi";
 
@@ -52,17 +51,6 @@ const SocialMedia = () => {
             aria-label="Twitter or X"
           >
             <FaXTwitter />
-          </Link>
-        </li>
-        <li className="media-btn">
-          <Link
-            target="_blank"
-            rel="noreferrer"
-            href="https://codepen.io/mozahedul"
-            title="CodePen"
-            aria-label="Link for CodePen"
-          >
-            <BiLogoCodepen />
           </Link>
         </li>
       </ul>

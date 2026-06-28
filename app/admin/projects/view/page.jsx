@@ -123,7 +123,7 @@ function ViewProjects() {
   }, []);
 
   return (
-    <div className="mt-28 mx-8">
+    <div className="mt-28 mx-4 sm:mx-6 lg:mx-0">
       <div className="mb-3 flex items-center justify-between">
         <h2 className="text-2xl font-bold text-gray-300">Project List</h2>
         <div>
@@ -157,45 +157,59 @@ function ViewProjects() {
         <table className="w-full table-auto border-2 border-slate-800">
           <thead>
             <tr className="bg-slate-700 text-gray-400">
-              <th className="px-3 py-2 text-left text-gray-200">SL No</th>
-              <th className="px-3 py-2 text-left text-gray-200">Title</th>
-              <th className="px-3 py-2 text-left text-gray-200">Anchor</th>
-              <th className="px-3 py-2 text-left text-gray-200">GitHub</th>
-              <th className="px-3 py-2 text-left text-gray-200">Languages</th>
-              <th className="px-3 py-2 text-left text-gray-200">Description</th>
-              <th className="px-3 py-2 text-left text-gray-200">Action</th>
+              <th className="px-3 text-sm py-2 text-left text-gray-200">
+                SL No
+              </th>
+              <th className="px-3 text-sm py-2 text-left text-gray-200">
+                Title
+              </th>
+              <th className="px-3 text-sm py-2 text-left text-gray-200">
+                Anchor
+              </th>
+              <th className="px-3 text-sm py-2 text-left text-gray-200">
+                GitHub
+              </th>
+              <th className="px-3 text-sm py-2 text-left text-gray-200">
+                Languages
+              </th>
+              <th className="px-3 text-sm py-2 text-left text-gray-200">
+                Description
+              </th>
+              <th className="px-3 text-sm py-2 text-left text-gray-200">
+                Action
+              </th>
             </tr>
           </thead>
           <tbody>
             {projects?.map((project, index) => (
               <tr
                 key={project._id}
-                className="text-gray-300 transition-all duration-500 hover:bg-cyan-900"
+                className="text-gray-300 transition-all duration-500 hover:bg-cyan-900 border-slate-800 border-2 align-middle"
               >
-                <td className="border-b-2 border-slate-800 p-3">{index + 1}</td>
-                <td className="border-b-2 border-slate-800 p-3">
+                <td className="text-sm p-3">{index + 1}</td>
+                <td className="text-sm p-3">
                   {`${project.title.substring(0, 20)}...`}
                 </td>
-                <td className="border-b-2 border-slate-800 p-3">
+                <td className="text-sm p-3">
                   {`${project.anchor.substring(0, 15)}...`}
                 </td>
-                <td className="border-b-2 border-slate-800 p-3">
+                <td className="text-sm p-3">
                   {`${project.github.substring(0, 15)}...`}
                 </td>
-                <td className="flex flex-wrap border-b-2 border-slate-800 p-3">
+                <td className="flex flex-wrap items-center gap-1 text-sm p-3">
                   {project?.language?.map(lang => (
                     <span
-                      className="m-1 rounded-full bg-slate-700 p-1 text-xs"
+                      className="rounded-md bg-slate-700 px-2 py-[2px] text-xs"
                       key={lang}
                     >
                       {lang}
                     </span>
                   ))}
                 </td>
-                <td className="border-b-2 border-slate-800 p-3">
+                <td className="text-sm p-3">
                   {`${project.description.substring(0, 20)}...`}
                 </td>
-                <td className="border-b-2 border-slate-800 p-3">
+                <td className="text-sm p-3 flex flex-nowrap">
                   <Link
                     href={`/admin/projects/edit/${project._id}`}
                     aria-label="The button navigates to the project edit page"

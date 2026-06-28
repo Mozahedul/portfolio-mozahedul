@@ -79,7 +79,7 @@ body {
     rgba(0, 102, 255, 1) 100%
   );
   /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a35aff",endColorstr="#ffac5e",GradientType=1); */
-  @apply rounded-lg border-transparent text-sm text-gray-100;
+  @apply border-transparent text-xs tracking-wider text-gray-100;
 }
 
 /* .btn:hover::before, */
@@ -110,7 +110,6 @@ body {
   /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffac5e",endColorstr="#a35aff",GradientType=1); */
   opacity: 0;
   z-index: -1;
-  @apply rounded-lg;
 }
 
 /* .btn:hover::before, */

@@ -89,19 +89,20 @@ const Archive = () => {
 
   return (
     // <div className="flex flex-col lg:flex-row lg:justify-between gap-x-20 mt-20 md:mt-32 xl:mx-12 relative max-w-[1400px] bg-red-400">
-    <div class="lg:flex px-6 lg:justify-between mt-20 md:mt-0 lg:gap-4 max-w-[1400px] md:mx-auto xl:px-12">
-      <header class="lg:fixed lg:py-24 lg:flex lg:max-h-screen lg:w-1/3 xl:w-1/4 lg:flex-col lg:justify-between ">
-        <h1 className="text-4xl md:text-6xl font-extrabold text-gray-300">
+    <div class="lg:flex px-4 sm:px-6 lg:mx-auto lg:justify-between mt-20 md:mt-0 lg:gap-4 max-w-[1200px] md:mx-auto ">
+      <header class="lg:fixed lg:py-24 lg:flex lg:max-h-screen lg:w-1/3 xl:w-1/4 lg:flex-col lg:justify-between">
+        <h1 className="text-3xl md:text-5xl font-extrabold text-gray-300">
           Archive.
         </h1>
-        <h2 className="text-2xl md:text-4xl font-bold mt-2 text-gray-400 flex items-center">
-          Mozahedul Islam
+        <h2 className="text-2xl md:text-4xl font-bold mt-2 text-gray-300 flex items-center">
+          <span className="text-cyan-600 mr-1">Mozahedul</span>{" "}
+          <span>Islam</span>
         </h2>
-        <p className="text-xl font-semibold text-gray-200 mt-3">
-          Experienced Full-stack Developer
+        <p className="text-xl font-semibold text-gray-200 mt-1">
+          Full-Stack & Email Developer
         </p>
-        <p className="text-md font-medium mt-2 mb-4 text-gray-200">
-          I develop exclusive and genuine web projects for clients.
+        <p className="text-md font-normal my-4 text-gray-400 leading-6">
+          Building modern websites and email experiences that make an impact.
         </p>
         <div className="flex flex-col items-start mt-5 gap-y-2">
           {categories?.map(category => (
@@ -120,7 +121,7 @@ const Archive = () => {
                 }`}
               />
               <span
-                className={`block uppercase text-sm font-semibold text-gray-200 tracking-wide group-hover:text-gray-400 ${
+                className={`block uppercase text-sm font-semibold text-gray-200 tracking-wider group-hover:text-gray-400 ${
                   activeButton === category._id ? "active-text" : ""
                 }`}
               >
