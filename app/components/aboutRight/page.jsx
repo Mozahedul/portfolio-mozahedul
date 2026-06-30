@@ -9,6 +9,18 @@ import Image from "next/image";
 import aosFadeUp from "@/utils/animation/aosFadeUp";
 
 const AboutRightSection = () => {
+  const languages = [
+    { name: "React.js" },
+    { name: "Node.js" },
+    { name: "MongoDB" },
+    { name: "MJML" },
+    { name: "Next.js" },
+    { name: "TypeScript" },
+    { name: "Tailwind CSS" },
+    { name: "Express.js" },
+    { name: "Bootstrap" },
+    { name: "Material UI" },
+  ];
   useEffect(() => {
     AOS.init();
     AOS.refresh();
@@ -138,66 +150,16 @@ const AboutRightSection = () => {
           Core stack
         </h2>
         <div className="flex flex-wrap gap-2 items-start content-start w-full mt-2">
-          <button
-            type="button"
-            className="text-xs tracking-wider py-1 px-3 rounded-full border-[1px] border-purple-400 border-opacity-30 text-purple-400 text-opacity-60 bg-purple-400 bg-opacity-10"
-          >
-            React.js
-          </button>
-          <button
-            type="button"
-            className="text-xs tracking-wider py-1 px-3 rounded-full border-[1px] border-purple-400 border-opacity-30 text-purple-400 text-opacity-60 bg-purple-400 bg-opacity-10"
-          >
-            Node.js
-          </button>
-          <button
-            type="button"
-            className="text-xs tracking-wider py-1 px-3 rounded-full border-[1px] border-purple-400 border-opacity-30 text-purple-400 text-opacity-60 bg-purple-400 bg-opacity-10"
-          >
-            MongoDB
-          </button>
-          <button
-            type="button"
-            className="text-xs tracking-wider py-1 px-3 rounded-full border-[1px] border-green-400 border-opacity-30 text-green-400 text-opacity-60 bg-green-400 bg-opacity-10"
-          >
-            MJML
-          </button>
-          <button
-            type="button"
-            className="text-xs tracking-wider py-1 px-3 rounded-full border-[1px] border-cyan-400 border-opacity-30 text-cyan-400 text-opacity-60 bg-cyan-400 bg-opacity-10"
-          >
-            Next.js
-          </button>
-          <button
-            type="button"
-            className="text-xs tracking-wider py-1 px-3 rounded-full border-[1px] border-cyan-400 border-opacity-30 text-cyan-400 text-opacity-60 bg-cyan-400 bg-opacity-10"
-          >
-            TypeScript
-          </button>
-          <button
-            type="button"
-            className="text-xs tracking-wider py-1 px-3 rounded-full border-[1px] border-gray-400 border-opacity-30 text-gray-400 text-opacity-60 bg-gray-400 bg-opacity-10"
-          >
-            Tailwind CSS
-          </button>
-          <button
-            type="button"
-            className="text-xs tracking-wider py-1 px-3 rounded-full border-[1px] border-gray-400 border-opacity-30 text-gray-400 text-opacity-60 bg-gray-400 bg-opacity-10"
-          >
-            Express.js
-          </button>
-          <button
-            type="button"
-            className="text-xs tracking-wider py-1 px-3 rounded-full border-[1px] border-sky-400 border-opacity-30 text-sky-400 text-opacity-60 bg-sky-400 bg-opacity-10"
-          >
-            Bootstrap
-          </button>
-          <button
-            type="button"
-            className="text-xs tracking-wider py-1 px-3 rounded-full border-[1px] border-sky-400 border-opacity-30 text-sky-400 text-opacity-60 bg-sky-400 bg-opacity-10"
-          >
-            Material UI
-          </button>
+          {languages.length &&
+            languages?.map(language => (
+              <button
+                key={language.name}
+                type="button"
+                className="text-xs tracking-wider py-[2px] px-2 rounded-md border-[1px] border-gray-700 border-opacity-30 text-gray-300 text-opacity-60 bg-gray-700 bg-opacity-10"
+              >
+                {language.name}
+              </button>
+            ))}
         </div>
       </div>
 

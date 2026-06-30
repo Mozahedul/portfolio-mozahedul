@@ -19,7 +19,7 @@ const Blog = () => {
     AOS.refresh();
   }, []);
   return (
-    <section className="px-4 sm:px-6 my-16" id="blog">
+    <section className="px-4 sm:px-6 lg:px-0 lg:mx-auto my-16" id="blog">
       {/* Blog Header */}
       <div {...aosFadeUp}>
         <p className="text-gray-300 mb-4 mx-auto text-center">

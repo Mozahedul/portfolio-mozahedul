@@ -61,12 +61,12 @@ const Hero = () => {
           <div className="flex gap-3 items-center" {...aosFadeUp}>
             <button
               type="button"
-              className="bg-gray-900 border-[1px] border-slate-800 text-xl text-purple-400 w-10 h-10 text-center inline-block rounded-md"
+              className="bg-gray-900 border-[1px] border-slate-800 text-purple-400 w-10 h-10 text-center inline-block rounded-md"
             >
               <IoBriefcaseOutline className="mx-auto" />
             </button>
             <div>
-              <h2 className="text-gray-200 text-xl font-bold mb-[-2px]">5+</h2>
+              <h2 className="text-gray-200 text-lg font-bold mb-[-2px]">5+</h2>
               <p className="text-gray-500 text-xs">Years Experience</p>
             </div>
           </div>
@@ -75,12 +75,12 @@ const Hero = () => {
           <div className="flex gap-3 items-center" {...aosFadeUp}>
             <button
               type="button"
-              className="bg-gray-900 border-[1px] border-slate-800 text-xl text-purple-400 w-10 h-10 text-center inline-block rounded-md"
+              className="bg-gray-900 border-[1px] border-slate-800 text-lg text-purple-400 w-10 h-10 text-center inline-block rounded-md"
             >
               <MdOutlineMail className="mx-auto" />
             </button>
             <div>
-              <h2 className="text-gray-200 text-xl font-bold mb-[-2px]">60+</h2>
+              <h2 className="text-gray-200 text-lg font-bold mb-[-2px]">60+</h2>
               <p className="text-gray-500 text-xs">Email Templates</p>
             </div>
           </div>
@@ -89,12 +89,12 @@ const Hero = () => {
           <div className="flex gap-3 items-center" {...aosFadeUp}>
             <button
               type="button"
-              className="bg-gray-900 border-[1px] border-slate-800 text-xl text-purple-400 w-10 h-10 text-center inline-block rounded-md"
+              className="bg-gray-900 border-[1px] border-slate-800 text-purple-400 w-10 h-10 text-center inline-block rounded-md"
             >
               <FaCode className="mx-auto" />
             </button>
             <div>
-              <h2 className="text-gray-200 text-xl font-bold mb-[-2px]">70+</h2>
+              <h2 className="text-gray-200 text-lg font-bold mb-[-2px]">70+</h2>
               <p className="text-gray-500 text-xs">Projects Completed</p>
             </div>
           </div>
@@ -106,12 +106,12 @@ const Hero = () => {
           >
             <button
               type="button"
-              className="bg-gray-900 border-[1px] border-slate-800 text-xl text-purple-400 w-10 h-10 text-center inline-block rounded-md"
+              className="bg-gray-900 border-[1px] border-slate-800 text-purple-400 w-10 h-10 text-center inline-block rounded-md"
             >
               <IoPeople className="mx-auto" />
             </button>
             <div>
-              <h2 className="text-gray-200 text-xl font-bold mb-[-2px]">
+              <h2 className="text-gray-200 text-lg font-bold mb-[-2px]">
                 100%
               </h2>
               <p className="text-gray-500 text-xs">Client Satisfaction</p>
@@ -122,7 +122,7 @@ const Hero = () => {
           <div className="flex gap-3 items-center" {...aosFadeUp}>
             <button
               type="button"
-              className="bg-gray-900 border-[1px] border-slate-800 text-xl text-purple-400 w-10 h-10 text-center inline-block rounded-xl"
+              className="bg-gray-900 border-[1px] border-slate-800 text-purple-400 w-10 h-10 text-center inline-block rounded-xl"
             >
               <FaLocationDot className="mx-auto" />
             </button>

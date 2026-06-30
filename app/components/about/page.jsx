@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { GiElectric, GiCompass } from "react-icons/gi";
 import { FaHeart } from "react-icons/fa";
+import { FaStaylinked } from "react-icons/fa6";
 import AOS from "aos";
 // import { inter } from "@/utils/google-fonts/fonts";
 import "aos/dist/aos.css";
@@ -112,11 +113,12 @@ const AboutLeftSection = () => {
       </div>
 
       {/* PERFORMACE SECTION = 3 COLUMNS */}
-      <div {...aosFadeUp} className="flex flex-wrap gap-3 mt-8">
+      <div {...aosFadeUp} className="grid grid-cols-2 gap-2 mt-8">
+        {/* Performance */}
         <div className="flex gap-3 items-center bg-[#0D1520] px-2 py-1 border-[1px] border-cyan-800 border-opacity-15 rounded-lg">
           <button
             type="button"
-            className="bg-gray-900 border-[1px] border-slate-800 text-xl text-purple-400 w-10 h-10 text-center inline-block rounded-xl p-2"
+            className="bg-gray-900 border-[1px] border-slate-800 text-xl text-purple-400 w-10 h-10 text-center inline-block rounded-lg p-2"
           >
             <GiElectric className="mx-auto" />
           </button>
@@ -125,14 +127,16 @@ const AboutLeftSection = () => {
               Performance
             </h2>
             <p className="text-gray-500 text-xs leading-4 mt-[2px]">
-              Fast, optimized and reliable solutions.
+              Fast & optimized solutions.
             </p>
           </div>
         </div>
+
+        {/* Precision */}
         <div className="flex gap-3 items-center bg-[#0D1520] px-3 py-2 border-[1px] border-cyan-800 border-opacity-15 rounded-lg">
           <button
             type="button"
-            className="bg-gray-900 border-[1px] border-slate-800 text-xl text-purple-400 w-10 h-10 text-center inline-block rounded-xl p-2"
+            className="bg-gray-900 border-[1px] border-slate-800 text-xl text-purple-400 w-10 h-10 text-center inline-block rounded-lg p-2"
           >
             <GiCompass className="mx-auto" />
           </button>
@@ -141,14 +145,16 @@ const AboutLeftSection = () => {
               Precision
             </h2>
             <p className="text-gray-500 text-xs leading-4 mt-[2px]">
-              Pixel-perfect designs and clean code.
+              Pixel-perfect clean code.
             </p>
           </div>
         </div>
+
+        {/* Purpose */}
         <div className="flex gap-3 items-center bg-[#0D1520] px-3 py-2 border-[1px] border-cyan-800 border-opacity-15 rounded-lg">
           <button
             type="button"
-            className="bg-gray-900 border-[1px] border-slate-800 text-xl text-purple-400 w-10 h-10 text-center inline-block rounded-xl p-2"
+            className="bg-gray-900 border-[1px] border-slate-800 text-xl text-purple-400 w-10 h-10 text-center inline-block rounded-lg p-2"
           >
             <FaHeart className="mx-auto" />
           </button>
@@ -157,7 +163,25 @@ const AboutLeftSection = () => {
               Purpose
             </h2>
             <p className="text-gray-500 text-xs leading-4 mt-[2px]">
-              Building products that solve real problems.
+              products that solve problems.
+            </p>
+          </div>
+        </div>
+
+        {/* Clear comms */}
+        <div className="flex gap-3 items-center bg-[#0D1520] px-3 py-2 border-[1px] border-cyan-800 border-opacity-15 rounded-lg">
+          <button
+            type="button"
+            className="bg-gray-900 border-[1px] border-slate-800 text-xl text-purple-400 w-10 h-10 text-center inline-block rounded-lg p-2"
+          >
+            <FaStaylinked className="mx-auto" />
+          </button>
+          <div>
+            <h2 className="text-gray-200 text-sm font-bold mb-[-2px]">
+              Clear comms
+            </h2>
+            <p className="text-gray-500 text-xs leading-4 mt-[2px]">
+              Replies within 24 hours.
             </p>
           </div>
         </div>

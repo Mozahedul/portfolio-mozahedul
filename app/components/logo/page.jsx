@@ -22,7 +22,7 @@ const Logo = () => {
   };
   return (
     <div
-      className="animate-pulse cursor-pointer"
+      className="cursor-pointer"
       onMouseEnter={handleLogoHover}
       onMouseLeave={handleLogoHoverOut}
     >

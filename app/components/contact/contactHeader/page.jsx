@@ -58,10 +58,13 @@ const ContactHeader = () => {
           <p className="text-gray-600 text-[10px] uppercase font-extralight tracking-wider">
             Email
           </p>
-          <p className="flex items-center gap-[6px] text-purple-300 text-sm">
+          <a
+            href="mailto:mozahed001@gmail.com?subject=Project Inquiry"
+            className="flex items-center gap-[6px] text-purple-300 text-xs no-underline"
+          >
             <MdEmail className="shrink-0" />
             <span>mozahed001@gmail.com</span>
-          </p>
+          </a>
         </div>
 
         {/* Mobile */}
@@ -72,10 +75,13 @@ const ContactHeader = () => {
           <p className="text-gray-600 text-[10px] uppercase font-extralight tracking-wider">
             Mobile
           </p>
-          <div className="flex items-center gap-[6px] text-sm">
-            <FaPhone className="text-purple-400 shrink-0" />
+          <a
+            href="tel:+8801738648749"
+            className="flex items-center gap-[6px] text-xs"
+          >
+            <FaPhone className="text-purple-400 shrink-0 no-underline" />
             <span className="text-gray-300">+880-1738-648-749</span>
-          </div>
+          </a>
         </div>
 
         {/* Blog */}
@@ -86,7 +92,7 @@ const ContactHeader = () => {
           <p className="text-gray-600 text-[10px] uppercase font-extralight tracking-wider">
             Blog
           </p>
-          <div className="flex items-center gap-[6px] text-purple-300 text-sm">
+          <div className="flex items-center gap-[6px] text-purple-300 text-xs">
             <FaGlobe className="shrink-0" />
             <Link
               href="https://procodelearn.blogspot.com/"
@@ -103,7 +109,7 @@ const ContactHeader = () => {
           <p className="text-gray-600 text-[10px] uppercase font-extralight tracking-wider">
             Location
           </p>
-          <p className="flex items-center gap-[6px] text-purple-300 text-sm">
+          <p className="flex items-center gap-[6px] text-purple-300 text-xs">
             <CiLocationOn className="text-purple-400 shrink-0" />
             <span className="text-gray-300">Bangladesh . Remote OK</span>
           </p>

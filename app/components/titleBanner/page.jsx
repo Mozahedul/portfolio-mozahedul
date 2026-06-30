@@ -60,7 +60,7 @@ const TitleHero = () => {
         {...aosFadeUp}
       >
         I'm a{" "}
-        <span className="text-purple-500">
+        <span className="text-purple-500 font-semibold">
           Full-Stack Developer & Email Developer
         </span>{" "}
         developing frontend and backend supported web application and responsive
