@@ -80,7 +80,7 @@ const Navigation = ({ handleMenuClose }) => {
           <button
             className="flex bubbly-button"
             type="button"
-            onClick={event => handleToShowSection(event, "skills")}
+            onClick={event => handleToShowSection(event, "work")}
             aria-label="Button for skills menu"
           >
             Projects
@@ -91,22 +91,13 @@ const Navigation = ({ handleMenuClose }) => {
           <button
             className="flex bubbly-button"
             type="button"
-            onClick={event => handleToShowSection(event, "skills")}
+            onClick={event => handleToShowSection(event, "blog")}
             aria-label="Button for skills menu"
           >
-            Email
+            Blog
           </button>
         </li>
-        <li className="m-5 sm:m-2 md:mx-1 lg:mx-2">
-          <button
-            className="flex bubbly-button"
-            type="button"
-            onClick={event => handleToShowSection(event, "work")}
-            aria-label="Button for work menu"
-          >
-            Services
-          </button>
-        </li>
+
         {/* <li className="m-5 sm:m-2 md:mx-1 lg:mx-2">
           <button
             className="flex bubbly-button"

@@ -1,3 +1,4 @@
+import aosFadeUp from "@/utils/animation/aosFadeUp";
 import { inter } from "@/utils/google-fonts/fonts";
 
 const FooterSection = () => {

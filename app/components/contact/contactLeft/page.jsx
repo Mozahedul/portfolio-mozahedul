@@ -12,7 +12,7 @@ import { inter } from "@/utils/google-fonts/fonts";
 import "aos/dist/aos.css";
 import aosFadeUp from "@/utils/animation/aosFadeUp";
 
-const ContactHeader = () => {
+const ContactLeft = () => {
   useEffect(() => {
     AOS.init();
     AOS.refresh();
@@ -20,11 +20,11 @@ const ContactHeader = () => {
   return (
     <div
       id="contact"
-      {...aosFadeUp}
       className={`flex flex-col justify-between ${inter.className} my-4 sm:my-6 md:my-10`}
     >
       <div>
         <p
+        {...aosFadeUp}
           className="text-xs flex gap-2 items-center uppercase"
           aria-label="Button for sending message"
         >
@@ -33,7 +33,7 @@ const ContactHeader = () => {
             Let's connect
           </span>
         </p>
-        <h1 className="mt-6 text-2xl sm:text-3xl md:text-5xl font-extrabold text-gray-200">
+        <h1 {...aosFadeUp} className="mt-6 text-2xl sm:text-3xl md:text-5xl font-extrabold text-gray-200">
           <span>Have an</span>
           <br />
           <span className="text-purple-600 text-transparent [-webkit-text-stroke:2px_#a855f7]">
@@ -42,7 +42,7 @@ const ContactHeader = () => {
           <br />
           <span>Let's talk.</span>
         </h1>
-        <p className="font-md mt-6 text-left text-sm tracking-wide leading-7 text-gray-400">
+        <p {...aosFadeUp} className="font-md mt-6 text-left text-sm tracking-wide leading-7 text-gray-400">
           Whether it's a full-stack web app, a pixel-perfect email template, or
           just a conversation — I'm all ears. Every great project starts with a
           message.
@@ -105,7 +105,7 @@ const ContactHeader = () => {
         </div>
 
         {/* Location */}
-        <div className="flex flex-col gap-1 p-4" {...aosFadeUp}>
+        <div {...aosFadeUp} className="flex flex-col gap-1 p-4" >
           <p className="text-gray-600 text-[10px] uppercase font-extralight tracking-wider">
             Location
           </p>
@@ -114,68 +114,14 @@ const ContactHeader = () => {
             <span className="text-gray-300">Bangladesh . Remote OK</span>
           </p>
         </div>
-
-        {/* <div className="flex items-center my-4">
-          <div
-            className="bg-gradient-contact bg-opacity-30 text-gray-300 p-3 rounded-full"
-            data-aos="zoom-in"
-            data-aos-duration="500"
-            data-aos-delay="200"
-          >
-            <FaPhone />
-          </div>
-          <p
-            className="flex flex-col ml-3"
-            data-aos="zoom-in"
-            data-aos-duration="500"
-            data-aos-delay="200"
-          >
-            <strong className="text-sm font-bold text-[#a36aff]">
-              Mobile:
-            </strong>
-            <span className="text-xs text-gray-200 tracking-wide">
-              {" "}
-              +880-1738-648-749
-            </span>
-          </p>
-        </div>
-        <div className="flex items-center mt-4">
-          <div
-            className="bg-gradient-contact bg-opacity-30 text-gray-300 p-3 rounded-full"
-            data-aos="zoom-in"
-            data-aos-duration="500"
-            data-aos-delay="200"
-          >
-            <CgWebsite />
-          </div>
-          <p
-            className="flex flex-col ml-3"
-            data-aos="zoom-in"
-            data-aos-duration="500"
-            data-aos-delay="200"
-          >
-            <strong className="text-sm font-bold text-[#a36aff]">
-              Blog Website:
-            </strong>
-            <Link
-              target="_blank"
-              rel="noreferrer"
-              href="https://procodelearn.blogspot.com/"
-              className="text-[#ffac5e] text-xs tracking-wide"
-              aria-label="The button navigates to the blog website"
-            >
-              https://procodelearn.blogspot.com/
-            </Link>
-          </p>
-        </div> */}
       </div>
 
       {/* Social media */}
       <div className="mt-12">
-        <h4 className="uppercase font-extralight text-xs text-gray-500 tracking-wider ">
+        <h4 {...aosFadeUp} className="uppercase font-extralight text-xs text-gray-500 tracking-wider ">
           Find me on
         </h4>
-        <div className="mt-3 flex items-center gap-2">
+        <div {...aosFadeUp} className="mt-3 flex items-center gap-2">
           <Link
             href="https://github.com/Mozahedul"
             target="_blank"
@@ -208,7 +154,7 @@ const ContactHeader = () => {
       </div>
 
       {/* Personal response */}
-      <div className="mt-10 flex gap-3 flex-start p-4 bg-[#22222C]">
+      <div {...aosFadeUp} className="mt-10 flex gap-3 flex-start p-4 bg-[#22222C]">
         <div>
           <CiClock2
             size="32"
@@ -229,4 +175,4 @@ const ContactHeader = () => {
   );
 };
 
-export default ContactHeader;
+export default ContactLeft;

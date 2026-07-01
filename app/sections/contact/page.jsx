@@ -2,10 +2,10 @@
 
 import React, { useEffect } from "react";
 import AOS from "aos";
-import ContactHeader from "@/app/components/contact/contactHeader/page";
 import "aos/dist/aos.css";
-import ContactUs from "@/app/components/emails/contactUs/page";
 import aosFadeUp from "@/utils/animation/aosFadeUp";
+import ContactLeft from "@/app/components/contact/contactLeft/page";
+import ContactRight from "@/app/components/emails/contactRight/page";
 
 const ContactSection = () => {
   useEffect(() => {
@@ -30,9 +30,9 @@ const ContactSection = () => {
         className="contact grid grid-cols-1 sm:grid-cols-2 sm:gap-8 lg:gap-12 lg:justify-between"
         id="contactMe"
       >
-        <ContactHeader />
+        <ContactLeft />
         <div {...aosFadeUp} className="mt-10 md:mt-0">
-          <ContactUs />
+          <ContactRight />
         </div>
       </div>
     </section>

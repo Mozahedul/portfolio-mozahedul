@@ -10,9 +10,10 @@ import { GrShieldSecurity } from "react-icons/gr";
 import { TiWarningOutline } from "react-icons/ti";
 import emailjs from "@emailjs/browser";
 import aosZoomIn from "@/utils/animation/aosZoomIn";
+import aosFadeUp from "@/utils/animation/aosFadeUp";
 // import { toastError, toastSuccess } from "@/utils/showMessage/toastReact";
 
-const ContactUs = () => {
+const ContactRight = () => {
   const form = useRef();
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
@@ -101,19 +102,20 @@ const ContactUs = () => {
       {/* contact form header */}
       <div className="mb-6">
         <button
+          {...aosFadeUp}
           type="button"
           className="flex items-center text-xs text-purple-300 tracking-wider gap-2 border-[1px] border-purple-500 border-opacity-25 py-1 px-2 mb-6"
         >
           <LuSend />
           <span>Send a message</span>
         </button>
-        <h2 className="text-3xl font-bold">
+        <h2 {...aosFadeUp} className="text-3xl font-bold">
           <span className="text-gray-200">
             Start a conversation —<br /> tell me what you
           </span>{" "}
           <span className="text-purple-400">need.</span>
         </h2>
-        <p className="text-gray-400 text-xs mt-4 tracking-wider">
+        <p {...aosFadeUp} className="text-gray-400 text-xs mt-4 tracking-wider">
           All fields required. I read every single message personally.
         </p>
       </div>
@@ -125,13 +127,13 @@ const ContactUs = () => {
         <div className="grid grid-cols-2 border-b-[1px] border-gray-600 border-opacity-30">
           <div className="flex flex-col justify-center p-4 border-r-[1px] border-gray-600 border-opacity-30">
             <label
-              {...aosZoomIn}
+              {...aosFadeUp}
               className="text-[10px] font-medium tracking-widest text-gray-500 mb-2 uppercase"
             >
               Full name
             </label>
             <input
-              {...aosZoomIn}
+              {...aosFadeUp}
               required
               type="text"
               name="user_name"
@@ -141,13 +143,13 @@ const ContactUs = () => {
           </div>
           <div className="flex flex-col p-4">
             <label
-              {...aosZoomIn}
+              {...aosFadeUp}
               className="text-[10px] font-medium tracking-widest text-gray-500 mb-2 uppercase"
             >
               Email address
             </label>
             <input
-              {...aosZoomIn}
+              {...aosFadeUp}
               required
               type="email"
               name="user_email"
@@ -160,13 +162,13 @@ const ContactUs = () => {
         {/* Message */}
         <div className="flex flex-col justify-center p-4 border-b-[1px] border-gray-600 border-opacity-30">
           <label
-            {...aosZoomIn}
+            {...aosFadeUp}
             className="text-[10px] font-medium tracking-widest text-gray-500 mb-2 uppercase"
           >
             Your message
           </label>
           <textarea
-            {...aosZoomIn}
+            {...aosFadeUp}
             required
             rows={5}
             onChange={handleCharCount}
@@ -178,21 +180,24 @@ const ContactUs = () => {
         </div>
         {/* Show warning if user input > 500 characters */}
         {charCount === 500 && (
-          <p className="flex items-center gap-2 text-red-500 text-xs mx-4 mt-2 bg-gray-900 tracking-wider font-semibold px-3 py-2">
+          <p
+            {...aosFadeUp}
+            className="flex items-center gap-2 text-red-500 text-xs mx-4 mt-2 bg-gray-900 tracking-wider font-semibold px-3 py-2"
+          >
             <TiWarningOutline size="20" />
             <span>Maximum 500 characters reached</span>
           </p>
         )}
         <div className="flex items-center gap-6 p-4 justify-between">
           <button
-            {...aosZoomIn}
+            {...aosFadeUp}
             type="submit"
             className="hire-btn flex-grow cursor-pointer transition duration-500 tracking-wide py-3 text-gray-800 text-sm placeholder:text-gray-600 font-semibold hover:bg-cyan-900 hover:text-white uppercase"
             aria-label="Button for sending email message"
           >
             {sendEmailMessage()}
           </button>
-          <p className="text-gray-300 text-xs tracking-wider">
+          <p {...aosFadeUp} className="text-gray-300 text-xs tracking-wider">
             {charCount} / 500 characters
           </p>
         </div>
@@ -200,6 +205,7 @@ const ContactUs = () => {
       {/* Buttons after form */}
       <div className="mt-2 flex flex-wrap gap-2 items-center">
         <button
+          {...aosFadeUp}
           type="button"
           className="flex items-center gap-2 text-gray-300 cursor-text text-xs font-light px-3 py-[6px] bg-[#22222C] tracking-widest"
         >
@@ -207,6 +213,7 @@ const ContactUs = () => {
           <span>Reply in &lt; 24 hrs </span>
         </button>
         <button
+          {...aosFadeUp}
           type="button"
           className="flex items-center gap-2 text-gray-300 cursor-text text-xs font-light px-3 py-[6px] bg-[#22222C] tracking-widest"
         >
@@ -217,6 +224,7 @@ const ContactUs = () => {
           <span>No spam</span>
         </button>
         <button
+          {...aosFadeUp}
           type="button"
           className="flex items-center gap-2 text-gray-300 cursor-text text-xs font-light px-3 py-[6px] bg-[#22222C] tracking-widest"
         >
@@ -224,6 +232,7 @@ const ContactUs = () => {
           <span>Private & secure</span>
         </button>
         <button
+          {...aosFadeUp}
           type="button"
           className="flex items-center gap-2 text-gray-300 cursor-text text-xs font-light px-3 py-[6px] bg-[#22222C] tracking-widest"
         >
@@ -235,4 +244,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default ContactRight;

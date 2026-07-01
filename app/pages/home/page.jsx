@@ -7,6 +7,7 @@ import About from "@/app/sections/aboutme/page";
 import Hero from "@/app/sections/banner/page";
 import Blog from "@/app/sections/blog/page";
 import ContactSection from "@/app/sections/contact/page";
+import Services from "@/app/sections/services/page";
 import SkillSection from "@/app/sections/skills/page";
 import Work from "@/app/sections/work/page";
 
@@ -17,6 +18,7 @@ const MainPage = () => {
       <About />
       <SkillSection />
       <Work />
+      <Services />
       <Blog />
       <ContactSection />
       {/* Sidebar and scroll button */}
